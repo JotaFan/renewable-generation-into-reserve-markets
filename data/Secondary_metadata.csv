@@ -1,7 +1,0 @@
-,name,units
-0,DATA,datetime
-1,HORA,int
-2,BANDA_SUBIR,MW
-3,BANDA_DESCER,MW
-4,Consumo real,MWh
-5,Consumo Máximo ENTSO-E,MWh

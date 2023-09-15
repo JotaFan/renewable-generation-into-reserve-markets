@@ -1,0 +1,12 @@
+,indicators,names,units
+0,632,SecondaryReserveAllocationAUpward,MW
+1,633,SecondaryReserveAllocationADownward,MW
+2,680,UpwardUsedSecondaryReserveEnergy,MWh
+3,681,DownwardUsedSecondaryReserveEnergy,MWh
+4,1777,WindD+1DailyForecast,MWh
+5,1779,PhotovoltaicD+1DailyForecast,MWh
+6,1775,DemandD+1DailyForecast,MWh
+7,10258,TotalBaseDailyOperatingSchedulePBFGeneration,MWh
+8,14,BaseDailyOperatingSchedulePBFSolarPV,MWh
+9,10073,BaseDailyOperatingSchedulePBFWind,MWh
+10,10186,BaseDailyOperatingShedulePBFTotalBalanceInterconnections,MWh
