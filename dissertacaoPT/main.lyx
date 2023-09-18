@@ -1,0 +1,1178 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+%Documento elaborado através da modificação de Template_ Tese_ MAEG por RJF. 
+%Com contribuições e modificações dos alunos do DEGGE e Phd student 
+%Angelo Soares (arsoares@fc.ul.pt) com orientação de Carla M. Silva.
+%11/11/2021
+% Para escrever neste documento, expandam a secção Capitulos e escrevam no capitulo apropriado.
+% Após a escrita, seleccionem "main.tex" e recompilem. Tudo o que escreverem nos capitulos irá 
+% aparecer. 
+
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------ ALTERAR CAPA ----------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+%A Neste main.tex as únicas alterações que precisam de fazer são referentes à Capa da
+%dissertação. Sigam as indicações seguintes: Façam ctrl+F para procurar "includepdf" e leiam 
+%as notas por baixo do \includepdf.
+
+% ------------------------------------------------------------------------------------------------------%
+
+%Outras Notas: 
+%1. Ler o conteudo em "library.bib".
+%2. O GOOGLE é vosso amigo, todas e quaisquer modificações necessárias, seja para introduzir um
+%certo tipo de formatação, seja para colocar uma figura ou tabela com especificações particulares,
+%usem o GOOGLE, existem N exemplos para todo o tipo de alteração em latex. Com quase copy+paste
+%code.
+% ------------------------------------------ IMPORTANTE -----------------------------------------------%
+%3. Neste documento existem algumas colisoes de pacotes, nomeadamente o tocloft e o book report
+%e a maneira %como o chapter foi elaborado. Exemplo: Se os alunos quiserem colocar o prefixo "1."
+%antes da introdução, ou seja "1. Introdução". No Indice ficaria "1 1. Introdução".
+%ALTERNATIVA: Escrevam a dissertação na totalidade. No fim, façam download do PDF (cliquem segundo
+%Icone após o Recompile). Com esse ficheiro PDF, abram-no no PDF reader (adobe acrobat pro) e 
+%editem acrescentando o número do capitulo para ficar igual ao que está no Indice "1. Introdução".
+%É a forma mais simples de resolver.
+
+%Se alguem por curiosidade encontrar outra solução usando o tocloft package, como por exemplo, 
+%ocultar o número do capitulo no TOC sem usar \chapter* ou interferir com o hyperref enviem essa
+%info para o email supramencionado, muito obrigado.
+%Boa sorte
+
+
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------- PREAMBLE -------------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+% Fonte mais próxima de Times New Roman
+% Alterar margens do documento
+\renewcommand{\baselinestretch}{1.15}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[RO]{\small{\rightmark}}
+\fancyhead[LE]{\small{\leftmark}}
+\setlength{\headheight}{12pt}
+\addtolength{\topmargin}{-10.5pt}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+%Numeric style
+%\usepackage[backend=biber,style=authoryear,maxcitenames=1,autocite=inline,natbib=true]{biblatex}
+%\addbibresource{library} %O ficheiro .bib que a bibliografia vai usar
+%\bibliography{library}
+%\addbibresource{library.bib} %O ficheiro .bib que a bibliografia vai usar
+%\bibliography{library.bib}
+
+
+%\bibliographystyle XXX
+%\usepackage[numbers]{natbib}
+
+% Package que permite incluir imagens
+
+
+% Comentar para não incluir a lista de figuras e tabelas no índice
+\usepackage[nottoc]{tocbibind}
+
+
+% Para citar referências
+%\usepackage{natbib}
+%\setcitestyle{numbers}
+%\bibliographystyle{humannat}
+%\setcitestyle{authoryear}
+
+%Indentar primeiro parágrafo
+\usepackage{indentfirst}
+
+
+% Incluir até à subsecção no índice
+
+
+
+% Permite remover os espaços entre itens
+\usepackage{enumitem}
+
+
+% Caption para imagens
+\usepackage[font=footnotesize]{caption}
+
+
+% Referenciar anexos
+\usepackage[toc,page]{appendix}
+
+
+%Adicionar pdfs
+\usepackage{pdfpages}
+
+
+%Alterar nome de capitulo para a referencia
+\usepackage{fmtcount}
+\usepackage{url}
+
+
+%Para expressões Matemáticas
+\usepackage{bm}
+
+
+%Bibliotecas
+%\usepackage{biblatex}
+\usepackage[portuguese]{babel}
+%Can be switched to english
+
+\raggedbottom
+\usepackage{subcaption}
+\usepackage{eurosym}
+\usepackage{csquotes}
+\usepackage[nottoc]{tocbibind}
+%\usepackage[scaled]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+
+%Comando que cria abreviaturas usado no Nomenclatura
+\newcommand{\abbreviations}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Abreviaturas}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+%Criar Siglas
+\newcommand{\siglas}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Siglas e acrónimos}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+%Cria simbologia
+\newcommand{\simbolos}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Simbologia}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+
+
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{plain}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+ \clearpage{\cleardoublepage}
+
+\providecommand{\keywords}[1]{\textbf{Keywords:} #1}
+\providecommand{\keywordsP}[1]{\textbf{Palavras chave:} #1}
+
+%Remover Chapter N on the header
+\usepackage{titlesec}
+\usepackage{lipsum}
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\huge}
+
+%\numberwithin{section}{chapter}
+\usepackage{multirow}
+\usepackage{chngcntr}
+\usepackage{tocloft}
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+\renewcommand{\cftfigpresnum}{\textbf{Figura\ }}
+\renewcommand{\cfttabpresnum}{\textbf{Tabela\ }}
+
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+1.5em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+1.5em}
+
+\sloppy
+
+
+\newcommand{\listoftablesandfigures}{%
+    \chapter*{List of Tables and Figures}%
+    \phantomsection
+\@starttoc{lof}%
+\bigskip
+\@starttoc{lot}}
+
+
+
+
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------- END - PREAMBLE -------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+\end_preamble
+\options openright
+\use_default_options false
+\maintain_unincluded_children false
+\language portuguese
+\language_package default
+\inputencoding utf8
+\fontencoding T1
+\font_roman "times" "default"
+\font_sans "default" "default"
+\font_typewriter "mathptmx" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref section
+\pdf_pdfusetitle false
+\pdf_quoted_options "hidelinks"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine biblatex-natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\biblio_options backend=biber,sorting=none
+\biblatex_bibstyle numeric
+\biblatex_citestyle numeric
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style french
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Capa
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "capa.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "Capa"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+let
+\backslash
+cleardoublepage
+\backslash
+clearpage
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 1
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage clearpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+frontmatter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% RESUMO
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-0-Resumo.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "resumo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Abstract
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-0.1-Abstract.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "abstract"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% AGRADECIMENTOS
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-0.2-Agradecimentos.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "agradecimentos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Nomenclatura
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-0.3-Nomenclatura.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:nomenclatura"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% ÍNDICE
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand input
+filename "Indice.lyx"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+mainmatter
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+parindent}{15pt}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%Comentar retira a indentação inicial nos chapters
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%numeros em numeração árabe
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% INTRODUÇÃO
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-1-Introducao.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:intro"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Revisão bibliográfica
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-2-Revisao_bibliografica.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:revisao"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Contextos
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-3-Contextos.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:contexto"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Métodos
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-4-Metodos.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:metodos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Resultados e discussão
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-5-Resultados_discussao.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:resultados_discussao"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Conclusões e sugestões futuras
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand include
+filename "Capitulos/Tese-6-Conclusao.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:conclusao"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Referências Bibliográficas
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset FormulaMacro
+\newcommand{\bibname}{Referências}
+\end_inset
+
+ 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%comando para rename a BIBLIOGRAFIA para REFERENCIAS
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{
+\backslash
+numberline{6}
+\end_layout
+
+\end_inset
+
+Referências
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%
+\backslash
+bibliographystyle{babplain}      % basic style, author-year citations
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "library"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+% Referências Bibliográficas
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not
+ empty
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{plain}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset include
+LatexCommand input
+filename "Capitulos/Tese-7-Anexos.lyx"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "ch:Anexos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "library"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

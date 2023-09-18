@@ -1,0 +1,617 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.16)  16 OCT 2022 20:29
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**capa.tex
+(./capa.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-04-10>
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4 \centering{\fontsize{12.2}{14.4}\selectfont U
+                                                 NIVERSIDADE DE LISBOA}\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (92.49492pt too wide) in paragraph at lines 4--4
+ []\OT1/cmr/m/n/12 UNIVERSIDADE 
+ []
+
+
+Overfull \hbox (16.9679pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/n/12 DE 
+ []
+
+
+Overfull \hbox (22.02478pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/n/12 LIS- 
+ []
+
+
+Overfull \hbox (25.9414pt too wide) in paragraph at lines 4--4
+ \OT1/cmr/m/n/12 BOA 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.5 \centering{\fontsize{12.2}{14.4}\selectfont F
+                                                 ACULDADE DE CIÊNCIAS}\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (73.90344pt too wide) in paragraph at lines 5--5
+ []\OT1/cmr/m/n/12 FACULDADE 
+ []
+
+
+Overfull \hbox (16.9679pt too wide) in paragraph at lines 5--5
+ \OT1/cmr/m/n/12 DE 
+ []
+
+
+Overfull \hbox (57.5883pt too wide) in paragraph at lines 5--5
+ \OT1/cmr/m/n/12 CI[]ENCIAS 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.6 \centering{\fontsize{12.2}{14.4}\selectfont D
+                                                 EPARTAMENTO DE ENGENHARIA G...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (101.96843pt too wide) in paragraph at lines 6--7
+ []\OT1/cmr/m/n/12 DEPARTAMENTO 
+ []
+
+
+Overfull \hbox (16.9679pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 DE 
+ []
+
+
+Overfull \hbox (20.71924pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 EN- 
+ []
+
+
+Overfull \hbox (29.9386pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 GEN- 
+ []
+
+
+Overfull \hbox (39.31071pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 HARIA 
+ []
+
+
+Overfull \hbox (21.13036pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 GE- 
+ []
+
+
+Overfull \hbox (134.59866pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 OGR[]AFICA,GEOF[]ISICA 
+ []
+
+
+Overfull \hbox (7.99437pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 E 
+ []
+
+
+Overfull \hbox (20.71924pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 EN- 
+ []
+
+
+Overfull \hbox (20.55814pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 ER- 
+ []
+
+
+Overfull \hbox (22.26645pt too wide) in paragraph at lines 6--7
+ \OT1/cmr/m/n/12 GIA 
+ []
+
+
+! LaTeX Error: Environment figure undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{figure}
+                   [h]
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.10 \begin{figure}[
+                    h]
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no ] in font nullfont!
+! Undefined control sequence.
+l.12  \includegraphics
+                      [width = 6.99cm,height = 3.3cm]{Imagens/logo_fcul.png}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+Missing character: There is no [ in font nullfont!
+Missing character: There is no w in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no d in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 6 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 9 in font nullfont!
+Missing character: There is no 9 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no , in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no i in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no h in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no = in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 3 in font nullfont!
+Missing character: There is no c in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no ] in font nullfont!
+Missing character: There is no I in font nullfont!
+Missing character: There is no m in font nullfont!
+Missing character: There is no a in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no e in font nullfont!
+Missing character: There is no n in font nullfont!
+Missing character: There is no s in font nullfont!
+Missing character: There is no / in font nullfont!
+Missing character: There is no l in font nullfont!
+Missing character: There is no o in font nullfont!
+Missing character: There is no g in font nullfont!
+Missing character: There is no o in font nullfont!
+! Missing $ inserted.
+<inserted text> 
+                $
+l.12 ...dth = 6.99cm,height = 3.3cm]{Imagens/logo_
+                                                  fcul.png}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 12.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 12.
+! Extra }, or forgotten $.
+l.12 ...9cm,height = 3.3cm]{Imagens/logo_fcul.png}
+                                                  
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+
+! LaTeX Error: \begin{document} ended by \end{figure}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \end{figure}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.13 \end{figure}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.13 \end{figure}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (37.35664pt too wide) in paragraph at lines 10--14
+ []\OML/cmm/m/it/10 cul:png$ 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.19 ...cado de reservas de um sistema eléctrico}
+                                                  }
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (105.18996pt too wide) in paragraph at lines 19--20
+ []\OT1/cmr/bx/n/17.28 Participa^^Xc~ao 
+ []
+
+
+Overfull \hbox (20.24998pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 da 
+ []
+
+
+Overfull \hbox (63.78996pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 gera^^Xc~ao 
+ []
+
+
+Overfull \hbox (80.48993pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 renov^^Savel 
+ []
+
+
+Overfull \hbox (20.51997pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 no 
+ []
+
+
+Overfull \hbox (39.48999pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 mer- 
+ []
+
+
+Overfull \hbox (38.60997pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 cado 
+ []
+
+
+Overfull \hbox (19.66998pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 de 
+ []
+
+
+Overfull \hbox (47.768pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 reser- 
+ []
+
+
+Overfull \hbox (26.298pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 vas 
+ []
+
+
+Overfull \hbox (19.66998pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 de 
+ []
+
+
+Overfull \hbox (26.99998pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 um 
+ []
+
+
+Overfull \hbox (27.21602pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 sis- 
+ []
+
+
+Overfull \hbox (42.07999pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 tema 
+ []
+
+
+Overfull \hbox (71.03996pt too wide) in paragraph at lines 19--20
+ \OT1/cmr/bx/n/17.28 el^^Sectrico 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.25 \centering{\fontsize{14}{16.8}\selectfont J
+                                                oão Pedro Passagem dos Santos}
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (28.39299pt too wide) in paragraph at lines 25--26
+ []\OT1/cmr/m/n/14.4 Jo~ao 
+ []
+
+
+Overfull \hbox (20.16809pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 Pe- 
+ []
+
+
+Overfull \hbox (20.36641pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 dro 
+ []
+
+
+Overfull \hbox (26.51302pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 Pas- 
+ []
+
+
+Overfull \hbox (37.67787pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 sagem 
+ []
+
+
+Overfull \hbox (20.44475pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 dos 
+ []
+
+
+Overfull \hbox (27.41632pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 San- 
+ []
+
+
+Overfull \hbox (18.09477pt too wide) in paragraph at lines 25--26
+ \OT1/cmr/m/n/14.4 tos 
+ []
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 31.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.31 ...Mestrado em Engenharia Energia e Ambiente}
+                                                  }\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <13> not available
+(Font)              size <12> substituted on input line 31.
+
+
+Overfull \hbox (55.8667pt too wide) in paragraph at lines 31--31
+ []\OT1/cmr/bx/n/12 Mestrado 
+ []
+
+
+Overfull \hbox (17.40971pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 em 
+ []
+
+
+Overfull \hbox (20.86111pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 En- 
+ []
+
+
+Overfull \hbox (24.90971pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 gen- 
+ []
+
+
+Overfull \hbox (29.8889pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 haria 
+ []
+
+
+Overfull \hbox (20.86111pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 En- 
+ []
+
+
+Overfull \hbox (16.17361pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 er- 
+ []
+
+
+Overfull \hbox (17.0625pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 gia 
+ []
+
+
+Overfull \hbox (6.15971pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 e 
+ []
+
+
+Overfull \hbox (25.94444pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 Am- 
+ []
+
+
+Overfull \hbox (15.75pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 bi- 
+ []
+
+
+Overfull \hbox (24.69443pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 ente 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 \centering{\fontsize{11}{13.2}\selectfont V
+                                                ersão MIPD }
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (31.7246pt too wide) in paragraph at lines 39--40
+ []\OT1/cmr/m/n/10.95 Vers~ao 
+ []
+
+
+Overfull \hbox (29.80836pt too wide) in paragraph at lines 39--40
+ \OT1/cmr/m/n/10.95 MIPD 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.43 \centering{\fontsize{13}{15.6}\selectfont D
+                                                issertação orientada por:}\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (58.71468pt too wide) in paragraph at lines 43--43
+ []\OT1/cmr/m/n/12 Disserta^^Xc~ao 
+ []
+
+
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/n/12 ori- 
+ []
+
+
+Overfull \hbox (15.6665pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/n/12 en- 
+ []
+
+
+Overfull \hbox (22.84698pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/n/12 tada 
+ []
+
+
+Overfull \hbox (20.56229pt too wide) in paragraph at lines 43--43
+ \OT1/cmr/m/n/12 por: 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \centering{\fontsize{13}{15.6}\selectfont P
+                                                rofessora Doutora Ana Estanq...
+
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (52.83974pt too wide) in paragraph at lines 44--45
+ []\OT1/cmr/m/n/12 Professora 
+ []
+
+
+Overfull \hbox (42.26485pt too wide) in paragraph at lines 44--45
+ \OT1/cmr/m/n/12 Doutora 
+ []
+
+
+Overfull \hbox (21.21089pt too wide) in paragraph at lines 44--45
+ \OT1/cmr/m/n/12 Ana 
+ []
+
+
+Overfull \hbox (16.54567pt too wide) in paragraph at lines 44--45
+ \OT1/cmr/m/n/12 Es- 
+ []
+
+
+Overfull \hbox (48.63144pt too wide) in paragraph at lines 44--45
+ \OT1/cmr/m/n/12 tanqueiro 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.48 \centering{\fontsize{14}{16.8}\selectfont 2
+                                                023}
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+)
+! Emergency stop.
+<*> capa.tex
+            
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 42 strings out of 478238
+ 686 string characters out of 5850455
+ 291994 words of memory out of 5000000
+ 18378 multiletter control sequences out of 15000+600000
+ 471068 words of font info for 34 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 18i,1n,12p,188b,114s stack positions out of 5000i,500n,10000p,200000b,80000s
+!  ==> Fatal error occurred, no output PDF file produced!
