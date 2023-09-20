@@ -431,43 +431,135 @@
       \verb http://www.jstor.org/stable/2984099
       \endverb
     \endentry
-    \entry{CMVM2018}{misc}{}
-      \name{author}{4}{}{%
-        {{hash=27514308c545671eb26dc2274ce8a8ba}{%
-           family={CMVM},
-           familyi={C\bibinitperiod}}}%
-        {{hash=6d07a471d225b63c9b871719a3607a00}{%
-           family={CNMC},
-           familyi={C\bibinitperiod}}}%
-        {{hash=3f56367a9e05a67816369db9584ec5f5}{%
-           family={CNMV},
-           familyi={C\bibinitperiod}}}%
-        {{hash=9dbbe88bed8b0c0127efc746d0fda915}{%
-           family={ERSE},
-           familyi={E\bibinitperiod}}}%
+    \entry{VLHelen2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d918a6d73452ed5f87e47757e55a6a56}{%
+           family={Josephine},
+           familyi={J\bibinitperiod},
+           given={V\bibnamedelima L\bibnamedelima Helen},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=869c6c7fd42e54da9edd254897a6ddbc}{%
+           family={Nirmala},
+           familyi={N\bibinitperiod},
+           given={A.P.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5a5e00808ddbb178254486adb0513b8a}{%
+           family={Alluri},
+           familyi={A\bibinitperiod},
+           given={Vijaya\bibnamedelima Lakshmi},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
       }
-      \strng{namehash}{27d0bcb25ea4dadc0a6f1829f477fc78}
-      \strng{fullhash}{c1f80dd971b45627f0c7218e29a116ac}
-      \strng{bibnamehash}{27d0bcb25ea4dadc0a6f1829f477fc78}
-      \strng{authorbibnamehash}{27d0bcb25ea4dadc0a6f1829f477fc78}
-      \strng{authornamehash}{27d0bcb25ea4dadc0a6f1829f477fc78}
-      \strng{authorfullhash}{c1f80dd971b45627f0c7218e29a116ac}
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{fullhash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{bibnamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authorbibnamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authornamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authorfullhash}{4bcaaaf372fc74947252f3693f978f02}
       \field{sortinit}{1}
       \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{month}{3}
-      \field{title}{INTEGRAÇÃO DA PRODUÇÃO RENOVÁVEL E DE COGERAÇÃO NO MIBEL E NA OPERAÇÃO DOS RESPECTIVOS SISTEMAS ELÉCTRICOS}
-      \field{year}{2018}
-      \verb{urlraw}
-      \verb https://www.cmvm.pt/pt/Cooperacao/conselhoreguladoresMibel/comunicados/Documents/Mibel_Estudo_PRE_PT_201803.pdf
-      \endverb
-      \verb{url}
-      \verb https://www.cmvm.pt/pt/Cooperacao/conselhoreguladoresMibel/comunicados/Documents/Mibel_Estudo_PRE_PT_201803.pdf
+      \field{abstract}{Education and Health care sectors are two predominant areas where societal growth is expected through innovation and technology development. Machine Learning and Deep learning classification models have been entertained in predicting, detecting, and diagnosing major diseases in the early stage. In this research paper, we have analyzed the impact of hidden dense layers in the Convolution neural network to improve the performance of the classification model. Three different classification deep network models have been constructed, analyzed and the result was tested with a diabetes dataset. Results concluded that the more layers with deeper the network better was the classification performance. The classification model with six hidden dense layers outperforms all other less number of hidden dense layers.}
+      \field{issn}{1757-8981}
+      \field{issue}{1}
+      \field{journaltitle}{IOP Conference Series: Materials Science and Engineering}
+      \field{month}{4}
+      \field{title}{Impact of Hidden Dense Layers in Convolutional Neural Network to enhance Performance of Classification Model}
+      \field{volume}{1131}
+      \field{year}{2021}
+      \field{pages}{012007}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1757-899X/1131/1/012007
       \endverb
     \endentry
+    \entry{Hewamalage2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bcedb4c1d2a852d41022a05e63751bf9}{%
+           family={Hewamalage},
+           familyi={H\bibinitperiod},
+           given={Hansika},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fb7be81f0574878d688bb03f0abb8502}{%
+           family={Bergmeir},
+           familyi={B\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d2ea33f311ab7e75395d319cf5cb988d}{%
+           family={Bandara},
+           familyi={B\bibinitperiod},
+           given={Kasun},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier B.V.}%
+      }
+      \strng{namehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{fullhash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{bibnamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authorbibnamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authornamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authorfullhash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recurrent Neural Networks (RNNs) have become competitive forecasting methods, as most notably shown in the winning method of the recent M4 competition. However, established statistical models such as exponential smoothing (ETS) and the autoregressive integrated moving average (ARIMA) gain their popularity not only from their high accuracy, but also because they are suitable for non-expert users in that they are robust, efficient, and automatic. In these areas, RNNs have still a long way to go. We present an extensive empirical study and an open-source software framework of existing RNN architectures for forecasting, and we develop guidelines and best practices for their use. For example, we conclude that RNNs are capable of modelling seasonality directly if the series in the dataset possess homogeneous seasonal patterns; otherwise, we recommend a deseasonalisation step. Comparisons against ETS and ARIMA demonstrate that (semi-) automatic RNN models are not silver bullets, but they are nevertheless competitive alternatives in many situations.}
+      \field{issn}{01692070}
+      \field{issue}{1}
+      \field{journaltitle}{International Journal of Forecasting}
+      \field{month}{1}
+      \field{title}{Recurrent Neural Networks for Time Series Forecasting: Current status and future directions}
+      \field{volume}{37}
+      \field{year}{2021}
+      \field{pages}{388\bibrangedash 427}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2020.06.008
+      \endverb
+      \keyw{Best practices,Big data,Forecasting,Framework}
+    \endentry
+    \entry{Costa2022}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4ea9d0f088041c81161f5b581c4df34c}{%
+           family={C.\bibnamedelimi Costa},
+           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Rogério\bibnamedelima Luís},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{fullhash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{bibnamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authorbibnamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authornamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authorfullhash}{4ea9d0f088041c81161f5b581c4df34c}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Solar panels can generate energy to meet almost all of the energy needs of a house. Batteries store energy generated during daylight hours for future use. Also, it may be possible to sell extra electricity back to distribution companies. However, the efficiency of photovoltaic systems varies according to several factors, such as the solar exposition at ground levels, atmospheric temperature, and relative humidity, and predicting the energy generated by such a system is not easy. This work is on the use of deep learning to predict the generation of photovoltaic energy by residential systems. We use real-world data to evaluate the performance of LSTM, Convolutional, and hybrid Convolutional-LSTM networks in predicting photovoltaic power generation at different forecasting horizons. We also assess the generalizability of the solutions, evaluating the use of models trained with data aggregated by geographic areas to predict the energy generation by individual systems. We compare the performance of deep networks with Prophet in terms of MAE, RMSE, and NRMSE, and in most cases, Convolutional and Convolutional-LSTM networks achieve the best results. Using models trained with region-based data to predict the power generation of individual systems is confirmed to be a promising approach.}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{month}{11}
+      \field{title}{Convolutional-LSTM networks and generalization in forecasting of household photovoltaic generation}
+      \field{volume}{116}
+      \field{year}{2022}
+      \field{pages}{105458}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.ENGAPPAI.2022.105458
+      \endverb
+      \keyw{Convolutional neural networks,Deep learning,LSTM,Photovoltaic power generation,Time series forecasting}
+    \endentry
   \enddatalist
-  \missing{fet_skaar_2006}
 \endrefsection
 \endinput
 
