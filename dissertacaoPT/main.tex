@@ -164,6 +164,12 @@
 \usepackage{chngcntr}  
 \usepackage{tocloft}
 \usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,  % color of internal links
+    filecolor=black,  % color of links to local 
+      urlcolor=blue,
+}
 %\counterwithout{figure}{chapter}
 %\counterwithout{table}{chapter}
 
@@ -276,19 +282,19 @@
 % Métodos
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-4-Metodos}
+\input{Capitulos/Tese-6-Metodos}
 \label{ch:metodos}
 
 % Resultados e discussão
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-5-Resultados_discussao}
+\input{Capitulos/Tese-7-Resultados_discussao}
 \label{ch:resultados_discussao}
 
 % Conclusões e sugestões futuras
 \newpage
 \thispagestyle{plain}
-\include{Capitulos/Tese-6-Conclusao}
+\include{Capitulos/Tese-8-Conclusao}
 \label{ch:conclusao}
 
 % Referências Bibliográficas
@@ -301,7 +307,7 @@
 \appendix
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-7-Anexos}
+\input{Capitulos/Tese-9-Anexos}
 \label{ch:Anexos}
 
 \end{document}

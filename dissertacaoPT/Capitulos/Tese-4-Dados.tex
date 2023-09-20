@@ -2,8 +2,7 @@
 
 \section{Dados Utilizados \label{se:dados_crus}}
 
-Os dados em estudo são do mercado energético espanol, retirados do site :
-https://www.esios.ree.es/es
+Os dados em estudo são do mercado energético espanol, retirados do site da \href{https://www.esios.ree.es/es}{ESIOS}.
 
 
 \csvautotabular{../data/indicators_metadata.csv}
@@ -11,9 +10,8 @@ https://www.esios.ree.es/es
 
 \subsection{Aquisição dos Dados}
 
-No ambito da automatização destes dados foi modificado o repositorio ESIOS (ref) para ser usado como uma biblioteca de python, aberta, em pypi.
-Sendo uma ferramenta mais facilmente acessivel para a extrair dados do mercado espanhol:
-https://pypi.org/project/pyesios/
+No ambito da automatização destes dados foi modificado o repositorio \href{https://github.com/SanPen/ESIOS}{ESIOS} para ser usado como uma biblioteca de python, aberta, em pypi.
+Sendo uma ferramenta mais facilmente acessivel para a extrair dados do mercado espanhol, \href{https://pypi.org/project/pyesios/}{pyesios}:
 
 
 
@@ -168,8 +166,8 @@ Podemos ver que temos dados em falta de varios anos, em três atributos, e um te
   \caption{Outliers}
 \end{figure}
 
-Vamos aplicar o método experimental "IterativeImputer"[https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html] da biblioteca de python "sklearn".
-Este metodo é baseado nos trabalhos de (ref) https://www.jstatsoft.org/article/view/v045i03 (ref) https://www.jstor.org/stable/2984099
+Vamos aplicar o método experimental \href{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}{IterativeImputer} da biblioteca de python \href{https://scikit-learn.org/stable/index.html}{sklearn}.
+Este metodo é baseado nos trabalhos de \cite{vanBuuren2011} e de \cite{Buck1960}
 
 
 Por ultimo foi adicionado ao dados mais atributos, sendo eles todos de cariz temporal. É adicionado atributos correspondentes à hora, ao dia do ano, ao dia da semana, ao dia do mês, mês, ano. TODO

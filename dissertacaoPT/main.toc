@@ -52,4 +52,4 @@
 \contentsline {chapter}{\numberline {7}Resultados e discussão}{22}{chapter.7}%
 \contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{23}{chapter.8}%
 \contentsline {chapter}{\hbox to\@tempdima {6\hfil }Referências}{24}{chapter.8}%
-\contentsline {chapter}{\numberline {A}Anexos}{24}{appendix.A}%
+\contentsline {chapter}{\numberline {A}Anexos}{25}{appendix.A}%

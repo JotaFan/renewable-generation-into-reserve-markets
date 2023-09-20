@@ -2368,10 +2368,12 @@
     <bcf:citekey order="5" intorder="1">Carneiro2016</bcf:citekey>
     <bcf:citekey order="6" intorder="1">Fernandes2016</bcf:citekey>
     <bcf:citekey order="7" intorder="1">Agostini2021</bcf:citekey>
-    <bcf:citekey order="8" intorder="1">CMVM2018</bcf:citekey>
-    <bcf:citekey order="9" intorder="1">Carneiro2016</bcf:citekey>
-    <bcf:citekey order="10" intorder="1">Carneiro2016</bcf:citekey>
-    <bcf:citekey order="11" intorder="1">fet_skaar_2006</bcf:citekey>
+    <bcf:citekey order="8" intorder="1">vanBuuren2011</bcf:citekey>
+    <bcf:citekey order="9" intorder="1">Buck1960</bcf:citekey>
+    <bcf:citekey order="10" intorder="1">CMVM2018</bcf:citekey>
+    <bcf:citekey order="11" intorder="1">Carneiro2016</bcf:citekey>
+    <bcf:citekey order="12" intorder="1">Carneiro2016</bcf:citekey>
+    <bcf:citekey order="13" intorder="1">fet_skaar_2006</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
