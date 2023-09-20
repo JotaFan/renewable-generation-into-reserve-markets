@@ -9,7 +9,7 @@ https://www.esios.ree.es/es
 \csvautotabular{../data/indicators_metadata.csv}
 
 
-\subsection{Aquisição dos Dados (depth 2)}
+\subsection{Aquisição dos Dados}
 
 No ambito da automatização destes dados foi modificado o repositorio ESIOS (ref) para ser usado como uma biblioteca de python, aberta, em pypi.
 Sendo uma ferramenta mais facilmente acessivel para a extrair dados do mercado espanhol:
@@ -144,31 +144,33 @@ A normalizaçao foi deixada por ser aprendida nos modelos, sendo que todos têm 
 Limpeza
 
 Podemos ver pelos graficos seguintes que a existem alguns outliers, sendo estes definidos como 3 desvios padrão de distância à média.
-
-graphhhhhhhhh
-
-
-No caso de "" e "" existe um grande salto nos valores logo o aqui os dados são partidos e estudados os outliers nas duas diferentes zonas.
-A limpeza destes dados é feita apenas substituindo pelo ................................................
-
-Fica também como motivo de estudo se a remoção deste outliers ajuda na modelação.
+Estes graficos mostram também que existe uma variação do que são os valores normais de cada atributo a nível temporal. Logo um método de limpeza não se poderia basear apenas numa definição geral de outliers, mas teria de ser feito em janelas temporais.
+Pelo mesmo argumento e visto que os outliers fazem parte do que queremos também descobrir, não é aplicada nenhum método de remoção dos mesmo, sendo os dados passados a cru para os modelos.
 
 
-Estudemos tambem o caso de dados em falta. Alguns destes atributos têm certas entras vazias, e como podemos ver alguns não têm alguns anos inteiros.
-Como queremos usar o maximo de dados possiveis iremos usar tecnicas de imputing nesses dados 
-............................................
-imputing
-https://arxiv.org/abs/2102.03340
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../plots/Outliers_3stds.png}
+  \caption{Outliers}
+\end{figure}
 
-cleaning
-	outliers
-		naquela parte que parte fazer a limpeza em duas vezes
-		melhora se tirarmos os outliers?
-		
-	imputing de missing data
-	
-features adicionais:
-	apenas as temporais	
+Outra análise desta variação dos atributos a nível temporal leva-nos a que qualquer divisão dos dados para treino e teste deva levar as variações em consideração. Isto sendo que o treino deve ter representatividade de todas, ou maior parte, das condições diferentes.
+Visto estarmos a usar dados de 2014 a 2022, argumento até que podemos nem fazer divisão no treino, e usar como teste e validação dados de 2023.
+
+
+Estudemos tambem o caso de dados em falta. Alguns destes atributos têm certas entradass vazias, e como podemos ver alguns não têm alguns anos inteiros.
+Como queremos usar o maximo de dados possiveis iremos usar tecnicas de imputing nesses dados.
+Podemos ver que temos dados em falta de varios anos, em três atributos, e um tem algumas horas esporadicas em falta nos primeiros anos.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../plots/missing_data.png}
+  \caption{Outliers}
+\end{figure}
+
+Vamos aplicar o método experimental "IterativeImputer"[https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html] da biblioteca de python "sklearn".
+Este metodo é baseado nos trabalhos de (ref) https://www.jstatsoft.org/article/view/v045i03 (ref) https://www.jstor.org/stable/2984099
+
 
 Por ultimo foi adicionado ao dados mais atributos, sendo eles todos de cariz temporal. É adicionado atributos correspondentes à hora, ao dia do ano, ao dia da semana, ao dia do mês, mês, ano. TODO
 
