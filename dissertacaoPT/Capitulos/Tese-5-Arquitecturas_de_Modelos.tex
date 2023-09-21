@@ -15,9 +15,14 @@ Todas as arquiteturas em análise irão ter por base um bloco de camadas neurona
 O bloco dense sendo ele o mais simples é formado por duas camadas Dense, em que a primeira apresenta um numero maior de filtros que a segunda.
 Estas camadas não são mais do que uma criação de filtros aleatórios combinando as entradas, para criar todos os filtros de saida. São a base das camadas intrepretativas. A acumulação em série (stacked) de camadas de dense está ligada a melhorias nas capacidades predictivas dos modelos \cite{VLHelen2021}.
 
-explicar om que e dense
-imagem
+Exemplo ilustrativo do nosso bloco basico onde entrariam 16 filtros na primeira camada e para finalizar o bloco com 2 filtros
 
+\begin{figure}[H]
+	\centering
+	\includegraphics{Imagens/dense_layer.png}
+	\caption{Bloco Dense}
+	\label{fig:dense_blcok}
+\end{figure}
 	
 \subsection{Blcoo CNN}
 
@@ -80,6 +85,7 @@ Normalmente usando em modelção de imagens, a arquitectura UNET passa por criar
 O bloco principal contextualmente o mesmo que o CNN.
 Nas suas ligações UNET junta informação de filtros passados (não de nivel temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.
 É habitual tambem adicionar aos blocos principais portões de atenção, portões residuais. Estas duas tecnicas são tambem estudadas aqui.
+É chamada assim pois é uma rede (NET) que forma um U na sua expansão e contracção.
 
 Como exemplo a arquitetura de "UNET"
 
@@ -90,3 +96,6 @@ imagem da mesma
 
 Aqui e dizer que os modelos utilizados para teste sao as combinacoes deste blocos nestas aquiteturas.
 
+Imagens de layers criadas com 
+dense
+http://alexlenail.me/NN-SVG/index.html

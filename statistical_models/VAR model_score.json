@@ -1,0 +1,1 @@
+{"name": "VAR model", "rmse": 166.85503991096118, "Absolute Error": 1089722.9883580431, "r2 score": -0.0019394169077302514, "mape score": 10.208184979184825, "alloc_missing": 555326.3361217275, "alloc_surplus": 534396.6522363159, "spain_alloc_missing": 555326.3361217275, "spain_alloc_surplus": 555326.3361217275, "optimal_percentage": 0.6290248915277461}

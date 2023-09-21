@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.16)  16 OCT 2022 20:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.6)  21 SEP 2023 12:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **capa.tex
 (./capa.tex
-LaTeX2e <2021-11-15> patch level 1
-L3 programming layer <2022-04-10>
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22>
 
 ! LaTeX Error: Missing \begin{document}.
 
@@ -421,7 +421,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.31 ...Mestrado em Engenharia Energia e Ambiente}
+l.31 ...trado em Engenharia da Energia e Ambiente}
                                                   }\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
@@ -453,6 +453,11 @@ Overfull \hbox (24.90971pt too wide) in paragraph at lines 31--31
 
 Overfull \hbox (29.8889pt too wide) in paragraph at lines 31--31
  \OT1/cmr/bx/n/12 haria 
+ []
+
+
+Overfull \hbox (14.0625pt too wide) in paragraph at lines 31--31
+ \OT1/cmr/bx/n/12 da 
  []
 
 
@@ -497,55 +502,33 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.39 \centering{\fontsize{11}{13.2}\selectfont V
-                                                ersão MIPD }
-You're in trouble here.  Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (31.7246pt too wide) in paragraph at lines 39--40
- []\OT1/cmr/m/n/10.95 Vers~ao 
- []
-
-
-Overfull \hbox (29.80836pt too wide) in paragraph at lines 39--40
- \OT1/cmr/m/n/10.95 MIPD 
- []
-
-
-! LaTeX Error: Missing \begin{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.43 \centering{\fontsize{13}{15.6}\selectfont D
+l.42 \centering{\fontsize{13}{15.6}\selectfont D
                                                 issertação orientada por:}\\
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (58.71468pt too wide) in paragraph at lines 43--43
+Overfull \hbox (58.71468pt too wide) in paragraph at lines 42--42
  []\OT1/cmr/m/n/12 Disserta^^Xc~ao 
  []
 
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 43--43
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 42--42
  \OT1/cmr/m/n/12 ori- 
  []
 
 
-Overfull \hbox (15.6665pt too wide) in paragraph at lines 43--43
+Overfull \hbox (15.6665pt too wide) in paragraph at lines 42--42
  \OT1/cmr/m/n/12 en- 
  []
 
 
-Overfull \hbox (22.84698pt too wide) in paragraph at lines 43--43
+Overfull \hbox (22.84698pt too wide) in paragraph at lines 42--42
  \OT1/cmr/m/n/12 tada 
  []
 
 
-Overfull \hbox (20.56229pt too wide) in paragraph at lines 43--43
+Overfull \hbox (20.56229pt too wide) in paragraph at lines 42--42
  \OT1/cmr/m/n/12 por: 
  []
 
@@ -556,35 +539,72 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.44 \centering{\fontsize{13}{15.6}\selectfont P
+l.43 \centering{\fontsize{13}{15.6}\selectfont P
                                                 rofessora Doutora Ana Estanq...
 
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
 
-Overfull \hbox (52.83974pt too wide) in paragraph at lines 44--45
+Overfull \hbox (52.83974pt too wide) in paragraph at lines 43--43
  []\OT1/cmr/m/n/12 Professora 
  []
 
 
-Overfull \hbox (42.26485pt too wide) in paragraph at lines 44--45
+Overfull \hbox (42.26485pt too wide) in paragraph at lines 43--43
  \OT1/cmr/m/n/12 Doutora 
  []
 
 
-Overfull \hbox (21.21089pt too wide) in paragraph at lines 44--45
+Overfull \hbox (21.21089pt too wide) in paragraph at lines 43--43
  \OT1/cmr/m/n/12 Ana 
  []
 
 
-Overfull \hbox (16.54567pt too wide) in paragraph at lines 44--45
+Overfull \hbox (16.54567pt too wide) in paragraph at lines 43--43
  \OT1/cmr/m/n/12 Es- 
  []
 
 
-Overfull \hbox (48.63144pt too wide) in paragraph at lines 44--45
+Overfull \hbox (48.63144pt too wide) in paragraph at lines 43--43
  \OT1/cmr/m/n/12 tanqueiro 
+ []
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.44 \centering{\fontsize{13}{15.6}\selectfont D
+                                                outor Hugo Algarvio}\\
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+Overfull \hbox (36.38991pt too wide) in paragraph at lines 44--44
+ []\OT1/cmr/m/n/12 Doutor 
+ []
+
+
+Overfull \hbox (27.08583pt too wide) in paragraph at lines 44--44
+ \OT1/cmr/m/n/12 Hugo 
+ []
+
+
+Overfull \hbox (15.98872pt too wide) in paragraph at lines 44--44
+ \OT1/cmr/m/n/12 Al- 
+ []
+
+
+Overfull \hbox (20.2359pt too wide) in paragraph at lines 44--44
+ \OT1/cmr/m/n/12 gar- 
+ []
+
+
+Overfull \hbox (15.34012pt too wide) in paragraph at lines 44--44
+ \OT1/cmr/m/n/12 vio 
  []
 
 
@@ -607,11 +627,11 @@ If that doesn't work, type  X <return>  to quit.
 
  
 Here is how much of TeX's memory you used:
- 42 strings out of 478238
- 686 string characters out of 5850455
- 291994 words of memory out of 5000000
- 18378 multiletter control sequences out of 15000+600000
- 471068 words of font info for 34 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 18i,1n,12p,188b,114s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40 strings out of 477985
+ 655 string characters out of 5840059
+ 1851388 words of memory out of 5000000
+ 20337 multiletter control sequences out of 15000+600000
+ 513796 words of font info for 37 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 18i,1n,12p,188b,115s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!

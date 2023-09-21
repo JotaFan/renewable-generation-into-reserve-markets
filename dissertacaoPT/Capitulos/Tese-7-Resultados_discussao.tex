@@ -1,5 +1,49 @@
 \chapter{Resultados e discussão}
 
+Os resultados das experiências são apresentados por experiência, sendo que cada um vai testando e eliminando parametros na modulção.
+Após análise inicial na modelação foi concluido que usar tentar modelar apenas um dos atributos de cada vez leva a melhor resultados que tentar modelar os dois no mesmo modelo.
+Foi também visto que os dois atributos em causa são analogos, logo os sistemas que melhor represetam um dos atributos tambem são semelhantemente eficazes no outro. 
+Assim todas as experiências foram realizadas usado apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e em que o atributo de alocação comparativo é  "SecondaryReserveAllocationAUpward".
+
+\section{Métricas  \label{se:metricas}}
+
+A nivel de comparação efectiva de modelos iremos usar as seguintes metricas: RMSE, erro absoluto, r2 score, percentagem optima, alocação em falta, alocação a mais.
+Sendo que as métricas de decisão final são as que representam melhor o objectivo: baixar os custo de alocação das reservas secundárias. logo serão as metricas de alocção em falta e em demasia, sendo que a soma das mesmas é o erro absoluto.
+
+\begin{equation}
+\label{eq:rmse}
+    RMSE (y, \hat{y}) = \sqrt{\frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}_i)^2}{N}}
+\end{equation}
+
+\begin{equation} \label{eq:abse} 
+    \text{Absolute\ Error} = \sum_{i=0}^{N - 1} \left| y_i - \hat{y}_i \right| 
+\end{equation}
+
+\begin{equation} \label{eq:r2score} R^2\ \text{score} = 1 - \frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}i)^2}{\sum{i=0}^{N - 1} (y_i - \bar{y})^2} \end{equation}
+
+
+\begin{equation} 
+    \label{eq:eq1} 
+    \text{alocação em falta} = 
+    \begin{cases} 
+        0 & ,\text{if } \hat{y} \geq y \\
+        y - \hat{y} & ,\text{otherwise} 
+    \end{cases} 
+\end{equation}
+
+\begin{equation} 
+    \label{eq:eq1} 
+    \text{optimal percentage} = \frac{1}{N} \sum_{i=1}^{n} 1 [\hat{y}_i \geq y_i  \&  \hat{y}_i \leq alloc]
+    \text{(not: \cite{Iverson1962})}
+\end{equation}
+
+
+Onde \textit{$\hat{y}$} são as previsões dos modelos, \textit{y} são os valores reais utilizados, "UpwardUsedSecondaryReserveEnergy", e \textit{alloc} são os valores alocados "SecondaryReserveAllocationAUpward"
+
+
+\section{Experiência  \label{se:metricas}}
+
+
 Aqui devem constar gráficos e sua análise crítica e ligação com a secção 2 da revisão bibliográfica no sentido de comparar valores e discutir diferenças, por exemplo. A legenda dos gráficos deve seguir a das figuras, isto é, porque também são figuras.
 
 % Para introduzir figuras

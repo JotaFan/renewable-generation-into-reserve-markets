@@ -1,15 +1,14 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[62] biber:340> INFO - === qua set 20, 2023, 17:50:51
-[72] Biber.pm:419> INFO - Reading 'main.bcf'
-[121] Biber.pm:979> INFO - Found 12 citekeys in bib section 0
-[135] Biber.pm:4419> INFO - Processing section 0
-[142] Biber.pm:4610> INFO - Looking for bibtex file 'library.bib' for section 0
-[145] bibtex.pm:1713> INFO - LaTeX decoding ...
-[160] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
-[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[261] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[261] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[261] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[270] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[275] bbl.pm:763> INFO - Output to main.bbl
+[66] biber:340> INFO - === qui set 21, 2023, 13:14:46
+[78] Biber.pm:419> INFO - Reading 'main.bcf'
+[134] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
+[147] Biber.pm:4419> INFO - Processing section 0
+[157] Biber.pm:4610> INFO - Looking for bibtex file 'library.bib' for section 0
+[159] bibtex.pm:1713> INFO - LaTeX decoding ...
+[176] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
+[280] Utils.pm:410> ERROR - BibTeX subsystem: /tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8, line 250, syntax error: found ",", expected one of: number, name (entry type, key, field, or macro name), end of entry ("}" or ")") or quoted string ({...} or "...")
+[280] Biber.pm:131> WARN - Invalid or undefined BibTeX entry key in file '/tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8', skipping ...
+[280] Biber.pm:131> WARN - Invalid or undefined BibTeX entry key in file '/tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8', skipping ...
+[281] Biber.pm:133> INFO - WARNINGS: 2
+[281] Biber.pm:136> INFO - ERRORS: 1
