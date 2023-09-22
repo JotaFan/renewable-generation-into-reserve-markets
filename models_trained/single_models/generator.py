@@ -4,15 +4,13 @@
 # input shape:
 # (N, x_time, n_features)
 
-from tensorflow import keras
-import math
-import pandas as pd
-import numpy as np
 import math
 import os
 import sys
 
 import numpy as np
+import pandas as pd
+from tensorflow import keras
 
 top_level_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append(top_level_dir)

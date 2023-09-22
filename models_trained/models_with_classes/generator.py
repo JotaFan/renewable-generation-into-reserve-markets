@@ -4,21 +4,20 @@
 # input shape:
 # (N, x_time, n_features)
 
-from tensorflow import keras
-import math
-import pandas as pd
-import numpy as np
 import math
 import os
 import sys
 
 import numpy as np
+import pandas as pd
+from tensorflow import keras
 
 top_level_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
 sys.path.append(top_level_dir)
 
 
 from scripts.utils import assign_labels_with_limits
+
 
 class DataGenerator(keras.utils.Sequence):
     def __init__(
@@ -106,7 +105,7 @@ def get_dataset(dataset,  time_moving_window_size_X=168, #batch size 7 days, 168
 
                 
 ):
-    if not label_col in dataset:
+    if label_col not in dataset:
         print(len(dataset))
         print(len(dataset[y_columns].values.ravel()))
         print(len(assign_labels_with_limits(dataset[y_columns].values.ravel(), classes_dict)))

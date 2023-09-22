@@ -1,0 +1,1 @@
+{"name": "StackedCNN", "rmse": 295.1711918328201, "abs erro": 24121229.182373047, "erro comp": "False", "r2 score": -2.270454494085119, "mape score": 0.07647786539602436, "alloc missing": 24085452.936035156, "alloc surplus": 35776.246337890625, "spain alloc missing": 0.0, "spain alloc surplus": 0.0, "optimal percentage": 0.0, "beter percentage": 0.0}

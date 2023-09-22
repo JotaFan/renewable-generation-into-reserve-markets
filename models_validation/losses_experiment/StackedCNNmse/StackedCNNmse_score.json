@@ -1,0 +1,1 @@
+{"name": "StackedCNNmse", "rmse": 176.70760089733406, "abs erro": 1103152.675954437, "erro comp": "True", "r2 score": 0.08361615962773838, "mape score": 14.8109138763698, "alloc missing": 673158.5333229064, "alloc surplus": 429994.14263153076, "optimal percentage": 58.74542124542125, "better allocation": 58.74542124542125, "beter percentage": 85.67994505494505}

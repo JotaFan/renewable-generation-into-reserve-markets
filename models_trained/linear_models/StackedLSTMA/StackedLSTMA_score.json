@@ -1,0 +1,1 @@
+{"name": "StackedLSTMA", "rmse": 197.7015577655987, "Absolute Error": 11808942.817829892, "r2 score": -0.5200010529948103, "mape score": 858061085465586.4, "erro_per_mean score": 1.4454694731847217, "alloc_erro": 11379521.697683716, "spain_alloc_erro": 0.0, "alloc_erro_comp_bool": 20496.0, "alloc_erro_comp_value": 94368.0}
