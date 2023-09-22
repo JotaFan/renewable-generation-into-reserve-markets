@@ -3,30 +3,72 @@ import math
 import os
 import pandas as pd
 from keras.callbacks import Callback, ModelCheckpoint
-
+import json
 STEPS_PER_EPOCH = 2336
 
+def update_history_dict(new_log, old_log):
+    history_to_save = {}
+    if old_log:
+        if isinstance(old_log, dict):
+            for key in old_log:
+                old = old_log[key]
+                new = new_log.get(key, [])
+                if not isinstance(new, list):
+                    new=[new]
+                history_to_save[key] = old + new
+    for key in new_log:
+        if key not in history_to_save:
+            history_to_save[key] = new_log[key]
+    return history_to_save
+
+
+
+class SaveModelCallback(Callback):
+    def __init__(self, save_frequency, model_keras_filename,model_log_filename, logs=None,start_epoch=0 ):
+        super(SaveModelCallback, self).__init__()
+        self.save_frequency = save_frequency
+        self.model_keras_filename = model_keras_filename
+        self.model_log_filename = model_log_filename
+        self.old_logs = logs or {}
+        self.start_epoch = start_epoch
+
+
+    def on_epoch_end(self, epoch, logs=None):
+        epoc_save = epoch + 1 + self.start_epoch
+        if (epoc_save) % self.save_frequency == 0:
+            logs = update_history_dict(logs, self.old_logs)
+            model_save_name = self.model_keras_filename.format(epoch=epoc_save)
+            # Save the model
+            self.model.save(model_save_name)
+
+            # Save the logs to a JSON file
+            with open(self.model_log_filename, "w") as f:
+                json.dump(logs, f)
+
+
+
 class CustomModelCheckpoint(Callback):
-    def __init__(self, model_keras_filename, period, start_epoch=1):
+    def __init__(self, model_keras_filename, period, start_epoch=1, logs=None):
         super().__init__()
         self.model_keras_filename = model_keras_filename
         self.period = period
         self.start_epoch = start_epoch
         self.model_checkpoint = None
+        self.old_logs = logs
 
     def on_epoch_begin(self, epoch, logs=None):
-        if self.model_checkpoint is not None:
-            self.model_checkpoint.model = None
-
         if epoch >= self.start_epoch:
-            self.model_checkpoint = ModelCheckpoint(self.model_keras_filename,
-                                                     save_freq=int(self.period * STEPS_PER_EPOCH),
-                                                     )
+            if self.model_checkpoint is None:
+                self.model_checkpoint = ModelCheckpoint(self.model_keras_filename,
+                                                        save_freq=int(self.period * STEPS_PER_EPOCH),
+                                                        )
             self.model_checkpoint.set_model(self.model)
 
     def on_epoch_end(self, epoch, logs=None):
         if self.model_checkpoint is not None:
-            self.model_checkpoint.on_epoch_end(epoch, logs)
+            self.model_checkpoint.on_epoch_end(epoch+self.start_epoch, logs)
+            # frq_model_filename = self.model_keras_filename.format(epoch=epoch + 1, **logs)
+            # self.model.save(frq_model_filename)
 
 class StopOnNanLoss(Callback):
     def __init__(self, filepath):
@@ -49,13 +91,13 @@ class StopOnNanLoss(Callback):
             if self.last_good_epoch is not None:
                 frq_model_filename = self.filepath.replace(".keras", f"freq_saves/{self.last_good_epoch}.keras")
                 self.model.save(frq_model_filename)
-            self.model.save(frq_model_filename)
-            self.model.stop_training = True
             self.model.save(self.filepath.replace(".keras", "freq_saves/unfinished.keras"))
+            self.model.stop_training = True
         else:
             self.last_good_model = self.model.get_weights()
-            if os.path.exists(self.filepath.replace(".keras", "freq_saves/unfinished.keras")):
-                os.remove(self.filepath.replace(".keras", "freq_saves/unfinished.keras"))
+            unfinished = self.filepath.replace(".keras", "freq_saves/unfinished.keras")
+            if os.path.exists(unfinished):
+                os.remove(unfinished)
 
 
 def assign_labels_with_limits(values, classes_dict):
