@@ -1,32 +1,49 @@
 \chapter{Métodos}
 
-Neste capitulo percorremos as experiências realizadas. Estas foram feitas atraves do usos do programas criados para o efeito disponiveis no repositorio GitHub do \href{https://github.com/JotaFan/renewable-generation-into-reserve-markets}{projecto}.
+Neste capitulo percorremos as experiências realizadas. Estas foram feitas atraves do usos do programas criados para o efeito, disponiveis no repositorio GitHub do \href{https://github.com/JotaFan/renewable-generation-into-reserve-markets}{projecto}.
 
 \section{Benchmark}
 
-Como modelo bencharmark iremos usar os atributos de alocação nos dados
-
-TODO: explicar e adicionar imagens
+Como modelo bencharmark iremos usar a alocação feita. Pois são estes valores que procuramos melhorar no caso prático.
 
 
-\section{Modelos estatiscos  \label{se:dados_estudo}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/benchmark.png}
+    \caption{Serie Temporal do benchmark}
+    \label{fig:benchmark}
+\end{figure}
+  
+
+\resizebox{\linewidth}{!}{\csvautotabular{../data/benchmark_scores.csv}  \label{tb:benchmark}}
+
+Para validação dos mesmo, vamos usar o ano 2021, devido aquele salto nos valores de alocação em 2022.
+
+Para esses temos os seguintes dados:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/benchmark_validation.png}
+    \caption{Serie Temporal do benchmark 2021}
+    \label{fig:benchmark_validation}
+\end{figure}
+  
+
+Os metodos em estudo vão ser comparados a esta medida. Sendo que o principal é baixar tanto a alocação perdida, como a alocação a mais. Que se traduzem no erro absoluto.
+
+\resizebox{\linewidth}{!}{\csvautotabular{../data/benchmark_validation_scores.csv}  \label{tb:benchmark_val}}
+
+
+\section{Modelos estatiscos  \label{se:model_stats}}
 
 Antes de entrar para o densenvolvimento de modelos vamos usar metódos e modelos abertos para usar comparativamente.
 Para as equações apresentadas temos que \textit{$Y_t$} é a variavel alvo, no tempo \textit{t}
 
-\subsection{AR}
+Os modelos estatiscos recurrentes em previsões são AR, MA, ARMA, ARIMA, SARIMA para previsões so com um atributo, e para multiplos atributos VAR.
 
-AR eé blabla
+O modelo AR não teve resultados aplicaveis, logo foi desconsiderado.
 
-\begin{equation} \label{eq:AR} Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \varepsilon_t \end{equation}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{../plots/AR_model.png}
-    \caption{Previsões 2022 com model AR}
-    \label{fig:AR_model}
-\end{figure}
-  
 
 
 
@@ -41,7 +58,7 @@ AR eé blabla
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/MA_model.png}
-    \caption{Previsões 2022 com model MA}
+    \caption{Previsões 2021 com modelo MA}
     \label{fig:MA_model}
 \end{figure}
   
@@ -54,7 +71,7 @@ AR eé blabla
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/ARMA_model.png}
-    \caption{Previsões 2022 com model ARMA}
+    \caption{Previsões 2021 com modelo ARMA}
     \label{fig:ARMA_model}
 \end{figure}
 
@@ -67,7 +84,7 @@ AR eé blabla
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/ARIMA_model.png}
-    \caption{Previsões 2022 com model ARIMA}
+    \caption{Previsões 2021 com modelo ARIMA}
     \label{fig:ARIMA_model}
 \end{figure}
 
@@ -80,15 +97,16 @@ AR eé blabla
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{../plots/SARIMA_model.png}
-    \caption{Previsões 2022 com model SARIMA}
+    \caption{Previsões 2021 com modelo SARIMA}
     \label{fig:SARIMA_model}
 \end{figure}
 
 
 TODO: criar csv com resultados disto
 
-\section{Forecat  \label{se:dados_estudo}}
+\section{Forecat  \label{se:forecat}}
 
+TODO!
 Com o propósito de desenvolver este estudo, e deixar ferramentas para a replicação do mesmo, foi criado uma biblioteca em python para desenhar as arquitecturas em estudo.
 
 
@@ -96,19 +114,19 @@ Com o propósito de desenvolver este estudo, e deixar ferramentas para a replica
 
 
 \subsection{subsubsection Gerador de dados (depth 2)}
-distribuiçao
+distribuição
 
 clustering
 
 
-\section{Treino e Resultados  \label{se:dados_estudo}}
+\section{Treino e Resultados  \label{se:training}}
 
 Realizaram-se várias experiências, onde em cada um se ia elimando alguns dos objectos em estudo.
 Em casa experiências toda a parametrização era igual, à excepção do objecto de estudo.
 
 \subsection{Arquiteturas e numeros de epocas}
 
-Nesta experiência foi testado o resultado das várias arquiteturas em estudo, como tambem o impacto do numero de epocas na qualidade dos modelos-
+Nesta experiência foi testado o resultado das várias arquiteturas em estudo, como também o impacto do numero de epocas na qualidade dos modelos-
 As arquitecturas estudadas foram:
 
 \begin{itemize}
@@ -149,13 +167,58 @@ Esta experiência consiste em rever que função de perda é melhor aplicavel ao
 
 
 
-\subsection{subsubsection Gerador de dados (depth 2)}
-distribuiçao
+\subsection{Hiperparametrização}
 
-clustering
+\subsubsection{Activação}
+
+\subsubsection{Optimizadores}
+
+\subsection{Janelas Temporais}
+
+Um dos pontos deste trabalho é perceber a fesiabilidade de usar dados de previsão do dia anterior (DA) para estes atributos energéticos.
+Algo que pode ser também aplicado no futuro a outros dados que não DA, mas sim a 3 horas, ou a 8 horas.
+Para perceber esta flexibilidade, mas especialmente para escolher as melhores janelas temporais a usar neste modelos, vamos testar várias combinações.
+Mantendo em mente que o objectivo é prever 24 horas, para os casos onde o alvo não dá um previsão de 24 horas, é necessario criar um numero de modelos para fazer as 24 horas.
+Para validação apenas é usado o espaço temporar previsto, e não multiplos modelos.
+
+Dado as análises de autocorrelação iremos usar como janelas para treino o conjunto [24, 48, 98, 168] para prever o conjunto [1, 4, 8, 12, 24]
 
 
-\section{Considerações adicionais  \label{se:dados_plus}}
+Para alem destes foram também testadas combinações com janelas de treino 8 e 12 horas. Estas mostraram rapidamente que janelas de treino menores que as de previsão funcionam muito mal.
+
+\subsection{Classificação}
+
+Como descrito em (ref)... existe também o uso de tanto classes como valores linears para resoluçao de problemas de regressão, também chamado \textit{cluster-wise regression}.
+Para este teste mudamos um pouco o modelo em uso. Ao invés de apenas uma camada interpretativa, fazemos duas, em paralelo, sendo que uma resolve a regressão e a outra a classificação.
+Outro caso, proposto aqui, é usar uma nova camada intrepertativa, que combina as duas saidas anteriores (linear e classificação), e resolve novamente para os valores lineares.
+
+Estes modelos não teram apenas uma saida, mas varias, como as arquiteturas MultiTail, mas neste caso cada uma resolve para um problema diferente, com funções de perda, e activações diferentes.
+
+TODO: desenho destas duas camadas intrepretaticas
+
+\subsection{Pesos}
+
+Por ultimo foi testado o impacto do uso de pesos nos modelos. Estes pesos são o peso que aquele alvo TODO: epxlicar pesos
+
+\subsubsection{Modelos lineares}
+
+Para os modelos lineares o peso que é adiciona ao modelo é a distância à média.
+Este peso serve para dar mais importância a valores facilmente considerados outliers.
+
+
+
+\subsubsection{Modelos Lineares e de Classificação}
+Aqui o peso é dado por saida. Para as saidas lineares o peso dados é o mesmo que apresentado anteriormente, para a saida de classificaçao, o peso é o inverso da frequência da classe.
+Distribuindo assim a importância de treino pela frquência das classes. Sendo um prática comum especialmente quando as distribuiçoes são muito desiguais, como o caso em estudo.
+É aqui estudada a aplicaçao destes pesos individualmente, e em conjunto. 
+Os pesos aqui são tambem normalizados de modo a que o maior peso em cada um deles seja 1, e logo a multiplicaçao dos dois esteja dentro das mesmas dimensões de relevância.
+
+
+\begin{equation} \label{eq:peso_media} 
+    P_m = \left| y - mean \right| 
+\end{equation}
+
+\section{Considerações adicionais  \label{se:metodos_plus}}
 
 Foram realizados testes adicionais que não obtiveram resultados passivos de boa interpretação, e foram imediatamente descartados, como:
 
@@ -166,3 +229,5 @@ Foram realizados testes adicionais que não obtiveram resultados passivos de boa
     \item[--] epocas : influência do numero de epocas nos modelos, foram treinados até 20000 epocas alguns modelos mas à medida que a perda ia estagnando na assintomta, o modelo ia apenas piorando.
 \end{itemize}
 
+
+Todos os metodos foram realizados utilizando código em python, que está aberto em https://github.com/JotaFan/renewable-generation-into-reserve-markets

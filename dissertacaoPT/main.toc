@@ -21,7 +21,7 @@
 \contentsline {subsubsection}{\numberline {4.2.1.2}Correlações Temporais}{9}{subsubsection.4.2.1.2}%
 \contentsline {subsection}{\numberline {4.2.2}Agrupamento }{10}{subsection.4.2.2}%
 \contentsline {section}{\numberline {4.3}Tratamento dos dados }{12}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Considerações adicionais }{14}{section.4.4}%
+\contentsline {section}{\numberline {4.4}Considerações adicionais}{14}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Arquitecturas de Modelos}{15}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Blocos }{15}{section.5.1}%
 \contentsline {subsection}{\numberline {5.1.1}Bloco Dense}{15}{subsection.5.1.1}%
@@ -36,28 +36,34 @@
 \contentsline {section}{\numberline {5.3}Considerações adicionais }{17}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Métodos}{18}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Benchmark}{18}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Modelos estatiscos }{18}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}AR}{18}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}MA}{19}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}ARMA}{19}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}ARIMA}{20}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}SARIMA}{21}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.2}Modelos estatiscos }{19}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}MA}{19}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}ARMA}{20}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}ARIMA}{21}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}SARIMA}{21}{subsection.6.2.4}%
 \contentsline {section}{\numberline {6.3}Forecat }{22}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Construtor de modelos}{22}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}subsubsection Gerador de dados (depth 2)}{22}{subsection.6.3.2}%
 \contentsline {section}{\numberline {6.4}Treino e Resultados }{22}{section.6.4}%
 \contentsline {subsection}{\numberline {6.4.1}Arquiteturas e numeros de epocas}{22}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Funções de Perda (Loss)}{23}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}subsubsection Gerador de dados (depth 2)}{23}{subsection.6.4.3}%
-\contentsline {section}{\numberline {6.5}Considerações adicionais }{23}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Resultados e discussão}{24}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Métricas}{24}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Experiências}{24}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Arquiteturas e numeros de epocas}{25}{subsection.7.2.1}%
-\contentsline {subsubsection}{\numberline {7.2.1.1}Arquiteturas}{25}{subsubsection.7.2.1.1}%
-\contentsline {subsubsection}{\numberline {7.2.1.2}Epocas}{25}{subsubsection.7.2.1.2}%
-\contentsline {subsection}{\numberline {7.2.2}Funções de Perda (Loss) }{25}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Funções de Perda (Loss) }{25}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{26}{chapter.8}%
-\contentsline {chapter}{\hbox to\@tempdima {8\hfil }Referências}{27}{chapter.8}%
-\contentsline {chapter}{\numberline {A}Anexos}{27}{appendix.A}%
+\contentsline {subsection}{\numberline {6.4.3}Hiperparametrização}{23}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}Activação}{23}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}Optimizadores}{23}{subsubsection.6.4.3.2}%
+\contentsline {subsection}{\numberline {6.4.4}Janelas Temporais}{23}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.5}Classificação}{24}{subsection.6.4.5}%
+\contentsline {subsection}{\numberline {6.4.6}Pesos}{24}{subsection.6.4.6}%
+\contentsline {subsubsection}{\numberline {6.4.6.1}Modelos lineares}{24}{subsubsection.6.4.6.1}%
+\contentsline {subsubsection}{\numberline {6.4.6.2}Modelos Lineares e de Classificação}{24}{subsubsection.6.4.6.2}%
+\contentsline {section}{\numberline {6.5}Considerações adicionais }{24}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Resultados e discussão}{26}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Métricas}{26}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Experiências}{26}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Arquiteturas e numeros de epocas}{27}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}Arquiteturas}{27}{subsubsection.7.2.1.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.2}Epocas}{27}{subsubsection.7.2.1.2}%
+\contentsline {subsection}{\numberline {7.2.2}Funções de Perda (Loss) }{27}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Funções de Perda (Loss) }{27}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{28}{chapter.8}%
+\contentsline {chapter}{\hbox to\@tempdima {9\hfil }Referências}{29}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Anexos}{31}{appendix.A}%

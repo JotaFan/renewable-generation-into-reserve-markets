@@ -134,7 +134,7 @@ Os limites retirados são:
 
 
 
-\section{Tratamento dos dados  \label{se:data_treatment}}
+\section{Tratamento dos dados \label{se:data_treatment}}
 
 Normalizaçao
 A normalizaçao foi deixada por ser aprendida nos modelos, sendo que todos têm como segunda camada, uma de normalização.
@@ -163,7 +163,7 @@ Podemos ver que temos dados em falta de varios anos, em três atributos, e um te
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{../plots/missing_data.png}
-  \caption{Outliers}
+  \caption{Dados em falta}
 \end{figure}
 
 Vamos aplicar o método experimental \href{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}{IterativeImputer} da biblioteca de python \href{https://scikit-learn.org/stable/index.html}{sklearn}.
@@ -173,6 +173,6 @@ Este metodo é baseado nos trabalhos de \cite{vanBuuren2011} e de \cite{Buck1960
 Por ultimo foi adicionado ao dados mais atributos, sendo eles todos de cariz temporal. É adicionado atributos correspondentes à hora, ao dia do ano, ao dia da semana, ao dia do mês, mês, ano. TODO
 
 
-\section{Considerações adicionais  \label{se:dados_plus}}
+\section{Considerações adicionais\label{se:dados_plus}}
 
 Talvez aqui uma secçao para finalizar e mostrar algumas coisas
