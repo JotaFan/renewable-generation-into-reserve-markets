@@ -1,14 +1,9 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[66] biber:340> INFO - === qui set 21, 2023, 13:14:46
-[78] Biber.pm:419> INFO - Reading 'main.bcf'
-[134] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
-[147] Biber.pm:4419> INFO - Processing section 0
-[157] Biber.pm:4610> INFO - Looking for bibtex file 'library.bib' for section 0
-[159] bibtex.pm:1713> INFO - LaTeX decoding ...
-[176] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
-[280] Utils.pm:410> ERROR - BibTeX subsystem: /tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8, line 250, syntax error: found ",", expected one of: number, name (entry type, key, field, or macro name), end of entry ("}" or ")") or quoted string ({...} or "...")
-[280] Biber.pm:131> WARN - Invalid or undefined BibTeX entry key in file '/tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8', skipping ...
-[280] Biber.pm:131> WARN - Invalid or undefined BibTeX entry key in file '/tmp/biber_tmp_Jhqu/7f56027f9015dc497dc7645faffbdd71_22091.utf8', skipping ...
-[281] Biber.pm:133> INFO - WARNINGS: 2
-[281] Biber.pm:136> INFO - ERRORS: 1
+[112] biber:340> INFO - === sex set 22, 2023, 15:52:15
+[127] Biber.pm:419> INFO - Reading 'main.bcf'
+[200] Biber.pm:979> INFO - Found 13 citekeys in bib section 0
+[218] Biber.pm:4419> INFO - Processing section 0
+[236] Biber.pm:4610> INFO - Looking for bibtex file 'library' for section 0
+[354] Utils.pm:410> ERROR - Cannot find 'library'!
+[354] Biber.pm:136> INFO - ERRORS: 1

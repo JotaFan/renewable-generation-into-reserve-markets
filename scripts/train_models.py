@@ -127,7 +127,7 @@ epocas=10, loss="mse", model_name_load=None):
     #if os.path.exists(model_keras_filename):
      #   return
     history=None
-    period = 1
+    period = 10
     model_checkpoint = keras.callbacks.ModelCheckpoint(model_keras_filename)
     freq_saves_folder = model_keras_filename.replace(".keras","freq_saves") 
     os.makedirs(freq_saves_folder, exist_ok=True)
@@ -275,7 +275,9 @@ models_strutres = {
 from losses import MeanSquaredLogarithmicError, weighted_loss, mean_squared_diff_error, mean_absolute_percentage_error
 
 
-losses = {"mae":"mae", "mse":"mse", "msle":MeanSquaredLogarithmicError(), "wl":weighted_loss, "msde":mean_squared_diff_error, "mape":mean_absolute_percentage_error
+losses = {#"mae":"mae", "mse":"mse", 
+"msle":MeanSquaredLogarithmicError(), 
+"wl":weighted_loss, #"msde":mean_squared_diff_error, "mape":mean_absolute_percentage_error
 }
 
 for loss_name,loss in losses.items():
@@ -286,6 +288,7 @@ for loss_name,loss in losses.items():
             train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=loss, model_name_load=model_name)
         except Exception as e:
             print(e)
+            
 # Experiment 3 - activation end
 
 # Experiment 4 - time windows

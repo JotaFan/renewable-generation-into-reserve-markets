@@ -15,6 +15,8 @@ def update_history_dict(new_log, old_log):
                 new = new_log.get(key, [])
                 if not isinstance(new, list):
                     new=[new]
+                if not isinstance(old, list):
+                    old=[old]
                 history_to_save[key] = old + new
     for key in new_log:
         if key not in history_to_save:

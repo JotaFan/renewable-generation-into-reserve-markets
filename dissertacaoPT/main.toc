@@ -16,43 +16,48 @@
 \contentsline {section}{\numberline {4.1}Dados Utilizados }{5}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Aquisição dos Dados}{5}{subsection.4.1.1}%
 \contentsline {section}{\numberline {4.2}Estudo dos dados }{5}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Correlações}{6}{subsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.1}Correlações entre atributos}{6}{subsubsection.4.2.1.1}%
-\contentsline {subsubsection}{\numberline {4.2.1.2}Correlações Temporais}{8}{subsubsection.4.2.1.2}%
-\contentsline {subsection}{\numberline {4.2.2}Agrupamento }{9}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Tratamento dos dados }{11}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Considerações adicionais }{13}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Arquitecturas de Modelos}{14}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Blocos }{14}{section.5.1}%
-\contentsline {subsection}{\numberline {5.1.1}Bloco Dense}{14}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5.1.2}Blcoo CNN}{15}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5.1.3}Blcoo LSTM}{15}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5.2}Arquiteturas }{15}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Vanilla }{15}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Stacked }{15}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}MultiHead }{15}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}MultiTail }{15}{subsection.5.2.4}%
-\contentsline {subsection}{\numberline {5.2.5}UNET }{16}{subsection.5.2.5}%
-\contentsline {section}{\numberline {5.3}Considerações adicionais }{16}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Métodos}{17}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Benchmark}{17}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Modelos estatiscos }{17}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}AR}{17}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}MA}{17}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}ARMA}{18}{subsection.6.2.3}%
-\contentsline {subsection}{\numberline {6.2.4}ARIMA}{19}{subsection.6.2.4}%
-\contentsline {subsection}{\numberline {6.2.5}SARIMA}{19}{subsection.6.2.5}%
-\contentsline {section}{\numberline {6.3}Forecat }{20}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Construtor de modelos}{20}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}subsubsection Gerador de dados (depth 2)}{20}{subsection.6.3.2}%
-\contentsline {section}{\numberline {6.4}Treino e Resultados }{20}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Arquiteturas e numeros de epocas}{20}{subsection.6.4.1}%
-\contentsline {subsection}{\numberline {6.4.2}Funções de Perda (Loss)}{21}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}subsubsection Gerador de dados (depth 2)}{21}{subsection.6.4.3}%
-\contentsline {section}{\numberline {6.5}Considerações adicionais }{21}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Resultados e discussão}{23}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Métricas }{23}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Experiência }{23}{section.7.2}%
-\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{25}{chapter.8}%
-\contentsline {chapter}{\hbox to\@tempdima {8\hfil }Referências}{26}{chapter.8}%
-\contentsline {chapter}{\numberline {A}Anexos}{26}{appendix.A}%
+\contentsline {subsection}{\numberline {4.2.1}Correlações}{7}{subsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.1}Correlações entre atributos}{7}{subsubsection.4.2.1.1}%
+\contentsline {subsubsection}{\numberline {4.2.1.2}Correlações Temporais}{9}{subsubsection.4.2.1.2}%
+\contentsline {subsection}{\numberline {4.2.2}Agrupamento }{10}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Tratamento dos dados }{12}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Considerações adicionais }{14}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Arquitecturas de Modelos}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Blocos }{15}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Bloco Dense}{15}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Blcoo CNN}{16}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Blcoo LSTM}{16}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5.2}Arquiteturas }{16}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Vanilla }{16}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Stacked }{16}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}MultiHead }{16}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}MultiTail }{16}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {5.2.5}UNET }{17}{subsection.5.2.5}%
+\contentsline {section}{\numberline {5.3}Considerações adicionais }{17}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Métodos}{18}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Benchmark}{18}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Modelos estatiscos }{18}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}AR}{18}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}MA}{19}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}ARMA}{19}{subsection.6.2.3}%
+\contentsline {subsection}{\numberline {6.2.4}ARIMA}{20}{subsection.6.2.4}%
+\contentsline {subsection}{\numberline {6.2.5}SARIMA}{21}{subsection.6.2.5}%
+\contentsline {section}{\numberline {6.3}Forecat }{22}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Construtor de modelos}{22}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}subsubsection Gerador de dados (depth 2)}{22}{subsection.6.3.2}%
+\contentsline {section}{\numberline {6.4}Treino e Resultados }{22}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Arquiteturas e numeros de epocas}{22}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Funções de Perda (Loss)}{23}{subsection.6.4.2}%
+\contentsline {subsection}{\numberline {6.4.3}subsubsection Gerador de dados (depth 2)}{23}{subsection.6.4.3}%
+\contentsline {section}{\numberline {6.5}Considerações adicionais }{23}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Resultados e discussão}{24}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Métricas}{24}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Experiências}{24}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Arquiteturas e numeros de epocas}{25}{subsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.1}Arquiteturas}{25}{subsubsection.7.2.1.1}%
+\contentsline {subsubsection}{\numberline {7.2.1.2}Epocas}{25}{subsubsection.7.2.1.2}%
+\contentsline {subsection}{\numberline {7.2.2}Funções de Perda (Loss) }{25}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Funções de Perda (Loss) }{25}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{26}{chapter.8}%
+\contentsline {chapter}{\hbox to\@tempdima {8\hfil }Referências}{27}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Anexos}{27}{appendix.A}%

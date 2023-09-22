@@ -65,6 +65,8 @@ def prediction_score(test_dataset_Y, predictions, test_allocation, model_name):
     # better_than_spain = smaller_error & mask_great_or_equal # assim teriamos de assumir que se eu alocasse 100000000 para 100 e espanha 95 que o meu era melhor..
     beter_percentage = np.sum(smaller_error)/test_dataset_Y.size
 
+        # "spain alloc missing":np.sum(spain_alloc_missing),
+        # "spain alloc surplus":np.sum(spain_alloc_surplus),
 
 
     predict_score = {
@@ -76,8 +78,6 @@ def prediction_score(test_dataset_Y, predictions, test_allocation, model_name):
         "mape score": mape, 
         "alloc missing":np.sum(alloc_missing),
         "alloc surplus":np.sum(alloc_surplus),
-        "spain alloc missing":np.sum(spain_alloc_missing),
-        "spain alloc surplus":np.sum(spain_alloc_surplus),
         "optimal percentage":optimal_percentage*100,
         "better allocation": better_allocation_mask*100,
         "beter percentage": beter_percentage*100,

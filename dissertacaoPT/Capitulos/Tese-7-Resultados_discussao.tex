@@ -5,7 +5,7 @@ Após análise inicial na modelação foi concluido que usar tentar modelar apen
 Foi também visto que os dois atributos em causa são analogos, logo os sistemas que melhor represetam um dos atributos tambem são semelhantemente eficazes no outro. 
 Assim todas as experiências foram realizadas usado apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e em que o atributo de alocação comparativo é  "SecondaryReserveAllocationAUpward".
 
-\section{Métricas  \label{se:metricas}}
+\section{Métricas\label{se:metricas}}
 
 A nivel de comparação efectiva de modelos iremos usar as seguintes metricas: RMSE, erro absoluto, r2 score, percentagem optima, alocação em falta, alocação a mais.
 Sendo que as métricas de decisão final são as que representam melhor o objectivo: baixar os custo de alocação das reservas secundárias. logo serão as metricas de alocção em falta e em demasia, sendo que a soma das mesmas é o erro absoluto.
@@ -41,7 +41,32 @@ Sendo que as métricas de decisão final são as que representam melhor o object
 Onde \textit{$\hat{y}$} são as previsões dos modelos, \textit{y} são os valores reais utilizados, "UpwardUsedSecondaryReserveEnergy", e \textit{alloc} são os valores alocados "SecondaryReserveAllocationAUpward"
 
 
-\section{Experiência  \label{se:metricas}}
+\section{Experiências\label{se:experiments}}
+
+Para comparação o erro absoluto para o ano de 2021 na alocação feita é de 3889367.4
+
+\subsection{Arquiteturas e numeros de epocas\label{se:archs_epocs}}
+
+\subsubsection{Arquiteturas\label{se:archs_res}}
+
+
+
+\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_epocs/experiment_results.tex}}
+
+\subsubsection{Epocas\label{se:epocas_res}}
+
+\subsection{Funções de Perda (Loss) \label{se:archs_epocs}}
+
+As funções de perda foram estudas com duas arquitecturas diferentes, de modo a conseguir ter uma melhor noção do impacto das mesmas.
+
+\resizebox{\linewidth}{!}{\input{../models_validation/losses_experiment/experiment_results.tex}}
+
+A nivel de percentagem de modelo melhor, elas esão todas bastante renhidas, mas ha uma claro vantagem quando vemos a percentagem de melhor alocação ou de alocação optima.
+Sendo que a perda que avança é a de MSLE (Mean Square Log Error).
+Esta perda é tendicionalmente usada para distribuições exponencias, e onde temos bastantes outliers, que devem ser considerados. O que é o caso no nosso problema.
+Esta experiência valida a observação feito na análise estatistica sobre o mesmo.
+
+\subsection{Funções de Perda (Loss) \label{se:archs_epocs}}
 
 
 Aqui devem constar gráficos e sua análise crítica e ligação com a secção 2 da revisão bibliográfica no sentido de comparar valores e discutir diferenças, por exemplo. A legenda dos gráficos deve seguir a das figuras, isto é, porque também são figuras.

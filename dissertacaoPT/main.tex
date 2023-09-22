@@ -62,21 +62,21 @@
   \fancyhead{}
   \renewcommand{\headrulewidth}{0pt}
 }
-
+\usepackage[utf8]{inputenc}
+\usepackage{datatool}
 \usepackage[backend=biber, natbib=true, style=numeric, sorting=none]{biblatex} %Numeric style
 %\usepackage[backend=biber,style=authoryear,maxcitenames=1,autocite=inline,natbib=true]{biblatex}
 %\addbibresource{library} %O ficheiro .bib que a bibliografia vai usar
 %\bibliography{library}
 %\addbibresource{library.bib} %O ficheiro .bib que a bibliografia vai usar
-%\bibliography{library.bib}
-\addbibresource{library.bib}
+%\bibliography{library}
+\addbibresource{library}
 
 %\bibliographystyle XXX
-%\usepackage[numbers]{natbib}
+%\usepackage[numbers]{natbib}1
 
 % Package que permite incluir imagens
 \usepackage{graphicx}
-
 % Comentar para não incluir a lista de figuras e tabelas no índice
 \usepackage[nottoc]{tocbibind}
 
@@ -116,8 +116,8 @@
 %Bibliotecas
 %\usepackage{biblatex}
 %\usepackage[portuguese]{babel} %Can be switched to english
-\usepackage{csvsimple}
-\usepackage[utf8]{inputenc}
+%\usepackage{csvsimple}
+\usepackage{csvsimple-l3}
 \usepackage{float}
 \raggedbottom
 \usepackage{subcaption}
@@ -204,8 +204,7 @@
 % Capa
 \newpage
 \thispagestyle{empty}
-\input{capa}
-\label{Capa}
+\input{capa}\label{Capa}
 
 
 
@@ -261,46 +260,30 @@
 % Contextos
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-3-Contextos}
-\label{ch:contexto}
-
+\input{Capitulos/Tese-3-Contextos}\label{ch:contexto}
 % Dados
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-4-Dados}
-\label{ch:dados}
-
+\input{Capitulos/Tese-4-Dados} \label{ch:dados}
 % Arquiteturas a estudar
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-5-Arquitecturas_de_Modelos}
-\label{ch:arch}
-
-
-
-
+\input{Capitulos/Tese-5-Arquitecturas_de_Modelos}\label{ch:arch}
 % Métodos
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-6-Metodos}
-\label{ch:metodos}
-
+\input{Capitulos/Tese-6-Metodos}\label{ch:metodos}
 % Resultados e discussão
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-7-Resultados_discussao}
-\label{ch:resultados_discussao}
-
+\input{Capitulos/Tese-7-Resultados_discussao}\label{ch:resultados_discussao}
 % Conclusões e sugestões futuras
 \newpage
 \thispagestyle{plain}
-\include{Capitulos/Tese-8-Conclusao}
-\label{ch:conclusao}
-
+\include{Capitulos/Tese-8-Conclusao}\label{ch:conclusao}
 % Referências Bibliográficas
 \renewcommand{\bibname}{Referências} %comando para rename a BIBLIOGRAFIA para REFERENCIAS
 \addcontentsline{toc}{chapter}{\numberline{8}Referências}%
-%\bibliographystyle{babplain}      % basic style, author-year citations
 \printbibliography
 
 % Referências Bibliográficas

@@ -105,6 +105,12 @@ schema_list = [filename for filename in os.listdir(path_to_trained_models_folder
 # Experiment ONE
 schema_to_validate = ["linear_models_epocs", "losses_experiment"]
 
+def make_validatio_scores():
+
+    return
+
+
+
 for schema in schema_list:
     if schema not in schema_to_validate:
         continue
@@ -211,6 +217,9 @@ for schema in schema_list:
         model_experiments_freq_saves = [filename for filename in os.listdir(model_experiment_path) if os.path.isdir(os.path.join(model_experiment_path,filename))]
         model_experiments_freq_saves_path = os.path.join(model_experiment_path, model_experiments_freq_saves[0])
         model_experiments_freq_saves_files = [filename for filename in os.listdir(model_experiment_path) if not filename.startswith("unfinished")]
+    
+    
+    
     path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results.csv")
     df_schema.to_csv(path_schema_csv, index=False)
     path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results.tex")

@@ -12,12 +12,13 @@ TODO: explicar e adicionar imagens
 \section{Modelos estatiscos  \label{se:dados_estudo}}
 
 Antes de entrar para o densenvolvimento de modelos vamos usar metódos e modelos abertos para usar comparativamente.
+Para as equações apresentadas temos que \textit{$Y_t$} é a variavel alvo, no tempo \textit{t}
 
 \subsection{AR}
 
 AR eé blabla
 
-equacao
+\begin{equation} \label{eq:AR} Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \varepsilon_t \end{equation}
 
 \begin{figure}[H]
     \centering
@@ -33,7 +34,9 @@ equacao
 
 AR eé blabla
 
-equacao
+\begin{equation} \label{eq:MA} 
+    Y_t = c + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t 
+\end{equation}
 
 \begin{figure}[H]
     \centering
@@ -46,7 +49,7 @@ equacao
 
 AR eé blabla
 
-equacao
+\begin{equation} \label{eq:ARMA}  Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t  \end{equation}
 
 \begin{figure}[H]
     \centering
@@ -59,7 +62,7 @@ equacao
 
 AR eé blabla
 
-equacao
+\begin{equation} \label{eq:ARIMA} Y't = c + \phi_1 Y'{t-1} + \phi_2 Y'{t-2} + \dots + \phi_p Y'{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t \end{equation}
 
 \begin{figure}[H]
     \centering
@@ -72,8 +75,7 @@ equacao
 
 AR eé blabla
 
-equacao
-
+\begin{equation} \label{eq:SARIMA} Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t \end{equation}
 
 \begin{figure}[H]
     \centering
