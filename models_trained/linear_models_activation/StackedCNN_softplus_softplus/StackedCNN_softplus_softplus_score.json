@@ -1,0 +1,1 @@
+{"name": "StackedCNN_softplus_softplus", "rmse": 708.8342539304844, "abs erro": 63465401.029052734, "erro comp": "False", "r2 score": -17.860342085172157, "mape score": 0.20371744354044202, "alloc missing": 63465401.029052734, "alloc surplus": 0.0, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

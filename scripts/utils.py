@@ -31,57 +31,38 @@ class SaveModelCallback(Callback):
         self.save_frequency = save_frequency
         self.model_keras_filename = model_keras_filename
         self.model_log_filename = model_log_filename
-        self.old_logs = logs or {}
         self.start_epoch = start_epoch
+        self.logs = logs or {}
 
 
     def on_epoch_end(self, epoch, logs=None):
         epoc_save = epoch + 1 + self.start_epoch
+        self.logs = update_history_dict(logs, self.logs)
         if (epoc_save) % self.save_frequency == 0:
-            logs = update_history_dict(logs, self.old_logs)
             model_save_name = self.model_keras_filename.format(epoch=epoc_save)
             # Save the model
             self.model.save(model_save_name)
 
             # Save the logs to a JSON file
             with open(self.model_log_filename, "w") as f:
-                json.dump(logs, f)
+                json.dump(self.logs, f)
 
 
-
-class CustomModelCheckpoint(Callback):
-    def __init__(self, model_keras_filename, period, start_epoch=1, logs=None):
-        super().__init__()
-        self.model_keras_filename = model_keras_filename
-        self.period = period
-        self.start_epoch = start_epoch
-        self.model_checkpoint = None
-        self.old_logs = logs
-
-    def on_epoch_begin(self, epoch, logs=None):
-        if epoch >= self.start_epoch:
-            if self.model_checkpoint is None:
-                self.model_checkpoint = ModelCheckpoint(self.model_keras_filename,
-                                                        save_freq=int(self.period * STEPS_PER_EPOCH),
-                                                        )
-            self.model_checkpoint.set_model(self.model)
-
-    def on_epoch_end(self, epoch, logs=None):
-        if self.model_checkpoint is not None:
-            self.model_checkpoint.on_epoch_end(epoch+self.start_epoch, logs)
-            # frq_model_filename = self.model_keras_filename.format(epoch=epoch + 1, **logs)
-            # self.model.save(frq_model_filename)
 
 class StopOnNanLoss(Callback):
-    def __init__(self, filepath):
+    def __init__(self, filepath, model_log_filename, logs=None,):
         super(StopOnNanLoss, self).__init__()
         self.filepath = filepath
         self.last_good_model = None
         self.last_good_epoch = None
+        self.logs = logs or {}
+        self.model_log_filename = model_log_filename
+
 
     def on_epoch_end(self, epoch, logs=None):
         self.last_good_model = self.model.get_weights()
         self.last_good_epoch = epoch
+        self.logs = update_history_dict(logs, self.logs)
 
 
     def on_train_batch_end(self, batch, logs=None):
@@ -93,6 +74,8 @@ class StopOnNanLoss(Callback):
             if self.last_good_epoch is not None:
                 frq_model_filename = self.filepath.replace(".keras", f"freq_saves/{self.last_good_epoch}.keras")
                 self.model.save(frq_model_filename)
+                with open(self.model_log_filename, "w") as f:
+                    json.dump(self.logs, f)
             self.model.save(self.filepath.replace(".keras", "freq_saves/unfinished.keras"))
             self.model.stop_training = True
         else:

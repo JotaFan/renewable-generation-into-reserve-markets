@@ -16,7 +16,7 @@ sys.path.insert(0, scripts_path) # Add the script's directory to the system path
 
 from generator import get_dataset
 
-from utils import CustomModelCheckpoint, StopOnNanLoss
+from utils import StopOnNanLoss
 from sys_utils import get_functions_from_experiment
 from predictions_scores import prediction_score, save_scores
 
@@ -103,7 +103,7 @@ dataset = dataset[mask_data]
 schema_list = [filename for filename in os.listdir(path_to_trained_models_folder) if os.path.isdir(os.path.join(path_to_trained_models_folder,filename))]
 
 # Experiment ONE
-schema_to_validate = ["linear_models_epocs", "losses_experiment"]
+schema_to_validate = ["linear_models_epocs", "losses_experiment", "linear_models_activation", "linear_models_time_windows"]
 
 def make_validatio_scores():
 
@@ -154,7 +154,7 @@ for schema in schema_list:
         Y_timeseries = data_metadata["Y_timeseries"]
         frac = 1
         train_features_folga = 24
-        skiping_step=24
+        skiping_step=Y_timeseries
         if "Y_label_dim" in data_metadata:
             y_val = columns_Y[0]
             num_classes = data_metadata["Y_classes"]-1
@@ -219,7 +219,9 @@ for schema in schema_list:
         model_experiments_freq_saves_files = [filename for filename in os.listdir(model_experiment_path) if not filename.startswith("unfinished")]
     
     
-    
+    df_schema.columns = df_schema.columns.str.replace('_', ' ')
+    if "name" in df_schema:
+        df_schema["name"] = df_schema["name"].str.replace('_', ' ')   
     path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results.csv")
     df_schema.to_csv(path_schema_csv, index=False)
     path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results.tex")

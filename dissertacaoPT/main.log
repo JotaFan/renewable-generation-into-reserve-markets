@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.6)  22 SEP 2023 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.6)  24 SEP 2023 12:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1038,12 +1038,6 @@ LaTeX Warning: Label `eq:eq1' multiply defined.
 
 LaTeX Warning: Label `eq:eq1' multiply defined.
 
-
-LaTeX Warning: Label `se:archs_epocs' multiply defined.
-
-
-LaTeX Warning: Label `se:archs_epocs' multiply defined.
-
 (./Capitulos/Tese-8-Conclusao.aux)
 
 LaTeX Warning: Label `fig:grafico1' multiply defined.
@@ -1169,7 +1163,7 @@ Package hyperref Info: Link coloring ON on input line 201.
 \openout5 = `main.out'.
 
  (./capa.tex
-<Imagens/logo_fcul.png, id=280, 185.0112pt x 85.2786pt>
+<Imagens/logo_fcul.png, id=300, 185.0112pt x 85.2786pt>
 File: Imagens/logo_fcul.png Graphic file (type png)
 <use Imagens/logo_fcul.png>
 Package pdftex.def Info: Imagens/logo_fcul.png  used on input line 12.
@@ -1254,7 +1248,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
  [5
 
-])
+]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 12.58502pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.58502pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
+
+[6])
 \tf@toc=\write6
 \openout6 = `main.toc'.
 
@@ -1267,7 +1270,7 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[6] (./main.lof
+[7] (./main.lof
 Overfull \hbox (2.08049pt too wide) detected at line 20
 \T1/ptm/b/n/10.95 Figura \T1/ptm/m/n/10.95 4.10 
  []
@@ -1281,15 +1284,15 @@ Overfull \hbox (2.08049pt too wide) detected at line 21
 \tf@lof=\write7
 \openout7 = `main.lof'.
 
- [7
+ [8
 
 ] (./main.lot)
 \tf@lot=\write8
 \openout8 = `main.lot'.
 
- [8
+ [9
 
-] [9
+] [10
 
 ]) (./Capitulos/Tese-1-Introducao.tex
 Chapter 1.
@@ -1298,18 +1301,18 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<Imagens/DesenvolvimentoSustentavel.jpg, id=458, 455.45157pt x 256.70906pt>
+<Imagens/DesenvolvimentoSustentavel.jpg, id=487, 455.45157pt x 256.70906pt>
 File: Imagens/DesenvolvimentoSustentavel.jpg Graphic file (type jpg)
 <use Imagens/DesenvolvimentoSustentavel.jpg>
 Package pdftex.def Info: Imagens/DesenvolvimentoSustentavel.jpg  used on input 
 line 13.
 (pdftex.def)             Requested size: 455.45045pt x 256.70842pt.
-<Imagens/FigA.png, id=461, 170.88844pt x 170.88844pt>
+<Imagens/FigA.png, id=490, 170.88844pt x 170.88844pt>
 File: Imagens/FigA.png Graphic file (type png)
 <use Imagens/FigA.png>
 Package pdftex.def Info: Imagens/FigA.png  used on input line 22.
 (pdftex.def)             Requested size: 136.57462pt x 136.58316pt.
-<Imagens/FigB.png, id=462, 170.88844pt x 170.88844pt>
+<Imagens/FigB.png, id=491, 170.88844pt x 170.88844pt>
 File: Imagens/FigB.png Graphic file (type png)
 <use Imagens/FigB.png>
 Package pdftex.def Info: Imagens/FigB.png  used on input line 28.
@@ -1346,7 +1349,7 @@ Overfull \hbox (15.0215pt too wide) in paragraph at lines 8--9
 [][]  
  []
 
-<../plots/targets_timeseries.png, id=504, 867.24pt x 361.35pt>
+<../plots/targets_timeseries.png, id=533, 867.24pt x 361.35pt>
 File: ../plots/targets_timeseries.png Graphic file (type png)
 <use ../plots/targets_timeseries.png>
 Package pdftex.def Info: ../plots/targets_timeseries.png  used on input line 24
@@ -1355,52 +1358,52 @@ Package pdftex.def Info: ../plots/targets_timeseries.png  used on input line 24
 [5
 
 ]
-<../plots/target_timeseries_windows.png, id=510, 1084.05pt x 722.7pt>
+<../plots/target_timeseries_windows.png, id=539, 1084.05pt x 722.7pt>
 File: ../plots/target_timeseries_windows.png Graphic file (type png)
 <use ../plots/target_timeseries_windows.png>
 Package pdftex.def Info: ../plots/target_timeseries_windows.png  used on input 
 line 33.
 (pdftex.def)             Requested size: 364.19667pt x 242.79245pt.
-<../plots/target_histograms.png, id=511, 867.24pt x 361.35pt>
+<../plots/target_histograms.png, id=540, 867.24pt x 361.35pt>
 File: ../plots/target_histograms.png Graphic file (type png)
 <use ../plots/target_histograms.png>
 Package pdftex.def Info: ../plots/target_histograms.png  used on input line 48.
 
 (pdftex.def)             Requested size: 455.24411pt x 189.68402pt.
  [6 <../plots/targets_timeseries.png> <../plots/target_timeseries_windows.png>]
-<../plots/feature_correlation.png, id=518, 1445.4pt x 1445.4pt>
+<../plots/feature_correlation.png, id=547, 1445.4pt x 1445.4pt>
 File: ../plots/feature_correlation.png Graphic file (type png)
 <use ../plots/feature_correlation.png>
 Package pdftex.def Info: ../plots/feature_correlation.png  used on input line 6
 4.
 (pdftex.def)             Requested size: 455.24411pt x 455.23724pt.
  [7 <../plots/target_histograms.png>]
-<../plots/correlation_heatmap.png, id=524, 722.7pt x 578.16pt>
+<../plots/correlation_heatmap.png, id=554, 722.7pt x 578.16pt>
 File: ../plots/correlation_heatmap.png Graphic file (type png)
 <use ../plots/correlation_heatmap.png>
 Package pdftex.def Info: ../plots/correlation_heatmap.png  used on input line 7
 4.
 (pdftex.def)             Requested size: 455.24411pt x 364.19861pt.
  [8 <../plots/feature_correlation.png>]
-<../plots/autocorrelation.png, id=531, 722.7pt x 361.35pt>
+<../plots/autocorrelation.png, id=560, 722.7pt x 361.35pt>
 File: ../plots/autocorrelation.png Graphic file (type png)
 <use ../plots/autocorrelation.png>
 Package pdftex.def Info: ../plots/autocorrelation.png  used on input line 82.
 (pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
 [9 <../plots/correlation_heatmap.png> <../plots/autocorrelation.png>]
-<../plots/silhouette_score.png, id=538, 867.24pt x 505.89pt>
+<../plots/silhouette_score.png, id=567, 867.24pt x 505.89pt>
 File: ../plots/silhouette_score.png Graphic file (type png)
 <use ../plots/silhouette_score.png>
 Package pdftex.def Info: ../plots/silhouette_score.png  used on input line 107.
 
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
-<../plots/elbow_test.png, id=539, 867.24pt x 505.89pt>
+<../plots/elbow_test.png, id=568, 867.24pt x 505.89pt>
 File: ../plots/elbow_test.png Graphic file (type png)
 <use ../plots/elbow_test.png>
 Package pdftex.def Info: ../plots/elbow_test.png  used on input line 114.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
  [10 <../plots/silhouette_score.png>]
-<../plots/clusters_histogram.png, id=545, 867.24pt x 505.89pt>
+<../plots/clusters_histogram.png, id=574, 867.24pt x 505.89pt>
 File: ../plots/clusters_histogram.png Graphic file (type png)
 <use ../plots/clusters_histogram.png>
 Package pdftex.def Info: ../plots/clusters_histogram.png  used on input line 12
@@ -1411,13 +1414,13 @@ Overfull \hbox (15.005pt too wide) in paragraph at lines 133--134
 [][]  
  []
 
-<../plots/Outliers_3stds.png, id=551, 1445.4pt x 1445.4pt>
+<../plots/Outliers_3stds.png, id=580, 1445.4pt x 1445.4pt>
 File: ../plots/Outliers_3stds.png Graphic file (type png)
 <use ../plots/Outliers_3stds.png>
 Package pdftex.def Info: ../plots/Outliers_3stds.png  used on input line 151.
 (pdftex.def)             Requested size: 455.24411pt x 455.23724pt.
 [12 <../plots/clusters_histogram.png>]
-<../plots/missing_data.png, id=557, 1806.75pt x 722.7pt>
+<../plots/missing_data.png, id=586, 1806.75pt x 722.7pt>
 File: ../plots/missing_data.png Graphic file (type png)
 <use ../plots/missing_data.png>
 Package pdftex.def Info: ../plots/missing_data.png  used on input line 165.
@@ -1426,7 +1429,7 @@ Package pdftex.def Info: ../plots/missing_data.png  used on input line 165.
 [14 <../plots/missing_data.png>]
 (./Capitulos/Tese-5-Arquitecturas_de_Modelos.tex
 Chapter 5.
-<Imagens/dense_layer.png, id=576, 295.1025pt x 206.7725pt>
+<Imagens/dense_layer.png, id=605, 295.1025pt x 206.7725pt>
 File: Imagens/dense_layer.png Graphic file (type png)
 <use Imagens/dense_layer.png>
 Package pdftex.def Info: Imagens/dense_layer.png  used on input line 22.
@@ -1435,7 +1438,7 @@ Package pdftex.def Info: Imagens/dense_layer.png  used on input line 22.
 
  <./Imagens/dense_layer.png>] [16]) [17] (./Capitulos/Tese-6-Metodos.tex
 Chapter 6.
-<../plots/benchmark.png, id=596, 1084.05pt x 722.7pt>
+<../plots/benchmark.png, id=626, 1084.05pt x 722.7pt>
 File: ../plots/benchmark.png Graphic file (type png)
 <use ../plots/benchmark.png>
 Package pdftex.def Info: ../plots/benchmark.png  used on input line 13.
@@ -1445,7 +1448,7 @@ Overfull \hbox (14.99158pt too wide) in paragraph at lines 19--20
 [][]  
  []
 
-<../plots/benchmark_validation.png, id=597, 1084.05pt x 722.7pt>
+<../plots/benchmark_validation.png, id=627, 1084.05pt x 722.7pt>
 File: ../plots/benchmark_validation.png Graphic file (type png)
 <use ../plots/benchmark_validation.png>
 Package pdftex.def Info: ../plots/benchmark_validation.png  used on input line 
@@ -1458,13 +1461,13 @@ Overfull \hbox (15.01537pt too wide) in paragraph at lines 35--36
 [][]  
  []
 
-<../plots/MA_model.png, id=604, 462.528pt x 346.896pt>
+<../plots/MA_model.png, id=633, 462.528pt x 346.896pt>
 File: ../plots/MA_model.png Graphic file (type png)
 <use ../plots/MA_model.png>
 Package pdftex.def Info: ../plots/MA_model.png  used on input line 60.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
 [19 <../plots/benchmark_validation.png>]
-<../plots/ARMA_model.png, id=612, 462.528pt x 346.896pt>
+<../plots/ARMA_model.png, id=642, 462.528pt x 346.896pt>
 File: ../plots/ARMA_model.png Graphic file (type png)
 <use ../plots/ARMA_model.png>
 Package pdftex.def Info: ../plots/ARMA_model.png  used on input line 73.
@@ -1479,17 +1482,21 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
 [20 <../plots/MA_model.png> <../plots/ARMA_model.png>]
-<../plots/ARIMA_model.png, id=621, 462.528pt x 346.896pt>
+<../plots/ARIMA_model.png, id=650, 462.528pt x 346.896pt>
 File: ../plots/ARIMA_model.png Graphic file (type png)
 <use ../plots/ARIMA_model.png>
 Package pdftex.def Info: ../plots/ARIMA_model.png  used on input line 86.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
-<../plots/SARIMA_model.png, id=622, 462.528pt x 346.896pt>
+<../plots/SARIMA_model.png, id=651, 462.528pt x 346.896pt>
 File: ../plots/SARIMA_model.png Graphic file (type png)
 <use ../plots/SARIMA_model.png>
 Package pdftex.def Info: ../plots/SARIMA_model.png  used on input line 99.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
- [21 <../plots/ARIMA_model.png>]
+ [21 <../plots/ARIMA_model.png>] (../statistical_models/stats_scores.tex)
+Overfull \hbox (15.00931pt too wide) in paragraph at lines 104--105
+[][]  
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 12.58502pt, for example:
@@ -1510,27 +1517,38 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 [24]) [25] (./Capitulos/Tese-7-Resultados_discussao.tex
 Chapter 7.
 (../models_validation/linear_models_epocs/experiment_results.tex)
-Overfull \hbox (14.99765pt too wide) in paragraph at lines 54--55
+Overfull \hbox (14.99878pt too wide) in paragraph at lines 54--55
 [][]  
  []
 
 [26
 
 ] (../models_validation/losses_experiment/experiment_results.tex)
-Overfull \hbox (14.9955pt too wide) in paragraph at lines 62--63
+Overfull \hbox (15.00139pt too wide) in paragraph at lines 62--63
 [][]  
  []
 
+(../models_validation/linear_models_activation/experiment_results.tex)
+Overfull \hbox (15.00471pt too wide) in paragraph at lines 73--74
+[][]  
+ []
+
+[27] (../models_validation/linear_models_time_windows/experiment_results.tex)
+Overfull \hbox (15.00441pt too wide) in paragraph at lines 80--81
+[][]  
+ []
+
+[28]
 File: Imagens/FigA.png Graphic file (type png)
 <use Imagens/FigA.png>
-Package pdftex.def Info: Imagens/FigA.png  used on input line 77.
+Package pdftex.def Info: Imagens/FigA.png  used on input line 92.
 (pdftex.def)             Requested size: 150.0pt x 150.0094pt.
-) [27]
+) [29]
 \openout2 = `Capitulos/Tese-8-Conclusao.aux'.
 
  (./Capitulos/Tese-8-Conclusao.tex
 Chapter 8.
-) [28
+) [30
 
 
 ]
@@ -1538,7 +1556,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 87.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [29
+) [31
 
 
 
@@ -1551,29 +1569,29 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[30] (./Capitulos/Tese-9-Anexos.tex
+[32] (./Capitulos/Tese-9-Anexos.tex
 Appendix A.
 File: Imagens/FigA.png Graphic file (type png)
 <use Imagens/FigA.png>
 Package pdftex.def Info: Imagens/FigA.png  used on input line 6.
 (pdftex.def)             Requested size: 150.0pt x 150.0094pt.
-) [31
+) [33
 
 ] (./main.aux (./Capitulos/Tese-8-Conclusao.aux))
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: EB7D3182288B78B855C58D39A4FF4124;9669.
+(rerunfilecheck)             Checksum: D9BEA7F252D1252D6FEDA81A28B3F2BB;10257.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26625 strings out of 477985
- 469985 string characters out of 5840059
- 1872388 words of memory out of 5000000
- 46135 multiletter control sequences out of 15000+600000
+ 26658 strings out of 477985
+ 471104 string characters out of 5840059
+ 1910388 words of memory out of 5000000
+ 46150 multiletter control sequences out of 15000+600000
  593184 words of font info for 127 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  94i,13n,117p,3974b,1572s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1585,10 +1603,10 @@ ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
 mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
 share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (42 pages, 2651452 bytes).
+Output written on main.pdf (45 pages, 2661276 bytes).
 PDF statistics:
- 791 PDF objects out of 1000 (max. 8388607)
- 674 compressed objects within 7 object streams
- 158 named destinations out of 1000 (max. 500000)
- 663 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 831 PDF objects out of 1000 (max. 8388607)
+ 710 compressed objects within 8 object streams
+ 166 named destinations out of 1000 (max. 500000)
+ 703 words of extra memory for PDF output out of 10000 (max. 10000000)
 

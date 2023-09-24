@@ -1,0 +1,42 @@
+\begin{tabular}{lrrlrrrrrrr}
+\toprule
+name & rmse & abs erro & erro comp & r2 score & mape score & alloc missing & alloc surplus & optimal percentage & better allocation & beter percentage \\
+\midrule
+StackedCNN relu relu & 207.66 & 1113406.16 & True & -0.27 & 3.90 & 1028475.81 & 84930.35 & 38.64 & 38.64 & 82.31 \\
+StackedCNN relu tanh & 236.24 & 1289434.20 & True & -0.64 & 0.85 & 1288660.90 & 773.30 & 11.47 & 11.47 & 80.40 \\
+StackedCNN relu softsign & 236.31 & 1290138.00 & True & -0.64 & 0.86 & 1289376.80 & 761.20 & 11.29 & 11.29 & 80.40 \\
+StackedCNN linear tanh & 236.24 & 1289434.20 & True & -0.64 & 0.85 & 1288660.90 & 773.30 & 11.47 & 11.47 & 80.40 \\
+StackedCNN softsign linear & 1112.70 & 8936608.01 & False & -35.34 & 178.94 & 8185.60 & 8928422.41 & 7.99 & 7.50 & 8.60 \\
+StackedCNN softsign softsign & 236.24 & 1289436.03 & True & -0.64 & 0.85 & 1288662.99 & 773.04 & 11.00 & 11.00 & 80.39 \\
+StackedCNN softplus elu & 294.00 & 2287913.46 & True & -1.54 & 52.62 & 273134.72 & 2014778.74 & 79.27 & 79.25 & 88.22 \\
+StackedCNN softplus softplus & 393.20 & 3191326.78 & True & -3.54 & 72.87 & 84140.16 & 3107186.62 & 69.22 & 69.15 & 71.84 \\
+StackedCNN relu selu & 262.76 & 1986551.87 & True & -1.03 & 43.04 & 261245.83 & 1725306.04 & 77.31 & 77.17 & 86.49 \\
+StackedCNN linear elu & 297.39 & 2368520.21 & True & -1.60 & 55.86 & 177934.14 & 2190586.07 & 87.47 & 87.47 & 92.53 \\
+StackedCNN softsign tanh & 236.24 & 1289434.20 & True & -0.64 & 0.85 & 1288660.90 & 773.30 & 11.47 & 11.47 & 80.40 \\
+StackedCNN softplus exponential & 461.92 & 3782992.35 & True & -5.26 & 82.96 & 50599.52 & 3732392.83 & 32.55 & 31.88 & 35.55 \\
+StackedCNN softplus selu & 287.86 & 2249601.96 & True & -1.43 & 53.57 & 218301.68 & 2031300.27 & 84.44 & 84.44 & 91.23 \\
+StackedCNN softplus softsign & 236.36 & 1291380.19 & True & -0.64 & 0.90 & 1290725.89 & 654.30 & 9.39 & 9.39 & 80.40 \\
+StackedCNN softplus linear & 208.37 & 1113888.40 & True & -0.27 & 3.74 & 1032928.56 & 80959.84 & 38.23 & 38.23 & 82.30 \\
+StackedCNN softsign relu & 203.70 & 1100693.28 & True & -0.22 & 4.92 & 986235.38 & 114457.90 & 41.64 & 41.64 & 82.69 \\
+StackedCNN softsign exponential & 508.90 & 4187396.73 & False & -6.60 & 91.15 & 32147.81 & 4155248.92 & 25.81 & 24.91 & 28.09 \\
+StackedCNN linear softsign & 236.24 & 1289434.20 & True & -0.64 & 0.85 & 1288660.90 & 773.30 & 11.47 & 11.47 & 80.40 \\
+StackedCNN relu exponential & 542.88 & 4482255.28 & False & -7.65 & 96.23 & 31472.22 & 4450783.06 & 22.04 & 21.01 & 24.00 \\
+StackedCNN softsign selu & 2053.61 & 17501165.80 & False & -122.77 & 323.70 & 73467.70 & 17427698.09 & 0.01 & 0.00 & 2.98 \\
+StackedCNN tanh softplus & 203.53 & 1097751.79 & True & -0.22 & 4.71 & 986626.52 & 111125.27 & 41.31 & 41.31 & 82.73 \\
+StackedCNN tanh linear & 543.57 & 4512608.50 & False & -7.67 & 97.01 & 27030.50 & 4485578.00 & 20.81 & 19.78 & 22.73 \\
+StackedCNN relu elu & 481.58 & 3739379.02 & True & -5.81 & 83.92 & 84681.14 & 3654697.88 & 50.13 & 49.65 & 53.43 \\
+StackedCNN linear exponential & 457.52 & 3752241.97 & True & -5.14 & 83.28 & 52642.15 & 3699599.81 & 29.83 & 29.21 & 33.15 \\
+StackedCNN relu softplus & 187.41 & 1193440.68 & True & -0.03 & 17.36 & 716295.64 & 477145.04 & 59.08 & 59.08 & 85.03 \\
+StackedCNN linear selu & 559.84 & 4606574.05 & False & -8.20 & 98.93 & 35641.95 & 4570932.10 & 22.53 & 21.82 & 24.82 \\
+StackedCNN softplus relu & 380.03 & 3059764.47 & True & -3.24 & 69.45 & 99012.20 & 2960752.27 & 70.70 & 70.58 & 74.00 \\
+StackedCNN linear relu & 614.15 & 4962488.83 & False & -10.07 & 100.79 & 66478.05 & 4896010.78 & 19.20 & 18.28 & 23.60 \\
+StackedCNN linear softplus & 321.88 & 2577000.96 & True & -2.04 & 59.88 & 149354.46 & 2427646.50 & 88.59 & 88.59 & 92.51 \\
+StackedCNN tanh relu & 548.29 & 4556413.79 & False & -7.82 & 97.85 & 26362.43 & 4530051.37 & 20.66 & 19.65 & 22.52 \\
+StackedCNN softsign softplus & 900.71 & 6351850.55 & False & -22.81 & 117.73 & 22655.51 & 6329195.04 & 17.30 & 16.55 & 18.83 \\
+StackedCNN linear linear & 238.22 & 1866499.25 & True & -0.67 & 43.41 & 292863.60 & 1573635.64 & 81.02 & 81.02 & 90.41 \\
+StackedCNN tanh softsign & 236.24 & 1289436.20 & True & -0.64 & 0.85 & 1288663.18 & 773.02 & 11.00 & 11.00 & 80.39 \\
+StackedCNN softsign elu & 205.05 & 1105893.27 & True & -0.23 & 4.88 & 995748.76 & 110144.51 & 41.17 & 41.17 & 82.57 \\
+StackedCNN relu linear & 431.38 & 3464311.65 & True & -4.46 & 76.14 & 133075.54 & 3331236.11 & 45.08 & 44.54 & 51.57 \\
+StackedCNN softplus tanh & 236.24 & 1289434.20 & True & -0.64 & 0.85 & 1288660.90 & 773.30 & 11.47 & 11.47 & 80.40 \\
+\bottomrule
+\end{tabular}

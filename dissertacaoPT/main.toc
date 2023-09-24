@@ -2,8 +2,8 @@
 \contentsline {chapter}{Abstract}{ii}{chapter*.3}%
 \contentsline {chapter}{Agradecimentos}{iii}{chapter*.4}%
 \contentsline {chapter}{Nomenclatura}{iv}{chapter*.5}%
-\contentsline {chapter}{List of Figures}{vii}{section*.6}%
-\contentsline {chapter}{List of Tables}{viii}{section*.7}%
+\contentsline {chapter}{List of Figures}{viii}{section*.6}%
+\contentsline {chapter}{List of Tables}{ix}{section*.7}%
 \contentsline {chapter}{\numberline {1}Introdução}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Enquadramento }{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objetivos e perguntas de investigação }{2}{section.1.2}%
@@ -45,17 +45,17 @@
 \contentsline {subsection}{\numberline {6.3.1}Construtor de modelos}{22}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}subsubsection Gerador de dados (depth 2)}{22}{subsection.6.3.2}%
 \contentsline {section}{\numberline {6.4}Treino e Resultados }{22}{section.6.4}%
-\contentsline {subsection}{\numberline {6.4.1}Arquiteturas e numeros de epocas}{22}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.1}Arquiteturas e numeros de epocas}{23}{subsection.6.4.1}%
 \contentsline {subsection}{\numberline {6.4.2}Funções de Perda (Loss)}{23}{subsection.6.4.2}%
-\contentsline {subsection}{\numberline {6.4.3}Hiperparametrização}{23}{subsection.6.4.3}%
-\contentsline {subsubsection}{\numberline {6.4.3.1}Activação}{23}{subsubsection.6.4.3.1}%
-\contentsline {subsubsection}{\numberline {6.4.3.2}Optimizadores}{23}{subsubsection.6.4.3.2}%
-\contentsline {subsection}{\numberline {6.4.4}Janelas Temporais}{23}{subsection.6.4.4}%
+\contentsline {subsection}{\numberline {6.4.3}Hiperparametrização}{24}{subsection.6.4.3}%
+\contentsline {subsubsection}{\numberline {6.4.3.1}Activação}{24}{subsubsection.6.4.3.1}%
+\contentsline {subsubsection}{\numberline {6.4.3.2}Optimizadores}{24}{subsubsection.6.4.3.2}%
+\contentsline {subsection}{\numberline {6.4.4}Janelas Temporais}{24}{subsection.6.4.4}%
 \contentsline {subsection}{\numberline {6.4.5}Classificação}{24}{subsection.6.4.5}%
 \contentsline {subsection}{\numberline {6.4.6}Pesos}{24}{subsection.6.4.6}%
 \contentsline {subsubsection}{\numberline {6.4.6.1}Modelos lineares}{24}{subsubsection.6.4.6.1}%
 \contentsline {subsubsection}{\numberline {6.4.6.2}Modelos Lineares e de Classificação}{24}{subsubsection.6.4.6.2}%
-\contentsline {section}{\numberline {6.5}Considerações adicionais }{24}{section.6.5}%
+\contentsline {section}{\numberline {6.5}Considerações adicionais }{25}{section.6.5}%
 \contentsline {chapter}{\numberline {7}Resultados e discussão}{26}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Métricas}{26}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Experiências}{26}{section.7.2}%
@@ -63,7 +63,12 @@
 \contentsline {subsubsection}{\numberline {7.2.1.1}Arquiteturas}{27}{subsubsection.7.2.1.1}%
 \contentsline {subsubsection}{\numberline {7.2.1.2}Epocas}{27}{subsubsection.7.2.1.2}%
 \contentsline {subsection}{\numberline {7.2.2}Funções de Perda (Loss) }{27}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Funções de Perda (Loss) }{27}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{28}{chapter.8}%
-\contentsline {chapter}{\hbox to\@tempdima {9\hfil }Referências}{29}{chapter.8}%
-\contentsline {chapter}{\numberline {A}Anexos}{31}{appendix.A}%
+\contentsline {subsection}{\numberline {7.2.3}Hiperparametrização }{28}{subsection.7.2.3}%
+\contentsline {subsubsection}{\numberline {7.2.3.1}Activação}{28}{subsubsection.7.2.3.1}%
+\contentsline {subsubsection}{\numberline {7.2.3.2}Optimizaçao}{28}{subsubsection.7.2.3.2}%
+\contentsline {subsection}{\numberline {7.2.4}Janelas Temporais}{28}{subsection.7.2.4}%
+\contentsline {subsection}{\numberline {7.2.5}Classificação}{29}{subsection.7.2.5}%
+\contentsline {subsection}{\numberline {7.2.6}Pesos}{29}{subsection.7.2.6}%
+\contentsline {chapter}{\numberline {8}Conclusões e sugestões futuras}{30}{chapter.8}%
+\contentsline {chapter}{\hbox to\@tempdima {9\hfil }Referências}{31}{chapter.8}%
+\contentsline {chapter}{\numberline {A}Anexos}{33}{appendix.A}%

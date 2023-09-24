@@ -101,17 +101,22 @@ AR eé blabla
     \label{fig:SARIMA_model}
 \end{figure}
 
+\resizebox{\linewidth}{!}{\input{../statistical_models/stats_scores.tex}} %\label{tb:statitics_scores}
 
-TODO: criar csv com resultados disto
+
+Apenas pelos métodos estatisticos verificamos que no ano de 2021 teria havido uma melhoria de cerca de 80\% das vezes, usando qualquer um dos métodos apresentados.
+Embora a alocação em falta seja de uma ordem de grandeza superior.
+
 
 \section{Forecat  \label{se:forecat}}
 
-TODO!
-Com o propósito de desenvolver este estudo, e deixar ferramentas para a replicação do mesmo, foi criado uma biblioteca em python para desenhar as arquitecturas em estudo.
 
+Com o propósito de desenvolver este estudo, e deixar ferramentas para a replicação do mesmo, foi criado uma biblioteca em python para desenhar as arquitecturas em estudo.
+TODO: url
 
 \subsection{Construtor de modelos}
 
+Esta ferramenta 
 
 \subsection{subsubsection Gerador de dados (depth 2)}
 distribuição
@@ -129,6 +134,8 @@ Em casa experiências toda a parametrização era igual, à excepção do object
 Nesta experiência foi testado o resultado das várias arquiteturas em estudo, como também o impacto do numero de epocas na qualidade dos modelos-
 As arquitecturas estudadas foram:
 
+%TODO: arranjar reseach para cada uma 
+
 \begin{itemize}
     \item[--] VanillaDense
     \item[--] VanillaCNN
@@ -139,7 +146,7 @@ As arquitecturas estudadas foram:
     \item[--] UNET
 \end{itemize}
 
-O modelos foram treinados em 200 epocas, sendo que foram salvos a cada 15 epocas, de forma conseguirmos perceber os contextos nos saltos de epocas.
+O modelos foram treinados em 200 epocas, sendo que foram salvos a cada 10 epocas, de forma conseguirmos perceber os contextos nos saltos de epocas.
 
 As parametrizações usadas:
 \begin{itemize}

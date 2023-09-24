@@ -1,0 +1,1 @@
+{"name": "StackedCNN_tanh_softsign", "rmse": 222.57550084770276, "abs erro": 14571410.501462875, "erro comp": "True", "r2 score": -0.9265417491688566, "mape score": 0.9652997108195865, "alloc missing": 14570642.846462011, "alloc surplus": 767.6550008654596, "optimal percentage": 1.245868293923214, "better allocation": 1.245868293923214, "beter percentage": 99.97457411645054}

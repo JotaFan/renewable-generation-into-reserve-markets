@@ -1,0 +1,1 @@
+{"name": "UNET", "rmse": 160.20471065237112, "abs erro": 11208631.515243148, "erro comp": "True", "r2 score": 0.0018995071584979595, "mape score": 4.687952538944823, "alloc missing": 4972591.854561615, "alloc surplus": 6236039.660681535, "optimal percentage": 66.40922959572845, "better allocation": 66.40922959572845, "beter percentage": 99.99894058818543}

@@ -55,7 +55,7 @@ Para comparação o erro absoluto para o ano de 2021 na alocação feita é de 3
 
 \subsubsection{Epocas\label{se:epocas_res}}
 
-\subsection{Funções de Perda (Loss) \label{se:archs_epocs}}
+\subsection{Funções de Perda (Loss) \label{se:loss_exp}}
 
 As funções de perda foram estudas com duas arquitecturas diferentes, de modo a conseguir ter uma melhor noção do impacto das mesmas.
 
@@ -66,8 +66,23 @@ Sendo que a perda que avança é a de MSLE (Mean Square Log Error).
 Esta perda é tendicionalmente usada para distribuições exponencias, e onde temos bastantes outliers, que devem ser considerados. O que é o caso no nosso problema.
 Esta experiência valida a observação feito na análise estatistica sobre o mesmo.
 
-\subsection{Funções de Perda (Loss) \label{se:archs_epocs}}
+\subsection{Hiperparametrização \label{se:hiper}}
 
+\subsubsection{Activação\label{se:activ}}
+
+\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
+
+\subsubsection{Optimizaçao\label{se:opt}}
+
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_optimizers/experiment_results.tex}}
+
+\subsection{Janelas Temporais}
+\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_time_windows/experiment_results.tex}}
+
+\subsection{Classificação}
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
+
+\subsection{Pesos}
 
 Aqui devem constar gráficos e sua análise crítica e ligação com a secção 2 da revisão bibliográfica no sentido de comparar valores e discutir diferenças, por exemplo. A legenda dos gráficos deve seguir a das figuras, isto é, porque também são figuras.
 
