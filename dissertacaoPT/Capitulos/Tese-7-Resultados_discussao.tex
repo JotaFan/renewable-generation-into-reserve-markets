@@ -1,14 +1,14 @@
 \chapter{Resultados e discussão}
 
-Os resultados das experiências são apresentados por experiência, sendo que cada um vai testando e eliminando parametros na modulção.
-Após análise inicial na modelação foi concluido que usar tentar modelar apenas um dos atributos de cada vez leva a melhor resultados que tentar modelar os dois no mesmo modelo.
-Foi também visto que os dois atributos em causa são analogos, logo os sistemas que melhor represetam um dos atributos tambem são semelhantemente eficazes no outro. 
-Assim todas as experiências foram realizadas usado apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e em que o atributo de alocação comparativo é  "SecondaryReserveAllocationAUpward".
+Os resultados das experiências são apresentados por experiência, sendo que cada um vai testando e eliminando parametros na modulção.\\
+Após análise inicial na modelação foi concluido que usar tentar modelar apenas um dos atributos de cada vez leva a melhor resultados que tentar modelar os dois no mesmo modelo.\\
+Foi também visto que os dois atributos em causa são analogos, logo os sistemas que melhor represetam um dos atributos tambem são semelhantemente eficazes no outro. \\
+Assim todas as experiências foram realizadas usado apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e em que o atributo de alocação comparativo é  "SecondaryReserveAllocationAUpward".\\
 
 \section{Métricas\label{se:metricas}}
 
-A nivel de comparação efectiva de modelos iremos usar as seguintes metricas: RMSE, erro absoluto, r2 score, percentagem optima, alocação em falta, alocação a mais.
-Sendo que as métricas de decisão final são as que representam melhor o objectivo: baixar os custo de alocação das reservas secundárias. logo serão as metricas de alocção em falta e em demasia, sendo que a soma das mesmas é o erro absoluto.
+A nivel de comparação efectiva de modelos iremos usar as seguintes metricas: RMSE, erro absoluto, r2 score, percentagem optima, alocação em falta, alocação a mais.\\
+Sendo que as métricas de decisão final são as que representam melhor o objectivo: baixar os custo de alocação das reservas secundárias. logo serão as metricas de alocção em falta e em demasia, sendo que a soma das mesmas é o erro absoluto.\\
 
 \begin{equation}
 \label{eq:rmse}
@@ -23,7 +23,7 @@ Sendo que as métricas de decisão final são as que representam melhor o object
 
 
 \begin{equation} 
-    \label{eq:eq1} 
+    \label{eq:miss_alloc} 
     \text{alocação em falta} = 
     \begin{cases} 
         0 & ,\text{if } \hat{y} \geq y \\
@@ -32,7 +32,7 @@ Sendo que as métricas de decisão final são as que representam melhor o object
 \end{equation}
 
 \begin{equation} 
-    \label{eq:eq1} 
+    \label{eq:opt_perc} 
     \text{optimal percentage} = \frac{1}{N} \sum_{i=1}^{n} 1 [\hat{y}_i \geq y_i  \&  \hat{y}_i \leq alloc]
     \text{(not: \cite{Iverson1962})}
 \end{equation}
@@ -50,8 +50,10 @@ Para comparação o erro absoluto para o ano de 2021 na alocação feita é de 3
 \subsubsection{Arquiteturas\label{se:archs_res}}
 
 
-
+\begin{table}[H]
+\caption{Resultados Arquitecturas}            
 \resizebox{\linewidth}{!}{\input{../models_validation/linear_models_epocs/experiment_results.tex}}
+\end{table}
 
 \subsubsection{Epocas\label{se:epocas_res}}
 
@@ -59,32 +61,42 @@ Para comparação o erro absoluto para o ano de 2021 na alocação feita é de 3
 
 As funções de perda foram estudas com duas arquitecturas diferentes, de modo a conseguir ter uma melhor noção do impacto das mesmas.
 
+\begin{table}[H]
+\caption{Resultados Funções de perda}        
 \resizebox{\linewidth}{!}{\input{../models_validation/losses_experiment/experiment_results.tex}}
+\end{table}
 
-A nivel de percentagem de modelo melhor, elas esão todas bastante renhidas, mas ha uma claro vantagem quando vemos a percentagem de melhor alocação ou de alocação optima.
-Sendo que a perda que avança é a de MSLE (Mean Square Log Error).
-Esta perda é tendicionalmente usada para distribuições exponencias, e onde temos bastantes outliers, que devem ser considerados. O que é o caso no nosso problema.
-Esta experiência valida a observação feito na análise estatistica sobre o mesmo.
+A nivel de percentagem de modelo melhor, elas esão todas bastante renhidas, mas ha uma claro vantagem quando vemos a percentagem de melhor alocação ou de alocação optima.\\
+Sendo que a perda que avança é a de MSLE (Mean Square Log Error).\\
+Esta perda é tendicionalmente usada para distribuições exponencias, e onde temos bastantes outliers, que devem ser considerados. O que é o caso no nosso problema.\\
+Esta experiência valida a observação feito na análise estatistica sobre o mesmo.\\
 
-\subsection{Hiperparametrização \label{se:hiper}}
+\subsection{Hiperparametrização\label{se:hiper}}
 
 \subsubsection{Activação\label{se:activ}}
 
+\begin{table}[H]
+\caption{Resultados Ativação}    
 \resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
+\end{table}
 
 \subsubsection{Optimizaçao\label{se:opt}}
 
 %\resizebox{\linewidth}{!}{\input{../models_validation/linear_optimizers/experiment_results.tex}}
 
 \subsection{Janelas Temporais}
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_time_windows/experiment_results.tex}}
+
+\begin{table}[H]
+\caption{Resultados Janelas Temporais}
+\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_time_windows/experiment_results.tex}}        
+\end{table}
 
 \subsection{Classificação}
 %\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
 
 \subsection{Pesos}
 
-Aqui devem constar gráficos e sua análise crítica e ligação com a secção 2 da revisão bibliográfica no sentido de comparar valores e discutir diferenças, por exemplo. A legenda dos gráficos deve seguir a das figuras, isto é, porque também são figuras.
+Aqui devem constar gráficos e sua análise crítica e ligação com a secção 2 da revisão bibliográfica no sentido de comparar valores e discutir diferenças, por exemplo. A legenda dos gráficos deve seguir a das figuras, isto é, porque também são figuras.\\
 
 % Para introduzir figuras
 \begin{figure}[H]
@@ -92,5 +104,5 @@ Aqui devem constar gráficos e sua análise crítica e ligação com a secção 
 \includegraphics[width=150pt, keepaspectratio]{Imagens/FigA.png}
 % legenda da figura por baixo
 \caption{Exemplo de como considerar um gráfico}
-\label{fig:grafico1} % referência única da figura
+\label{fig:graficoecampl} % referência única da figura
 \end{figure}

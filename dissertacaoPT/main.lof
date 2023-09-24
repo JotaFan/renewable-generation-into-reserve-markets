@@ -3,33 +3,32 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Deve aparecer por baixo da figura. Se a figura for feita pelo aluno não necessita de referência. Caso seja retirada de uma fonte bibliográfica deve ser pedida autorização para a sua reprodução/cópia. Caso seja retirada de um website \textit {freevector} deve ser creditada de acordo com as regras estipuladas no mesmo. Por exemplo pode encontrar todos os ODS com reprodução livre em \href {URL}{https://www.un.org/sustainabledevelopment/news/communications-material/}\relax }}{1}{figure.caption.8}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Exemplo de duas imagens numa figura.\relax }}{2}{figure.caption.9}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Objetivos desenvolvimento sustentável ONU\relax }}{1}{figure.caption.8}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Serie Temporal dos dados alvo\relax }}{6}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Janelas Temporais dos dados alvo\relax }}{6}{figure.caption.11}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Frequência dos dados alvos\relax }}{7}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Correlação entre atributos\relax }}{8}{figure.caption.13}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Valores de correlação entre atributos\relax }}{9}{figure.caption.14}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Serie Temporal dos dados alvo\relax }}{9}{figure.caption.15}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Serie Temporal dos dados alvo\relax }}{10}{figure.caption.16}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Serie Temporal dos dados alvo\relax }}{11}{figure.caption.17}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograma das classes\relax }}{12}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Outliers\relax }}{13}{figure.caption.19}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Dados em falta\relax }}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Serie Temporal dos dados alvo\relax }}{6}{figure.caption.9}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Janelas Temporais dos dados alvo\relax }}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Frequência dos dados alvos\relax }}{7}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Correlação entre atributos\relax }}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Valores de correlação entre atributos\relax }}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Serie Temporal dos dados alvo\relax }}{9}{figure.caption.14}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Serie Temporal dos dados alvo\relax }}{10}{figure.caption.15}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Serie Temporal dos dados alvo\relax }}{11}{figure.caption.16}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Histograma das classes\relax }}{12}{figure.caption.17}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Outliers\relax }}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Dados em falta\relax }}{14}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Bloco Dense\relax }}{15}{figure.caption.21}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Bloco Dense\relax }}{15}{figure.caption.20}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Serie Temporal do benchmark\relax }}{18}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Serie Temporal do benchmark\relax }}{18}{figure.caption.21}%
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Serie Temporal do benchmark 2021\relax }}{19}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Previsões 2021 com modelo MA\relax }}{20}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Previsões 2021 com modelo ARMA\relax }}{20}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Previsões 2021 com modelo ARIMA\relax }}{21}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Previsões 2021 com modelo SARIMA\relax }}{22}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Previsões 2021 com modelo MA\relax }}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Previsões 2021 com modelo ARMA\relax }}{20}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Previsões 2021 com modelo ARIMA\relax }}{21}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Previsões 2021 com modelo SARIMA\relax }}{22}{figure.caption.28}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Exemplo de como considerar um gráfico\relax }}{29}{figure.caption.28}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Exemplo de como considerar um gráfico\relax }}{29}{figure.caption.33}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Exemplo de como considerar um gráfico nos anexos.\relax }}{33}{figure.caption.30}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Exemplo de como considerar um gráfico nos anexos.\relax }}{33}{figure.caption.35}%

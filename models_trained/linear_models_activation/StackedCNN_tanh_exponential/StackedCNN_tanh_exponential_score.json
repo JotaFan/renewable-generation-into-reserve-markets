@@ -1,0 +1,1 @@
+{"name": "StackedCNN_tanh_exponential", "rmse": 163.6166308316802, "abs erro": 10753499.661338806, "erro comp": "True", "r2 score": -0.04106680073509561, "mape score": 3.9890449678797304, "alloc missing": 6141163.417255402, "alloc surplus": 4612336.244083405, "optimal percentage": 60.07818459191457, "better allocation": 60.07818459191457, "beter percentage": 99.99788117637088}

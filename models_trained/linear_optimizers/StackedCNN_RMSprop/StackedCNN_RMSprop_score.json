@@ -1,0 +1,1 @@
+{"name": "StackedCNN_RMSprop", "rmse": 1453.0747234134737, "abs erro": 124133720.23168945, "erro comp": "False", "r2 score": -78.25671524305132, "mape score": 0.4040383809062058, "alloc missing": 25758808.0, "alloc surplus": 98374912.23168945, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

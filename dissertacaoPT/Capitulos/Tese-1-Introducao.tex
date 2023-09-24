@@ -1,7 +1,7 @@
-\chapter{Introdução}
+\chapter{Introdução \label{ch:introducao}}
 
 \section{Enquadramento \label{se:enquadramento}}
-Esta dissertação encontra-se no âmbito do projecto \href{https://traderes.eu/}{TradeRES}, o qual estuda um sistema de mercado eléctricos que consiga dar resposta às necessidades da sociedade num sistema quase todo renovável. Tendo as características para se integrar nos \href{https://ods.pt/ods/}{ODS} (ver Figura \ref{fig:ODS}).
+Esta dissertação encontra-se no âmbito do projecto \href{https://traderes.eu/}{TradeRES}, o qual estuda um sistema de mercado eléctricos que consiga dar resposta às necessidades da sociedade num sistema quase todo renovável. Tendo as características para se integrar nos \href{https://ods.pt/ods/}{ODS} \ref{fig:ODS}.
 
 O estudo da acessibilidade das energias renováveis ao mercado vigente integra-se nos ODS nº7, “Energia Renováveis e Acessíveis”, indo directamente de encontro a um dos pontos deste objectivo: 7.2.1 “Peso das energias renováveis no consumo total final de energia”. Por meio deste objectivo, a participação das renováveis no mercado faz também cumprir, embora indiretamente, o objectivo nº8 “Trabalho Digno e Crescimento Económico”, através do ponto 8.4, onde é dada primazia à eficiência dos recursos globais no consumo e na produção. Indiretamente, pois, ao haver um melhor uso das renováveis, o uso de energias não limpas vai diminuir, melhorando a gestão de recursos, e baixando o consumo de recursos naturais não renováveis.
 
@@ -11,26 +11,8 @@ Por último podemos incluir o objectivo nº13, “Acção Climática”, no qual
 \begin{figure}[h]
     \centering
     \includegraphics{Imagens/DesenvolvimentoSustentavel.jpg}
-    \caption{Deve aparecer por baixo da figura. Se a figura for feita pelo aluno não necessita de referência. Caso seja retirada de uma fonte bibliográfica deve ser pedida autorização para a sua reprodução/cópia. Caso seja retirada de um website \textit{freevector} deve ser creditada de acordo com as regras estipuladas no mesmo. Por exemplo pode encontrar todos os ODS com reprodução livre em \href{URL}{https://www.un.org/sustainabledevelopment/news/communications-material/}}
+    \caption{Objetivos desenvolvimento sustentável ONU}
     \label{fig:ODS}
-\end{figure}
-
-\begin{figure}[H]
-\centering
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.6\linewidth]{Imagens/FigA.png}
-  \caption{Explicar o que é Fig A}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=.6\linewidth]{Imagens/FigB.png}
-  \caption{Explicar o que é Fig B}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{Exemplo de duas imagens numa figura.}
-\label{fig:test}
 \end{figure}
 
 
@@ -44,9 +26,19 @@ Foram aprovadas a nível europeu (2020), medidas de alteração aos serviços de
   \item[c)]\noindent Essa participação é positiva para o sistema eléctrico num todo?
 \end{description}
 
+Como forma de responder a estas questões vamos tentar utilizar dados de previsão de geradores renováveis para prever a energia necessária para alocação secundária.\\
+Os valores de previsão deste mercado estão actualmente longe do que realmente é utilizado, fazendo com que a alocação no dia anterior não seja em conformidade com o necessario, logo não existindo o optimo aproveitamento de recursos. \\
+O objectivo neste trabalho é perceber se utilizando técnicas de \textit{Machine Learning} (Apredizagem automática) %TODO: ver nome em PT para ML, procurar nas teses da fcul
+conseguimos obter previsoes mais proximas da energia utilizando, possibilitando assim uma melhor gestão das alocações, logo um menor gasto de recursos, energéticos mas especialmente financeiros.\\
+
 \section{Organização do documento \label{se:organização}}
 
-Explicar a lógica da organização em termos do conteúdo de cada secção. Por exemplo, no capitulo \ref{ch:revisao} mostram-se os estudos referentes a…….Na secção \ref{se:objetivos} mostra-se…..Na secção \ref{se:enquadramento} apresentam-se …..Finalmente, no capitulo \ref{ch:conclusao} são respondidas as perguntas de investigação, descrevem-se as limitações do estudo e recomendam-se …..para estudos futuros.
+Este documento está divido em capitulos. Sendo que os primeiros apresentam uma introdução às ideias e temas \ref{ch:introducao}, o estado de arte do temas na literatura publicada \ref{ch:revisao}, e por fim uma contextualização dos temas abordados \ref{ch:contexto}. \\
+Segue um capitulo de explicação dos dados usado \ref{ch:dados}, onde se apresentam os mesmos juntamente com alguns estudos preliminares para compreender a naturuza e qualidades dos mesmos. \\%TODO: adicinar onde os buscar e que estudos
 
-%Quando recompilam, todas estas labels são hiperlinks que podem usar para "saltar" para a secção/Capitulo em questão.
+O capitulo seguinte entra no ambito experimental da dissertação, onde se apresenta as diferentes arquitecturas \ref{ch:arch} utilizadas, incluindo uma explicação dos componentes das mesmas. \\
+
+Os capítulos 6 e 7 são bastatante paralelos, sendo que o sexto \ref{ch:metodos} apresenta a metologia do trabalho, e explica todas as experiências, e o sétimo \ref{ch:resultados_discussao} apresenta apenas os resultados e conclusoes experiência a experiência. \\
+
+Termina com um capitulo conclusivo \ref{ch:conclusao} onde são avaliadas as experiências como um todo, e o seu impacto no ambito dos mercados de reserva. \\
 

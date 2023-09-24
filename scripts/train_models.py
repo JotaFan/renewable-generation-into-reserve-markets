@@ -9,6 +9,8 @@ import pandas as pd
 from forecat import CNNArch, DenseArch, LSTMArch, UNETArch,EncoderDecoder
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
+import tensorflow as tf
+
 
 scripts_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -37,7 +39,7 @@ def assign_labels_with_limits(values, classes_dict):
             elif len(limits) == 2 and limits[0] <= value <= limits[1]:
                 labels.append(label)
 
-    return labels
+    return np.array(labels)
 
 
 dataset_file_path = "../data/dados_2014-2022.csv"
@@ -183,21 +185,55 @@ epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}
 
     callbacks = [model_checkpoint,save_on_freq, StopOnNanLoss(model_keras_filename, model_log_filename=model_history_filename, logs=history),]
 
+ 
 
     # Checnk for multioupt
     output_shape = foremodel.outputs
     if isinstance(output_shape, list):
+        clsuter_shape = (len(train_dataset_Y), *tuple(output_shape[1].shape[-2:]))
+        clsuter_shape_test = (len(test_dataset_Y), *tuple(output_shape[1].shape[-2:]))
+
+        # make labels
+        train_dataset_labels = assign_labels_with_limits(train_dataset_Y.ravel(), classes_dict)
+        # pass to one hoe
+        train_dataset_labels = np.array(tf.one_hot(train_dataset_labels, np.max(train_dataset_labels)+1)).reshape(clsuter_shape)
+
+        test_dataset_labels = assign_labels_with_limits(test_dataset_Y.ravel(), classes_dict)
+        test_dataset_labels = np.array(tf.one_hot(test_dataset_labels, np.max(test_dataset_labels)+1)).reshape(clsuter_shape_test)
+
+
         if len(output_shape)==2:
-            train_dataset_Y = train_dataset_Y, assign_labels_with_limits(train_dataset_Y, classes_dict)
-            test_dataset_Y = test_dataset_Y, assign_labels_with_limits(test_dataset_Y, classes_dict)
+            train_dataset_Y = train_dataset_Y, train_dataset_labels
+            test_dataset_Y = test_dataset_Y, test_dataset_labels
+
+            loss = [loss, "categorical_crossentropy"]
+            metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
+            metrics = {
+                metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
+                    metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
+                }
+
+
+
         elif len(output_shape)==3:
-            train_dataset_Y = train_dataset_Y, assign_labels_with_limits(train_dataset_Y, classes_dict), train_dataset_Y
-            test_dataset_Y = test_dataset_Y, assign_labels_with_limits(test_dataset_Y, classes_dict), test_dataset_Y
+            train_dataset_Y = train_dataset_Y, train_dataset_labels, train_dataset_Y
+            test_dataset_Y = test_dataset_Y, test_dataset_labels, test_dataset_Y
+            loss = [loss, "categorical_crossentropy", loss]
+            metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
+            metrics = {
+                metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
+                    metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
+                metrics_keys[2]:tf.keras.metrics.RootMeanSquaredError(),
+            }
 
 
-    foremodel.compile(optimizer=optimizer, 
-        loss=loss,
-        metrics=metrics,) 
+
+
+    compile_args = {"optimizer":optimizer, 
+        "loss":loss,
+        "metrics":metrics,}
+
+    foremodel.compile(**compile_args) 
 
     history_new = foremodel.fit(
                     train_dataset_X,
@@ -356,7 +392,8 @@ models_strutres = {
     "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
 }
 
-regression_activations = ["relu", "linear", "softplus", "softsign", "tanh", "selu", "elu", "exponential"]
+regression_activations = ["relu", "linear", "softplus", "softsign", "tanh", "selu", "elu", "exponential"
+]
 
 for middle in regression_activations:
     for end in regression_activations:
@@ -465,7 +502,7 @@ for X in [24, 48, 98, 168]:
 
 
 # Experiment 5 - clusterings
-pocas=30
+epocas=30
 X_timeseries = 168
 Y_timeseries = 24
 frac = 0.95
@@ -484,18 +521,7 @@ get_dataset_args={
     "time_cols":time_cols,
     "alloc_column":alloc_column,
 }
-models_strutres = {
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
-    "StackedCNNClusters":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
-                                                        "multitail":[{"dense_args":{"activation":"relu"}}, 
-                                                        {"dense_args":[{"activation":"relu"}, {"activation":"softmax"}]}],}}, 
-    "StackedCNNClusterLinear":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
-                                                            "multitail":[{"dense_args":{"activation":"relu"}}, 
-                                                        {"dense_args":[{"activation":"relu"}, {"activation":"softmax"}]},
-                                                        {"dense_args":{"activation":"relu"}}],
-    }}, 
 
-}
 
 list_classes_dict = [
 
@@ -513,16 +539,39 @@ list_classes_dict = [
     5: [592.7],}
 ]
 
-
 for cla in list_classes_dict:
-    for model_name in models_strutres:
+
+    models_strutres = {
+        "StackedCNNClusters":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+                                                            "multitail":[{"dense_args":{"activation":"relu"}}, 
+                                                            {"dense_args":[{"activation":"relu"}, {
+                                                                "filters":Y_timeseries*len(cla),
+                                                                "activation":"softmax"}],
+                                                            "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
+                                                                }],}},
+                                                                
+        "StackedCNNClusterLinear":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+                                                                "multitail":[{"dense_args":{"activation":"relu"}}, 
+                                                            {"dense_args":[{"activation":"relu"}, {
+                                                                "filters":Y_timeseries*len(cla),
+                                                                "activation":"softmax"}],
+                                                            "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
+
+                                                            },
+                                                            {"dense_args":{"activation":"relu"}}],
+        }}, 
+
+    }
+
+
+    for i,model_name in enumerate(models_strutres):
         model_name_to_save = model_name + f"_{len(cla)}"
         print(model_name_to_save)
 
 
         try:
             train_save_model(dataset, model_name_to_save,
-            struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),
+            struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),models_strutres=models_strutres,
             model_name_load=model_name,  classes_dict=cla)
         except Exception as e:
             print(e)
