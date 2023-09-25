@@ -44,15 +44,25 @@ Os metodos em estudo vão ser comparados a esta medida. Sendo que o principal é
 \section{Modelos estatiscos\label{se:model_stats}}
 
 Antes de entrar para o densenvolvimento de modelos vamos usar metódos e modelos abertos para usar comparativamente.\\
-Para as equações apresentadas temos que \textit{$Y_t$} é a variavel alvo, no tempo \textit{t} \\
-
 
 Os modelos estatiscos recurrentes em previsões são AR, MA, ARMA, ARIMA, SARIMA para previsões so com um atributo, e para multiplos atributos VAR.\\
-O modelo AR não teve resultados aplicaveis, logo foi desconsiderado.\\
+O modelo AR e o VAR não obtiveram resultados aplicaveis, logo foram desconsiderado.\\
 
 \subsection{Univariate Analysis}
 
 Estas análises apenas aplicam uma formula à variavel em questão.
+
+\subsubsection{AR}
+\begin{equation} \label{eq:AR} 
+    y_t = \beta_0 + \beta_1 y_{t-1} + \dots + \beta_p y_{t-p} + \epsilon_t 
+\end{equation}
+onde:
+\begin{itemize}
+  \item $y_t$: O valor da serie no tempo $t$.
+  \item $p$: O numero de atrasos.
+  \item $\epsilon_t$: O barulho no tempo $t$.
+  \item $\beta$: O coeficiente dos valores em atrasdo.
+\end{itemize}
 
 \subsubsection{MA}
 MA - Moving Average
@@ -61,7 +71,7 @@ A MA
 
 
 \begin{equation} \label{eq:MA} 
-    Y_t = c + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t 
+    y_t = c + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q}
 \end{equation}
 
 \begin{figure}[H]
@@ -75,7 +85,17 @@ A MA
 
 AR eé blabla
 
-\begin{equation} \label{eq:ARMA}  Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t  \end{equation}
+\begin{equation} \label{eq:ARMA}  y_t = \beta_0 + \beta_1 y_{t-1} + \dots + \beta_p y_{t-p} + \epsilon_t + \theta_1 \epsilon_{t-1} + \dots + \theta_q \epsilon_{t-q}  \end{equation}
+\textbf{ARMA (Autoregressive Moving Average) Model:}
+\begin{itemize}
+  \item{$y_t$: The value of the time series at time $t$.}
+  \item $p$: The number of time lags to regress on (AR part).
+  \item $q$: The number of time lags of the error term to regress on (MA part).
+  \item $\epsilon_t$: The error term at time $t$.
+  \item $\beta$: The coefficients of the lagged values (AR part).
+  \item $\theta$: The coefficients of the lagged error terms (MA part).
+\end{itemize}
+
 
 \begin{figure}[H]
     \centering
@@ -88,7 +108,17 @@ AR eé blabla
 
 AR eé blabla
 
-\begin{equation} \label{eq:ARIMA} Y't = c + \phi_1 Y'{t-1} + \phi_2 Y'{t-2} + \dots + \phi_p Y'{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t \end{equation}
+\begin{equation} \label{eq:ARIMA}y_t^d = \beta_0 + \beta_1 y_{t-1}^d + \dots + \beta_p y_{t-p}^d + \epsilon_t^d + \theta_1 \epsilon_{t-1}^d + \dots + \theta_q \epsilon_{t-q}^d \end{equation}
+\textbf{ARIMA (Autoregressive Integrated Moving Average) Model:}
+\begin{itemize}
+  \item $y_t^{[d]}$: The differenced value of the time series at time $t$.
+  \item $p$: The number of time lags to regress on (AR part).
+  \item $d$: The order of differencing.
+  \item $q$: The number of time lags of the error term to regress on (MA part).
+  \item $\epsilon_t^{[d]}$: The differenced error term at time $t$.
+  \item $\beta$: The coefficients of the lagged values (AR part).
+  \item $\theta$: The coefficients of the lagged error terms (MA part).
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -101,7 +131,23 @@ AR eé blabla
 
 AR eé blabla
 
-\begin{equation} \label{eq:SARIMA} Y_t = c + \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \dots + \phi_p Y_{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \dots + \theta_q \varepsilon_{t-q} + \varepsilon_t \end{equation}
+
+
+AR eé blabla
+
+\begin{equation} \label{eq:SARIMA} y_t^{[m]d} = \beta_0 + \beta_1 y_{t-m}^{[m]d} + \dots + \beta_p y_{t-pm}^{[m]d} + \epsilon_t^{[m]d} + \theta_1 \epsilon_{t-m}^{[m]d} + \dots + \theta_q \epsilon_{t-qm}^{[m]d} \end{equation}
+
+\textbf{SARIMA (Seasonal Autoregressive Integrated Moving Average) Model:}
+\begin{itemize}
+  \item $y_t^{[m]d}$: The differenced value of the time series at time $t$.
+  \item $p$: The number of time lags to regress on (AR part).
+  \item $d$: The order of differencing.
+  \item $q$: The number of time lags of the error term to regress on (MA part).
+  \item $m$: The number of time lags comprising one full period of seasonality.
+  \item $\epsilon_t^{[m]d}$: The differenced error term at time $t$.
+  \item $\beta$: The coefficients of the lagged values (AR part).
+  \item $\theta$: The coefficients of the lagged error terms (MA part).
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -110,14 +156,34 @@ AR eé blabla
     \label{fig:SARIMA_model}
 \end{figure}
 
-\resizebox{\linewidth}{!}{\input{../statistical_models/stats_scores.tex}} %\label{tb:statitics_scores}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../plots/VAR model_model.png}
+    \caption{Previsões 2021 com modelo VAR}
+    \label{fig:VAR_model}
+\end{figure}
+
+
+
+
+
+
+
+
+
+\subsection{Resultados\label{se:statitics_scores}}
+
+\begin{table}[H]
+    \caption{Resultados modelos Estatísticos}
+    \resizebox{\linewidth}{!}{\input{../statistical_models/stats_scores.tex}\label{tb:statitics_scores}}      
+\end{table}
 
 Apenas pelos métodos estatisticos verificamos que no ano de 2021 teria havido uma melhoria de cerca de 80\% das vezes, usando qualquer um dos métodos apresentados.\\
 Embora a alocação em falta seja de uma ordem de grandeza superior.\\
 
 
-\section{Forecat  \label{se:forecat}}
+\section{Forecat\label{se:forecat}}
 
 
 Com o propósito de desenvolver este estudo, e deixar ferramentas para a replicação do mesmo, foi criado uma biblioteca em python para desenhar as arquitecturas em estudo.\\
@@ -143,7 +209,7 @@ Usando como exemplo uma janela temporal de 168 (horas, uma semana) para treino, 
 Como estamos tambem a lidar com dados desfasados, o gerador permite um TODO: shift em atributos a especificar. No caso em estudo temos que os atributos são de DA (day-ahead), logo estão desfasados 24 horas. O que implica termos de aplicar este shift nos dados que não são DA, nomeadamente os dados alvo. Esta propriedade permite tambem o facil uso da ferramenta noutros dados desfasados, como as previsões a 3 ou 8 horas.\\
 
 
-\section{Treino e Resultados  \label{se:training}}
+\section{Treino e Resultados\label{se:training}}
 
 Realizaram-se várias experiências, onde em cada um se ia elimando alguns dos objectos em estudo.\\
 Em casa experiências toda a parametrização era igual, à excepção do objecto de estudo.\\
@@ -175,7 +241,7 @@ As parametrizações usadas:
     \item[--] optimizador : Adam
     \item[--] Janela temporal em X : 168 horas (1 semana)
     \item[--] Janela temporal em Y : 24 horas (1 semana)
-    \item[--] Fracção de treino : 95%  
+    \item[--] Fracção de treino : 95\%  
 \end{itemize}
 
 \subsection{Funções de Perda (Loss)}
@@ -183,6 +249,9 @@ As parametrizações usadas:
 TODO: o que é a loss function?
 
 Esta experiência consiste em rever que função de perda é melhor aplicavel ao problema. Sendo um problema de regressao linear, de valores bastante oscilatórios e com uma distribuição exponencial, temos algumas loss functions que já são reconhecidas para o problema.\\
+
+
+(NLE) loss function %\cite{Deep Uncertainty Quantification: A Machine Learning Approach for Weather Forecasting}
 
 \begin{itemize}
     \item[--] mean absolute error

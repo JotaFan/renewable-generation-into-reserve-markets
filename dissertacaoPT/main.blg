@@ -1,13 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is 'main.blg'
-[60] biber:340> INFO - === seg set 25, 2023, 00:16:00
-[72] Biber.pm:419> INFO - Reading 'main.bcf'
-[122] Biber.pm:979> INFO - Found 18 citekeys in bib section 0
-[139] Biber.pm:4419> INFO - Processing section 0
-[147] Biber.pm:4610> INFO - Looking for bibtex file 'library.bib' for section 0
-[149] bibtex.pm:1713> INFO - LaTeX decoding ...
-[168] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
-[284] Utils.pm:410> ERROR - BibTeX subsystem: /tmp/biber_tmp_BkCt/7f56027f9015dc497dc7645faffbdd71_5132.utf8, line 1, syntax error: found ",", expected one of: number, name (entry type, key, field, or macro name), end of entry ("}" or ")") or quoted string ({...} or "...")
-[284] Biber.pm:131> WARN - Invalid or undefined BibTeX entry key in file '/tmp/biber_tmp_BkCt/7f56027f9015dc497dc7645faffbdd71_5132.utf8', skipping ...
-[284] Biber.pm:133> INFO - WARNINGS: 1
-[284] Biber.pm:136> INFO - ERRORS: 1
+[62] biber:340> INFO - === seg set 25, 2023, 03:12:59
+[77] Biber.pm:419> INFO - Reading 'main.bcf'
+[128] Biber.pm:979> INFO - Found 27 citekeys in bib section 0
+[142] Biber.pm:4419> INFO - Processing section 0
+[150] Biber.pm:4610> INFO - Looking for bibtex file 'library.bib' for section 0
+[153] bibtex.pm:1713> INFO - LaTeX decoding ...
+[182] bibtex.pm:1519> INFO - Found BibTeX data source 'library.bib'
+[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[372] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[372] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[372] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[395] bbl.pm:660> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[405] bbl.pm:763> INFO - Output to main.bbl

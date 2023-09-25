@@ -1,20 +1,25 @@
 \chapter{Revisão bibliográfica}
 
-reserve allocation forecasting \\
-A alocação de reservas 
-
-
-energy forecasting with ML \\
-Previsões são um dos problemas mais comuns a ser tratados com aprendizagem automática. \cite{} \\
-No ambito de energias vários trabalhos vieram mostrar que o uso de \textit{machine learning} para previsões energéticas tem aplicabilidade e muitos casos resultados melhores do que usados na industria currente. \cite{Ahmad2020} \cite{Antonopoulos2020} \\  
-Como muitos trabalhos apresentados em \cite{Benti2023}, o uso destas técnicas está a crescer e a produzir frutos. Como concluido nesse trabalho as várias arquitecturas e modelos comuns de ML já foram aplicados em energia, especial nas areas de consumo e produção. \\
-
-deep neural network on forecasting\\
-O uso de redes neuronais profundas para previsões é tambem por si proprio alvo de estudo
+A análise de séries temporais é um tema recorrente em pesquisa. Especialmente para previsões.\\
+Desde as previsões para mercados de acções\cite{Bhandari2022}, fenomenos meteorologicos\cite{Wang2019}, e especialmente mercados energéticos, onde se quer ter em consideração o impacto das gerações mais voláteis. \\
+As energias renováveis, devido à sua natureza, são as produçoes mais voláteis, logo alvo de estudo ideal para estas tecnologias\cite{Lu2015}
+, energia eolica\cite{Sun2022}, energia solar\cite{Rajasundrapandiyanleebanon2023}, aplicabilidade dos vários sistemas\cite{Ahmad2020}, procura\cite{Antonopoulos2020}.
+Sendo que cada problema já apresenta arquiteturas e soluções diferentes, como a geração de energia fotovoltaica em casas pode ser melhor prevista com LSTM\cite{Costa2022} mas tambem com uso de SVM\cite{Meenal2018}
+As várias faces destas tecnologias estão optimamente apresentadas em\cite{Benti2023}
 
 
 
-ESTUDOS EM MERCADOS DE RESERVAS \cite{Rassid2017}
+Para o estudo de previsões de séries temporais chega a ser o caso se pesquisar primeiramente com \textit{deep learning}, antes de procurar outras soluções.\\
+Em \cite{Elsayed} é visto o impacto dessa decisão, e se realmente compensa emergir em \text{machine learning}. O trabalho conclui que modelos simples, com alguma engenharia de atributos inteligente, consegue competir, ou mesmo passar as qualidades de redes neuronais profundas. \\
+Esta conclusão mostra também que por vezes a procura por modelos mais complexos não compensa, e que cada problema/dataset deve ter a sua própria investigação e conclusão, consoante a quantidade/qualidade de recursos disponiveis. \\
+
+Os sistema de reserva de frequência do mercado espanhol já foram alvo de análise predictivas com modelos de redes neuronais profundas \cite{miota2023}.\\
+Neste trabalho procurou-se prever o preço da banda de reserva secundaria, sendo que os melhores modelos atigiram metricas de MASE de cerca de 64\%, o que não foi considerado um bom resultado. \\
+Para o trabalho presente, isto mostra que a resolução linear destes dados pode ser dificil. O trabalho utilizou 32 variaveis abertas pela TSO espanhola, e tambem conclui que o aumento de numero de variveis não melhorou os modelos. Para este trabalho o impacto deste conhecimento é pouco, visto estudarmos com um conjunto fixo de variaveis, e sendo que queremos perceber se conseguimos prever com esse conjunto.\\
+Embora estes dados tragam um estudo parecido, usando dados da mesma fonte, o objectivo é ligeiremente diferente.
+
+
+
 
 
 

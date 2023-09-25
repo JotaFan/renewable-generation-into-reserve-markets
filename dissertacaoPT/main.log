@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.6)  25 SEP 2023 00:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.9.6)  25 SEP 2023 03:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1081,18 +1081,11 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'main.bbl' found.
- (./main.bbl
-
-Package biblatex Warning: The following entry could not be found
-(biblatex)                in the database:
-(biblatex)                dege
-(biblatex)                Please verify the spelling and rerun
-(biblatex)                LaTeX afterwards.
-
-)
+ (./main.bbl)
 Package biblatex Info: Reference section=0 on input line 201.
 Package biblatex Info: Reference segment=0 on input line 201.
- (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count495
 \scratchdimen=\dimen262
@@ -1141,7 +1134,7 @@ Package hyperref Info: Link coloring ON on input line 201.
 \openout5 = `main.out'.
 
  (./capa.tex
-<Imagens/logo_fcul.png, id=304, 185.0112pt x 85.2786pt>
+<Imagens/logo_fcul.png, id=312, 185.0112pt x 85.2786pt>
 File: Imagens/logo_fcul.png Graphic file (type png)
 <use Imagens/logo_fcul.png>
 Package pdftex.def Info: Imagens/logo_fcul.png  used on input line 12.
@@ -1279,7 +1272,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 6
 (/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-<Imagens/DesenvolvimentoSustentavel.jpg, id=496, 455.45157pt x 256.70906pt>
+<Imagens/DesenvolvimentoSustentavel.jpg, id=511, 455.45157pt x 256.70906pt>
 File: Imagens/DesenvolvimentoSustentavel.jpg Graphic file (type jpg)
 <use Imagens/DesenvolvimentoSustentavel.jpg>
 Package pdftex.def Info: Imagens/DesenvolvimentoSustentavel.jpg  used on input 
@@ -1290,8 +1283,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.22 
-      [1
+l.21 ...co sem recurso a combustíveis fósseis.\\
+                                                   [1
 
 
 
@@ -1304,15 +1297,12 @@ l.255 \newpage
                [2] (./Capitulos/Tese-2-Revisao_bibliografica.tex
 Chapter 2.
 
-LaTeX Warning: Citation '' on page 3 undefined on input line 8.
+LaTeX Warning: Citation '' on page 3 undefined on input line 24.
 
 ) [3
 
 ] (./Capitulos/Tese-3-Contextos.tex
 Chapter 3.
-
-LaTeX Warning: Citation 'dgeg_mss' on page 4 undefined on input line 8.
-
 
 LaTeX Warning: Citation '' on page 4 undefined on input line 19.
 
@@ -1325,7 +1315,7 @@ Overfull \hbox (15.0215pt too wide) in paragraph at lines 8--9
 [][]  
  []
 
-<../plots/targets_timeseries.png, id=548, 867.24pt x 361.35pt>
+<../plots/targets_timeseries.png, id=587, 867.24pt x 361.35pt>
 File: ../plots/targets_timeseries.png Graphic file (type png)
 <use ../plots/targets_timeseries.png>
 Package pdftex.def Info: ../plots/targets_timeseries.png  used on input line 25
@@ -1334,52 +1324,52 @@ Package pdftex.def Info: ../plots/targets_timeseries.png  used on input line 25
 [5
 
 ]
-<../plots/target_timeseries_windows.png, id=554, 1084.05pt x 722.7pt>
+<../plots/target_timeseries_windows.png, id=593, 1084.05pt x 722.7pt>
 File: ../plots/target_timeseries_windows.png Graphic file (type png)
 <use ../plots/target_timeseries_windows.png>
 Package pdftex.def Info: ../plots/target_timeseries_windows.png  used on input 
 line 34.
 (pdftex.def)             Requested size: 364.19667pt x 242.79245pt.
-<../plots/target_histograms.png, id=555, 867.24pt x 361.35pt>
+<../plots/target_histograms.png, id=594, 867.24pt x 361.35pt>
 File: ../plots/target_histograms.png Graphic file (type png)
 <use ../plots/target_histograms.png>
 Package pdftex.def Info: ../plots/target_histograms.png  used on input line 49.
 
 (pdftex.def)             Requested size: 455.24411pt x 189.68402pt.
  [6 <../plots/targets_timeseries.png> <../plots/target_timeseries_windows.png>]
-<../plots/feature_correlation.png, id=562, 1445.4pt x 1445.4pt>
+<../plots/feature_correlation.png, id=601, 1445.4pt x 1445.4pt>
 File: ../plots/feature_correlation.png Graphic file (type png)
 <use ../plots/feature_correlation.png>
 Package pdftex.def Info: ../plots/feature_correlation.png  used on input line 6
 6.
 (pdftex.def)             Requested size: 455.24411pt x 455.23724pt.
  [7 <../plots/target_histograms.png>]
-<../plots/correlation_heatmap.png, id=569, 722.7pt x 578.16pt>
+<../plots/correlation_heatmap.png, id=608, 722.7pt x 578.16pt>
 File: ../plots/correlation_heatmap.png Graphic file (type png)
 <use ../plots/correlation_heatmap.png>
 Package pdftex.def Info: ../plots/correlation_heatmap.png  used on input line 7
 8.
 (pdftex.def)             Requested size: 455.24411pt x 364.19861pt.
  [8 <../plots/feature_correlation.png>]
-<../plots/autocorrelation.png, id=575, 722.7pt x 361.35pt>
+<../plots/autocorrelation.png, id=614, 722.7pt x 361.35pt>
 File: ../plots/autocorrelation.png Graphic file (type png)
 <use ../plots/autocorrelation.png>
 Package pdftex.def Info: ../plots/autocorrelation.png  used on input line 86.
 (pdftex.def)             Requested size: 455.24411pt x 227.62413pt.
 [9 <../plots/correlation_heatmap.png> <../plots/autocorrelation.png>]
-<../plots/silhouette_score.png, id=582, 867.24pt x 505.89pt>
+<../plots/silhouette_score.png, id=621, 867.24pt x 505.89pt>
 File: ../plots/silhouette_score.png Graphic file (type png)
 <use ../plots/silhouette_score.png>
 Package pdftex.def Info: ../plots/silhouette_score.png  used on input line 114.
 
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
-<../plots/elbow_test.png, id=583, 867.24pt x 505.89pt>
+<../plots/elbow_test.png, id=622, 867.24pt x 505.89pt>
 File: ../plots/elbow_test.png Graphic file (type png)
 <use ../plots/elbow_test.png>
 Package pdftex.def Info: ../plots/elbow_test.png  used on input line 121.
 (pdftex.def)             Requested size: 455.24411pt x 265.55762pt.
  [10 <../plots/silhouette_score.png>]
-<../plots/clusters_histogram.png, id=589, 867.24pt x 505.89pt>
+<../plots/clusters_histogram.png, id=629, 867.24pt x 505.89pt>
 File: ../plots/clusters_histogram.png Graphic file (type png)
 <use ../plots/clusters_histogram.png>
 Package pdftex.def Info: ../plots/clusters_histogram.png  used on input line 13
@@ -1390,13 +1380,13 @@ Overfull \hbox (15.005pt too wide) in paragraph at lines 140--141
 [][]  
  []
 
-<../plots/Outliers_3stds.png, id=595, 1445.4pt x 1445.4pt>
+<../plots/Outliers_3stds.png, id=635, 1445.4pt x 1445.4pt>
 File: ../plots/Outliers_3stds.png Graphic file (type png)
 <use ../plots/Outliers_3stds.png>
 Package pdftex.def Info: ../plots/Outliers_3stds.png  used on input line 158.
 (pdftex.def)             Requested size: 455.24411pt x 455.23724pt.
 [12 <../plots/clusters_histogram.png>]
-<../plots/missing_data.png, id=601, 1806.75pt x 722.7pt>
+<../plots/missing_data.png, id=641, 1806.75pt x 722.7pt>
 File: ../plots/missing_data.png Graphic file (type png)
 <use ../plots/missing_data.png>
 Package pdftex.def Info: ../plots/missing_data.png  used on input line 173.
@@ -1408,7 +1398,7 @@ Chapter 5.
 
 LaTeX Warning: Citation '' on page 15 undefined on input line 14.
 
-<Imagens/dense_layer.png, id=621, 295.1025pt x 206.7725pt>
+<Imagens/dense_layer.png, id=660, 295.1025pt x 206.7725pt>
 File: Imagens/dense_layer.png Graphic file (type png)
 <use Imagens/dense_layer.png>
 Package pdftex.def Info: Imagens/dense_layer.png  used on input line 20.
@@ -1417,12 +1407,12 @@ Package pdftex.def Info: Imagens/dense_layer.png  used on input line 20.
 
  <./Imagens/dense_layer.png>] [16]) [17] (./Capitulos/Tese-6-Metodos.tex
 Chapter 6.
-<../plots/benchmark.png, id=641, 1084.05pt x 722.7pt>
+<../plots/benchmark.png, id=679, 1084.05pt x 722.7pt>
 File: ../plots/benchmark.png Graphic file (type png)
 <use ../plots/benchmark.png>
 Package pdftex.def Info: ../plots/benchmark.png  used on input line 13.
 (pdftex.def)             Requested size: 364.19667pt x 242.79245pt.
-<../plots/benchmark_validation.png, id=642, 1084.05pt x 722.7pt>
+<../plots/benchmark_validation.png, id=680, 1084.05pt x 722.7pt>
 File: ../plots/benchmark_validation.png Graphic file (type png)
 <use ../plots/benchmark_validation.png>
 Package pdftex.def Info: ../plots/benchmark_validation.png  used on input line 
@@ -1430,17 +1420,16 @@ Package pdftex.def Info: ../plots/benchmark_validation.png  used on input line
 (pdftex.def)             Requested size: 364.19667pt x 242.79245pt.
 [18
 
- <../plots/benchmark.png>]
-<../plots/MA_model.png, id=648, 462.528pt x 346.896pt>
+ <../plots/benchmark.png>] [19 <../plots/benchmark_validation.png>]
+<../plots/MA_model.png, id=695, 462.528pt x 346.896pt>
 File: ../plots/MA_model.png Graphic file (type png)
 <use ../plots/MA_model.png>
-Package pdftex.def Info: ../plots/MA_model.png  used on input line 69.
+Package pdftex.def Info: ../plots/MA_model.png  used on input line 79.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
- [19 <../plots/benchmark_validation.png>]
-<../plots/ARMA_model.png, id=658, 462.528pt x 346.896pt>
+<../plots/ARMA_model.png, id=696, 462.528pt x 346.896pt>
 File: ../plots/ARMA_model.png Graphic file (type png)
 <use ../plots/ARMA_model.png>
-Package pdftex.def Info: ../plots/ARMA_model.png  used on input line 82.
+Package pdftex.def Info: ../plots/ARMA_model.png  used on input line 102.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
 
 
@@ -1451,21 +1440,18 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[20 <../plots/MA_model.png> <../plots/ARMA_model.png>]
-<../plots/ARIMA_model.png, id=666, 462.528pt x 346.896pt>
+[20 <../plots/MA_model.png>]
+<../plots/ARIMA_model.png, id=704, 462.528pt x 346.896pt>
 File: ../plots/ARIMA_model.png Graphic file (type png)
 <use ../plots/ARIMA_model.png>
-Package pdftex.def Info: ../plots/ARIMA_model.png  used on input line 95.
+Package pdftex.def Info: ../plots/ARIMA_model.png  used on input line 125.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
-<../plots/SARIMA_model.png, id=667, 462.528pt x 346.896pt>
+ [21 <../plots/ARMA_model.png>]
+<../plots/SARIMA_model.png, id=711, 462.528pt x 346.896pt>
 File: ../plots/SARIMA_model.png Graphic file (type png)
 <use ../plots/SARIMA_model.png>
-Package pdftex.def Info: ../plots/SARIMA_model.png  used on input line 108.
+Package pdftex.def Info: ../plots/SARIMA_model.png  used on input line 154.
 (pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
- [21 <../plots/ARIMA_model.png>] (../statistical_models/stats_scores.tex)
-Overfull \hbox (15.00931pt too wide) in paragraph at lines 113--114
-[][]  
- []
 
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
@@ -1475,7 +1461,14 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[22 <../plots/SARIMA_model.png>] [23]
+[22 <../plots/ARIMA_model.png>]
+<../plots/VAR model_model.png, id=718, 462.528pt x 346.896pt>
+File: ../plots/VAR model_model.png Graphic file (type png)
+<use ../plots/VAR model_model.png>
+Package pdftex.def Info: ../plots/VAR model_model.png  used on input line 162.
+(pdftex.def)             Requested size: 364.19667pt x 273.16086pt.
+ (../statistical_models/stats_scores.tex)
+[23 <../plots/SARIMA_model.png> <../plots/VAR model_model.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.5pt): 
 (fancyhdr)                Make it at least 12.58502pt, for example:
@@ -1484,26 +1477,35 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[24]) [25] (./Capitulos/Tese-7-Resultados_discussao.tex
+[24] [25]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 12.58502pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.58502pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
+
+[26]) [27] (./Capitulos/Tese-7-Resultados_discussao.tex
 Chapter 7.
-(../models_validation/linear_models_epocs/experiment_results.tex) [26
+(../models_validation/linear_models_epocs/experiment_results.tex) [28
 
 ]
 (../models_validation/losses_experiment/experiment_results.tex)
-(../models_validation/linear_models_activation/experiment_results.tex) [27]
+(../models_validation/linear_models_activation/experiment_results.tex)
 (../models_validation/linear_models_time_windows/experiment_results.tex)
-[28]
-<Imagens/FigA.png, id=720, 170.88844pt x 170.88844pt>
+[29]
+<Imagens/FigA.png, id=765, 170.88844pt x 170.88844pt>
 File: Imagens/FigA.png Graphic file (type png)
 <use Imagens/FigA.png>
 Package pdftex.def Info: Imagens/FigA.png  used on input line 104.
 (pdftex.def)             Requested size: 150.0pt x 150.0094pt.
-) [29 <./Imagens/FigA.png>]
+) [30 <./Imagens/FigA.png>]
 \openout2 = `Capitulos/Tese-8-Conclusao.aux'.
 
  (./Capitulos/Tese-8-Conclusao.tex
 Chapter 8.
-) [30
+) [31
 
 
 ]
@@ -1511,7 +1513,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 87.
  (/usr/share/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2022/07/10 v2.5l Standard LaTeX font definitions
-) [31
+) [32
 
 
 
@@ -1524,49 +1526,67 @@ Package fancyhdr Warning: \headheight is too small (12.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
 
-[32] (./Capitulos/Tese-9-Anexos.tex
+[33]
+
+Package fancyhdr Warning: \headheight is too small (12.5pt): 
+(fancyhdr)                Make it at least 12.58502pt, for example:
+(fancyhdr)                \setlength{\headheight}{12.58502pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-0.08502pt}.
+
+[34] (./Capitulos/Tese-9-Anexos.tex
 Appendix A.
 File: Imagens/FigA.png Graphic file (type png)
 <use Imagens/FigA.png>
 Package pdftex.def Info: Imagens/FigA.png  used on input line 6.
 (pdftex.def)             Requested size: 150.0pt x 150.0094pt.
-) [33
+) [35
 
 ] (./main.aux (./Capitulos/Tese-8-Conclusao.aux))
 
 LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 7C36ABEAFE976FDAE1F16B724403EC06;10292.
 
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                main
-(biblatex)                and rerun LaTeX afterwards.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 73DE3599A7565702D659AA1E7709A2C3;10462.
+
+Package biblatex Warning: Please rerun LaTeX.
 
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 26699 strings out of 477985
- 472454 string characters out of 5840059
- 1912388 words of memory out of 5000000
- 46183 multiletter control sequences out of 15000+600000
+ 26777 strings out of 477985
+ 474914 string characters out of 5840059
+ 1892388 words of memory out of 5000000
+ 46241 multiletter control sequences out of 15000+600000
  591472 words of font info for 126 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 94i,13n,117p,3974b,1579s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt
-1095.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/tex
-mf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/
-share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (45 pages, 2663581 bytes).
+ 94i,13n,117p,3974b,1582s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+pdfTeX warning (dest): name{table.caption.37} has been referenced but does not 
+exist, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{figure.caption.36} has been referenced but does not
+ exist, replaced by a fixed one
+
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt10
+95.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf
+-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/ti
+mes/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (47 pages, 2696269 bytes).
 PDF statistics:
- 855 PDF objects out of 1000 (max. 8388607)
- 737 compressed objects within 8 object streams
- 175 named destinations out of 1000 (max. 500000)
- 706 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 927 PDF objects out of 1000 (max. 8388607)
+ 804 compressed objects within 9 object streams
+ 194 named destinations out of 1000 (max. 500000)
+ 727 words of extra memory for PDF output out of 10000 (max. 10000000)
 

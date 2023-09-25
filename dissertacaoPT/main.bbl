@@ -1,0 +1,1279 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{Bhandari2022}{article}{}
+      \name{author}{6}{}{%
+        {{hash=5255feb7d1e38a9726635201459b65e9}{%
+           family={Bhandari},
+           familyi={B\bibinitperiod},
+           given={Hum\bibnamedelima Nath},
+           giveni={H\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=4fe37d14ac6f2fead7f7f8a77cf72eef}{%
+           family={Rimal},
+           familyi={R\bibinitperiod},
+           given={Binod},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7654ed070f94a920efc27c2d579aca6d}{%
+           family={Pokhrel},
+           familyi={P\bibinitperiod},
+           given={Nawa\bibnamedelima Raj},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=e9b1c071d48d1549d85e02cbaf0c3b1a}{%
+           family={Rimal},
+           familyi={R\bibinitperiod},
+           given={Ramchandra},
+           giveni={R\bibinitperiod}}}%
+        {{hash=c5a22a922030c955aa51751dab91de15}{%
+           family={Dahal},
+           familyi={D\bibinitperiod},
+           given={Keshab\bibnamedelima R.},
+           giveni={K\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=8f8bf94616ff05f301f1a6af038a7f9d}{%
+           family={Khatri},
+           familyi={K\bibinitperiod},
+           given={Rajendra\bibnamedelima K.C.},
+           giveni={R\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{07f02e3874060ff462579d19b2e9b49e}
+      \strng{fullhash}{af61cfc27804d2cfbf9aa713786187e7}
+      \strng{bibnamehash}{07f02e3874060ff462579d19b2e9b49e}
+      \strng{authorbibnamehash}{07f02e3874060ff462579d19b2e9b49e}
+      \strng{authornamehash}{07f02e3874060ff462579d19b2e9b49e}
+      \strng{authorfullhash}{af61cfc27804d2cfbf9aa713786187e7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{By increasing mobile devices in technology and human life, using a runtime and mobile services has gotten more complex along with the composition of a large number of atomic services. Different services are provided by mobile cloud components to represent the non- functional properties as Quality of Service (QoS), which is applied by a set of standards. On the other hand, the growth of the energy-source heterogeneity in mobile clouds is an emerging challenge according to the energy saving problem in mobile nodes. In order to mobile cloud service composition as an NP-Hard problem, an efficient selection method should be taken by problem using optimal energy-aware methods that can extend the deployment and interoperability of mobile cloud components. Also, an energy-aware service composition mechanism is required to preserve high energy saving scenarios for mobile cloud components. In this paper, an energy-aware mechanism is applied to optimize mobile cloud service composition using a hybrid Shuffled Frog Leaping Algorithm and Genetic Algorithm (SFGA). Experimental results capture that the proposed mechanism improves the feasibility of the service composition with minimum energy consumption, response time, and cost for mobile cloud components against some current algorithms.}
+      \field{issn}{2666-8270}
+      \field{journaltitle}{Machine Learning with Applications}
+      \field{month}{9}
+      \field{title}{Predicting stock market index using LSTM}
+      \field{volume}{9}
+      \field{year}{2022}
+      \field{pages}{100320}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.MLWA.2022.100320
+      \endverb
+    \endentry
+    \entry{Wang2019}{article}{}
+      \name{author}{7}{}{%
+        {{hash=dc58cd6a24a023ce7177d8f199d47875}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Bin},
+           giveni={B\bibinitperiod}}}%
+        {{hash=e60d990c21d8eba53bbe1778952a8b50}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Huaishao},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ac5d9ef9ece193ddd2ebaa8662733704}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Tianrui},
+           giveni={T\bibinitperiod}}}%
+        {{hash=0c789b32177871041a88496e9fd1bea9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guangquan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=d2ade1cc491ab061c743877b9fac6eb4}{%
+           family={Yan},
+           familyi={Y\bibinitperiod},
+           given={Zheng},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=61a21d8aba7853cbf9f3f099c48b174f}{%
+           family={Zheng},
+           familyi={Z\bibinitperiod},
+           given={Yu},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computing Machinery}%
+      }
+      \strng{namehash}{c87bd3eac62b206b2913a3aec71aaa97}
+      \strng{fullhash}{b780f84c21a149d543c939cceaba0024}
+      \strng{bibnamehash}{c87bd3eac62b206b2913a3aec71aaa97}
+      \strng{authorbibnamehash}{c87bd3eac62b206b2913a3aec71aaa97}
+      \strng{authornamehash}{c87bd3eac62b206b2913a3aec71aaa97}
+      \strng{authorfullhash}{b780f84c21a149d543c939cceaba0024}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Weather forecasting is usually solved through numerical weather prediction (NWP), which can sometimes lead to unsatisfactory performance due to inappropriate setting of the initial states. In this paper, we design a data-driven method augmented by an effective information fusion mechanism to learn from historical data that incorporates prior knowledge from NWP. We cast the weather forecasting problem as an end-to-end deep learning problem and solve it by proposing a novel negative log-likelihood error (NLE) loss function. A notable advantage of our proposed method is that it simultaneously implements single-value forecasting and uncertainty quantification, which we refer to as deep uncertainty quantification (DUQ). Efficient deep ensemble strategies are also explored to further improve performance. This new approach was evaluated on a public dataset collected from weather stations in Beijing, China. Experimental results demonstrate that the proposed NLE loss significantly improves generalization compared to mean squared error (MSE) loss and mean absolute error (MAE) loss. Compared with NWP, this approach significantly improves accuracy by 47.76, which is a state-of-the-art result on this benchmark dataset. The preliminary version of the proposed method won 2nd place in an online competition for daily weather forecasting1}
+      \field{isbn}{9781450362016}
+      \field{journaltitle}{Proceedings of the ACM SIGKDD International Conference on Knowledge Discovery and Data Mining}
+      \field{month}{7}
+      \field{title}{Deep uncertainty quantification: A machine learning approach for weather forecasting}
+      \field{year}{2019}
+      \field{pages}{2087\bibrangedash 2095}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1145/3292500.3330704
+      \endverb
+      \verb{urlraw}
+      \verb https://dl.acm.org/doi/10.1145/3292500.3330704
+      \endverb
+      \verb{url}
+      \verb https://dl.acm.org/doi/10.1145/3292500.3330704
+      \endverb
+      \keyw{Deep learning,Uncertainty quantification,Urban computing,Weather forecasting}
+    \endentry
+    \entry{Lu2015}{article}{}
+      \name{author}{8}{}{%
+        {{hash=27db1337fa63952f24fedca38d466d52}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Siyuan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=46248a8c47a607888629ab23c45608db}{%
+           family={Youngdeok},
+           familyi={Y\bibinitperiod},
+           given={Hwang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=d41e45df5ebd11272c8ade32e16321a4}{%
+           family={Khabibrakhmanov},
+           familyi={K\bibinitperiod},
+           given={Ildar},
+           giveni={I\bibinitperiod}}}%
+        {{hash=e7342ca9f7df5096357a34cb66acfaaf}{%
+           family={Marianno},
+           familyi={M\bibinitperiod},
+           given={Fernando\bibnamedelima J.},
+           giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=b5ea7f727cdb3bc2fd8575eb223d67af}{%
+           family={Shao},
+           familyi={S\bibinitperiod},
+           given={Xiaoyan},
+           giveni={X\bibinitperiod}}}%
+        {{hash=2f4cc163c8766d4437008ea260208de8}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=9338d5a6eff6082884da8fd2ba3b99ed}{%
+           family={Hodge},
+           familyi={H\bibinitperiod},
+           given={Bri\bibnamedelima Mathias},
+           giveni={B\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=1ea8d3a2d7f747b97339f171e3ef1412}{%
+           family={Hamann},
+           familyi={H\bibinitperiod},
+           given={Hendrik\bibnamedelima F.},
+           giveni={H\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{050928b863940d857fb0328ec779676e}
+      \strng{fullhash}{2d9fc13954f551a4e313f72ed981cddf}
+      \strng{bibnamehash}{050928b863940d857fb0328ec779676e}
+      \strng{authorbibnamehash}{050928b863940d857fb0328ec779676e}
+      \strng{authornamehash}{050928b863940d857fb0328ec779676e}
+      \strng{authorfullhash}{2d9fc13954f551a4e313f72ed981cddf}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{With increasing penetration of solar and wind energy to the total energy supply mix, the pressing need for accurate energy forecasting has become well-recognized. Here we report the development of a machine-learning based model blending approach for statistically combining multiple meteorological models for improving the accuracy of solar/wind power forecast. Importantly, we demonstrate that in addition to parameters to be predicted (such as solar irradiance and power), including additional atmospheric state parameters which collectively define weather situations as machine learning input provides further enhanced accuracy for the blended result. Functional analysis of variance shows that the error of individual model has substantial dependence on the weather situation. The machine-learning approach effectively reduces such situation dependent error thus produces more accurate results compared to conventional multi-model ensemble approaches based on simplistic equally or unequally weighted model averaging. Validation over an extended period of time results show over 30 improvement in solar irradiance/power forecast accuracy compared to forecasts based on the best individual model.}
+      \field{isbn}{9783952426937}
+      \field{journaltitle}{2015 European Control Conference, ECC 2015}
+      \field{month}{11}
+      \field{title}{Machine learning based multi-physical-model blending for enhancing renewable energy forecast - Improvement via situation dependent error correction}
+      \field{year}{2015}
+      \field{pages}{283\bibrangedash 290}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ECC.2015.7330558
+      \endverb
+    \endentry
+    \entry{Sun2022}{article}{}
+      \name{author}{3}{}{%
+        {{hash=328a53713a0d55788f696ebac4bcb524}{%
+           family={Sun},
+           familyi={S\bibinitperiod},
+           given={Haibo},
+           giveni={H\bibinitperiod}}}%
+        {{hash=502de95c3193f5c283f4ef712520a97e}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Li},
+           giveni={L\bibinitperiod}}}%
+        {{hash=3ba30dd8f330c6e35c8cf88f12b318b9}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Haonan},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Institute of Electrical}%
+        {Electronics Engineers Inc.}%
+      }
+      \strng{namehash}{715f951a7778598f4c90942094bc0452}
+      \strng{fullhash}{715f951a7778598f4c90942094bc0452}
+      \strng{bibnamehash}{715f951a7778598f4c90942094bc0452}
+      \strng{authorbibnamehash}{715f951a7778598f4c90942094bc0452}
+      \strng{authornamehash}{715f951a7778598f4c90942094bc0452}
+      \strng{authorfullhash}{715f951a7778598f4c90942094bc0452}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Wind power forecasting is an important work that contributes to the stable and economic operation of the power system. In Order to carry out accurate and efficient short-term wind power forecasting, a short-term wind power forecasting method based on artificial neural network and ensemble learning is proposed, which uses the self-learning and self-organizing ability of ANN to carry out the primary forecasting learning of wind power. The prediction accuracy is effectively improved by ensemble learning. Through the simulation on the power generation data of a domestic wind turbine, the prediction results show that the short-term wind power model mentioned in this paper has high learning efficiency and operation accuracy.}
+      \field{isbn}{9781665422079}
+      \field{issn}{26932865}
+      \field{journaltitle}{IEEE Joint International Information Technology and Artificial Intelligence Conference (ITAIC)}
+      \field{title}{Short-term Wind Power Forecasting Model Based on Stacking Fusion Learning}
+      \field{volume}{2022-June}
+      \field{year}{2022}
+      \field{pages}{53\bibrangedash 57}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/ITAIC54216.2022.9836510
+      \endverb
+      \keyw{Artificial neural network,Ensemble learning,Machine learning,wind power forecasting}
+    \endentry
+    \entry{Rajasundrapandiyanleebanon2023}{article}{}
+      \name{author}{5}{}{%
+        {{hash=f8e0e4a4f14a4a57f88a6db49815d980}{%
+           family={Rajasundrapandiyanleebanon},
+           familyi={R\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=450948b404ef3d117ab8b4424aaa6a1e}{%
+           family={Kumaresan},
+           familyi={K\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=82a1ecfc6b04d478937cc841f352721e}{%
+           family={Murugan},
+           familyi={M\bibinitperiod},
+           given={Sakthivel},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b0368aa80022c69a3b36be016f3d5aeb}{%
+           family={Subathra},
+           familyi={S\bibinitperiod},
+           given={M.\bibnamedelimi S.P.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=4bb192c17d43533e8eef31ab32c0ac32}{%
+           family={Sivakumar},
+           familyi={S\bibinitperiod},
+           given={Mahima},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{56652b59c26ce52751120a78de32ccb3}
+      \strng{fullhash}{bd311ca337e841f0f2ebe382f3342884}
+      \strng{bibnamehash}{56652b59c26ce52751120a78de32ccb3}
+      \strng{authorbibnamehash}{56652b59c26ce52751120a78de32ccb3}
+      \strng{authornamehash}{56652b59c26ce52751120a78de32ccb3}
+      \strng{authorfullhash}{bd311ca337e841f0f2ebe382f3342884}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Renewable energy sources are present copiously in the nature and are good for environmental conservation as they restore themselves and thus have considerable potential in the near future. It is hence important to concentrate on the forecast of these energy sources in order to make effective use of them as soon as possible. This paper is focused primarily on solar energy. There are many approaches that could be applied for the prediction of global solar radiation (GSR). In the field of artificial intelligence (AI), the forecasting of solar resources has moved from conventional mathematical approaches to the use of intelligent techniques. The extent to which data based decisions are made for planning such as judicious and functional for the solar energy sector has been increased to a large extent by this giant step. In modelling challenging and unpredictable connections in between a set of input data and output data along with specific patterns that occur between datasets, AI techniques have demonstrated increasing reliability. In this regard, purpose of this paper is to provide a synopsis of solar energy forecasting methods utilizing machine learning and deep learning approaches to the best of our understanding.}
+      \field{issn}{1886-1784}
+      \field{issue}{5}
+      \field{journaltitle}{Archives of Computational Methods in Engineering 2023 30:5}
+      \field{month}{2}
+      \field{title}{Solar Energy Forecasting Using Machine Learning and Deep Learning Techniques}
+      \field{volume}{30}
+      \field{year}{2023}
+      \field{pages}{3059\bibrangedash 3079}
+      \range{pages}{21}
+      \verb{doi}
+      \verb 10.1007/S11831-023-09893-1
+      \endverb
+      \verb{urlraw}
+      \verb https://link.springer.com/article/10.1007/s11831-023-09893-1
+      \endverb
+      \verb{url}
+      \verb https://link.springer.com/article/10.1007/s11831-023-09893-1
+      \endverb
+      \keyw{Machine learning,Mathematical and Computational Engineering,Neural network,Root mean square error,Solar forecasting}
+    \endentry
+    \entry{Ahmad2020}{article}{}
+      \name{author}{2}{}{%
+        {{hash=1eba736f56f2042c353068b3fc48db6a}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Tanveer},
+           giveni={T\bibinitperiod}}}%
+        {{hash=8c80d30a8e4731b960c90ecb9cfb1e11}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Huanxin},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{fe0a81cfede3e6347efdd6679caa414f}
+      \strng{fullhash}{fe0a81cfede3e6347efdd6679caa414f}
+      \strng{bibnamehash}{fe0a81cfede3e6347efdd6679caa414f}
+      \strng{authorbibnamehash}{fe0a81cfede3e6347efdd6679caa414f}
+      \strng{authornamehash}{fe0a81cfede3e6347efdd6679caa414f}
+      \strng{authorfullhash}{fe0a81cfede3e6347efdd6679caa414f}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Energy forecasting and planning play an important role in energy sector development and policy formulation. The forecasting model selection mostly based on the availability of the data, and the principal objective is the planning exercise and tool in different modern energy systems. Existing literature explicate that the supervised based machine learning algorithms are intelligent for predictions such as future load demand, wind, solar and geothermal energy forecasting, etc., across the wide range of applications. In this study, a comprehensive review is conducted on supervised based machine learning algorithms by using three well-known forecasting engines. This review aims to suggest suitable methods for forecasting analysis and several other prediciton tasks. A particular objective is to investigate and analyzed the methods used to forecast energy, real time use in multiple applications and to identify the research review with useful techniques that are approachable in the current literature. This review contains a critical comparison and study among various modeling techniques to choose a better forecasting model for performing the desired task in multiple applications. The forecasting accuracy is compared and analyzed through comprehensive literature review and with the real-time energy consumption and climate data used for modeling analysis. The Bayesian regularization backpropagation neural networks (BRBNNs) and the Levenberg Marquardt backpropagation neural networks (LMBNNs) render higher forecasting accuracy and performance with the coefficient of correlation 0.972 and 0.971 respectively. The supervised learning is useful for real-time applications because of optimal scenario of a specific model will allow for the model to precisely predict the label's class for unseen data instances. Additionally, the supervised learning can reduce the noise and control imbalanced data in the network formulation.}
+      \field{issn}{2210-6707}
+      \field{journaltitle}{Sustainable Cities and Society}
+      \field{month}{3}
+      \field{title}{A review on machine learning forecasting growth trends and their real-time applications in different energy systems}
+      \field{volume}{54}
+      \field{year}{2020}
+      \field{pages}{102010}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.SCS.2019.102010
+      \endverb
+      \keyw{Forecasting,Load demand prediction,Machine learning,Real-time applications,Renewable energy forecasting,Supervised models}
+    \endentry
+    \entry{Antonopoulos2020}{article}{}
+      \name{author}{9}{}{%
+        {{hash=632652a59e67c90b8c21bf948e430160}{%
+           family={Antonopoulos},
+           familyi={A\bibinitperiod},
+           given={Ioannis},
+           giveni={I\bibinitperiod}}}%
+        {{hash=17eae82bf918cce6367751ff51cd57a6}{%
+           family={Robu},
+           familyi={R\bibinitperiod},
+           given={Valentin},
+           giveni={V\bibinitperiod}}}%
+        {{hash=06541463e3a3678b5d3e06a1c9858369}{%
+           family={Couraud},
+           familyi={C\bibinitperiod},
+           given={Benoit},
+           giveni={B\bibinitperiod}}}%
+        {{hash=3bf3cf95bbe7b329e94bce5740086a91}{%
+           family={Kirli},
+           familyi={K\bibinitperiod},
+           given={Desen},
+           giveni={D\bibinitperiod}}}%
+        {{hash=5a49b55fb904454c7464965d42eb34cd}{%
+           family={Norbu},
+           familyi={N\bibinitperiod},
+           given={Sonam},
+           giveni={S\bibinitperiod}}}%
+        {{hash=7f11f92be9b9a17208adc70e3140475d}{%
+           family={Kiprakis},
+           familyi={K\bibinitperiod},
+           given={Aristides},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8203c46986abcdec01a47dbe2854f9f6}{%
+           family={Flynn},
+           familyi={F\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=f96e848bd17bdbeb80989b8a9450dc04}{%
+           family={Elizondo-Gonzalez},
+           familyi={E\bibinithyphendelim G\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c8df95befef0d28d7fd87dc3c591703c}{%
+           family={Wattam},
+           familyi={W\bibinitperiod},
+           given={Steve},
+           giveni={S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{ddeb18c00b55b0a7c86b7ca09cc3325a}
+      \strng{fullhash}{dc3871b30556b84f4c5bc38dff20d5e4}
+      \strng{bibnamehash}{ddeb18c00b55b0a7c86b7ca09cc3325a}
+      \strng{authorbibnamehash}{ddeb18c00b55b0a7c86b7ca09cc3325a}
+      \strng{authornamehash}{ddeb18c00b55b0a7c86b7ca09cc3325a}
+      \strng{authorfullhash}{dc3871b30556b84f4c5bc38dff20d5e4}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recent years have seen an increasing interest in Demand Response (DR) as a means to provide flexibility, and hence improve the reliability of energy systems in a cost-effective way. Yet, the high complexity of the tasks associated with DR, combined with their use of large-scale data and the frequent need for near real-time decisions, means that Artificial Intelligence (AI) and Machine Learning (ML) — a branch of AI — have recently emerged as key technologies for enabling demand-side response. AI methods can be used to tackle various challenges, ranging from selecting the optimal set of consumers to respond, learning their attributes and preferences, dynamic pricing, scheduling and control of devices, learning how to incentivise participants in the DR schemes and how to reward them in a fair and economically efficient way. This work provides an overview of AI methods utilised for DR applications, based on a systematic review of over 160 papers, 40 companies and commercial initiatives, and 21 large-scale projects. The papers are classified with regards to both the AI/ML algorithm(s) used and the application area in energy DR. Next, commercial initiatives are presented (including both start-ups and established companies) and large-scale innovation projects, where AI methods have been used for energy DR. The paper concludes with a discussion of advantages and potential limitations of reviewed AI techniques for different DR tasks, and outlines directions for future research in this fast-growing area.}
+      \field{issn}{1364-0321}
+      \field{journaltitle}{Renewable and Sustainable Energy Reviews}
+      \field{month}{9}
+      \field{title}{Artificial intelligence and machine learning approaches to energy demand-side response: A systematic review}
+      \field{volume}{130}
+      \field{year}{2020}
+      \field{pages}{109899}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.RSER.2020.109899
+      \endverb
+      \keyw{Artificial intelligence,Artificial neural networks,Demand response,Machine learning,Multi-agent systems,Nature-inspired intelligence,Power systems}
+    \endentry
+    \entry{Costa2022}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4ea9d0f088041c81161f5b581c4df34c}{%
+           family={C.\bibnamedelimi Costa},
+           familyi={C\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Rogério\bibnamedelima Luís},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{fullhash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{bibnamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authorbibnamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authornamehash}{4ea9d0f088041c81161f5b581c4df34c}
+      \strng{authorfullhash}{4ea9d0f088041c81161f5b581c4df34c}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Solar panels can generate energy to meet almost all of the energy needs of a house. Batteries store energy generated during daylight hours for future use. Also, it may be possible to sell extra electricity back to distribution companies. However, the efficiency of photovoltaic systems varies according to several factors, such as the solar exposition at ground levels, atmospheric temperature, and relative humidity, and predicting the energy generated by such a system is not easy. This work is on the use of deep learning to predict the generation of photovoltaic energy by residential systems. We use real-world data to evaluate the performance of LSTM, Convolutional, and hybrid Convolutional-LSTM networks in predicting photovoltaic power generation at different forecasting horizons. We also assess the generalizability of the solutions, evaluating the use of models trained with data aggregated by geographic areas to predict the energy generation by individual systems. We compare the performance of deep networks with Prophet in terms of MAE, RMSE, and NRMSE, and in most cases, Convolutional and Convolutional-LSTM networks achieve the best results. Using models trained with region-based data to predict the power generation of individual systems is confirmed to be a promising approach.}
+      \field{issn}{0952-1976}
+      \field{journaltitle}{Engineering Applications of Artificial Intelligence}
+      \field{month}{11}
+      \field{title}{Convolutional-LSTM networks and generalization in forecasting of household photovoltaic generation}
+      \field{volume}{116}
+      \field{year}{2022}
+      \field{pages}{105458}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.ENGAPPAI.2022.105458
+      \endverb
+      \keyw{Convolutional neural networks,Deep learning,LSTM,Photovoltaic power generation,Time series forecasting}
+    \endentry
+    \entry{Meenal2018}{article}{}
+      \name{author}{2}{}{%
+        {{hash=0f6789a2ff3c154470439f94ca3f4b03}{%
+           family={Meenal},
+           familyi={M\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=cafde3a7737bbbbdcf3cac994b6ae0ed}{%
+           family={Selvakumar},
+           familyi={S\bibinitperiod},
+           given={A.\bibnamedelimi Immanuel},
+           giveni={A\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \strng{fullhash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \strng{bibnamehash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \strng{authorbibnamehash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \strng{authornamehash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \strng{authorfullhash}{196da8e3d0ab9da47cfa90e8e6988e2c}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper evaluates the accuracy of Support Vector Machine (SVM), Artificial Neural Network (ANN) and empirical solar radiation models with different combination of input parameters. The parameters include month, latitude, longitude, bright sunshine hours, day length, relative humidity, maximum and minimum temperature. The models are evaluated based on statistical measures. Four new empirical models are introduced and validated with experimental data. This work is focused on the prediction of monthly mean daily global solar radiation (GSR) for different cities in India with most influencing input parameters identified using Waikato Environment for Knowledge Analysis (WEKA) software. WEKA identifies month, latitude, maximum temperature and bright sunshine hours as the most influencing and relative humidity as the least influencing input parameter. SVM model with most influencing input parameter performs better than ANN and Empirical models. Exclusion of relative humidity does not affect the prediction accuracy. Therefore this work reduces the dimensionality of the data and improves the prediction accuracy. This work also attempts in assessing the solar energy potential of smart cities of Tamil Nadu, India using the SVM model. The predicted annual GSR varies from 17 to 22 MJ/m2/day which is precise enough for a wide range of solar applications.}
+      \field{issn}{0960-1481}
+      \field{journaltitle}{Renewable Energy}
+      \field{month}{6}
+      \field{title}{Assessment of SVM, empirical and ANN based solar radiation prediction models with most influencing input parameters}
+      \field{volume}{121}
+      \field{year}{2018}
+      \field{pages}{324\bibrangedash 343}
+      \range{pages}{20}
+      \verb{doi}
+      \verb 10.1016/J.RENENE.2017.12.005
+      \endverb
+      \keyw{Artificial neural network,Empirical equations,Monthly mean daily global solar radiation,Support vector machine,WEKA}
+    \endentry
+    \entry{Benti2023}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bf4b58b607d0e8dbb66dd523e648ce05}{%
+           family={Benti},
+           familyi={B\bibinitperiod},
+           given={Natei\bibnamedelima Ermias},
+           giveni={N\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=882d827f92a08ed0d7a5d2b9912ca27f}{%
+           family={Chaka},
+           familyi={C\bibinitperiod},
+           given={Mesfin\bibnamedelima Diro},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=d1dbe661145d09060298fc5e24377677}{%
+           family={Semie},
+           familyi={S\bibinitperiod},
+           given={Addisu\bibnamedelima Gezahegn},
+           giveni={A\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {MDPI}%
+      }
+      \strng{namehash}{7c662d31b8a4611ccc451293b5c18e10}
+      \strng{fullhash}{7c662d31b8a4611ccc451293b5c18e10}
+      \strng{bibnamehash}{7c662d31b8a4611ccc451293b5c18e10}
+      \strng{authorbibnamehash}{7c662d31b8a4611ccc451293b5c18e10}
+      \strng{authornamehash}{7c662d31b8a4611ccc451293b5c18e10}
+      \strng{authorfullhash}{7c662d31b8a4611ccc451293b5c18e10}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article presents a review of current advances and prospects in the field of forecasting renewable energy generation using machine learning (ML) and deep learning (DL) techniques. With the increasing penetration of renewable energy sources (RES) into the electricity grid, accurate forecasting of their generation becomes crucial for efficient grid operation and energy management. Traditional forecasting methods have limitations, and thus ML and DL algorithms have gained popularity due to their ability to learn complex relationships from data and provide accurate predictions. This paper reviews the different approaches and models that have been used for renewable energy forecasting and discusses their strengths and limitations. It also highlights the challenges and future research directions in the field, such as dealing with uncertainty and variability in renewable energy generation, data availability, and model interpretability. Finally, this paper emphasizes the importance of developing robust and accurate renewable energy forecasting models to enable the integration of RES into the electricity grid and facilitate the transition towards a sustainable energy future.}
+      \field{issn}{20711050}
+      \field{issue}{9}
+      \field{journaltitle}{Sustainability (Switzerland)}
+      \field{month}{5}
+      \field{title}{Forecasting Renewable Energy Generation with Machine Learning and Deep Learning: Current Advances and Future Prospects}
+      \field{volume}{15}
+      \field{year}{2023}
+      \verb{doi}
+      \verb 10.3390/SU15097087
+      \endverb
+      \keyw{accurate predictions,deep learning,energy management,machine learning,renewable energy forecasting}
+    \endentry
+    \entry{Elsayed}{article}{}
+      \name{author}{5}{}{%
+        {{hash=2f63fd2fa50217575f1427ed54c83fdb}{%
+           family={Elsayed},
+           familyi={E\bibinitperiod},
+           given={Shereen},
+           giveni={S\bibinitperiod}}}%
+        {{hash=95ec39662bf55e7386de067945843a8c}{%
+           family={Thyssens},
+           familyi={T\bibinitperiod},
+           given={Daniela},
+           giveni={D\bibinitperiod}}}%
+        {{hash=3f9fc6a53b7f60a77e213a9714a6e329}{%
+           family={Rashed},
+           familyi={R\bibinitperiod},
+           given={Ahmed},
+           giveni={A\bibinitperiod}}}%
+        {{hash=035811cbaeece537bec68640e11d59b3}{%
+           family={Jomaa},
+           familyi={J\bibinitperiod},
+           given={Hadi\bibnamedelima Samer},
+           giveni={H\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+        {{hash=6bd1e34895061f42175a4e3ec60b0ea6}{%
+           family={Schmidt-Thieme},
+           familyi={S\bibinithyphendelim T\bibinitperiod},
+           given={Lars},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{2f58eb5227931bcea8969f06a9d38e0c}
+      \strng{fullhash}{8904efc124808265f241f23b6bbba807}
+      \strng{bibnamehash}{2f58eb5227931bcea8969f06a9d38e0c}
+      \strng{authorbibnamehash}{2f58eb5227931bcea8969f06a9d38e0c}
+      \strng{authornamehash}{2f58eb5227931bcea8969f06a9d38e0c}
+      \strng{authorfullhash}{8904efc124808265f241f23b6bbba807}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Time series forecasting is a crucial task in machine learning , as it has a wide range of applications including but not limited to forecasting electricity consumption, traffic, and air quality. Traditional forecasting models rely on rolling averages, vector auto-regression and auto-regressive integrated moving averages. On the other hand, deep learning and matrix factorization models have been recently proposed to tackle the same problem with more competitive performance. However, one major drawback of such models is that they tend to be overly complex in comparison to traditional techniques. In this paper, we report the results of prominent deep learning models with respect to a well-known machine learning baseline, a Gradient Boosting Regression Tree (GBRT) model. Similar to the deep neural network (DNN) models, we transform the time series forecasting task into a window-based regression problem. Furthermore, we feature-engineered the input and output structure of the GBRT model, such that, for each training window, the target values are concatenated with external features, and then flattened to form one input instance for a multi-output GBRT model. We conducted a comparative study on nine datasets for eight state-of-the-art deep-learning models that were presented at top-level conferences in the last years. The results demonstrate that the window-based input transformation boosts the performance of a simple GBRT model to levels that outperform all state-of-the-art DNN models evaluated in this paper.}
+      \field{title}{Do We Really Need Deep Learning Models for Time Series Forecasting?}
+      \keyw{Boosting Regres-sion Trees,Deep Learning,Time Series Forecasting}
+    \endentry
+    \entry{Rassid2017}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=e0e7f7df7e394905e6534c28cf13d6d3}{%
+           family={Rassid},
+           familyi={R\bibinitperiod},
+           given={Hussein\bibnamedelima Ashraf},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4e6d00a3817b137b14cc8dc25fbcbc4e}{%
+           family={Fernando},
+           familyi={F\bibinitperiod},
+           given={Orientador\bibnamedelima :},
+           giveni={O\bibinitperiod\bibinitdelim :\bibinitperiod}}}%
+        {{hash=41cadd6bc6a3cd591723d28b22227803}{%
+           family={Lopes},
+           familyi={L\bibinitperiod},
+           given={Jorge\bibnamedelima Ferreira},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{fullhash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{bibnamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authorbibnamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authornamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authorfullhash}{88211f2b562caf46a4239cf1e9978219}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mercado de Reservas: Simulador Multiagente SIMREEL e Caso de Estudo Envolvendo o Mercado Ibérico}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://run.unl.pt/handle/10362/30815
+      \endverb
+      \verb{url}
+      \verb https://run.unl.pt/handle/10362/30815
+      \endverb
+      \keyw{Domínio/Área Científica::Engenharia e Tecnologia::Engenharia Eletrotécnica,Eletrónica e Informática,energia éolica,remuneração,reserva de regulação,secundária,serviços de sistema,terciária}
+    \endentry
+    \entry{Stassen}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=2040b1a10ac82b23b952283bd7d8ce82}{%
+           family={Stassen},
+           familyi={S\bibinitperiod},
+           given={Auteur\bibnamedelima :},
+           giveni={A\bibinitperiod\bibinitdelim :\bibinitperiod}}}%
+        {{hash=093c0b21b039360362cfc92f960a0236}{%
+           family={Promoteur},
+           familyi={P\bibinitperiod},
+           given={Théo},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6fbe33fd3b6a25f54629f311cb113551}{%
+           family={Ernst},
+           familyi={E\bibinitperiod},
+           given={Damien},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{3c17bad11d1a450f34db975309769ac5}
+      \strng{fullhash}{3c17bad11d1a450f34db975309769ac5}
+      \strng{bibnamehash}{3c17bad11d1a450f34db975309769ac5}
+      \strng{authorbibnamehash}{3c17bad11d1a450f34db975309769ac5}
+      \strng{authornamehash}{3c17bad11d1a450f34db975309769ac5}
+      \strng{authorfullhash}{3c17bad11d1a450f34db975309769ac5}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Faculté : Faculté des Sciences appliquées Diplôme : Master en ingénieur civil en informatique, à finalité spécialisée en "intelligent systems" Année académique : 2019-2020 URI/URL : http://hdl.handle.net/2268.2/10466 Avertissement à l'attention des usagers : Tous les documents placés en accès ouvert sur le site le site MatheO sont protégés par le droit d'auteur. Conformément aux principes énoncés par la "Budapest Open Access Initiative"(BOAI, 2002), l'utilisateur du site peut lire, télécharger, copier, transmettre, imprimer, chercher ou faire un lien vers le texte intégral de ces documents, les disséquer pour les indexer, s'en servir de données pour un logiciel, ou s'en servir à toute autre fin légale (ou prévue par la réglementation relative au droit d'auteur). Toute utilisation du document à des fins commerciales est strictement interdite. Par ailleurs, l'utilisateur s'engage à respecter les droits moraux de l'auteur, principalement le droit à l'intégrité de l'oeuvre et le droit de paternité et ce dans toute utilisation que l'utilisateur entreprend. Ainsi, à titre d'exemple, lorsqu'il reproduira un document par extrait ou dans son intégralité, l'utilisateur citera de manière complète les sources telles que mentionnées ci-dessus. Toute utilisation non explicitement autorisée ci-avant (telle que par exemple, la modification du document ou son résumé) nécessite l'autorisation préalable et expresse des auteurs ou de leurs ayants droit.}
+      \field{title}{Master's Thesis : Comparison of probabilistic forecasting deep learning models in the context of renewable energy production}
+      \verb{urlraw}
+      \verb https://lib.uliege.behttps://matheo.uliege.be
+      \endverb
+      \verb{url}
+      \verb https://lib.uliege.behttps://matheo.uliege.be
+      \endverb
+    \endentry
+    \entry{miota2023}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2f9f3f6dc7fb88b4bf5b5b69a52b87aa}{%
+           family={Cardo-Miota},
+           familyi={C\bibinithyphendelim M\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+        {{hash=2a2daff02ce5f8fdf41fdad0a2ed9707}{%
+           family={Pérez},
+           familyi={P\bibinitperiod},
+           given={Emilio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ff13617f45155f017f07b839a41571a1}{%
+           family={Beltran},
+           familyi={B\bibinitperiod},
+           given={Hector},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \strng{fullhash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \strng{bibnamehash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \strng{authorbibnamehash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \strng{authornamehash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \strng{authorfullhash}{48f5a08f1e95e8de2e43051990a82d4b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{2352-4677}
+      \field{journaltitle}{Sustainable Energy, Grids and Networks}
+      \field{month}{9}
+      \field{title}{Deep learning-based forecasting of the automatic Frequency Reserve Restoration band price in the Iberian electricity market}
+      \field{volume}{35}
+      \field{year}{2023}
+      \field{pages}{101110}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.SEGAN.2023.101110
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S2352467723001182
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S2352467723001182
+      \endverb
+    \endentry
+    \entry{Lopes2021}{article}{}
+      \name{author}{1}{}{%
+        {{hash=13f6c6ed5cf46a605a9a4a4af428e6cc}{%
+           family={Lopes},
+           familyi={L\bibinitperiod},
+           given={Fernando},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Academic Press}%
+      }
+      \strng{namehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \strng{fullhash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \strng{bibnamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \strng{authorbibnamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \strng{authornamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \strng{authorfullhash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Most energy markets (EMs) across Europe are based on a design framework involving day-ahead, intraday, and bilateral markets, operating together with balancing markets. This framework was set out, however, when the vast majority of generation units were controllable and fuel-based. The increasing levels of renewable generation create unique challenges in the operation of EMs. In this context, flexibility markets are starting to be recognized as a promising and powerful tool to adequately valorize demand-side flexibility. This chapter describes the models underlying both centralized and bilateral markets, analyzes the operation of several European markets, introduces some energy management tools, analyzes the pressing issue of flexibility in system operation, and describes various pioneering flexibility platforms.}
+      \field{isbn}{9780128200742}
+      \field{journaltitle}{Local Electricity Markets}
+      \field{month}{1}
+      \field{title}{From wholesale energy markets to local flexibility markets: structure, models and operation}
+      \field{year}{2021}
+      \field{pages}{37\bibrangedash 61}
+      \range{pages}{25}
+      \verb{doi}
+      \verb 10.1016/B978-0-12-820074-2.00009-5
+      \endverb
+      \keyw{Agent-based tools for energy markets,Clean energy transition,Energy markets,Flexibility in system operation,Flexibility markets,Market architecture,Market models and operation,Renewable energy}
+    \endentry
+    \entry{Watson1984}{article}{}
+      \name{author}{3}{}{%
+        {{hash=2876318652a0af2a1717f0d0ee507234}{%
+           family={Watson},
+           familyi={W\bibinitperiod},
+           given={William\bibnamedelima F.},
+           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=9ae0e2136ad02535c951a1b8a14b1553}{%
+           family={Joskow},
+           familyi={J\bibinitperiod},
+           given={Paul\bibnamedelima L.},
+           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=4a248c42806779a485fb89901cb0d821}{%
+           family={Schmalensee},
+           familyi={S\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{52eb88f6a1397c17403db041ce092aab}
+      \strng{fullhash}{52eb88f6a1397c17403db041ce092aab}
+      \strng{bibnamehash}{52eb88f6a1397c17403db041ce092aab}
+      \strng{authorbibnamehash}{52eb88f6a1397c17403db041ce092aab}
+      \strng{authornamehash}{52eb88f6a1397c17403db041ce092aab}
+      \strng{authorfullhash}{52eb88f6a1397c17403db041ce092aab}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{00384038}
+      \field{issue}{2}
+      \field{journaltitle}{Southern Economic Journal}
+      \field{month}{10}
+      \field{title}{Markets for Power: An Analysis of Electrical Utility Deregulation}
+      \field{volume}{51}
+      \field{year}{1984}
+      \field{pages}{640}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.2307/1057863
+      \endverb
+    \endentry
+    \entry{Schweppe1988}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e0f4a9b91b174082be178ab03b9e3d9b}{%
+           family={Schweppe},
+           familyi={S\bibinitperiod},
+           given={Fred\bibnamedelima C.},
+           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=e0c3af0a356f97777aaf0d0725982103}{%
+           family={Caramanis},
+           familyi={C\bibinitperiod},
+           given={Michael\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=045d580594d2fc95ec80610463741a98}{%
+           family={Tabors},
+           familyi={T\bibinitperiod},
+           given={Richard\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+        {{hash=f6a5da6afa3eaa6a489a49fafa1f4aac}{%
+           family={Bohn},
+           familyi={B\bibinitperiod},
+           given={Roger\bibnamedelima E.},
+           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer US}%
+      }
+      \strng{namehash}{bb536c872410cb952b20dc53582bf609}
+      \strng{fullhash}{117028053197e5d0c166b99751117669}
+      \strng{bibnamehash}{bb536c872410cb952b20dc53582bf609}
+      \strng{authorbibnamehash}{bb536c872410cb952b20dc53582bf609}
+      \strng{authornamehash}{bb536c872410cb952b20dc53582bf609}
+      \strng{authorfullhash}{117028053197e5d0c166b99751117669}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{There is a need for fundamental changes in the ways society views electric energy. Electric energy must be treated as a commodity which can be bought, sold, and traded, taking into account its time-and space-varying values and costs. This book presents a complete framework for the establishment of such an energy marketplace. The framework is based on the use of spot prices. In general terms: o An hourly spot price (in dollars per kilowatt hour) reflects the operating and capital costs of generating, transmitting and distributing electric energy. It varies each hour and from place to place. o The spot price based energy marketplace involves a variety of utility-customer transactions (ranging from hourly varying prices to long-term, multiple-year contracts), all of which are based in a consistent manner on hourly spot prices. These transactions may include customers selling to, as well as buying from, the utility. The basic theory and practical implementation issues associated with a spot price based energy marketplace have been developed and discussed through a number of different reports, theses, and papers. Each addresses only a part of the total picture, and often with a somewhat different notation and terminology (which has evolved in parallel with our growing experience). This book was xvii xviii Preface written to serve as a single, integrated sourcebook on the theory and imple­ mentation of a spot price based energy marketplace. 1 Overview -- 1.1 Goal of Book -- 1.2 Three Steps to an Energy Marketplace -- 1.3 How Will Customers Respond? -- 1.4 Energy Marketplace Operation: A Developed Country -- 1.5 Energy Marketplace Operation: A Developing Country -- 1.6 Discussion of Chapter 1 -- I: The Energy Marketplace -- Preface to Part I: The Energy Marketplace -- 2 Behavior of Hourly Spot Prices -- 3 Energy Marketplace Transactions -- 4 Implementation -- 5 A Possible Future: Deregulation -- II: Theory of Hourly Spot Prices -- 6 Generation Only -- 7 Generation and Network -- 8 Revenue Reconciliation -- 9 Spot Price Based Rates -- 10 Optimal Investment Conditions -- References -- Annotated Bibliography -- Appendices -- A Power System Analysis and Control -- A.1 Network Flows -- A.2 Local Controllers -- A.3 Mathematical Models for System Dynamics -- A.4 Power System Dynamics -- Further Reading -- Notes -- B Power System Operation -- B.1 Short-Term Load Forecasting -- B.2 System Economics -- B.3 System Security -- B.4 Automatic Generation Control (AGC) -- B.5 Interconnected Systems -- Further Reading -- Notes -- C Power System Planning -- C.1 Multiple Attribute Decision Making Under Uncertainty -- C.2 Long Range Load Forecasting Models -- C.3 Production Cost Models -- C.4 Financial Models -- C.5 Generation Expansion Programs -- C.6 Network Expansion Programs -- C.7 Feedback Couplings -- Further Reading -- Notes -- D DC Load Flow -- D.1 General Relationships -- D.2 A Potpourri of Results -- D.3 Three-Bus Example -- Notes -- E Customer Response Model Structures -- E.1 Single Period -- E.2 Multiple Period -- Notes -- F FAPER -- F.1 Basic Concepts -- F.2 FAPER Designs -- F.3 Variations on the Basic Concept -- F.4 Analysis of Multiple FAPER Response -- F.5 Incentives to Install FAPERS -- F.6 Discussion -- G Expected Behavior of Spot Prices -- G.1 Introduction -- G.2 24-Hour Trajectories -- G.3 Price Duration Curves -- G.4 Impact of Customer Response on Variable Energy Costs -- H Interchange of Derivative and Expectation Operators.}
+      \field{isbn}{1461316839}
+      \field{title}{Spot Pricing of Electricity}
+      \field{year}{1988}
+      \field{pages}{384}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://books.google.com/books/about/Spot_Pricing_of_Electricity.html?hl=pt-PT&id=QZ8ACAAAQBAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.com/books/about/Spot_Pricing_of_Electricity.html?hl=pt-PT&id=QZ8ACAAAQBAJ
+      \endverb
+    \endentry
+    \entry{dgegmss}{misc}{}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labeltitlesource}{title}
+      \field{title}{Mercado de Serviço de Sistemas}
+      \verb{urlraw}
+      \verb https://www.dgeg.gov.pt/pt/areas-transversais/mercados-e-mecanismos-de-capacidade/outros-mercados/mercado-de-servico-de-sistemas/
+      \endverb
+      \verb{url}
+      \verb https://www.dgeg.gov.pt/pt/areas-transversais/mercados-e-mecanismos-de-capacidade/outros-mercados/mercado-de-servico-de-sistemas/
+      \endverb
+    \endentry
+    \entry{Carneiro2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=705fc25e09ae21a9dcc20e47132f7a49}{%
+           family={Carneiro},
+           familyi={C\bibinitperiod},
+           given={Célia},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Instituto Superior de Engenharia do Porto}%
+      }
+      \strng{namehash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \strng{fullhash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \strng{bibnamehash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \strng{authorbibnamehash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \strng{authornamehash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \strng{authorfullhash}{705fc25e09ae21a9dcc20e47132f7a49}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Every day the Operator Transport Network (ORT) is facing new challenges that will have to overcome in favor of providing users of the national electricity system with a service quality, reliability and safety. At times, the electric sector was traditionally seen as a natural monopoly, where a company, EDP, was responsible for all sector activities. However, given the restructuring that took place throughout the sector, which led to the introduction by weight of renewable energy sources and the liberalization of various activities led to the value chain separation and accept the participation of various actors in various activities, namely, the production and marketing, with the aim of creating a more competitive and more advantageous environment for the consumer. This process gave rise to challenges of greater complexity, among which there is the greatest volatility in electricity production and a possibility of experiencing imbalances, for which system services provision for the maintenance of the electrical system fullness is needed. The continued development of the sector liberalization process culminated in the creation of transnational electricity markets, grouping electricity markets in different countries in a single market. The Iberian Electricity Market (MIBEL), is an example of an international market which incorporates in itself the electricity markets in Portugal and Spain. The MIBEL in addition to other responsibilities coordinates the management of the Daily Market and Intraday Market, where you set the electricity price and the price thereof to be traded the next day and every hour of the day. With regard to the System Services Market, whose responsibility is the system manager, and are characterized by estimating the differences that may occur in an electrical system, develop resolution plans for them and finally arrange and implement the solution. The resolution involves the procurement of supplies in quantities able to cope with anomalies recorded in the system services market. This research focuses on the System Services, in particular on frequency regulation, including secondary and tertiary regulation reserve for the electrical systems of Portugal and Spain for the years 2013, 2014 and 2015. Under the regulation reserve, an analysis of the creation of an internal market concerning the commercialization of regulation reserve was carried out in parallel, was conceived to viione analysis support tool in Microsoft Office Excel that allows you to view as graphics stored data relating to offers of market agents, contracted reserve, the marginal cost of these offers and finally, the cost of closing the market. The same tool also enables the user to make a simulation to the desired day of what may occur in regulatory reserve market in accordance with the provisions ERSE. With respect to the reserve secondary regulation, we carried out a study of the possible optimization of the values of the supply requirements of such reserves, with the intention to decrease the closing market price at each time. The results showed that there is still great potential for development of system services, more specifically in the management of the secondary reserve and regulating the market, which will culminate in the creation of a single market at European level, the benefit of which will be based on reduced costs for the system and therefore to the final consumers. The creation of a single regulatory reserve market is one of the proposals, and the positive values achieved enable its creation, however, due to the complexity of the secondary reserve market presents the creation of a single market is still a process which will have difficulties to be implemented. However, the proposal for obtaining the value of secondary reserve enables the GGS needs an optimization of the costs associated with the system.}
+      \field{month}{11}
+      \field{title}{Mecanismos de funcionamento do Mercado de Serviços de Sistema - aplicação ao MIBEL}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://core.ac.uk/download/pdf/302870251.pdf
+      \endverb
+      \verb{url}
+      \verb https://core.ac.uk/download/pdf/302870251.pdf
+      \endverb
+    \endentry
+    \entry{Bessa2012}{article}{}
+      \name{author}{9}{}{%
+        {{hash=a6cf737840a317ac8799a289fa2c64bb}{%
+           family={Bessa},
+           familyi={B\bibinitperiod},
+           given={Ricardo\bibnamedelima J.},
+           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=f86adb0de13dee9db3681118e2c8da46}{%
+           family={Matos},
+           familyi={M\bibinitperiod},
+           given={Manuel\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=287377c66e87f603d6f3ae3a0af7628e}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Ivo\bibnamedelima C.},
+           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=34ce0f5f67846fc87131b0ec1bca73a7}{%
+           family={Bremermann},
+           familyi={B\bibinitperiod},
+           given={Leonardo},
+           giveni={L\bibinitperiod}}}%
+        {{hash=981ac6e310624bcbb93f06871954fa4d}{%
+           family={Franchin},
+           familyi={F\bibinitperiod},
+           given={Ivan\bibnamedelima Gustavo},
+           giveni={I\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=d930168ba905979b22a7696d805b28ad}{%
+           family={Pestana},
+           familyi={P\bibinitperiod},
+           given={Rui},
+           giveni={R\bibinitperiod}}}%
+        {{hash=01186fa07361fdec361dfaa0207d6fa9}{%
+           family={Machado},
+           familyi={M\bibinitperiod},
+           given={Nélio},
+           giveni={N\bibinitperiod}}}%
+        {{hash=aeb97f757767d5493de1e3f16b886451}{%
+           family={Waldl},
+           familyi={W\bibinitperiod},
+           given={Hans-Peter},
+           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=4e14acd6279fccd50e7d6bca0fdaa11d}{%
+           family={Wichmann},
+           familyi={W\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
+      \strng{fullhash}{ed6c437003cd4e460eb2a7f06b941544}
+      \strng{bibnamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
+      \strng{authorbibnamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
+      \strng{authornamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
+      \strng{authorfullhash}{ed6c437003cd4e460eb2a7f06b941544}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1949-3029}
+      \field{issue}{4}
+      \field{journaltitle}{IEEE Transactions on Sustainable Energy}
+      \field{month}{10}
+      \field{title}{Reserve Setting and Steady-State Security Assessment Using Wind Power Uncertainty Forecast: A Case Study}
+      \field{volume}{3}
+      \field{year}{2012}
+      \field{pages}{827\bibrangedash 836}
+      \range{pages}{10}
+      \verb{doi}
+      \verb 10.1109/TSTE.2012.2199340
+      \endverb
+    \endentry
+    \entry{Fernandes2016}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d028d1a97ec7cb4a10a966437c45b1c1}{%
+           family={Fernandes},
+           familyi={F\bibinitperiod},
+           given={Camila},
+           giveni={C\bibinitperiod}}}%
+        {{hash=c5deed7711b57b7851b961478ddfdcbe}{%
+           family={Frías},
+           familyi={F\bibinitperiod},
+           given={Pablo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=45d9282acfe752a4aab1b95b7dd8f0cd}{%
+           family={Reneses},
+           familyi={R\bibinitperiod},
+           given={Javier},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Pergamon}%
+      }
+      \strng{namehash}{64fc93b074716ec2a48e288facf72adb}
+      \strng{fullhash}{64fc93b074716ec2a48e288facf72adb}
+      \strng{bibnamehash}{64fc93b074716ec2a48e288facf72adb}
+      \strng{authorbibnamehash}{64fc93b074716ec2a48e288facf72adb}
+      \strng{authornamehash}{64fc93b074716ec2a48e288facf72adb}
+      \strng{authorfullhash}{64fc93b074716ec2a48e288facf72adb}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0960-1481}
+      \field{journaltitle}{Renewable Energy}
+      \field{month}{4}
+      \field{title}{Participation of intermittent renewable generators in balancing mechanisms: A closer look into the Spanish market design}
+      \field{volume}{89}
+      \field{year}{2016}
+      \field{pages}{305\bibrangedash 316}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/J.RENENE.2015.12.037
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0960148115305437
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0960148115305437
+      \endverb
+    \endentry
+    \entry{Agostini2021}{article}{}
+      \name{author}{4}{}{%
+        {{hash=adbf5175204ab3972b9534d2e2941667}{%
+           family={Agostini},
+           familyi={A\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+        {{hash=30141b2b96321149955510f63f7328bb}{%
+           family={Bertolini},
+           familyi={B\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=42e093404b6b94c51da96d1d8cba338a}{%
+           family={Coppo},
+           familyi={C\bibinitperiod},
+           given={Massimiliano},
+           giveni={M\bibinitperiod}}}%
+        {{hash=76ef71c2e20e2fd0dd21f94a1619d2c7}{%
+           family={Fontini},
+           familyi={F\bibinitperiod},
+           given={Fulvio},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {North-Holland}%
+      }
+      \strng{namehash}{9d59f3b29550d4205f6ac5c475a4fd92}
+      \strng{fullhash}{7a4698acdd588d52a523a5847792f8ed}
+      \strng{bibnamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
+      \strng{authorbibnamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
+      \strng{authornamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
+      \strng{authorfullhash}{7a4698acdd588d52a523a5847792f8ed}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The paper considers different market settings for the participation to the balancing services market of small scale variable renewable energy sources connected to the distribution grid. By mixing an economical and a technical approach, it evaluates the efficiency of participation to the market under two distinct approaches to resources' aggregation: a commercial scheme and a technical one. In the former, the supply of the small scale variable distributed renewable energy sources is grouped on a purely commercial basis; in the latter, the distribution system operator is responsible of the imbalances that may possibly arise in the distribution grid and aggregates the sources from a technical perspective. By considering a reference distribution network and designing scenarios for the forecast uncertainty about supply and demand of power profiles, the impact of different market frameworks is assessed. The upward and downward balancing services provided by variable distributed energy resources and controllable units connected to the high voltage grid are both considered. Moreover, the power supply curtailments, that endogenously arise due to the violation of technical constraints of the distribution grid and the random nature of energy supply by renewables, are addressed, for each specific market model. As a general outcome of this research, it is shown that providing balancing energy based on a commercial approach is preferable as long as renewables' curtailment penalty is low and local generators have correlated forecast errors (as in the case of photovoltaic units) with a large reserve capacity. High penalties for curtailment and lower correlation among generation schedule deviations, along with a lower reserve by distributed units, make the technical approach more convenient.}
+      \field{issn}{0140-9883}
+      \field{journaltitle}{Energy Economics}
+      \field{month}{5}
+      \field{title}{The participation of small-scale variable distributed renewable energy sources to the balancing services market}
+      \field{volume}{97}
+      \field{year}{2021}
+      \field{pages}{105208}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/J.ENECO.2021.105208
+      \endverb
+      \keyw{Aggregator,Balancing services,Distribution network,Market models,Network externalities and efficiency,Small scale variable distributed renewable energy sources}
+    \endentry
+    \entry{vanBuuren2011}{article}{}
+      \name{author}{2}{}{%
+        {{hash=4c5742dea00885b0aa447b833696d174}{%
+           family={Buuren},
+           familyi={B\bibinitperiod},
+           given={Stef},
+           giveni={S\bibinitperiod},
+           prefix={van},
+           prefixi={v\bibinitperiod}}}%
+        {{hash=608d0e9a1fa5297e662ddcf0f605c2ab}{%
+           family={Groothuis-Oudshoorn},
+           familyi={G\bibinithyphendelim O\bibinitperiod},
+           given={Karin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{089d1d8760fae91d5380d09f586254e7}
+      \strng{fullhash}{089d1d8760fae91d5380d09f586254e7}
+      \strng{bibnamehash}{089d1d8760fae91d5380d09f586254e7}
+      \strng{authorbibnamehash}{089d1d8760fae91d5380d09f586254e7}
+      \strng{authornamehash}{089d1d8760fae91d5380d09f586254e7}
+      \strng{authorfullhash}{089d1d8760fae91d5380d09f586254e7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The R package mice imputes incomplete multivariate data by chained equations. The software mice 1.0 appeared in the year 2000 as an S-PLUS library, and in 2001 as an R package. mice 1.0 introduced predictor selection, passive imputation and automatic pooling. This article documents mice, which extends the functionality of mice 1.0 in several ways. In mice, the analysis of imputed data is made completely general, whereas the range of models under which pooling works is substantially extended. mice adds new functionality for imputing multilevel data, automatic predictor selection, data handling, post-processing imputed values, specialized pooling routines, model selection tools, and diagnostic graphs. Imputation of categorical data is improved in order to bypass problems caused by perfect prediction. Special attention is paid to transformations, sum scores, indices and interactions using passive imputation, and to the proper setup of the predictor matrix. mice can be downloaded from the Comprehensive R Archive Network. This article provides a hands-on, stepwise approach to solve applied incomplete data problems.}
+      \field{issn}{1548-7660}
+      \field{issue}{3}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{month}{12}
+      \field{title}{mice: Multivariate Imputation by Chained Equations in R}
+      \field{volume}{45}
+      \field{year}{2011}
+      \field{pages}{1\bibrangedash 67}
+      \range{pages}{67}
+      \verb{doi}
+      \verb 10.18637/JSS.V045.I03
+      \endverb
+      \verb{urlraw}
+      \verb https://www.jstatsoft.org/index.php/jss/article/view/v045i03
+      \endverb
+      \verb{url}
+      \verb https://www.jstatsoft.org/index.php/jss/article/view/v045i03
+      \endverb
+      \keyw{Chained equations,Fully conditional specification,Gibbs sampler,MICE,Multiple imputation,Passive imputation,Predictor selection,R}
+    \endentry
+    \entry{Buck1960}{article}{}
+      \name{author}{1}{}{%
+        {{hash=1482e1f76c45dcf2ae3ea60316c3cd89}{%
+           family={Buck},
+           familyi={B\bibinitperiod},
+           given={S\bibnamedelima F},
+           giveni={S\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {[Royal Statistical Society, Wiley]}%
+      }
+      \strng{namehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \strng{fullhash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \strng{bibnamehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \strng{authorbibnamehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \strng{authornamehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \strng{authorfullhash}{1482e1f76c45dcf2ae3ea60316c3cd89}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{[Estimation of statistical parameters from multivariate data results in wasted information, if units with incomplete data are rejected entirely, and perhaps in inconsistencies in the variance-covariance matrix if the variances and correlation coefficients are estimated from all available data on individual variates and pairs of variates respectively. An alternative is to estimate the missing values by regression techniques and to calculate a revised variance-covariance matrix. This method is suitable for use with an electronic computer. It is shown that with this method the resultant covariances are unbiased, but that the variances require correction for bias. A numerical example is given.]}
+      \field{issn}{00359246}
+      \field{issue}{2}
+      \field{journaltitle}{Journal of the Royal Statistical Society. Series B (Methodological)}
+      \field{title}{A Method of Estimation of Missing Values in Multivariate Data Suitable for use with an Electronic Computer}
+      \field{volume}{22}
+      \field{year}{1960}
+      \field{pages}{302\bibrangedash 306}
+      \range{pages}{5}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/2984099
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/2984099
+      \endverb
+    \endentry
+    \entry{VLHelen2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=d918a6d73452ed5f87e47757e55a6a56}{%
+           family={Josephine},
+           familyi={J\bibinitperiod},
+           given={V\bibnamedelima L\bibnamedelima Helen},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=869c6c7fd42e54da9edd254897a6ddbc}{%
+           family={Nirmala},
+           familyi={N\bibinitperiod},
+           given={A.P.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=5a5e00808ddbb178254486adb0513b8a}{%
+           family={Alluri},
+           familyi={A\bibinitperiod},
+           given={Vijaya\bibnamedelima Lakshmi},
+           giveni={V\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOP Publishing}%
+      }
+      \strng{namehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{fullhash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{bibnamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authorbibnamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authornamehash}{4bcaaaf372fc74947252f3693f978f02}
+      \strng{authorfullhash}{4bcaaaf372fc74947252f3693f978f02}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Education and Health care sectors are two predominant areas where societal growth is expected through innovation and technology development. Machine Learning and Deep learning classification models have been entertained in predicting, detecting, and diagnosing major diseases in the early stage. In this research paper, we have analyzed the impact of hidden dense layers in the Convolution neural network to improve the performance of the classification model. Three different classification deep network models have been constructed, analyzed and the result was tested with a diabetes dataset. Results concluded that the more layers with deeper the network better was the classification performance. The classification model with six hidden dense layers outperforms all other less number of hidden dense layers.}
+      \field{issn}{1757-8981}
+      \field{issue}{1}
+      \field{journaltitle}{IOP Conference Series: Materials Science and Engineering}
+      \field{month}{4}
+      \field{title}{Impact of Hidden Dense Layers in Convolutional Neural Network to enhance Performance of Classification Model}
+      \field{volume}{1131}
+      \field{year}{2021}
+      \field{pages}{012007}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1088/1757-899X/1131/1/012007
+      \endverb
+    \endentry
+    \entry{Hewamalage2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bcedb4c1d2a852d41022a05e63751bf9}{%
+           family={Hewamalage},
+           familyi={H\bibinitperiod},
+           given={Hansika},
+           giveni={H\bibinitperiod}}}%
+        {{hash=fb7be81f0574878d688bb03f0abb8502}{%
+           family={Bergmeir},
+           familyi={B\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+        {{hash=d2ea33f311ab7e75395d319cf5cb988d}{%
+           family={Bandara},
+           familyi={B\bibinitperiod},
+           given={Kasun},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier B.V.}%
+      }
+      \strng{namehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{fullhash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{bibnamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authorbibnamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authornamehash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \strng{authorfullhash}{29e798ed628767a2e5b0b45cb594e1c7}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Recurrent Neural Networks (RNNs) have become competitive forecasting methods, as most notably shown in the winning method of the recent M4 competition. However, established statistical models such as exponential smoothing (ETS) and the autoregressive integrated moving average (ARIMA) gain their popularity not only from their high accuracy, but also because they are suitable for non-expert users in that they are robust, efficient, and automatic. In these areas, RNNs have still a long way to go. We present an extensive empirical study and an open-source software framework of existing RNN architectures for forecasting, and we develop guidelines and best practices for their use. For example, we conclude that RNNs are capable of modelling seasonality directly if the series in the dataset possess homogeneous seasonal patterns; otherwise, we recommend a deseasonalisation step. Comparisons against ETS and ARIMA demonstrate that (semi-) automatic RNN models are not silver bullets, but they are nevertheless competitive alternatives in many situations.}
+      \field{issn}{01692070}
+      \field{issue}{1}
+      \field{journaltitle}{International Journal of Forecasting}
+      \field{month}{1}
+      \field{title}{Recurrent Neural Networks for Time Series Forecasting: Current status and future directions}
+      \field{volume}{37}
+      \field{year}{2021}
+      \field{pages}{388\bibrangedash 427}
+      \range{pages}{40}
+      \verb{doi}
+      \verb 10.1016/j.ijforecast.2020.06.008
+      \endverb
+      \keyw{Best practices,Big data,Forecasting,Framework}
+    \endentry
+    \entry{Iverson1962}{book}{}
+      \name{author}{1}{}{%
+        {{hash=a4a677916806de71f27d916884f6a907}{%
+           family={Iverson},
+           familyi={I\bibinitperiod},
+           given={Kenneth\bibnamedelima E.},
+           giveni={K\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4a677916806de71f27d916884f6a907}
+      \strng{fullhash}{a4a677916806de71f27d916884f6a907}
+      \strng{bibnamehash}{a4a677916806de71f27d916884f6a907}
+      \strng{authorbibnamehash}{a4a677916806de71f27d916884f6a907}
+      \strng{authornamehash}{a4a677916806de71f27d916884f6a907}
+      \strng{authorfullhash}{a4a677916806de71f27d916884f6a907}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Explores how programming language is a signifier for a whole host of mathematical algorithms and procedures. The book focuses on specific areas of application which serve as universal examples and are chosen to illustrate particular facets of the effort to design explicit and concise programming languages. The language -- Microprogramming -- Representation of variables -- Search techniques -- Metaprograms -- Sorting -- The logical calculus.}
+      \field{isbn}{0471430145}
+      \field{title}{A programming language}
+      \field{year}{1962}
+      \field{pages}{11}
+      \range{pages}{1}
+      \verb{urlraw}
+      \verb https://www.jsoftware.com/papers/APL.htm
+      \endverb
+      \verb{url}
+      \verb https://www.jsoftware.com/papers/APL.htm
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
