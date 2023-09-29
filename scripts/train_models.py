@@ -10,7 +10,7 @@ from forecat import CNNArch, DenseArch, LSTMArch, UNETArch,EncoderDecoder
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
 import tensorflow as tf
-
+import traceback
 
 scripts_path = os.path.dirname(os.path.abspath(__file__))
 
@@ -41,6 +41,22 @@ def assign_labels_with_limits(values, classes_dict):
 
     return np.array(labels)
 
+
+
+def get_freq_samples(train_dataset_labels ):
+    unique_values, value_counts = np.unique(train_dataset_labels, return_counts=True, axis=None)
+    values_dict = {}
+    for u, c in zip(unique_values, value_counts):
+        values_dict[u]=c
+
+
+    # Define a function to map values using the dictionary
+    map_func = np.vectorize(lambda x: values_dict.get(x, x))
+
+    # Apply the function to arrayA to create arrayB
+    sample_weigths = map_func(train_dataset_labels)
+    sample_weigths = 1/sample_weigths
+    return sample_weigths
 
 dataset_file_path = "../data/dados_2014-2022.csv"
 dataset_file_path = pathlib.Path(scripts_path, dataset_file_path).resolve()
@@ -115,7 +131,9 @@ models_strutres = {
 models_strutres_DEFAULT = models_strutres
 
 def train_save_model(dataset, model_name,struct_name,get_dataset_args={},
-epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}, classes_dict={}, optimizer="adam"):
+epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}, classes_dict={}, optimizer="adam",
+weight=None,
+):
     if models_strutres is None:
         models_strutres = models_strutres_DEFAULT
 
@@ -123,8 +141,9 @@ epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}
         model_name_load = model_name
     model_folder = os.path.join(path_to_trained_models_folder, struct_name, model_name)
     os.makedirs(model_folder, exist_ok=True)
+    mean = np.nanmean(dataset[get_dataset_args["y_columns"]].values)
     dataset_to_use = dataset.copy()
-
+    train_dataset_Y_values = None
 
     train_dataset_X, train_dataset_Y, test_dataset_X, test_dataset_Y, gen = get_dataset(dataset_to_use,**get_dataset_args)
 
@@ -152,7 +171,13 @@ epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}
     #if os.path.exists(model_keras_filename):
     #   return
     history=None
-    period = 10
+    period = 3
+    if "linear_models_epocs" in struct_name:
+        if "Enco" in model_name:
+            period = 2
+        if "LSTM" in model_name:
+            period = 2
+
     model_checkpoint = keras.callbacks.ModelCheckpoint(model_keras_filename)
     freq_saves_folder = model_keras_filename.replace(".keras","freq_saves") 
     os.makedirs(freq_saves_folder, exist_ok=True)
@@ -179,52 +204,55 @@ epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}
     frq_model_filename = model_keras_filename.replace(".keras", "freq_saves/{epoch:02d}.keras")
     frq_model_filename_sof = model_keras_filename.replace(".keras", "freq_saves/{epoch}.keras")
 
-    save_on_freq = SaveModelCallback(period, frq_model_filename_sof, model_history_filename, logs=history,start_epoch=max_trained_epocas)
+    #save_on_freq = SaveModelCallback(period, frq_model_filename_sof, model_history_filename, logs=history,start_epoch=max_trained_epocas)
     
     STEPS_PER_EPOCH = 2336
 
-    callbacks = [model_checkpoint,save_on_freq, StopOnNanLoss(model_keras_filename, model_log_filename=model_history_filename, logs=history),]
+    callbacks = [model_checkpoint, StopOnNanLoss(model_keras_filename, model_log_filename=model_history_filename, logs=history,
+        save_frequency=period,start_epoch=max_trained_epocas, model_keras_filename=frq_model_filename_sof),]
 
  
 
     # Checnk for multioupt
     output_shape = foremodel.outputs
     if isinstance(output_shape, list):
-        clsuter_shape = (len(train_dataset_Y), *tuple(output_shape[1].shape[-2:]))
-        clsuter_shape_test = (len(test_dataset_Y), *tuple(output_shape[1].shape[-2:]))
+        if len(output_shape)>1:
+            clsuter_shape = (len(train_dataset_Y), *tuple(output_shape[1].shape[-2:]))
+            clsuter_shape_test = (len(test_dataset_Y), *tuple(output_shape[1].shape[-2:]))
 
-        # make labels
-        train_dataset_labels = assign_labels_with_limits(train_dataset_Y.ravel(), classes_dict)
-        # pass to one hoe
-        train_dataset_labels = np.array(tf.one_hot(train_dataset_labels, np.max(train_dataset_labels)+1)).reshape(clsuter_shape)
+            # make labels
+            train_dataset_labels = assign_labels_with_limits(train_dataset_Y.ravel(), classes_dict)
+            # pass to one hoe
+            train_dataset_labels = np.array(tf.one_hot(train_dataset_labels, np.max(train_dataset_labels)+1)).reshape(clsuter_shape)
 
-        test_dataset_labels = assign_labels_with_limits(test_dataset_Y.ravel(), classes_dict)
-        test_dataset_labels = np.array(tf.one_hot(test_dataset_labels, np.max(test_dataset_labels)+1)).reshape(clsuter_shape_test)
+            test_dataset_labels = assign_labels_with_limits(test_dataset_Y.ravel(), classes_dict)
+            test_dataset_labels = np.array(tf.one_hot(test_dataset_labels, np.max(test_dataset_labels)+1)).reshape(clsuter_shape_test)
+            if len(output_shape)==2:
+                train_dataset_Y_values = train_dataset_Y
+                test_dataset_Y_values = test_dataset_Y
 
+                train_dataset_Y = train_dataset_Y, train_dataset_labels
+                test_dataset_Y = test_dataset_Y, test_dataset_labels
 
-        if len(output_shape)==2:
-            train_dataset_Y = train_dataset_Y, train_dataset_labels
-            test_dataset_Y = test_dataset_Y, test_dataset_labels
-
-            loss = [loss, "categorical_crossentropy"]
-            metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
-            metrics = {
-                metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
-                    metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
+                loss = [loss, "categorical_crossentropy"]
+                metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
+                metrics = {
+                    metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
+                        metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
                 }
+            elif len(output_shape)==3:
+                train_dataset_Y_values = train_dataset_Y
+                test_dataset_Y_values = test_dataset_Y
 
-
-
-        elif len(output_shape)==3:
-            train_dataset_Y = train_dataset_Y, train_dataset_labels, train_dataset_Y
-            test_dataset_Y = test_dataset_Y, test_dataset_labels, test_dataset_Y
-            loss = [loss, "categorical_crossentropy", loss]
-            metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
-            metrics = {
-                metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
-                    metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
-                metrics_keys[2]:tf.keras.metrics.RootMeanSquaredError(),
-            }
+                train_dataset_Y = train_dataset_Y, train_dataset_labels, train_dataset_Y
+                test_dataset_Y = test_dataset_Y, test_dataset_labels, test_dataset_Y
+                loss = [loss, "categorical_crossentropy", loss]
+                metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
+                metrics = {
+                    metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
+                        metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
+                    metrics_keys[2]:tf.keras.metrics.RootMeanSquaredError(),
+                }
 
 
 
@@ -235,11 +263,27 @@ epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}
 
     foremodel.compile(**compile_args) 
 
+    fit_args={
+        "epochs":epocas,
+        "callbacks":callbacks,
+    }
+
+    if weight:
+        if "delta_mean" in  weight or "both" in weight:
+            train_dataset_Y_values = train_dataset_Y_values or train_dataset_Y
+            samples_weights = np.abs(train_dataset_Y_values - mean)
+            fit_args["sample_weight"] = samples_weights
+        if "freq" in  weight or "both" in weight:
+            freq_weights = get_freq_samples(train_dataset_labels)
+            fit_args["sample_weight"] = freq_weights
+        if "both" in weight:
+            fit_args["sample_weight"] = freq_weights*samples_weights
+
+
     history_new = foremodel.fit(
                     train_dataset_X,
                     train_dataset_Y,
-                    epochs=epocas,
-                    callbacks=callbacks
+                    **fit_args
                 )
 
     history_to_save = {}
@@ -312,12 +356,16 @@ get_dataset_args={
     "time_cols":time_cols,
     "alloc_column":alloc_column,
 }
+
+input_args = {"activation_middle":"linear",
+            "activation_end":"softplus"}
 for model_name in models_strutres:
     print(model_name)
     try:
-        train_save_model(dataset, model_name,struct_name,get_dataset_args=get_dataset_args, epocas=epocas)
+        train_save_model(dataset, model_name,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args)
     except Exception as e:
-        print(e)
+        print(f"Exception: {e}")
+        traceback.print_exc()
 
 # Experiment 2 - losses
 epocas=30
@@ -366,7 +414,8 @@ for loss_name,loss in losses.items():
         try:
             train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=loss, model_name_load=model_name)
         except Exception as e:
-            print(e)
+            print(f"Exception: {e}")
+            traceback.print_exc()
             
 # Experiment 3 - activation middle and end
 epocas=30
@@ -408,7 +457,8 @@ for middle in regression_activations:
                 struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),
                 model_name_load=model_name, input_args=input_args)
             except Exception as e:
-                print(e)
+                print(f"Exception: {e}")
+                traceback.print_exc()
 
 epocas=30
 X_timeseries = 168
@@ -437,18 +487,22 @@ regression_optimizer = [
     "SGD",
     "RMSprop",
     "Adam",
-    "AdamW",
+    keras.optimizers.AdamW(),
     "Adadelta",
     "Adagrad",
     "Adamax",
-    "Adafactor",
+    keras.optimizers.Adafactor(),
     "Nadam",
     "Ftrl",
 ]
 
 for opt in regression_optimizer:
     for model_name in models_strutres:
-        model_name_to_save = model_name + f"_{opt}"
+        name_opt = opt
+        if not isinstance(opt, str):
+            name_opt = opt.name
+
+        model_name_to_save = model_name + f"_{name_opt}"
         print(model_name_to_save)
 
         #input_args = {"activation_middle":middle,
@@ -458,7 +512,8 @@ for opt in regression_optimizer:
             struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),
             model_name_load=model_name, optimizer=opt)
         except Exception as e:
-            print(e)
+            print(f"Exception: {e}")
+            traceback.print_exc()
 
 # Experiment 4 - time windows
 epocas=30
@@ -489,15 +544,21 @@ for X in [24, 48, 98, 168]:
             model_name_to_save = model_name + f"_{X}X_{Y}Y"
             print(model_name_to_save)
 
+            input_args = {"activation_middle":"linear",
+            "activation_end":"softplus"}
+
             get_dataset_args.update({
                 "time_moving_window_size_X":X,
                 "time_moving_window_size_Y":Y,                
             })
             try:
-                train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),
+                train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, 
+                input_args=input_args,
+                epocas=epocas, loss=MeanSquaredLogarithmicError(),
                 model_name_load=model_name)
             except Exception as e:
-                print(e)
+                print(f"Exception: {e}")
+                traceback.print_exc()
 
 
 
@@ -574,4 +635,130 @@ for cla in list_classes_dict:
             struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),models_strutres=models_strutres,
             model_name_load=model_name,  classes_dict=cla)
         except Exception as e:
-            print(e)
+            print(f"Exception: {e}")
+            traceback.print_exc()
+
+
+# Experiment 6 - Pesos
+#  sem peso, dist to mean -> linear
+# sem peso, dist to mean, frequ, dmean+freq
+
+# Linear
+models_strutres = {
+    #"UNET" : {"arch":UNETArch},
+    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}},
+    "VanillaCNN":{"arch":CNNArch,}, 
+}
+epocas=30
+X_timeseries = 168
+Y_timeseries = 24
+frac = 0.95
+train_features_folga = 24
+skiping_step=1
+keep_y_on_x=True
+struct_name = "linear_weights"
+get_dataset_args={
+    "y_columns":columns_Y,
+    "time_moving_window_size_X":X_timeseries,
+    "time_moving_window_size_Y":Y_timeseries,
+    "frac":frac,
+    "keep_y_on_x":keep_y_on_x,
+    "train_features_folga":train_features_folga,        
+    "skiping_step":skiping_step,
+    "time_cols":time_cols,
+    "alloc_column":alloc_column,
+}
+
+input_args = {"activation_middle":"linear",
+            "activation_end":"softplus"}
+
+weitgh_list=["delta_mean", "no_weight"]
+for weight in weitgh_list:
+    for model_name in models_strutres:
+        model_name_to_save = model_name + f"_{weight}"
+        print(model_name_to_save)
+        try:
+            train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args,
+            weight=weight, model_name_load=model_name
+            )
+        except Exception as e:
+            print(f"Exception: {e}")
+            traceback.print_exc()
+
+
+# Cluster - Wise
+epocas=30
+X_timeseries = 168
+Y_timeseries = 24
+frac = 0.95
+train_features_folga = 24
+skiping_step=1
+keep_y_on_x=True
+struct_name = "cluster_weights"
+get_dataset_args={
+    "y_columns":columns_Y,
+    "time_moving_window_size_X":X_timeseries,
+    "time_moving_window_size_Y":Y_timeseries,
+    "frac":frac,
+    "keep_y_on_x":keep_y_on_x,
+    "train_features_folga":train_features_folga,        
+    "skiping_step":skiping_step,
+    "time_cols":time_cols,
+    "alloc_column":alloc_column,
+}
+
+
+list_classes_dict = [
+
+ {
+    0 : [0],
+    1: [26.2],
+    2: [26.3, 194.9],
+    3: [195.0],},
+{
+    0 : [0],
+    1: [20.2],
+    2: [20.3, 119.2],
+    3: [119.3, 331.9],
+    4: [332.0, 592.6],
+    5: [592.7],}
+]
+weitgh_list=["delta_mean", "no_weight", "freq", "both"]
+for weight in weitgh_list:
+    for cla in list_classes_dict:
+
+        models_strutres = {
+            "StackedCNNClusters":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+                                                                "multitail":[{"dense_args":{"activation":"relu"}}, 
+                                                                {"dense_args":[{"activation":"relu"}, {
+                                                                    "filters":Y_timeseries*len(cla),
+                                                                    "activation":"softmax"}],
+                                                                "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
+                                                                    }],}},
+                                                                    
+            "StackedCNNClusterLinear":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+                                                                    "multitail":[{"dense_args":{"activation":"relu"}}, 
+                                                                {"dense_args":[{"activation":"relu"}, {
+                                                                    "filters":Y_timeseries*len(cla),
+                                                                    "activation":"softmax"}],
+                                                                "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
+
+                                                                },
+                                                                {"dense_args":{"activation":"relu"}}],
+            }}, 
+
+        }
+
+
+        for i,model_name in enumerate(models_strutres):
+            model_name_to_save = model_name + f"_{len(cla)}_{weight}"
+            print(model_name_to_save)
+
+
+            try:
+                train_save_model(dataset, model_name_to_save,
+                struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),models_strutres=models_strutres,
+                model_name_load=model_name,  classes_dict=cla)
+            except Exception as e:
+                print(f"Exception: {e}")
+                traceback.print_exc()

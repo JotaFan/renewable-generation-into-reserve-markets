@@ -1,0 +1,1 @@
+{"name": "UNET170epc", "rmse": 177.1323146075525, "abs erro": 1196872.8251653672, "erro comp": "True", "r2 score": 0.07920584000848974, "mape score": 20.07414173077226, "alloc missing": 549025.8046346665, "alloc surplus": 647847.0205307006, "optimal percentage": 65.84249084249085, "better allocation": 65.84249084249085, "beter percentage": 87.05357142857143, "epoca": "170"}

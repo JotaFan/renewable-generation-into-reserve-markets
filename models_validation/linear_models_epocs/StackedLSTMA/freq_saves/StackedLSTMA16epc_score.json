@@ -1,0 +1,1 @@
+{"name": "StackedLSTMA16epc", "rmse": 211.46828220530801, "abs erro": 1193152.649008633, "erro comp": "True", "r2 score": -0.3123734499903681, "mape score": 7.972164881126707, "alloc missing": 992968.53476875, "alloc surplus": 200184.11423988317, "optimal percentage": 43.34935897435898, "better allocation": 43.34935897435898, "beter percentage": 82.55494505494505, "epoca": "16"}

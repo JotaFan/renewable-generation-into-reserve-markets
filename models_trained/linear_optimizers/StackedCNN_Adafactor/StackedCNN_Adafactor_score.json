@@ -1,0 +1,1 @@
+{"name": "StackedCNN_Adafactor", "rmse": 159.08257436826568, "abs erro": 10017274.590971375, "erro comp": "True", "r2 score": 0.015832709228325026, "mape score": 3.349751833976661, "alloc missing": 6510192.217082214, "alloc surplus": 3507082.373889161, "optimal percentage": 55.51211967115858, "better allocation": 55.51211967115858, "beter percentage": 99.98093058733791}

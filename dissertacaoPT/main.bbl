@@ -603,81 +603,6 @@
       \field{title}{Do We Really Need Deep Learning Models for Time Series Forecasting?}
       \keyw{Boosting Regres-sion Trees,Deep Learning,Time Series Forecasting}
     \endentry
-    \entry{Rassid2017}{misc}{}
-      \name{author}{3}{}{%
-        {{hash=e0e7f7df7e394905e6534c28cf13d6d3}{%
-           family={Rassid},
-           familyi={R\bibinitperiod},
-           given={Hussein\bibnamedelima Ashraf},
-           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=4e6d00a3817b137b14cc8dc25fbcbc4e}{%
-           family={Fernando},
-           familyi={F\bibinitperiod},
-           given={Orientador\bibnamedelima :},
-           giveni={O\bibinitperiod\bibinitdelim :\bibinitperiod}}}%
-        {{hash=41cadd6bc6a3cd591723d28b22227803}{%
-           family={Lopes},
-           familyi={L\bibinitperiod},
-           given={Jorge\bibnamedelima Ferreira},
-           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-      }
-      \strng{namehash}{88211f2b562caf46a4239cf1e9978219}
-      \strng{fullhash}{88211f2b562caf46a4239cf1e9978219}
-      \strng{bibnamehash}{88211f2b562caf46a4239cf1e9978219}
-      \strng{authorbibnamehash}{88211f2b562caf46a4239cf1e9978219}
-      \strng{authornamehash}{88211f2b562caf46a4239cf1e9978219}
-      \strng{authorfullhash}{88211f2b562caf46a4239cf1e9978219}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Mercado de Reservas: Simulador Multiagente SIMREEL e Caso de Estudo Envolvendo o Mercado Ibérico}
-      \field{year}{2017}
-      \verb{urlraw}
-      \verb https://run.unl.pt/handle/10362/30815
-      \endverb
-      \verb{url}
-      \verb https://run.unl.pt/handle/10362/30815
-      \endverb
-      \keyw{Domínio/Área Científica::Engenharia e Tecnologia::Engenharia Eletrotécnica,Eletrónica e Informática,energia éolica,remuneração,reserva de regulação,secundária,serviços de sistema,terciária}
-    \endentry
-    \entry{Stassen}{misc}{}
-      \name{author}{3}{}{%
-        {{hash=2040b1a10ac82b23b952283bd7d8ce82}{%
-           family={Stassen},
-           familyi={S\bibinitperiod},
-           given={Auteur\bibnamedelima :},
-           giveni={A\bibinitperiod\bibinitdelim :\bibinitperiod}}}%
-        {{hash=093c0b21b039360362cfc92f960a0236}{%
-           family={Promoteur},
-           familyi={P\bibinitperiod},
-           given={Théo},
-           giveni={T\bibinitperiod}}}%
-        {{hash=6fbe33fd3b6a25f54629f311cb113551}{%
-           family={Ernst},
-           familyi={E\bibinitperiod},
-           given={Damien},
-           giveni={D\bibinitperiod}}}%
-      }
-      \strng{namehash}{3c17bad11d1a450f34db975309769ac5}
-      \strng{fullhash}{3c17bad11d1a450f34db975309769ac5}
-      \strng{bibnamehash}{3c17bad11d1a450f34db975309769ac5}
-      \strng{authorbibnamehash}{3c17bad11d1a450f34db975309769ac5}
-      \strng{authornamehash}{3c17bad11d1a450f34db975309769ac5}
-      \strng{authorfullhash}{3c17bad11d1a450f34db975309769ac5}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Faculté : Faculté des Sciences appliquées Diplôme : Master en ingénieur civil en informatique, à finalité spécialisée en "intelligent systems" Année académique : 2019-2020 URI/URL : http://hdl.handle.net/2268.2/10466 Avertissement à l'attention des usagers : Tous les documents placés en accès ouvert sur le site le site MatheO sont protégés par le droit d'auteur. Conformément aux principes énoncés par la "Budapest Open Access Initiative"(BOAI, 2002), l'utilisateur du site peut lire, télécharger, copier, transmettre, imprimer, chercher ou faire un lien vers le texte intégral de ces documents, les disséquer pour les indexer, s'en servir de données pour un logiciel, ou s'en servir à toute autre fin légale (ou prévue par la réglementation relative au droit d'auteur). Toute utilisation du document à des fins commerciales est strictement interdite. Par ailleurs, l'utilisateur s'engage à respecter les droits moraux de l'auteur, principalement le droit à l'intégrité de l'oeuvre et le droit de paternité et ce dans toute utilisation que l'utilisateur entreprend. Ainsi, à titre d'exemple, lorsqu'il reproduira un document par extrait ou dans son intégralité, l'utilisateur citera de manière complète les sources telles que mentionnées ci-dessus. Toute utilisation non explicitement autorisée ci-avant (telle que par exemple, la modification du document ou son résumé) nécessite l'autorisation préalable et expresse des auteurs ou de leurs ayants droit.}
-      \field{title}{Master's Thesis : Comparison of probabilistic forecasting deep learning models in the context of renewable energy production}
-      \verb{urlraw}
-      \verb https://lib.uliege.behttps://matheo.uliege.be
-      \endverb
-      \verb{url}
-      \verb https://lib.uliege.behttps://matheo.uliege.be
-      \endverb
-    \endentry
     \entry{miota2023}{article}{}
       \name{author}{3}{}{%
         {{hash=2f9f3f6dc7fb88b4bf5b5b69a52b87aa}{%
@@ -727,136 +652,9 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S2352467723001182
       \endverb
     \endentry
-    \entry{Lopes2021}{article}{}
-      \name{author}{1}{}{%
-        {{hash=13f6c6ed5cf46a605a9a4a4af428e6cc}{%
-           family={Lopes},
-           familyi={L\bibinitperiod},
-           given={Fernando},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Academic Press}%
-      }
-      \strng{namehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \strng{fullhash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \strng{bibnamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \strng{authorbibnamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \strng{authornamehash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \strng{authorfullhash}{13f6c6ed5cf46a605a9a4a4af428e6cc}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Most energy markets (EMs) across Europe are based on a design framework involving day-ahead, intraday, and bilateral markets, operating together with balancing markets. This framework was set out, however, when the vast majority of generation units were controllable and fuel-based. The increasing levels of renewable generation create unique challenges in the operation of EMs. In this context, flexibility markets are starting to be recognized as a promising and powerful tool to adequately valorize demand-side flexibility. This chapter describes the models underlying both centralized and bilateral markets, analyzes the operation of several European markets, introduces some energy management tools, analyzes the pressing issue of flexibility in system operation, and describes various pioneering flexibility platforms.}
-      \field{isbn}{9780128200742}
-      \field{journaltitle}{Local Electricity Markets}
-      \field{month}{1}
-      \field{title}{From wholesale energy markets to local flexibility markets: structure, models and operation}
-      \field{year}{2021}
-      \field{pages}{37\bibrangedash 61}
-      \range{pages}{25}
-      \verb{doi}
-      \verb 10.1016/B978-0-12-820074-2.00009-5
-      \endverb
-      \keyw{Agent-based tools for energy markets,Clean energy transition,Energy markets,Flexibility in system operation,Flexibility markets,Market architecture,Market models and operation,Renewable energy}
-    \endentry
-    \entry{Watson1984}{article}{}
-      \name{author}{3}{}{%
-        {{hash=2876318652a0af2a1717f0d0ee507234}{%
-           family={Watson},
-           familyi={W\bibinitperiod},
-           given={William\bibnamedelima F.},
-           giveni={W\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-        {{hash=9ae0e2136ad02535c951a1b8a14b1553}{%
-           family={Joskow},
-           familyi={J\bibinitperiod},
-           given={Paul\bibnamedelima L.},
-           giveni={P\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-        {{hash=4a248c42806779a485fb89901cb0d821}{%
-           family={Schmalensee},
-           familyi={S\bibinitperiod},
-           given={Richard},
-           giveni={R\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {JSTOR}%
-      }
-      \strng{namehash}{52eb88f6a1397c17403db041ce092aab}
-      \strng{fullhash}{52eb88f6a1397c17403db041ce092aab}
-      \strng{bibnamehash}{52eb88f6a1397c17403db041ce092aab}
-      \strng{authorbibnamehash}{52eb88f6a1397c17403db041ce092aab}
-      \strng{authornamehash}{52eb88f6a1397c17403db041ce092aab}
-      \strng{authorfullhash}{52eb88f6a1397c17403db041ce092aab}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{00384038}
-      \field{issue}{2}
-      \field{journaltitle}{Southern Economic Journal}
-      \field{month}{10}
-      \field{title}{Markets for Power: An Analysis of Electrical Utility Deregulation}
-      \field{volume}{51}
-      \field{year}{1984}
-      \field{pages}{640}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.2307/1057863
-      \endverb
-    \endentry
-    \entry{Schweppe1988}{article}{}
-      \name{author}{4}{}{%
-        {{hash=e0f4a9b91b174082be178ab03b9e3d9b}{%
-           family={Schweppe},
-           familyi={S\bibinitperiod},
-           given={Fred\bibnamedelima C.},
-           giveni={F\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=e0c3af0a356f97777aaf0d0725982103}{%
-           family={Caramanis},
-           familyi={C\bibinitperiod},
-           given={Michael\bibnamedelima C.},
-           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=045d580594d2fc95ec80610463741a98}{%
-           family={Tabors},
-           familyi={T\bibinitperiod},
-           given={Richard\bibnamedelima D.},
-           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
-        {{hash=f6a5da6afa3eaa6a489a49fafa1f4aac}{%
-           family={Bohn},
-           familyi={B\bibinitperiod},
-           given={Roger\bibnamedelima E.},
-           giveni={R\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer US}%
-      }
-      \strng{namehash}{bb536c872410cb952b20dc53582bf609}
-      \strng{fullhash}{117028053197e5d0c166b99751117669}
-      \strng{bibnamehash}{bb536c872410cb952b20dc53582bf609}
-      \strng{authorbibnamehash}{bb536c872410cb952b20dc53582bf609}
-      \strng{authornamehash}{bb536c872410cb952b20dc53582bf609}
-      \strng{authorfullhash}{117028053197e5d0c166b99751117669}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{There is a need for fundamental changes in the ways society views electric energy. Electric energy must be treated as a commodity which can be bought, sold, and traded, taking into account its time-and space-varying values and costs. This book presents a complete framework for the establishment of such an energy marketplace. The framework is based on the use of spot prices. In general terms: o An hourly spot price (in dollars per kilowatt hour) reflects the operating and capital costs of generating, transmitting and distributing electric energy. It varies each hour and from place to place. o The spot price based energy marketplace involves a variety of utility-customer transactions (ranging from hourly varying prices to long-term, multiple-year contracts), all of which are based in a consistent manner on hourly spot prices. These transactions may include customers selling to, as well as buying from, the utility. The basic theory and practical implementation issues associated with a spot price based energy marketplace have been developed and discussed through a number of different reports, theses, and papers. Each addresses only a part of the total picture, and often with a somewhat different notation and terminology (which has evolved in parallel with our growing experience). This book was xvii xviii Preface written to serve as a single, integrated sourcebook on the theory and imple­ mentation of a spot price based energy marketplace. 1 Overview -- 1.1 Goal of Book -- 1.2 Three Steps to an Energy Marketplace -- 1.3 How Will Customers Respond? -- 1.4 Energy Marketplace Operation: A Developed Country -- 1.5 Energy Marketplace Operation: A Developing Country -- 1.6 Discussion of Chapter 1 -- I: The Energy Marketplace -- Preface to Part I: The Energy Marketplace -- 2 Behavior of Hourly Spot Prices -- 3 Energy Marketplace Transactions -- 4 Implementation -- 5 A Possible Future: Deregulation -- II: Theory of Hourly Spot Prices -- 6 Generation Only -- 7 Generation and Network -- 8 Revenue Reconciliation -- 9 Spot Price Based Rates -- 10 Optimal Investment Conditions -- References -- Annotated Bibliography -- Appendices -- A Power System Analysis and Control -- A.1 Network Flows -- A.2 Local Controllers -- A.3 Mathematical Models for System Dynamics -- A.4 Power System Dynamics -- Further Reading -- Notes -- B Power System Operation -- B.1 Short-Term Load Forecasting -- B.2 System Economics -- B.3 System Security -- B.4 Automatic Generation Control (AGC) -- B.5 Interconnected Systems -- Further Reading -- Notes -- C Power System Planning -- C.1 Multiple Attribute Decision Making Under Uncertainty -- C.2 Long Range Load Forecasting Models -- C.3 Production Cost Models -- C.4 Financial Models -- C.5 Generation Expansion Programs -- C.6 Network Expansion Programs -- C.7 Feedback Couplings -- Further Reading -- Notes -- D DC Load Flow -- D.1 General Relationships -- D.2 A Potpourri of Results -- D.3 Three-Bus Example -- Notes -- E Customer Response Model Structures -- E.1 Single Period -- E.2 Multiple Period -- Notes -- F FAPER -- F.1 Basic Concepts -- F.2 FAPER Designs -- F.3 Variations on the Basic Concept -- F.4 Analysis of Multiple FAPER Response -- F.5 Incentives to Install FAPERS -- F.6 Discussion -- G Expected Behavior of Spot Prices -- G.1 Introduction -- G.2 24-Hour Trajectories -- G.3 Price Duration Curves -- G.4 Impact of Customer Response on Variable Energy Costs -- H Interchange of Derivative and Expectation Operators.}
-      \field{isbn}{1461316839}
-      \field{title}{Spot Pricing of Electricity}
-      \field{year}{1988}
-      \field{pages}{384}
-      \range{pages}{1}
-      \verb{urlraw}
-      \verb https://books.google.com/books/about/Spot_Pricing_of_Electricity.html?hl=pt-PT&id=QZ8ACAAAQBAJ
-      \endverb
-      \verb{url}
-      \verb https://books.google.com/books/about/Spot_Pricing_of_Electricity.html?hl=pt-PT&id=QZ8ACAAAQBAJ
-      \endverb
-    \endentry
     \entry{dgegmss}{misc}{}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labeltitlesource}{title}
       \field{title}{Mercado de Serviço de Sistemas}
       \verb{urlraw}
@@ -865,6 +663,44 @@
       \verb{url}
       \verb https://www.dgeg.gov.pt/pt/areas-transversais/mercados-e-mecanismos-de-capacidade/outros-mercados/mercado-de-servico-de-sistemas/
       \endverb
+    \endentry
+    \entry{Rassid2017}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=e0e7f7df7e394905e6534c28cf13d6d3}{%
+           family={Rassid},
+           familyi={R\bibinitperiod},
+           given={Hussein\bibnamedelima Ashraf},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=4e6d00a3817b137b14cc8dc25fbcbc4e}{%
+           family={Fernando},
+           familyi={F\bibinitperiod},
+           given={Orientador\bibnamedelima :},
+           giveni={O\bibinitperiod\bibinitdelim :\bibinitperiod}}}%
+        {{hash=41cadd6bc6a3cd591723d28b22227803}{%
+           family={Lopes},
+           familyi={L\bibinitperiod},
+           given={Jorge\bibnamedelima Ferreira},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{fullhash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{bibnamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authorbibnamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authornamehash}{88211f2b562caf46a4239cf1e9978219}
+      \strng{authorfullhash}{88211f2b562caf46a4239cf1e9978219}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mercado de Reservas: Simulador Multiagente SIMREEL e Caso de Estudo Envolvendo o Mercado Ibérico}
+      \field{year}{2017}
+      \verb{urlraw}
+      \verb https://run.unl.pt/handle/10362/30815
+      \endverb
+      \verb{url}
+      \verb https://run.unl.pt/handle/10362/30815
+      \endverb
+      \keyw{Domínio/Área Científica::Engenharia e Tecnologia::Engenharia Eletrotécnica,Eletrónica e Informática,energia éolica,remuneração,reserva de regulação,secundária,serviços de sistema,terciária}
     \endentry
     \entry{Carneiro2016}{article}{}
       \name{author}{1}{}{%
@@ -883,8 +719,8 @@
       \strng{authorbibnamehash}{705fc25e09ae21a9dcc20e47132f7a49}
       \strng{authornamehash}{705fc25e09ae21a9dcc20e47132f7a49}
       \strng{authorfullhash}{705fc25e09ae21a9dcc20e47132f7a49}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Every day the Operator Transport Network (ORT) is facing new challenges that will have to overcome in favor of providing users of the national electricity system with a service quality, reliability and safety. At times, the electric sector was traditionally seen as a natural monopoly, where a company, EDP, was responsible for all sector activities. However, given the restructuring that took place throughout the sector, which led to the introduction by weight of renewable energy sources and the liberalization of various activities led to the value chain separation and accept the participation of various actors in various activities, namely, the production and marketing, with the aim of creating a more competitive and more advantageous environment for the consumer. This process gave rise to challenges of greater complexity, among which there is the greatest volatility in electricity production and a possibility of experiencing imbalances, for which system services provision for the maintenance of the electrical system fullness is needed. The continued development of the sector liberalization process culminated in the creation of transnational electricity markets, grouping electricity markets in different countries in a single market. The Iberian Electricity Market (MIBEL), is an example of an international market which incorporates in itself the electricity markets in Portugal and Spain. The MIBEL in addition to other responsibilities coordinates the management of the Daily Market and Intraday Market, where you set the electricity price and the price thereof to be traded the next day and every hour of the day. With regard to the System Services Market, whose responsibility is the system manager, and are characterized by estimating the differences that may occur in an electrical system, develop resolution plans for them and finally arrange and implement the solution. The resolution involves the procurement of supplies in quantities able to cope with anomalies recorded in the system services market. This research focuses on the System Services, in particular on frequency regulation, including secondary and tertiary regulation reserve for the electrical systems of Portugal and Spain for the years 2013, 2014 and 2015. Under the regulation reserve, an analysis of the creation of an internal market concerning the commercialization of regulation reserve was carried out in parallel, was conceived to viione analysis support tool in Microsoft Office Excel that allows you to view as graphics stored data relating to offers of market agents, contracted reserve, the marginal cost of these offers and finally, the cost of closing the market. The same tool also enables the user to make a simulation to the desired day of what may occur in regulatory reserve market in accordance with the provisions ERSE. With respect to the reserve secondary regulation, we carried out a study of the possible optimization of the values of the supply requirements of such reserves, with the intention to decrease the closing market price at each time. The results showed that there is still great potential for development of system services, more specifically in the management of the secondary reserve and regulating the market, which will culminate in the creation of a single market at European level, the benefit of which will be based on reduced costs for the system and therefore to the final consumers. The creation of a single regulatory reserve market is one of the proposals, and the positive values achieved enable its creation, however, due to the complexity of the secondary reserve market presents the creation of a single market is still a process which will have difficulties to be implemented. However, the proposal for obtaining the value of secondary reserve enables the GGS needs an optimization of the costs associated with the system.}
@@ -897,176 +733,6 @@
       \verb{url}
       \verb https://core.ac.uk/download/pdf/302870251.pdf
       \endverb
-    \endentry
-    \entry{Bessa2012}{article}{}
-      \name{author}{9}{}{%
-        {{hash=a6cf737840a317ac8799a289fa2c64bb}{%
-           family={Bessa},
-           familyi={B\bibinitperiod},
-           given={Ricardo\bibnamedelima J.},
-           giveni={R\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
-        {{hash=f86adb0de13dee9db3681118e2c8da46}{%
-           family={Matos},
-           familyi={M\bibinitperiod},
-           given={Manuel\bibnamedelima A.},
-           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=287377c66e87f603d6f3ae3a0af7628e}{%
-           family={Costa},
-           familyi={C\bibinitperiod},
-           given={Ivo\bibnamedelima C.},
-           giveni={I\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=34ce0f5f67846fc87131b0ec1bca73a7}{%
-           family={Bremermann},
-           familyi={B\bibinitperiod},
-           given={Leonardo},
-           giveni={L\bibinitperiod}}}%
-        {{hash=981ac6e310624bcbb93f06871954fa4d}{%
-           family={Franchin},
-           familyi={F\bibinitperiod},
-           given={Ivan\bibnamedelima Gustavo},
-           giveni={I\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=d930168ba905979b22a7696d805b28ad}{%
-           family={Pestana},
-           familyi={P\bibinitperiod},
-           given={Rui},
-           giveni={R\bibinitperiod}}}%
-        {{hash=01186fa07361fdec361dfaa0207d6fa9}{%
-           family={Machado},
-           familyi={M\bibinitperiod},
-           given={Nélio},
-           giveni={N\bibinitperiod}}}%
-        {{hash=aeb97f757767d5493de1e3f16b886451}{%
-           family={Waldl},
-           familyi={W\bibinitperiod},
-           given={Hans-Peter},
-           giveni={H\bibinithyphendelim P\bibinitperiod}}}%
-        {{hash=4e14acd6279fccd50e7d6bca0fdaa11d}{%
-           family={Wichmann},
-           familyi={W\bibinitperiod},
-           given={Christian},
-           giveni={C\bibinitperiod}}}%
-      }
-      \strng{namehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
-      \strng{fullhash}{ed6c437003cd4e460eb2a7f06b941544}
-      \strng{bibnamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
-      \strng{authorbibnamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
-      \strng{authornamehash}{ffa3cd59098e4e104643d6ec5c6f0cfb}
-      \strng{authorfullhash}{ed6c437003cd4e460eb2a7f06b941544}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{1949-3029}
-      \field{issue}{4}
-      \field{journaltitle}{IEEE Transactions on Sustainable Energy}
-      \field{month}{10}
-      \field{title}{Reserve Setting and Steady-State Security Assessment Using Wind Power Uncertainty Forecast: A Case Study}
-      \field{volume}{3}
-      \field{year}{2012}
-      \field{pages}{827\bibrangedash 836}
-      \range{pages}{10}
-      \verb{doi}
-      \verb 10.1109/TSTE.2012.2199340
-      \endverb
-    \endentry
-    \entry{Fernandes2016}{article}{}
-      \name{author}{3}{}{%
-        {{hash=d028d1a97ec7cb4a10a966437c45b1c1}{%
-           family={Fernandes},
-           familyi={F\bibinitperiod},
-           given={Camila},
-           giveni={C\bibinitperiod}}}%
-        {{hash=c5deed7711b57b7851b961478ddfdcbe}{%
-           family={Frías},
-           familyi={F\bibinitperiod},
-           given={Pablo},
-           giveni={P\bibinitperiod}}}%
-        {{hash=45d9282acfe752a4aab1b95b7dd8f0cd}{%
-           family={Reneses},
-           familyi={R\bibinitperiod},
-           given={Javier},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Pergamon}%
-      }
-      \strng{namehash}{64fc93b074716ec2a48e288facf72adb}
-      \strng{fullhash}{64fc93b074716ec2a48e288facf72adb}
-      \strng{bibnamehash}{64fc93b074716ec2a48e288facf72adb}
-      \strng{authorbibnamehash}{64fc93b074716ec2a48e288facf72adb}
-      \strng{authornamehash}{64fc93b074716ec2a48e288facf72adb}
-      \strng{authorfullhash}{64fc93b074716ec2a48e288facf72adb}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{issn}{0960-1481}
-      \field{journaltitle}{Renewable Energy}
-      \field{month}{4}
-      \field{title}{Participation of intermittent renewable generators in balancing mechanisms: A closer look into the Spanish market design}
-      \field{volume}{89}
-      \field{year}{2016}
-      \field{pages}{305\bibrangedash 316}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1016/J.RENENE.2015.12.037
-      \endverb
-      \verb{urlraw}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0960148115305437
-      \endverb
-      \verb{url}
-      \verb https://linkinghub.elsevier.com/retrieve/pii/S0960148115305437
-      \endverb
-    \endentry
-    \entry{Agostini2021}{article}{}
-      \name{author}{4}{}{%
-        {{hash=adbf5175204ab3972b9534d2e2941667}{%
-           family={Agostini},
-           familyi={A\bibinitperiod},
-           given={Marco},
-           giveni={M\bibinitperiod}}}%
-        {{hash=30141b2b96321149955510f63f7328bb}{%
-           family={Bertolini},
-           familyi={B\bibinitperiod},
-           given={Marina},
-           giveni={M\bibinitperiod}}}%
-        {{hash=42e093404b6b94c51da96d1d8cba338a}{%
-           family={Coppo},
-           familyi={C\bibinitperiod},
-           given={Massimiliano},
-           giveni={M\bibinitperiod}}}%
-        {{hash=76ef71c2e20e2fd0dd21f94a1619d2c7}{%
-           family={Fontini},
-           familyi={F\bibinitperiod},
-           given={Fulvio},
-           giveni={F\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {North-Holland}%
-      }
-      \strng{namehash}{9d59f3b29550d4205f6ac5c475a4fd92}
-      \strng{fullhash}{7a4698acdd588d52a523a5847792f8ed}
-      \strng{bibnamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
-      \strng{authorbibnamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
-      \strng{authornamehash}{9d59f3b29550d4205f6ac5c475a4fd92}
-      \strng{authorfullhash}{7a4698acdd588d52a523a5847792f8ed}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{The paper considers different market settings for the participation to the balancing services market of small scale variable renewable energy sources connected to the distribution grid. By mixing an economical and a technical approach, it evaluates the efficiency of participation to the market under two distinct approaches to resources' aggregation: a commercial scheme and a technical one. In the former, the supply of the small scale variable distributed renewable energy sources is grouped on a purely commercial basis; in the latter, the distribution system operator is responsible of the imbalances that may possibly arise in the distribution grid and aggregates the sources from a technical perspective. By considering a reference distribution network and designing scenarios for the forecast uncertainty about supply and demand of power profiles, the impact of different market frameworks is assessed. The upward and downward balancing services provided by variable distributed energy resources and controllable units connected to the high voltage grid are both considered. Moreover, the power supply curtailments, that endogenously arise due to the violation of technical constraints of the distribution grid and the random nature of energy supply by renewables, are addressed, for each specific market model. As a general outcome of this research, it is shown that providing balancing energy based on a commercial approach is preferable as long as renewables' curtailment penalty is low and local generators have correlated forecast errors (as in the case of photovoltaic units) with a large reserve capacity. High penalties for curtailment and lower correlation among generation schedule deviations, along with a lower reserve by distributed units, make the technical approach more convenient.}
-      \field{issn}{0140-9883}
-      \field{journaltitle}{Energy Economics}
-      \field{month}{5}
-      \field{title}{The participation of small-scale variable distributed renewable energy sources to the balancing services market}
-      \field{volume}{97}
-      \field{year}{2021}
-      \field{pages}{105208}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/J.ENECO.2021.105208
-      \endverb
-      \keyw{Aggregator,Balancing services,Distribution network,Market models,Network externalities and efficiency,Small scale variable distributed renewable energy sources}
     \endentry
     \entry{vanBuuren2011}{article}{}
       \name{author}{2}{}{%
@@ -1089,8 +755,8 @@
       \strng{authorbibnamehash}{089d1d8760fae91d5380d09f586254e7}
       \strng{authornamehash}{089d1d8760fae91d5380d09f586254e7}
       \strng{authorfullhash}{089d1d8760fae91d5380d09f586254e7}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The R package mice imputes incomplete multivariate data by chained equations. The software mice 1.0 appeared in the year 2000 as an S-PLUS library, and in 2001 as an R package. mice 1.0 introduced predictor selection, passive imputation and automatic pooling. This article documents mice, which extends the functionality of mice 1.0 in several ways. In mice, the analysis of imputed data is made completely general, whereas the range of models under which pooling works is substantially extended. mice adds new functionality for imputing multilevel data, automatic predictor selection, data handling, post-processing imputed values, specialized pooling routines, model selection tools, and diagnostic graphs. Imputation of categorical data is improved in order to bypass problems caused by perfect prediction. Special attention is paid to transformations, sum scores, indices and interactions using passive imputation, and to the proper setup of the predictor matrix. mice can be downloaded from the Comprehensive R Archive Network. This article provides a hands-on, stepwise approach to solve applied incomplete data problems.}
@@ -1131,8 +797,8 @@
       \strng{authorbibnamehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
       \strng{authornamehash}{1482e1f76c45dcf2ae3ea60316c3cd89}
       \strng{authorfullhash}{1482e1f76c45dcf2ae3ea60316c3cd89}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{[Estimation of statistical parameters from multivariate data results in wasted information, if units with incomplete data are rejected entirely, and perhaps in inconsistencies in the variance-covariance matrix if the variances and correlation coefficients are estimated from all available data on individual variates and pairs of variates respectively. An alternative is to estimate the missing values by regression techniques and to calculate a revised variance-covariance matrix. This method is suitable for use with an electronic computer. It is shown that with this method the resultant covariances are unbiased, but that the variances require correction for bias. A numerical example is given.]}
@@ -1178,8 +844,8 @@
       \strng{authorbibnamehash}{4bcaaaf372fc74947252f3693f978f02}
       \strng{authornamehash}{4bcaaaf372fc74947252f3693f978f02}
       \strng{authorfullhash}{4bcaaaf372fc74947252f3693f978f02}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Education and Health care sectors are two predominant areas where societal growth is expected through innovation and technology development. Machine Learning and Deep learning classification models have been entertained in predicting, detecting, and diagnosing major diseases in the early stage. In this research paper, we have analyzed the impact of hidden dense layers in the Convolution neural network to improve the performance of the classification model. Three different classification deep network models have been constructed, analyzed and the result was tested with a diabetes dataset. Results concluded that the more layers with deeper the network better was the classification performance. The classification model with six hidden dense layers outperforms all other less number of hidden dense layers.}
@@ -1223,8 +889,8 @@
       \strng{authorbibnamehash}{29e798ed628767a2e5b0b45cb594e1c7}
       \strng{authornamehash}{29e798ed628767a2e5b0b45cb594e1c7}
       \strng{authorfullhash}{29e798ed628767a2e5b0b45cb594e1c7}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Recurrent Neural Networks (RNNs) have become competitive forecasting methods, as most notably shown in the winning method of the recent M4 competition. However, established statistical models such as exponential smoothing (ETS) and the autoregressive integrated moving average (ARIMA) gain their popularity not only from their high accuracy, but also because they are suitable for non-expert users in that they are robust, efficient, and automatic. In these areas, RNNs have still a long way to go. We present an extensive empirical study and an open-source software framework of existing RNN architectures for forecasting, and we develop guidelines and best practices for their use. For example, we conclude that RNNs are capable of modelling seasonality directly if the series in the dataset possess homogeneous seasonal patterns; otherwise, we recommend a deseasonalisation step. Comparisons against ETS and ARIMA demonstrate that (semi-) automatic RNN models are not silver bullets, but they are nevertheless competitive alternatives in many situations.}
@@ -1256,8 +922,8 @@
       \strng{authorbibnamehash}{a4a677916806de71f27d916884f6a907}
       \strng{authornamehash}{a4a677916806de71f27d916884f6a907}
       \strng{authorfullhash}{a4a677916806de71f27d916884f6a907}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Explores how programming language is a signifier for a whole host of mathematical algorithms and procedures. The book focuses on specific areas of application which serve as universal examples and are chosen to illustrate particular facets of the effort to design explicit and concise programming languages. The language -- Microprogramming -- Representation of variables -- Search techniques -- Metaprograms -- Sorting -- The logical calculus.}

@@ -1,5 +1,5 @@
 
-from sklearn.metrics import r2_score
+from sklearn.metrics import r2_score, accuracy_score
 import numpy as np
 import json
 
@@ -98,3 +98,14 @@ def save_scores(test_dataset_Y, predictions, test_allocation, model_test_filenam
         json.dump(predict_score, mfile)
 
     return
+
+def classificaion_scores(test, prediciton, alloc):
+    acc = accuracy_score(test.ravel(), prediciton.ravel())
+
+    acc_aloc = accuracy_score(test.ravel(), alloc.ravel())
+
+
+
+    return {"acc":acc,
+    "acc aloc":acc_aloc,
+    }

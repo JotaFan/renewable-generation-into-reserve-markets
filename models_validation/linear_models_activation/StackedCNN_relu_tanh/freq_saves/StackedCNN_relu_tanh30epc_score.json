@@ -1,0 +1,1 @@
+{"name": "StackedCNN_relu_tanh30epc", "rmse": 236.23786408448117, "abs erro": 1289434.2, "erro comp": "True", "r2 score": -0.6378192663897875, "mape score": 0.8512952310974272, "alloc missing": 1288660.9, "alloc surplus": 773.3, "optimal percentage": 11.469780219780219, "better allocation": 11.469780219780219, "beter percentage": 80.40293040293041, "epoca": "30"}

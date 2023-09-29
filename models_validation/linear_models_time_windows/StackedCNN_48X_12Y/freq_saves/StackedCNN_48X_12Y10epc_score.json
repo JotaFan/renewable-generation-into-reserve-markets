@@ -1,0 +1,1 @@
+{"name": "StackedCNN_48X_12Y10epc", "rmse": 1288.9630046479563, "abs erro": 10919455.400971223, "erro comp": "False", "r2 score": -47.82347260157436, "mape score": 206.5802000654806, "alloc missing": 182395.74298782347, "alloc surplus": 10737059.657983398, "optimal percentage": 0.14679313459801266, "better allocation": 0.0, "beter percentage": 5.770099367660343, "epoca": "10"}

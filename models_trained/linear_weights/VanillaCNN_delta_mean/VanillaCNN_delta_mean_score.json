@@ -1,0 +1,1 @@
+{"name": "VanillaCNN_delta_mean", "rmse": 195.37891178736723, "abs erro": 14058736.055908203, "erro comp": "False", "r2 score": -0.432898887861499, "mape score": 0.04444619719546486, "alloc missing": 12105354.471435547, "alloc surplus": 1953381.5844726562, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

@@ -1,0 +1,1 @@
+{"name": "StackedCNN30epc", "rmse": 326.80603487110545, "abs erro": 2622213.404437256, "erro comp": "True", "r2 score": -2.134347153528642, "mape score": 61.16353773701454, "alloc missing": 137418.30463256835, "alloc surplus": 2484795.099804688, "optimal percentage": 89.67490842490842, "better allocation": 89.67490842490842, "beter percentage": 93.34935897435898, "epoca": "30"}

@@ -1,0 +1,1 @@
+{"name": "EncoderDecoder", "rmse": 167.0440169907145, "abs erro": 10344879.841046143, "erro comp": "True", "r2 score": -0.08513946012169926, "mape score": 2.9518821744475323, "alloc missing": 7292580.575388335, "alloc surplus": 3052299.265657807, "optimal percentage": 50.1345453004492, "better allocation": 50.1345453004492, "beter percentage": 99.9947029409272}

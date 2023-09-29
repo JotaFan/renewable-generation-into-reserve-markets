@@ -1,0 +1,1 @@
+{"name": "VanillaCNN70epc", "rmse": 174.4645992538604, "abs erro": 1105109.3490356447, "erro comp": "True", "r2 score": 0.10673237229184429, "mape score": 15.37336248833101, "alloc missing": 637189.791018486, "alloc surplus": 467919.5580171585, "optimal percentage": 60.199175824175825, "better allocation": 60.199175824175825, "beter percentage": 86.0691391941392, "epoca": "70"}

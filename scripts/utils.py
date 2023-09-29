@@ -50,20 +50,33 @@ class SaveModelCallback(Callback):
 
 
 class StopOnNanLoss(Callback):
-    def __init__(self, filepath, model_log_filename, logs=None,):
+    def __init__(self, filepath, model_log_filename, logs=None,save_frequency=1, model_keras_filename=None, start_epoch=0):
         super(StopOnNanLoss, self).__init__()
         self.filepath = filepath
         self.last_good_model = None
         self.last_good_epoch = None
         self.logs = logs or {}
         self.model_log_filename = model_log_filename
+        self.model_keras_filename = model_keras_filename or filepath
+        self.start_epoch = start_epoch
+        self.save_frequency = save_frequency
 
 
     def on_epoch_end(self, epoch, logs=None):
-        self.last_good_model = self.model.get_weights()
-        self.last_good_epoch = epoch
-        self.logs = update_history_dict(logs, self.logs)
+        loss = logs.get('loss')
+        if loss is not None and (isinstance(loss, float) and not math.isnan(loss)):
+            self.last_good_model = self.model.get_weights()
+            self.last_good_epoch = epoch
+            self.logs = update_history_dict(logs, self.logs)
+            epoc_save = epoch + 1 + self.start_epoch
+            if (epoc_save) % self.save_frequency == 0:
+                model_save_name = self.model_keras_filename.format(epoch=epoc_save)
+                # Save the model
+                self.model.save(model_save_name)
 
+                # Save the logs to a JSON file
+                with open(self.model_log_filename, "w") as f:
+                    json.dump(self.logs, f)
 
     def on_train_batch_end(self, batch, logs=None):
         loss = logs.get('loss')

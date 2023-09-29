@@ -1,0 +1,1 @@
+{"name": "StackedCNNwl20epc", "rmse": 175.98088005367157, "abs erro": 1196204.1468635558, "erro comp": "True", "r2 score": 0.09113803014541932, "mape score": 20.4234464702473, "alloc missing": 560141.2183776856, "alloc surplus": 636062.9284858702, "optimal percentage": 65.57921245421245, "better allocation": 65.57921245421245, "beter percentage": 86.89331501831502, "epoca": "20"}

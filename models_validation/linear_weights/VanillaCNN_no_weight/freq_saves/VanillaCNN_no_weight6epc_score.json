@@ -1,0 +1,1 @@
+{"name": "VanillaCNN_no_weight6epc", "rmse": 1509.0536124716898, "abs erro": 12940156.392211914, "erro comp": "False", "r2 score": -65.83074454838739, "mape score": 247.3165132402707, "alloc missing": 104.64973144531245, "alloc surplus": 12940051.74248047, "optimal percentage": 0.08012820512820512, "better allocation": 0.0, "beter percentage": 0.10302197802197803, "epoca": "6"}

@@ -1,0 +1,1 @@
+{"name": "StackedCNN_Ftrl", "rmse": 242.88535980284402, "abs erro": 1847009.0542633054, "erro comp": "True", "r2 score": -0.7312892678564087, "mape score": 39.005734961699964, "alloc missing": 341650.536138916, "alloc surplus": 1505358.51812439, "optimal percentage": 77.51831501831502, "better allocation": 77.51831501831502, "beter percentage": 89.30860805860806}

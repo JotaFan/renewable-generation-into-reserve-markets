@@ -1,0 +1,1 @@
+{"name": "StackedLSTMA", "rmse": 167.1278797168627, "abs erro": 11315497.386571132, "erro comp": "True", "r2 score": -0.08622929977610339, "mape score": 4.4962545994620635, "alloc missing": 5696916.685803806, "alloc surplus": 5618580.700767327, "optimal percentage": 62.27858293075684, "better allocation": 62.27858293075684, "beter percentage": 99.99682176455632}
