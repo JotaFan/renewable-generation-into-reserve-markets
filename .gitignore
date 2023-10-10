@@ -1,3 +1,6 @@
 *cache*
 *checkpoints*
 *.keras*
+dayly_plots*
+experiment_plots*
+old_results*

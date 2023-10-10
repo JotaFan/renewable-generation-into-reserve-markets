@@ -10,15 +10,56 @@ As dimensionalidades destas camadas é o que irá formar as diferentes arquitect
 Para uma construção de modelos usando a ferramenta \href{https://keras.io/}{keras} a unidade básica são as camadas. Estas representação um operação, com uma entrada, e uma saida, e com possiveis parametrizaçoes específicas. \\
 Estas camadas ligadas entre si, perfazem um \"profundo\" de camadas neuronais, chamado profundo pois tem mais  que uma camada. \\
 
-Apresento aqui as camadas utilizadas nos modelos aplicados.
+Apresento aqui as camadas utilizadas nos modelos aplicados.\\
 
 \subsection{Dense\label{se:dense_layer}}
 
-A camada dense pega num input, 
+A camada dense pega num input, cria um numero de neurónios, \textit{N}, também chamado numero de filtros, onde cada neuronio (filtro), recebe informação de cada uma das entradas, e todos os neuronios ligam a todas as dimensões de saida. \\
+Cada neuronio gera uma operação, inicialmente aleatoria, para tentar reproduzir uma função que traduza a entrada na saida ideal. \\
+Esta camade é altamente influenciada pelo \textit{Perceptão} inicialmente proposto por Franck Rosenblatt\cite{Rosenblatt1958}. Este apresentava um \textit{Perceptão} que fazia uma decisão binária baseado na somas pesadas de todas as entradas. \\
+A idea é a base utilizada actualmente, mas apresentava alguma limitações, e muita computação, o proposto por Minsky and Papert\cite{Minsky1969}, eleva a idea com a introdução da funcção de activação e o bias. \\
+A utilizção mais recorrente actual é a proposta por Haykin\cite{Haykin1999}, que baseada nas anteriores tem a seguinte apresentação:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{Imagens/percepton.png}
+	\caption[Ilustração da camada de Dense.]{Adaptado de \cite{Haykin1999}}
+	\label{fig:dense}
+\end{figure}
+
 
 \subsection{Convolution\label{se:conv_layer}}
+
+A camada de convoluções difere da dense no sentido em que os filtros (neuronios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada.
+Cada filtro é criado a partir de operações para aquela zona da entrada. Ao conjunto destes filtros dá-se o nome de \textit{feature map}, mapa de atributos, onde normalmente cada filtro aprende a \"ver\" um conceito diferente da entrada. \\
+No caso de convoluções em séries temporais, como neste trabalho, os filtros são criados em convoluções temporais\cite{sss}. Pegando no exemplo do trabalho em questão, se usarmos um tamanho da janela de 3 (horas), cada filtro criado terá representaçoes de todos os conjuntos subsequentes de 3 horas. \\
+(ref)(TODO: descrever melhor, e provavelmente fazer eu uma imagem para explicar em timeseries).
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{Imagens/conv_layer.png}
+	\caption{Ilustrção da camada de Convulução}
+	\label{fig:conv_blcok}
+\end{figure}
+
+
 \subsection{MaxPooling\label{se:max_pooling}}
-\subsection{\href{https://keras.io/api/layers/regularization_layers/dropout/}{Dropout}\label{se:dropount}}
+
+As camadas de pooling fazem operaçoes para redimensionar os filtros anteriores. \\
+Esta camada usada é MaxPooling, que escolhe o maior valor dentro da janela de strides, e aplica na saida. \\
+Outros exemplos são Average Pooling ou global Pooling. \\
+https://arxiv.org/pdf/2203.01016.pdf
+
+(ref) na imagem
+\begin{figure}[H]
+	\centering
+	\includegraphics{Imagens/pooling.jpg}
+	\caption{Ilustrção do efeito da camada de Pooling}
+	\label{fig:pooling}
+\end{figure}
+
+
+\subsection{\href{https://keras.io/api/layers/regularization_layers/dropout/}{Dropout}\label{se:dropout}}
 
 Dropout é uma camada que elimina/ignora alguns dos neuronios da camada anterior. Este procedimente impede o overfitting, ajudando na generalização. \\
 (ref) na imagem
@@ -37,7 +78,7 @@ Todas as arquiteturas em análise irão ter por base um bloco de camadas neurona
 
 \subsection{Bloco Dense\label{se:dense}}
 
-O bloco dense sendo ele o mais simples é formado por duas camadas Dense \cite{}, em que a primeira apresenta um numero maior de filtros que a segunda. \\
+O bloco dense sendo ele o mais simples é formado por duas camadas Dense \ref{se:dense_layer} \cite{}, em que a primeira apresenta um numero maior de filtros que a segunda. \\
 Estas camadas não são mais do que uma criação de filtros aleatórios combinando as entradas, para criar todos os filtros de saida. São a base das camadas intrepretativas. A acumulação em série (stacked) de camadas de dense está ligada a melhorias nas capacidades predictivas dos modelos \cite{VLHelen2021}. \\
 Exemplo ilustrativo do nosso bloco basico onde entrariam 16 filtros na primeira camada e para finalizar o bloco com 2 filtros \\
 
@@ -47,8 +88,15 @@ Exemplo ilustrativo do nosso bloco basico onde entrariam 16 filtros na primeira 
 	\caption{Bloco Dense}
 	\label{fig:dense_blcok}
 \end{figure}
-	
-\subsection{Blcoo CNN\label{se:cnn}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics{Imagens/dense_block.png}
+	\caption{Ilustrção do bloco de Dense}
+	%\label{fig:dense_blcok}
+\end{figure}
+
+\subsection{Bloco CNN\label{se:cnn}}
 
 Bloco de CNN é aqui definido como uma convolução na dimensão temporal seguido de camadas para combater o overfitting, MaxPooling e Dropout. \\
 Normalmente usada em processamentos de imagens, o uso de convuluções temporais é tambem por si mesmo uma ideia forte. \\
@@ -58,8 +106,17 @@ imagem
 
 Usada tambem as ideias de attention, residual e o que eu chamei broad
 
+%figura otima: https://www.researchgate.net/publication/344229502_A_Novel_Deep_Learning_Model_for_the_Detection_and_Identification_of_Rolling_Element-Bearing_Faults/figures?lo=1
+TODO citar
+\begin{figure}[H]
+	\centering
+	\includegraphics{Imagens/cnn_block.png}
+	\caption{Ilustrção do bloco de CNN}
+	\label{fig:cnn_block}
+\end{figure}
 
-\subsection{Blcoo LSTM\label{se:lstm}}
+
+\subsection{Bloco LSTM\label{se:lstm}}
 
 O uso de LSTM para previsões é uma area comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
 O bloco LSTM é a aplicaçao das RNN, aqui sendo apenas definido como uma camada de LSTM. \\

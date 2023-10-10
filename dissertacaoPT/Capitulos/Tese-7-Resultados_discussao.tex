@@ -1,30 +1,29 @@
 \chapter{Resultados e discussão}
 
-Os resultados das experiências são apresentados por experiência, sendo que cada um vai testando e eliminando parametros na modulção.\\
-Após análise inicial na modelação foi concluido que usar tentar modelar apenas um dos atributos de cada vez leva a melhor resultados que tentar modelar os dois no mesmo modelo.\\
-Foi também visto que os dois atributos em causa são analogos, logo os sistemas que melhor represetam um dos atributos tambem são semelhantemente eficazes no outro. \\
-Assim todas as experiências foram realizadas usado apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e em que o atributo de alocação comparativo é  "SecondaryReserveAllocationAUpward".\\
+Os resultados das experiências são apresentados por experiência, sendo que cada um vai testando e eliminando parâmetros na modelação.\\
+Após análise inicial na modelação, foi concluído que tentar modelar apenas um dos atributos de cada vez leva a melhores resultados do que tentar modelar os dois no mesmo modelo.\\
+Foi também observado que os dois atributos em questão são análogos, logo os sistemas que melhor representam um dos atributos também são semelhantemente eficazes no outro. \\
+Assim, todas as experiências foram realizadas usando apenas um dos atributos alvo, sendo este o "UpwardUsedSecondaryReserveEnergy", e o atributo de alocação comparativo é "SecondaryReserveAllocationAUpward".\\
 
 \section{Métricas\label{se:metricas}}
 
-A nivel de comparação efectiva de modelos iremos usar as seguintes metricas: RMSE, erro absoluto, r2 score, percentagem optima, alocação em falta, alocação a mais.\\
-Sendo que as métricas de decisão final são as que representam melhor o objectivo: baixar os custo de alocação das reservas secundárias. logo serão as metricas de alocção em falta e em demasia, sendo que a soma das mesmas é o erro absoluto.\\
+Para a comparação efetiva dos modelos, iremos usar as seguintes métricas: RMSE, erro absoluto, r2 score, percentagem ótima, alocação em falta, alocação a mais.\\
+As métricas de decisão final são aquelas que representam melhor o objetivo de reduzir os custos de alocação das reservas secundárias, portanto, são as métricas de alocação em falta e em excesso, sendo que a soma delas é o erro absoluto.\\
 
 \begin{equation}
 \label{eq:rmse}
-    RMSE (y, \hat{y}) = \sqrt{\frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}_i)^2}{N}}
+   % RMSE (y, \hat{y}) = \sqrt{\frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}_i)^2}{N}}
 \end{equation}
 
 \begin{equation} \label{eq:abse} 
-    \text{Absolute\ Error} = \sum_{i=0}^{N - 1} \left| y_i - \hat{y}_i \right| 
+    \text{Erro Absoluto} = \sum_{i=0}^{N - 1} \left| y_i - \hat{y}_i \right| 
 \end{equation}
 
-\begin{equation} \label{eq:r2score} R^2\ \text{score} = 1 - \frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}i)^2}{\sum{i=0}^{N - 1} (y_i - \bar{y})^2} \end{equation}
-
+%\begin{equation} \label{eq:r2score} R^2\ \text{score} = 1 - \frac{\sum_{i=0}^{N - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{N - 1} (y_i - \bar{y})^2} \end{equation}
 
 \begin{equation} 
     \label{eq:miss_alloc} 
-    \text{alocação em falta} = 
+    \text{Alocação em falta} = 
     \begin{cases} 
         0 & ,\text{if } \hat{y} \geq y \\
         y - \hat{y} & ,\text{otherwise} 
@@ -33,37 +32,33 @@ Sendo que as métricas de decisão final são as que representam melhor o object
 
 \begin{equation} 
     \label{eq:opt_perc} 
-    \text{optimal percentage} = \frac{1}{N} \sum_{i=1}^{n} 1 [\hat{y}_i \geq y_i  \&  \hat{y}_i \leq alloc]
-    \text{(not: \cite{Iverson1962})}
+    \text{Percentagem ótima} = \frac{1}{N} \sum_{i=1}^{n} 1 [\hat{y}_i \geq y_i  \&  \hat{y}_i \leq \text{alloc}]
 \end{equation}
 
-
-Onde \textit{$\hat{y}$} são as previsões dos modelos, \textit{y} são os valores reais utilizados, "UpwardUsedSecondaryReserveEnergy", e \textit{alloc} são os valores alocados "SecondaryReserveAllocationAUpward"
-
+Onde $\hat{y}$ são as previsões dos modelos, $y$ são os valores reais utilizados (UpwardUsedSecondaryReserveEnergy), e \text{alloc} são os valores alocados (SecondaryReserveAllocationAUpward). \\
 
 \section{Experiências\label{se:experiments}}
 
-Para comparação o erro absoluto para o ano de 2021 na alocação feita é de 3889367.4
+Para a comparação, o erro absoluto para o ano de 2021 na alocação feita é de 3889367.4. \\
 
-\subsection{Arquiteturas e numeros de epocas\label{se:archs_epocs}}
+\subsection{Arquiteturas e números de épocas\label{se:archs_epocs}}
 
 \subsubsection{Arquiteturas\label{se:archs_res}}
 
-
 \begin{table}[H]
-\caption{Resultados Arquitecturas}            
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_epocs/experiment_results.tex}}
+\caption{Resultados Arquiteturas}            
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_epocs/experiment_results.tex}}
 \end{table}
 
-\subsubsection{Epocas\label{se:epocas_res}}
+\subsubsection{Épocas\label{se:epocas_res}}
 
 \subsection{Funções de Perda (Loss) \label{se:loss_exp}}
 
-As funções de perda foram estudas com duas arquitecturas diferentes, de modo a conseguir ter uma melhor noção do impacto das mesmas.
+As funções de perda foram estudadas com duas arquiteturas diferentes, de modo a conseguir ter uma melhor noção do impacto das mesmas. \\
 
 \begin{table}[H]
 \caption{Resultados Funções de perda}        
-\resizebox{\linewidth}{!}{\input{../models_validation/losses_experiment/experiment_results.tex}}
+%\resizebox{\linewidth}{!}{\input{../models_validation/losses_experiment/experiment_results.tex}}
 \end{table}
 
 A nivel de percentagem de modelo melhor, elas esão todas bastante renhidas, mas ha uma claro vantagem quando vemos a percentagem de melhor alocação ou de alocação optima.\\
@@ -77,14 +72,14 @@ Esta experiência valida a observação feito na análise estatistica sobre o me
 
 \begin{table}[H]
 \caption{Resultados Ativação}    
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_activation/experiment_results.tex}}
 \end{table}
 
 \subsubsection{Optimizaçao\label{se:opt}}
 
 \begin{table}[H]
 \caption{Resultados Optimizadores}    
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_optimizers/experiment_results.tex}}
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_optimizers/experiment_results.tex}}
 \end{table}
 
 
@@ -92,7 +87,7 @@ Esta experiência valida a observação feito na análise estatistica sobre o me
 
 \begin{table}[H]
 \caption{Resultados Janelas Temporais}
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_time_windows/experiment_results.tex}}        
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_time_windows/experiment_results.tex}}        
 \end{table}
 
 \subsection{Classificação}
@@ -100,7 +95,7 @@ Esta experiência valida a observação feito na análise estatistica sobre o me
 
 \begin{table}[H]
 \caption{Resultados Janelas Temporais}
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_clustering/experiment_results.tex}}        
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_models_clustering/experiment_results.tex}}        
 \end{table}
 
 
@@ -110,7 +105,7 @@ Esta experiência valida a observação feito na análise estatistica sobre o me
 
 \begin{table}[H]
 \caption{Resultados Janelas Temporais}
-\resizebox{\linewidth}{!}{\input{../models_validation/linear_weights/experiment_results.tex}}        
+%\resizebox{\linewidth}{!}{\input{../models_validation/linear_weights/experiment_results.tex}}        
 \end{table}
 
 

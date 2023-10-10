@@ -57,12 +57,12 @@ Estas análises apenas aplicam uma formula à variavel em questão.
     y_t = \beta_0 + \beta_1 y_{t-1} + \dots + \beta_p y_{t-p} + \epsilon_t 
 \end{equation}
 onde:
-\begin{itemize}
-  \item $y_t$: O valor da serie no tempo $t$.
-  \item $p$: O numero de atrasos.
-  \item $\epsilon_t$: O barulho no tempo $t$.
-  \item $\beta$: O coeficiente dos valores em atrasdo.
-\end{itemize}
+% \begin{itemize}
+%   \item $y_t$: O valor da serie no tempo $t$.
+%   \item $p$: O numero de atrasos.
+%   \item $\epsilon_t$: O barulho no tempo $t$.
+%   \item $\beta$: O coeficiente dos valores em atrasdo.
+% \end{itemize}
 
 \subsubsection{MA}
 MA - Moving Average
@@ -138,16 +138,16 @@ AR eé blabla
 \begin{equation} \label{eq:SARIMA} y_t^{[m]d} = \beta_0 + \beta_1 y_{t-m}^{[m]d} + \dots + \beta_p y_{t-pm}^{[m]d} + \epsilon_t^{[m]d} + \theta_1 \epsilon_{t-m}^{[m]d} + \dots + \theta_q \epsilon_{t-qm}^{[m]d} \end{equation}
 
 \textbf{SARIMA (Seasonal Autoregressive Integrated Moving Average) Model:}
-\begin{itemize}
-  \item $y_t^{[m]d}$: The differenced value of the time series at time $t$.
-  \item $p$: The number of time lags to regress on (AR part).
-  \item $d$: The order of differencing.
-  \item $q$: The number of time lags of the error term to regress on (MA part).
-  \item $m$: The number of time lags comprising one full period of seasonality.
-  \item $\epsilon_t^{[m]d}$: The differenced error term at time $t$.
-  \item $\beta$: The coefficients of the lagged values (AR part).
-  \item $\theta$: The coefficients of the lagged error terms (MA part).
-\end{itemize}
+% \begin{itemize}
+%   \item $y_t^{[m]d}$: The differenced value of the time series at time $t$.
+%   \item $p$: The number of time lags to regress on (AR part).
+%   \item $d$: The order of differencing.
+%   \item $q$: The number of time lags of the error term to regress on (MA part).
+%   \item $m$: The number of time lags comprising one full period of seasonality.
+%   \item $\epsilon_t^{[m]d}$: The differenced error term at time $t$.
+%   \item $\beta$: The coefficients of the lagged values (AR part).
+%   \item $\theta$: The coefficients of the lagged error terms (MA part).
+% \end{itemize}
 
 \begin{figure}[H]
     \centering
