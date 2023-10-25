@@ -7,8 +7,8 @@
 import math
 
 import pandas as pd
-from tensorflow import keras
-
+#from tensorflow import keras
+import keras_core as keras
 
 class DataGenerator(keras.utils.Sequence):
     def __init__(

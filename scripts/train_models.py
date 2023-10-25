@@ -2,8 +2,9 @@ import json
 import os
 import pathlib
 import sys
-
-import keras
+import math
+import keras_core as keras
+from keras_core.metrics import RootMeanSquaredError
 import numpy as np
 import pandas as pd
 from forecat import CNNArch, DenseArch, LSTMArch, UNETArch,EncoderDecoder
@@ -116,15 +117,15 @@ df_imputed = None
 path_to_trained_models_folder = "../models_trained/"
 path_to_trained_models_folder = pathlib.Path(scripts_path, path_to_trained_models_folder).resolve()
 
-
+from alquitable.losses import mean_squared_error
 
 models_strutres = {
     "VanillaCNN":{"arch":CNNArch,}, 
     "VanillaDense":{"arch":DenseArch}, 
     "VanillaLSTM":{"arch":LSTMArch},
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
-    #"StackedCNN8":{"arch":CNNArch,  "architeture_args":{"block_repetition":8}}, 
-    "StackedLSTMA":{"arch":LSTMArch,  "architeture_args":{"block_repetition":2}},
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
+    #"StackedCNN8":{"arch":CNNArch,  "architecture_args":{"block_repetition":8}}, 
+    "StackedLSTMA":{"arch":LSTMArch,  "architecture_args":{"block_repetition":2}},
     "UNET" : {"arch":UNETArch},
     "EncoderDecoder":{"arch":EncoderDecoder}
 }
@@ -132,11 +133,11 @@ models_strutres_DEFAULT = models_strutres
 
 def train_save_model(dataset, model_name,struct_name,get_dataset_args={},
 epocas=10, loss="mse", model_name_load=None, models_strutres=None, input_args={}, classes_dict={}, optimizer="adam",
-weight=None,
+weight=None,batch_size=252,
 ):
+
     if models_strutres is None:
         models_strutres = models_strutres_DEFAULT
-
     if model_name_load is None:
         model_name_load = model_name
     model_folder = os.path.join(path_to_trained_models_folder, struct_name, model_name)
@@ -160,23 +161,28 @@ weight=None,
     })
 
     model_conf =models_strutres[model_name_load]
-    architeture_args = model_conf.get("architeture_args", {})
+    architecture_args = model_conf.get("architecture_args", {})
     keras.backend.clear_session()
 
     forearch = model_conf["arch"](**input_args)
-    foremodel = forearch.architeture(**architeture_args)
-    metrics = keras.metrics.RootMeanSquaredError()
+    foremodel = forearch.architecture(**architecture_args)
+    metrics = ["root_mean_squared_error"]#{"root_mean_squared_error" :keras.metrics.RootMeanSquaredError()} root_mean_squared_error
     
     model_keras_filename = os.path.join(model_folder, f"{model_name}.keras")
     #if os.path.exists(model_keras_filename):
     #   return
     history=None
-    period = 3
-    if "linear_models_epocs" in struct_name:
-        if "Enco" in model_name:
-            period = 2
-        if "LSTM" in model_name:
-            period = 2
+    period = 1
+    # if "linear_models_epocs" in struct_name:
+    #     if "Enco" in model_name:
+    #         period = 1
+    #         return
+    #     if "LSTM" in model_name:
+    #         period = 1
+    #         return
+    # if "UNET" in model_name:
+    #     period = 1
+    #     return
 
     model_checkpoint = keras.callbacks.ModelCheckpoint(model_keras_filename)
     freq_saves_folder = model_keras_filename.replace(".keras","freq_saves") 
@@ -237,8 +243,8 @@ weight=None,
                 loss = [loss, "categorical_crossentropy"]
                 metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
                 metrics = {
-                    metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
-                        metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
+                    metrics_keys[0]:"root_mean_squared_error",
+                        metrics_keys[1]:"categorical_accuracy",
                 }
             elif len(output_shape)==3:
                 train_dataset_Y_values = train_dataset_Y
@@ -249,9 +255,9 @@ weight=None,
                 loss = [loss, "categorical_crossentropy", loss]
                 metrics_keys = [str(node.name).split("/")[0] for node in foremodel.outputs]
                 metrics = {
-                    metrics_keys[0]:tf.keras.metrics.RootMeanSquaredError(),
-                        metrics_keys[1]:tf.keras.metrics.CategoricalAccuracy(),
-                    metrics_keys[2]:tf.keras.metrics.RootMeanSquaredError(),
+                    metrics_keys[0]:"root_mean_squared_error",
+                        metrics_keys[1]:"categorical_accuracy",
+                    metrics_keys[2]:"root_mean_squared_error",
                 }
 
 
@@ -266,6 +272,7 @@ weight=None,
     fit_args={
         "epochs":epocas,
         "callbacks":callbacks,
+        "batch_size":batch_size,
     }
 
     if weight:
@@ -278,7 +285,7 @@ weight=None,
             fit_args["sample_weight"] = freq_weights
         if "both" in weight:
             fit_args["sample_weight"] = freq_weights*samples_weights
-
+    foremodel.summary()
 
     history_new = foremodel.fit(
                     train_dataset_X,
@@ -292,6 +299,10 @@ weight=None,
             for key in history:
                 old = history[key]
                 new = history_new.history.get(key, [])
+                if not isinstance(old, list):
+                    old=[old]
+                old = [f for f in old if f]
+                old = [f for f in old if not  math.isnan(f)]
                 history_to_save[key] = old + new
     for key in history_new.history:
         if key not in history_to_save:
@@ -336,89 +347,89 @@ weight=None,
     return
 
 
-# Experiment 1 - Epocas and Archs
-epocas=200
-X_timeseries = 168
-Y_timeseries = 24
-frac = 0.95
-train_features_folga = 24
-skiping_step=1
-keep_y_on_x=True
-struct_name = "linear_models_epocs"
-get_dataset_args={
-    "y_columns":columns_Y,
-    "time_moving_window_size_X":X_timeseries,
-    "time_moving_window_size_Y":Y_timeseries,
-    "frac":frac,
-    "keep_y_on_x":keep_y_on_x,
-    "train_features_folga":train_features_folga,        
-    "skiping_step":skiping_step,
-    "time_cols":time_cols,
-    "alloc_column":alloc_column,
-}
-
-input_args = {"activation_middle":"linear",
-            "activation_end":"softplus"}
-for model_name in models_strutres:
-    print(model_name)
-    try:
-        train_save_model(dataset, model_name,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args)
-    except Exception as e:
-        print(f"Exception: {e}")
-        traceback.print_exc()
-
+# # Experiment 1 - Epocas and Archs
+# epocas=200
+# X_timeseries = 168
+# Y_timeseries = 24
+# frac = 0.95
+# train_features_folga = 24
+# skiping_step=1
+# keep_y_on_x=True
+# struct_name = "linear_models_epocs"
+# get_dataset_args={
+#     "y_columns":columns_Y,
+#     "time_moving_window_size_X":X_timeseries,
+#     "time_moving_window_size_Y":Y_timeseries,
+#     "frac":frac,
+#     "keep_y_on_x":keep_y_on_x,
+#     "train_features_folga":train_features_folga,        
+#     "skiping_step":skiping_step,
+#     "time_cols":time_cols,
+#     "alloc_column":alloc_column,
+# }
+# input_args = {"activation_middle":"relu",
+#             "activation_end":"relu"}
+# for model_name in models_strutres:
+#     print(model_name)
+#     try:
+#         train_save_model(dataset, model_name,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args)
+#     except Exception as e:
+#         print(f"Exception: {e}")
+#         traceback.print_exc()
+print("doing the lossssssssssssssssssssssssssssseeeeeeeeeeeeees")
 # Experiment 2 - losses
-epocas=30
+# epocas=150
 
-X_timeseries = 168
-Y_timeseries = 24
-frac = 0.95
-train_features_folga = 24
-skiping_step=1
-keep_y_on_x=True
+# X_timeseries = 168
+# Y_timeseries = 24
+# frac = 0.95
+# train_features_folga = 24
+# skiping_step=1
+# keep_y_on_x=True
 
-struct_name = "losses_experiment"
-get_dataset_args={
+# struct_name = "losses_experiment"
+# get_dataset_args={
 
-    "y_columns":columns_Y,
-    "time_moving_window_size_X":X_timeseries,
-    "time_moving_window_size_Y":Y_timeseries,
-    "frac":frac,
-    "keep_y_on_x":keep_y_on_x,
-    "train_features_folga":train_features_folga,        
-    "skiping_step":skiping_step,
-    "time_cols":time_cols,
-    "alloc_column":alloc_column,
-
-
-}
-
-models_strutres = {
-    "UNET" : {"arch":UNETArch},
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}},
-    "VanillaCNN":{"arch":CNNArch,}, 
-}
-
-from losses import MeanSquaredLogarithmicError, weighted_loss, mean_squared_diff_error, mean_absolute_percentage_error
+#     "y_columns":columns_Y,
+#     "time_moving_window_size_X":X_timeseries,
+#     "time_moving_window_size_Y":Y_timeseries,
+#     "frac":frac,
+#     "keep_y_on_x":keep_y_on_x,
+#     "train_features_folga":train_features_folga,        
+#     "skiping_step":skiping_step,
+#     "time_cols":time_cols,
+#     "alloc_column":alloc_column,
 
 
-losses = {"mae":"mae", "mse":"mse", 
-"msle":MeanSquaredLogarithmicError(), 
-"wl":weighted_loss, "msde":mean_squared_diff_error, "mape":mean_absolute_percentage_error
-}
+# }
 
-for loss_name,loss in losses.items():
-    for model_name in models_strutres:
-        model_name_to_save = model_name + loss_name
-        print(model_name_to_save)
-        try:
-            train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=loss, model_name_load=model_name)
-        except Exception as e:
-            print(f"Exception: {e}")
-            traceback.print_exc()
+# models_strutres = {
+#     "UNET" : {"arch":UNETArch},
+#     "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}},
+# #    "VanillaCNN":{"arch":CNNArch,}, 
+# }
+
+from alquitable.losses import weighted_loss, mean_absolute_percentage_error, mean_squared_diff_error, mean_squared_error
+from keras_core.losses import MeanSquaredLogarithmicError
+
+# losses = {"mae":"mae", "mse":"mse", 
+# "msle":MeanSquaredLogarithmicError(), 
+# "wl":weighted_loss, "msde":mean_squared_diff_error, "mape":mean_absolute_percentage_error
+# }
+
+# for loss_name,loss in losses.items():
+#     for model_name in models_strutres:
+#         model_name_to_save = model_name + loss_name
+#         print(model_name_to_save)
+#         try:
+#             train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=loss, model_name_load=model_name)
+#         except Exception as e:
+#             print(f"Exception: {e}")
+#             traceback.print_exc()
             
+print("doin the activation!!!!")
 # Experiment 3 - activation middle and end
-epocas=30
+epocas=150
 X_timeseries = 168
 Y_timeseries = 24
 frac = 0.95
@@ -438,27 +449,32 @@ get_dataset_args={
     "alloc_column":alloc_column,
 }
 models_strutres = {
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
 }
 
 regression_activations = ["relu", "linear", "softplus", "softsign", "tanh", "selu", "elu", "exponential"
 ]
+losses = {#"mae":"mae", "mse":"mse", 
+#"msle":MeanSquaredLogarithmicError(), 
+"wl":weighted_loss, #"msde":mean_squared_diff_error, "mape":mean_absolute_percentage_error
+}
+for loss_name,loss in losses.items():
 
-for middle in regression_activations:
-    for end in regression_activations:
-        for model_name in models_strutres:
-            model_name_to_save = model_name + f"_{middle}_{end}"
-            print(model_name_to_save)
+    for middle in regression_activations:
+        for end in regression_activations:
+            for model_name in models_strutres:
+                model_name_to_save = model_name +loss_name+ f"_{middle}_{end}"
+                print(model_name_to_save)
 
-            input_args = {"activation_middle":middle,
-            "activation_end":end}
-            try:
-                train_save_model(dataset, model_name_to_save,
-                struct_name,get_dataset_args=get_dataset_args, epocas=epocas, loss=MeanSquaredLogarithmicError(),
-                model_name_load=model_name, input_args=input_args)
-            except Exception as e:
-                print(f"Exception: {e}")
-                traceback.print_exc()
+                input_args = {"activation_middle":middle,
+                "activation_end":end}
+                try:
+                    train_save_model(dataset, model_name_to_save,
+                    struct_name,get_dataset_args=get_dataset_args, epocas=epocas,loss=loss,
+                    model_name_load=model_name, input_args=input_args)
+                except Exception as e:
+                    print(f"Exception: {e}")
+                    traceback.print_exc()
 
 epocas=30
 X_timeseries = 168
@@ -480,7 +496,7 @@ get_dataset_args={
     "alloc_column":alloc_column,
 }
 models_strutres = {
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
 }
 
 regression_optimizer = [
@@ -491,7 +507,7 @@ regression_optimizer = [
     "Adadelta",
     "Adagrad",
     "Adamax",
-    keras.optimizers.Adafactor(),
+    "Adafactor",
     "Nadam",
     "Ftrl",
 ]
@@ -515,6 +531,9 @@ for opt in regression_optimizer:
             print(f"Exception: {e}")
             traceback.print_exc()
 
+
+sys.exit()
+
 # Experiment 4 - time windows
 epocas=30
 X_timeseries = 168
@@ -536,7 +555,7 @@ get_dataset_args={
     "alloc_column":alloc_column,
 }
 models_strutres = {
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}}, 
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
 }
 for X in [24, 48, 98, 168]:
     for Y in [1, 4, 8, 12, 24]:
@@ -603,7 +622,7 @@ list_classes_dict = [
 for cla in list_classes_dict:
 
     models_strutres = {
-        "StackedCNNClusters":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+        "StackedCNNClusters":{"arch":CNNArch,  "architecture_args":{"block_repetition":2,
                                                             "multitail":[{"dense_args":{"activation":"relu"}}, 
                                                             {"dense_args":[{"activation":"relu"}, {
                                                                 "filters":Y_timeseries*len(cla),
@@ -611,7 +630,7 @@ for cla in list_classes_dict:
                                                             "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
                                                                 }],}},
                                                                 
-        "StackedCNNClusterLinear":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+        "StackedCNNClusterLinear":{"arch":CNNArch,  "architecture_args":{"block_repetition":2,
                                                                 "multitail":[{"dense_args":{"activation":"relu"}}, 
                                                             {"dense_args":[{"activation":"relu"}, {
                                                                 "filters":Y_timeseries*len(cla),
@@ -646,7 +665,7 @@ for cla in list_classes_dict:
 # Linear
 models_strutres = {
     #"UNET" : {"arch":UNETArch},
-    "StackedCNN":{"arch":CNNArch,  "architeture_args":{"block_repetition":2}},
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}},
     "VanillaCNN":{"arch":CNNArch,}, 
 }
 epocas=30
@@ -728,7 +747,7 @@ for weight in weitgh_list:
     for cla in list_classes_dict:
 
         models_strutres = {
-            "StackedCNNClusters":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+            "StackedCNNClusters":{"arch":CNNArch,  "architecture_args":{"block_repetition":2,
                                                                 "multitail":[{"dense_args":{"activation":"relu"}}, 
                                                                 {"dense_args":[{"activation":"relu"}, {
                                                                     "filters":Y_timeseries*len(cla),
@@ -736,7 +755,7 @@ for weight in weitgh_list:
                                                                 "output_layer_args":{"reshape_shape": (Y_timeseries,len(cla))}
                                                                     }],}},
                                                                     
-            "StackedCNNClusterLinear":{"arch":CNNArch,  "architeture_args":{"block_repetition":2,
+            "StackedCNNClusterLinear":{"arch":CNNArch,  "architecture_args":{"block_repetition":2,
                                                                     "multitail":[{"dense_args":{"activation":"relu"}}, 
                                                                 {"dense_args":[{"activation":"relu"}, {
                                                                     "filters":Y_timeseries*len(cla),
@@ -762,3 +781,86 @@ for weight in weitgh_list:
             except Exception as e:
                 print(f"Exception: {e}")
                 traceback.print_exc()
+
+
+models_strutres = {
+    "VanillaCNN":{"arch":CNNArch,}, 
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
+    #"UNET" : {"arch":UNETArch},
+}
+# Experiment 6 - filters
+epocas=50
+X_timeseries = 168
+Y_timeseries = 24
+frac = 0.95
+train_features_folga = 24
+skiping_step=1
+keep_y_on_x=True
+struct_name = "filters_on_conv"
+get_dataset_args={
+    "y_columns":columns_Y,
+    "time_moving_window_size_X":X_timeseries,
+    "time_moving_window_size_Y":Y_timeseries,
+    "frac":frac,
+    "keep_y_on_x":keep_y_on_x,
+    "train_features_folga":train_features_folga,        
+    "skiping_step":skiping_step,
+    "time_cols":time_cols,
+    "alloc_column":alloc_column,
+}
+
+input_args = {"activation_middle":"linear",
+            "activation_end":"softplus"}
+for filter_value in [16, 32, 64]:
+    for model_name in models_strutres:
+        model_name_to_save = model_name + f"_{filter_value}"
+        print(model_name_to_save)
+        if "architecture_args" not in models_strutres[model_name]:
+            models_strutres[model_name]["architecture_args"] = {}
+        models_strutres[model_name]["architecture_args"].update({
+            "conv_args":{"filters":filter_value}
+        })
+        try:
+            train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args,
+            models_strutres=models_strutres, model_name_load=model_name,)
+        except Exception as e:
+            print(f"Exception: {e}")
+            traceback.print_exc()
+
+
+models_strutres = {
+    "StackedCNN":{"arch":CNNArch,  "architecture_args":{"block_repetition":2}}, 
+}
+# Experiment 7 - batchsize
+epocas=50
+X_timeseries = 168
+Y_timeseries = 24
+frac = 0.95
+train_features_folga = 24
+skiping_step=1
+keep_y_on_x=True
+struct_name = "models_batch_size"
+get_dataset_args={
+    "y_columns":columns_Y,
+    "time_moving_window_size_X":X_timeseries,
+    "time_moving_window_size_Y":Y_timeseries,
+    "frac":frac,
+    "keep_y_on_x":keep_y_on_x,
+    "train_features_folga":train_features_folga,        
+    "skiping_step":skiping_step,
+    "time_cols":time_cols,
+    "alloc_column":alloc_column,
+}
+
+input_args = {"activation_middle":"linear",
+            "activation_end":"softplus"}
+for batch_size in [16, 32, 64, 128, 252, 504, 1008]:
+    for model_name in models_strutres:
+        model_name_to_save = model_name + f"_{batch_size}"
+        print(model_name_to_save)
+        try:
+            train_save_model(dataset, model_name_to_save,struct_name,get_dataset_args=get_dataset_args, epocas=epocas, input_args=input_args,
+            models_strutres=models_strutres, model_name_load=model_name,batch_size=batch_size)
+        except Exception as e:
+            print(f"Exception: {e}")
+            traceback.print_exc()

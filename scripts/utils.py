@@ -2,7 +2,7 @@
 import math
 import os
 import pandas as pd
-from keras.callbacks import Callback, ModelCheckpoint
+from keras_core.callbacks import Callback, ModelCheckpoint
 import json
 STEPS_PER_EPOCH = 2336
 
@@ -17,6 +17,8 @@ def update_history_dict(new_log, old_log):
                     new=[new]
                 if not isinstance(old, list):
                     old=[old]
+                old = [f for f in old if f]
+                old = [f for f in old if not  math.isnan(f)]
                 history_to_save[key] = old + new
     for key in new_log:
         if key not in history_to_save:
@@ -64,7 +66,8 @@ class StopOnNanLoss(Callback):
 
     def on_epoch_end(self, epoch, logs=None):
         loss = logs.get('loss')
-        if loss is not None and (isinstance(loss, float) and not math.isnan(loss)):
+        nan_value = math.isnan(loss) | math.isinf(loss)
+        if loss is not None and (isinstance(loss, float) and not nan_value):
             self.last_good_model = self.model.get_weights()
             self.last_good_epoch = epoch
             self.logs = update_history_dict(logs, self.logs)
@@ -80,7 +83,8 @@ class StopOnNanLoss(Callback):
 
     def on_train_batch_end(self, batch, logs=None):
         loss = logs.get('loss')
-        if loss is not None and (isinstance(loss, float) and math.isnan(loss)):
+        nan_value = math.isnan(loss) | math.isinf(loss)
+        if loss is not None and (isinstance(loss, float) and nan_value):
             print(f"Stopping training due to NaN loss at batch {batch}.")
             if self.last_good_model is not None:
                 self.model.set_weights(self.last_good_model)

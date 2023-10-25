@@ -69,19 +69,29 @@ def prediction_score(test_dataset_Y, predictions, test_allocation, model_name):
         # "spain alloc surplus":np.sum(spain_alloc_surplus),
 
 
+    benchmark_alloc_missing=147274.9
+    benchmark_alloc_surplus=30261755.8
+
+
+    bscore_m = (benchmark_alloc_missing - np.sum(alloc_missing))/benchmark_alloc_missing
+    bscore_s = (benchmark_alloc_surplus - np.sum(alloc_surplus))/benchmark_alloc_surplus
+    bscore = bscore_m + bscore_s
+
     predict_score = {
         "name":model_name,
         "rmse":rmse,
         "abs erro": erro_abs_sum,
-        "erro comp": str(erro_abs_sum<erro_spain_abs_sum),
+        #"erro comp": str(erro_abs_sum<erro_spain_abs_sum),
         "r2 score":r2,
         "mape score": mape, 
         "alloc missing":np.sum(alloc_missing),
         "alloc surplus":np.sum(alloc_surplus),
         "optimal percentage":optimal_percentage*100,
-        "better allocation": better_allocation_mask*100,
+        #"better allocation": better_allocation_mask*100,
         "beter percentage": beter_percentage*100,
-
+        "bscore m":bscore_m,
+        "bscore s":bscore_s,
+        "bscore":bscore,
       }
 
 

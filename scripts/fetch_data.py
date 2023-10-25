@@ -1,6 +1,6 @@
 import datetime
 import json
-
+import traceback
 import pandas as pd
 from pyesios import ESIOS
 
@@ -39,10 +39,12 @@ print("Getting the indicators:", names)
 
 # Trying to get older dates, visualy verified no earlier than 2012
 #   exists on targe data
-start_ = "01-01-2012T00"
-end_ = "01-01-2022T00"
+start_ = "01-02-2010T00"
+end_ = "01-10-2025T00"
 start_date = datetime.datetime.strptime(start_, "%d-%m-%YT%H")
 end_date = datetime.datetime.strptime(end_, "%d-%m-%YT%H")
+
+dfmul = esios.get_multiple_series(indicators_, start_date, end_date)
 
 # The dates are distribuited per max two years.
 # This is because the API breaks when asking more than two years at a time.
@@ -75,6 +77,10 @@ for i in range(len(list_dates) - 1):
             ).reset_index(drop=True)
         lll.append(ff_df)
     except Exception as e:
+        traceback.print_exc()
+        print("start", sss)
+        print("eee", eee)
+
         print("wriong", e)
 
 all_data = pd.concat(lll).drop_duplicates().reset_index(drop=True)
@@ -94,7 +100,6 @@ merge_dict = {
     "WindD+1DailyForecast": "Previsión diaria D+1 eólica",
     "datetime": "datetime",
 }
-
 rename_dict = {y: x for x, y in merge_dict.items()}
 indicators_df["names"] = [rename_dict[f] for f in indicators_df["names"]]
 indicators_json = []
@@ -107,6 +112,13 @@ for name, indi in zip(indicators_df["names"], indicators_df["indicators"]):
         "url":f"https://www.esios.ree.es/en/analysis/{indi}",
         "url_semantic":"",
     })
+
+all_data_rename = all_data.rename(columns=rename_dict)
+
+all_data_rename = all_data_rename.drop_duplicates("datetime").drop(["tz_time", "geo_id", "geo_name"], axis=1).reset_index(drop=True)
+
+
+
 with open("data/indicators_metadata.json", "w") as mfile:
     json.dump(indicators_json, mfile)
 
@@ -115,8 +127,5 @@ with open("data/indicators_metadata.json", "w") as mfile:
 # save to csv for later metadate prep.abs
 pd.DataFrame(indicators_df).to_csv("data/indicators_metadata.csv")
 
-all_data_rename = all_data.rename(columns=rename_dict)
-
-all_data_rename = all_data_rename.drop_duplicates("datetime").drop(["tz_time", "geo_id", "geo_name"], axis=1).reset_index(drop=True)
 
 all_data_rename.to_csv("data/dados_2014-2022.csv")

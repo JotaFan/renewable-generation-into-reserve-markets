@@ -3,13 +3,12 @@ import os
 import pathlib
 import sys
 
-import keras
+import keras_core as keras
 import numpy as np
 import pandas as pd
 from forecat import CNNArch, DenseArch, LSTMArch, UNETArch,EncoderDecoder
 from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer
-
 scripts_path = os.path.dirname(os.path.abspath(__file__))
 
 sys.path.insert(0, scripts_path) # Add the script's directory to the system path
@@ -31,6 +30,12 @@ alloc_column = ["SecondaryReserveAllocationAUpward"]
 y_columns = columns_Y
 datetime_col = "datetime"
 
+COLUMN_TO_SORT_BY = "optimal percentage"
+ascending_to_sort = False
+
+COLUMN_TO_SORT_BY = "alloc missing"
+if COLUMN_TO_SORT_BY =="alloc missing":
+    ascending_to_sort = True
 
 d = pd.to_datetime(dataset[datetime_col], format="mixed", utc=True)
 columns_X = dataset.columns[~dataset.columns.isin(columns_Y)]
@@ -97,14 +102,20 @@ path_to_plots_folder = "../plots/"
 path_to_plots_folder = pathlib.Path(scripts_path, path_to_plots_folder).resolve()
 
 # Validation is done on 2021 !
-mask_2021 = dataset["year"]==2021
-mask_last_week_2020 = dataset["year"]==2020
+# obtém resultados para o período de 2019 a 2022.
+year_mask = dataset["year"]==2019
+year_mask = year_mask | (dataset["year"]==2020)
+
+year_mask = year_mask | (dataset["year"]==2021)
+
+year_mask = year_mask | (dataset["year"]==2022)
+
+mask_last_week_2020 = dataset["year"]==2018
 week_hours_plus_day = (24*7)
 mmm = mask_last_week_2020[mask_last_week_2020].iloc[-week_hours_plus_day:]
 mmme = mmm & mask_last_week_2020
-mask_data = mmme | mask_2021
+mask_data = mmme | year_mask
 
-test_dataset = dataset[mask_2021].copy().iloc[:np.sum(mask_data)]#8712
 dataset = dataset[mask_data]
 
 
@@ -114,38 +125,93 @@ dataset = dataset[mask_data]
 schema_list = [filename for filename in os.listdir(path_to_trained_models_folder) if os.path.isdir(os.path.join(path_to_trained_models_folder,filename))]
 
 # Experiment ONE
-schema_to_validate = ["linear_weights","linear_models_clustering",
-    "linear_models_epocs", "losses_experiment", "linear_models_activation", 
-                        "linear_optimizers",
-                        "linear_models_time_windows",
+schema_to_validate = [#"linear_weights", # not working
+                        #"linear_models_clustering", # not worling
+                        #"linear_models_epocs", #1 
+                        "losses_experiment", #2
+                        #"models_batch_size"
+                        #"linear_models_activation", 
+                        #"linear_optimizers",
+                        #"linear_models_time_windows",
+                        #"filters_on_conv",
+                        #"models_batch_size"
                         ]
 
-def make_validation_epoch_scores(model_experiments_freq_saves_files, X, Y, alloc, model_name, folder_to_save_validation):
+def make_validation_epoch_scores(model_experiments_freq_saves_files, X, Y, alloc, model_name, folder_to_save_validation, reset=False):
     freq_folder_to_save_validation = os.path.join(folder_to_save_validation, "freq_saves")
     os.makedirs(freq_folder_to_save_validation, exist_ok=True)
     df_epocas_exp = pd.DataFrame()
+    path_schema_csv = os.path.join(freq_folder_to_save_validation, "experiment_results.csv")
+    path_schema_tex = os.path.join(freq_folder_to_save_validation, "experiment_results.tex")
+
+    if os.path.exists(path_schema_tex):
+        return
+        if not reset:
+            path_read = path_schema_csv
+            if os.path.exists(os.path.join(freq_folder_to_save_validation, "experiment_results_complete.csv")):
+                path_read = os.path.join(freq_folder_to_save_validation, "experiment_results_complete.csv")
+            df_epocas_exp = pd.read_csv(path_read)
+        else:
+            return
+
     for epoch_model in model_experiments_freq_saves_files:
         if "Cluster" in epoch_model:
             return
-
-
-        model_keras = keras.models.load_model(epoch_model, safe_mode=False,
-                                    compile=False)
-
+        if "Enc" in epoch_model:
+            return
+        if "LSTM" in epoch_model:
+            return
+        if "Dense" in epoch_model:
+            return
+        if "Vanilla" in epoch_model:
+            return
         epoch = os.path.basename(epoch_model).replace(".keras", "")
 
         epocs_model_name = f"{model_name}{epoch}epc"
-        predictions = model_keras.predict(X)
-        predict_score = prediction_score(Y, predictions, alloc, epocs_model_name)
+
         model_test_filename = os.path.join(freq_folder_to_save_validation, f"{epocs_model_name}_test.npz")
         model_score_filename = os.path.join(freq_folder_to_save_validation, f"{epocs_model_name}_score.json")
-        predict_score["epoca"] = epoch
+        predict_score_df = None
 
-        save_scores(Y, predictions, alloc, model_test_filename, predict_score, model_score_filename)
+
+
+
+        if os.path.exists(model_score_filename):
+            if not reset:
+                with open(model_score_filename) as f:
+                    predict_score = json.loads(f.read())
+
+            else:
+                continue
+
+        else:
+            try:
+                        # model_keras = keras.models.load_model(last_trained_model_path,safe_mode=True,
+                        #                     compile=False)
+
+                model_keras = keras.saving.load_model(epoch_model, safe_mode=True,
+                                            compile=False
+                                            )
+            except:
+                import tensorflow as tf
+                model_keras = tf.keras.models.load_model(epoch_model, safe_mode=True,
+                                            compile=False
+                                            )
+
+            predictions = model_keras.predict(X)
+            predict_score = prediction_score(Y, predictions, alloc, epocs_model_name)
+
+            predict_score["epoca"] = epoch
+
+
+            save_scores(Y, predictions, alloc, model_test_filename, predict_score, model_score_filename)
 
         if not isinstance(predict_score, list):
             predict_score = [predict_score]
-        df_epocas_exp = pd.concat([df_epocas_exp, pd.DataFrame(predict_score)], ignore_index=True)
+        predict_score_df = pd.DataFrame(predict_score)
+
+            
+        df_epocas_exp = pd.concat([df_epocas_exp, predict_score_df], ignore_index=True)
         df_epocas_exp.reset_index(drop=True, inplace=True)
 
 
@@ -156,13 +222,11 @@ def make_validation_epoch_scores(model_experiments_freq_saves_files, X, Y, alloc
     if "epoca" in df_epocas_exp:
         df_epocas_exp.sort_values(by="epoca", inplace=True)
 
-    path_schema_csv = os.path.join(freq_folder_to_save_validation, "experiment_results.csv")
-    path_schema_tex = os.path.join(freq_folder_to_save_validation, "experiment_results.tex")
 
+    df_epocas_exp = df_epocas_exp.sort_values(by=COLUMN_TO_SORT_BY, ascending=ascending_to_sort)
 
     if len(df_epocas_exp)>10:
-        df_schema_sort = df_epocas_exp.sort_values(by="optimal percentage", ascending=False)
-        df_schema_sort = pd.concat([df_schema_sort.head(), df_schema_sort.tail()])
+        df_schema_sort = pd.concat([df_epocas_exp.head(), df_epocas_exp.tail()])
         df_schema_sort.to_csv(path_schema_csv, index=False)
         df_schema_sort.to_latex(path_schema_tex, escape=False,index=False, float_format="%.2f")
         path_schema_csv = os.path.join(freq_folder_to_save_validation, "experiment_results_complete.csv")
@@ -179,6 +243,8 @@ def make_validation_epoch_scores(model_experiments_freq_saves_files, X, Y, alloc
 for schema in schema_list:
     if schema not in schema_to_validate:
         continue
+    print(schema)
+
     # if "linear_weights" not in schema:
     #     continue
     get_dataset, prepare_for_data, prepare_for_model, prediction_from_model, merge_predictions = get_functions_from_experiment(path_to_trained_models_folder, schema)
@@ -189,6 +255,16 @@ for schema in schema_list:
     model_experiments = [filename for filename in os.listdir(schema_path) if os.path.isdir(os.path.join(schema_path,filename))]
     model_experiments = [f for f in model_experiments if "pycache" not in f]
     for model_experiment in model_experiments:
+        if "Enc" in model_experiment:
+            continue
+        if "LSTM" in model_experiment:
+            continue
+        if "Dense" in model_experiment:
+            continue
+        if "Vanilla" in model_experiment:
+            continue
+        print(model_experiment)
+
         model_experiment_path = os.path.join(schema_path, model_experiment)
         model_experiment_files = [filename for filename in os.listdir(model_experiment_path) if not os.path.isdir(os.path.join(model_experiment_path,filename))]
         if len(model_experiment_files)==0:
@@ -201,8 +277,35 @@ for schema in schema_list:
         os.makedirs(folder_to_save_validation, exist_ok=True)
 
 
-        model_keras = keras.models.load_model(model_keras_experiment_path, safe_mode=False,
-                                    compile=False)
+
+
+        try:
+            model_keras = keras.models.load_model(model_keras_experiment_path,
+                                        compile=False)
+            
+            #model_keras = keras.saving.load_model(model_keras_experiment_path, safe_mode=True,
+             #                           compile=False
+              #                          )
+        except Exception as e:
+            print(e)
+            try:
+                
+                model_keras = keras.saving.load_model(model_keras_experiment_path, 
+                                           compile=False
+                                          )
+            except Exception as e:
+                print(e)
+                try:
+                    import keras as kkk
+                    kkk.models.load_model(model_keras_experiment_path, 
+                                            compile=False
+                                            )
+                except Exception as e:
+                    print(e)
+                    import tensorflow as tf
+                    model_keras = tf.keras.models.load_model(model_keras_experiment_path, safe_mode=True,
+                                                compile=False
+                                                )
 
         # if isinstance(model_keras, tfdf.keras.RandomForestModel):
         #     model_input_shape = None
@@ -314,11 +417,9 @@ for schema in schema_list:
         
     path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results.csv")
     path_schema_tex = os.path.join(path_to_validation_folder, schema, "experiment_results.tex")
-
-
+    df_schema = df_schema.sort_values(by=COLUMN_TO_SORT_BY, ascending=ascending_to_sort)
     if len(df_schema)>10:
-        df_schema_sort = df_schema.sort_values(by="optimal percentage", ascending=False)
-        df_schema_sort = pd.concat([df_schema_sort.head(), df_schema_sort.tail()])
+        df_schema_sort = pd.concat([df_schema.head(), df_schema.tail()])
         df_schema_sort.to_csv(path_schema_csv, index=False)
         df_schema_sort.to_latex(path_schema_tex, escape=False,index=False, float_format="%.2f")
         path_schema_csv = os.path.join(path_to_validation_folder, schema, "experiment_results_complete.csv")

@@ -1,8 +1,8 @@
 
 import numpy as np
 import tensorflow as tf
-from tensorflow.keras import backend as K
-from tensorflow.keras.losses import (MeanAbsoluteError,
+from keras_core import backend as K
+from keras_core.losses import (MeanAbsoluteError,
                                      MeanSquaredLogarithmicError)
 
 OFFSET=30
