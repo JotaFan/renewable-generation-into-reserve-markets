@@ -1,1 +1,0 @@
-{"name": "StackedCNN_24X_24Y", "rmse": 190.3824373754662, "abs erro": 13312929.567138672, "erro comp": "False", "r2 score": -0.3610324465542303, "mape score": 0.04180018529654598, "alloc missing": 8816545.217285156, "alloc surplus": 4496384.349853516, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

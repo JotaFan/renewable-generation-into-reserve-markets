@@ -1,1 +1,0 @@
-{"name": "StackedCNN", "rmse": 592.5832807908416, "Absolute Error": 110310442.51055908, "r2 score": 0.8046597439935825, "mape score": 0.16663574534528, "erro_per_mean score": 0.16762683866481098, "alloc_erro": 105655844.50756836, "spain_alloc_erro": 0.0, "alloc_erro_comp_bool": 84189.0, "alloc_erro_comp_value": 0.0}

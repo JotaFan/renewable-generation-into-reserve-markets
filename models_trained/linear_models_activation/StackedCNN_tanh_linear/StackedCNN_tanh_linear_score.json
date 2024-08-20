@@ -1,1 +1,0 @@
-{"name": "StackedCNN_tanh_linear", "rmse": 1003.9066823542556, "abs erro": 93497176.79711914, "erro comp": "False", "r2 score": -36.83091652298518, "mape score": 0.3010656812232254, "alloc missing": 93497176.79711914, "alloc surplus": 0.0, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

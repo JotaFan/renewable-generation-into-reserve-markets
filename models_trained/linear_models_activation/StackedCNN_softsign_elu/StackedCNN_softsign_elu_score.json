@@ -1,1 +1,0 @@
-{"name": "StackedCNN_softsign_elu", "rmse": 162.56534776300558, "abs erro": 10366187.951045992, "erro comp": "True", "r2 score": -0.027731483887738717, "mape score": 3.6778995696094547, "alloc missing": 6567210.854335785, "alloc surplus": 3798977.0967102055, "optimal percentage": 56.77705737774388, "better allocation": 56.77705737774388, "beter percentage": 99.99576235274176}
