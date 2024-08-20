@@ -1,1 +1,0 @@
-{"name": "StackedCNN_exponential_linear", "rmse": 413.7024688859916, "abs erro": 3374459.6397094727, "erro comp": "True", "r2 score": -4.022768781210375, "mape score": 76.11226362500531, "alloc missing": 69631.27473144532, "alloc surplus": 3304828.3649780275, "optimal percentage": 34.63827838827839, "better allocation": 34.375, "beter percentage": 38.87362637362637}

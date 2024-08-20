@@ -1,1 +1,0 @@
-{"name": "StackedCNN90epc", "rmse": 454.89733436599045, "abs erro": 3734228.8876342773, "erro comp": "True", "r2 score": -5.072866648817237, "mape score": 82.93281053673472, "alloc missing": 50815.6598022461, "alloc surplus": 3683413.2278320314, "optimal percentage": 35.07326007326007, "better allocation": 34.48946886446886, "beter percentage": 38.324175824175825, "epoca": "90"}

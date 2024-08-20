@@ -1,1 +1,0 @@
-{"name": "StackedCNN_elu_linear", "rmse": 405.5541749703421, "abs erro": 3298376.812969971, "erro comp": "True", "r2 score": -3.8268601280655448, "mape score": 74.86912021995765, "alloc missing": 74518.04271240234, "alloc surplus": 3223858.7702575685, "optimal percentage": 49.13003663003663, "better allocation": 48.878205128205124, "beter percentage": 52.541208791208796}

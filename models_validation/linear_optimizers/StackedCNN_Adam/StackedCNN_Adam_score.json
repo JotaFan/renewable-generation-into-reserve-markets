@@ -1,1 +1,0 @@
-{"name": "StackedCNN_Adam", "rmse": 507.51238887718125, "abs erro": 4103373.734161377, "erro comp": "False", "r2 score": -6.558928849367944, "mape score": 90.95847199264048, "alloc missing": 44467.78818969727, "alloc surplus": 4058905.945971679, "optimal percentage": 36.504120879120876, "better allocation": 35.86309523809524, "beter percentage": 38.94230769230769}

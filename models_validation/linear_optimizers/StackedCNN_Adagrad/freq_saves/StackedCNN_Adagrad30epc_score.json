@@ -1,1 +1,0 @@
-{"name": "StackedCNN_Adagrad30epc", "rmse": 2281.0990196524435, "abs erro": 19250481.97475586, "erro comp": "False", "r2 score": -151.7056959519266, "mape score": 354.3274160732942, "alloc missing": 50132.1, "alloc surplus": 19200349.87475586, "optimal percentage": 0.28617216117216115, "better allocation": 0.27472527472527475, "beter percentage": 3.514194139194139, "epoca": "30"}

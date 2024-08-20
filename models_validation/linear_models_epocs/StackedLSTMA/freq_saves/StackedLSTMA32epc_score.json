@@ -1,1 +1,0 @@
-{"name": "StackedLSTMA32epc", "rmse": 184.42945153687, "abs erro": 1171274.8359725953, "erro comp": "True", "r2 score": 0.0017771421211955074, "mape score": 17.02620288111362, "alloc missing": 703314.699923706, "alloc surplus": 467960.13604888914, "optimal percentage": 59.71840659340659, "better allocation": 59.71840659340659, "beter percentage": 85.11904761904762, "epoca": "32"}

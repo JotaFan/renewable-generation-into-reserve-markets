@@ -1,1 +1,0 @@
-{"name": "VanillaDense70epc", "rmse": 1139.4967701558357, "abs erro": 9568482.29761963, "erro comp": "False", "r2 score": -37.1059819986941, "mape score": 183.1145253564779, "alloc missing": 593.1411010742187, "alloc surplus": 9567889.156518554, "optimal percentage": 1.636904761904762, "better allocation": 1.179029304029304, "beter percentage": 1.6826923076923077, "epoca": "70"}

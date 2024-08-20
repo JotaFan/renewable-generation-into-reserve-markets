@@ -1,1 +1,0 @@
-{"name": "EncoderDecoder144epc", "rmse": 169.52025966598205, "abs erro": 998244.169380951, "erro comp": "True", "r2 score": 0.1566454763395143, "mape score": 9.974700844409423, "alloc missing": 736028.5687896728, "alloc surplus": 262215.6005912781, "optimal percentage": 52.117673992674, "better allocation": 52.10622710622711, "beter percentage": 85.18772893772893, "epoca": "144"}
