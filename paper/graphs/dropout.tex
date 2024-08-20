@@ -1,0 +1,78 @@
+\begin{tikzpicture}[scale=1.2]
+    % Group A
+    \begin{scope}[local bounding box=groupA]
+        % Draw input nodes
+        \foreach \h [count=\hi ] in {$x_5$,$x_4$,$x_3$,$x_2$,$x_1$}{%
+              \node[input] (f\hi) at (0,-\hi*1.25cm+1.5cm) {\h};
+            }
+    
+        % Draw neurons nodes
+        \foreach \h [count=\hi ] in {$N_5$,$N_4$,$N_3$,$N_2$,$N_1$}{%
+              \node[neurons] (w\hi) at (2,-\hi*1.25cm+1.5cm) {\h};
+            }
+
+        \begin{scope}[yshift=-1.5cm, local bounding box=outs1]
+            % Draw output nodes
+            \foreach \h [count=\hi ] in {$y_3$,$y_2$,$y_1$}{%
+                \node[input] (o\hi) at (4,-\hi*1.25cm+1.5cm) {\h};
+                }
+            \end{scope}
+
+        % Connect input nodes to hidden nodes
+        \foreach \i in {1,2,3,4,5}{
+            \foreach \j in {1,2,3,4,5}{
+                \draw [->] (f\i) -- (w\j);
+                }
+        }
+    
+        % Connect hidden nodes to output nodes
+        \foreach \i in {1,2,3,4,5}{    
+            \foreach \j in {1,2,3}{
+                \draw [->] (w\i) -- (o\j);
+                }
+        }
+    \end{scope}
+    
+    % Group B
+    \begin{scope}[xshift=6cm, local bounding box=groupB]
+        % Draw input nodes
+        \foreach \h [count=\hi ] in {$x'_5$,$x'_4$,$x'_3$,$x'_2$,$x'_1$}{%
+              \node[input] (f'\hi) at (0,-\hi*1.25cm+1.5cm) {\h};
+            }
+    
+        % Draw neurons nodes
+        \foreach \h [count=\hi ] in {$N'_5$,$N'_4$,$N'_3$,$N'_2$,$N'_1$}{%
+              \node[neurons] (w'\hi) at (2,-\hi*1.25cm+1.5cm) {\h};
+            }
+    
+        \begin{scope}[yshift=-1.5cm, local bounding box=outs]
+            % Draw output nodes
+            \foreach \h [count=\hi] in {$y'_3$,$y'_2$,$y'_1$}{%
+                \node[input] (o'\hi) at (4,-\hi*1.25cm+1.5cm) {\h};
+                }
+            \end{scope}
+        % Draw cross on the "deleted" neurons
+        \foreach \i in {2,5}{
+            \node[cross out, draw, red, thick, minimum size=1cm] (w'\i) at (2,-\i*1.25cm+1.5cm) {};
+        }
+    
+        % Connect input nodes to hidden nodes
+        \foreach \i in {1,2,3,4,5}{
+            \foreach \j in {1,3,4}{
+                \draw [->] (f'\i) -- (w'\j);
+                }
+        }
+    
+        % Connect hidden nodes to output nodes
+        \foreach \i in {1,3,4}{    
+            \foreach \j in {1,2,3}{
+                \draw [->] (w'\i) -- (o'\j);
+                }
+        }
+    \end{scope}
+    
+    % Add titles to each group
+    \node[above=0.3cm] at (groupA.north) {Camada Neuronal};
+    \node[above=0.3cm] at (groupB.north) {Camada após efeito Dropout};
+    \end{tikzpicture}
+    

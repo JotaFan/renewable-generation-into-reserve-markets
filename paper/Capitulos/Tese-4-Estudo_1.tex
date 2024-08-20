@@ -1,0 +1,120 @@
+\chapter{Estudo 1: Estimativa do parâmetro $\rho$ da fórmula da REN}
+
+
+
+Para responder a primeira questão estudou-se o comportamento do parâmetro p na equação publicada pela REN para a Banda de Regulação Secundária a Subir:
+
+\begin{equation} \label{eq:BRREN} 
+    BR = \rho \times \sqrt{a \times  L_{max} + b^{2}} - b 
+\end{equation}
+onde:
+\begin{itemize}
+  \item $BR$: Banda de Reserva  de regulação secundária necessária (MW).
+  \item $\rho$: Paramêtro horário.
+  \item $a$ e $b$: Coeficientes empiricos, $a$=10MW e $b$=150MW .
+  \item $L_{max}$: Pico máximo de consumo (MW).
+\end{itemize}
+
+Aqui queremos descobrir qual o valor do parâmetro $\rho$ (por hora do dia) que melhor nos descreve os dados reais. Para isso estudamos os valores reais usados para a Banda de Reserva, os valores resultantes da proposta de $\rho$  em \cite{Carneiro2016} e os valores resultados do estudo aqui proposto. Aproximar o parâmetro $\rho$  utilizando os dados históricos. \\
+Todos os dados necessários são disponibilizados pelo operador do sistema no \href{https://mercado.ren.pt/PT/Electr}{site da REN}, com exceção do consumo máximo expectável. Este parâmetro é então substituído pelo consumo real, como uma aproximação à formulação indicada previamente.\\
+Os dados estudados contêm entradas horárias desde 2010 até ao fim de 2018. Com as seguintes variáveis:\\
+
+\begin{table}[H] \centering \caption{Dados REN} \input{tabelas/tabela_dados_estudo_1_variaveis.tex} \end{table}
+
+Na equação \ref{eq:BRREN} BR equivale à soma de BANDA SUBIR e BANDA DESCER, onde aqui é sempre considerado que Banda a subir são $\frac{2}{3}$ da Banda de Reserva total e a Banda a descer é o restante $\frac{1}{3}$. \\
+Aqui iremos aplicar o mapa de parâmetro $\rho$ apresentado em \cite{Carneiro2016} na formula \ref{eq:BRREN} para o cálculo da Banda de Reserva Carneiro2016 como benchmark. \\
+
+\begin{table}[H] \centering \caption{Valores de $\rho$ apresentado em \cite{Carneiro2016}} \input{tabelas/rho_carneiro2016.tex} \end{table}
+
+
+Por outro lado, usando os dados de consumo real, calculamos o $\rho$ ideal para cada entrada, de onde estudamos a melhor normalização dos mesmos para cada hora. \\
+O cálculo deste $\rho_{proposto}$ é apenas a utilização da fórmula \ref{eq:BRREN} mas em função de $\rho$ : \\
+
+\begin{equation} \label{eq:rhoproposed} 
+    \rho  = \frac{(BR + b)}{\sqrt{a \times L_max + b^{2}}}
+\end{equation}
+
+
+Arredondando o $\rho_{proposto}$ a uma casa decimal, podemos verificar que o histograma das diferentes propostas difere bastante. Sendo que esta apresenta uma curva de distribuição normal. \\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Histograma_parametro_p.png}
+    \caption{Histograma $\rho$}
+  \end{figure}
+
+
+Olhando as distribuições por hora: \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Valor_do_parametro_p_hora.png}
+    \caption{Valor do paramêtro $\rho$ (hora)}
+  \end{figure}
+
+O $\rho_{proposto}$ apresenta um grande variabilidade em todas as horas, embora de notar que em todas tem um maior peso perto da mediana. O $\rho$ de comparação embora sempre dentro da distribuição note-se que cai quase sempre em zonas com pouco peso nestes dados históricos. \\
+Calculamos $\rho$ possiveis para proposta final usando as seguintes aproximações: média, mediana, e média ponderada ao consumo, e à banda. \\
+
+As distribuições por hora são as seguintes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Comparação_de_p_propostos_por_hora.png}
+    \caption{Histograma $\rho$}
+\end{figure}
+
+Todas seguem um percurso semelhante ao longo do dia, o qual também pode ser extrapolado para Carneiro2016. A média e mediana destacam-se seguindo muito parecidas, enquanto que as ponderadas também parecidas entre elas são bastante mais discretas. \\
+Para a escolha da normalização deste parâmetro à Hora, estudou-se o erro entre a Banda Reserva calculada através das normalizações e a Banda Reserva disponível nos dados. \\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Comparação_das_metricas_de_Erro.png}
+    \caption{Histograma $\rho$}
+\end{figure}
+
+
+\begin{table}[H]
+    \caption{Erros de Banda de Reserva por método de normalização $rho$}    
+    \resizebox{\linewidth}{!}{\input{tabelas/tabela_estudo_1_medias.tex}}
+    \end{table}
+
+
+A normalização com erros mais baixos é a mediana. Com um erro médio (de todo o histórico) para o consumo real de 11.51\% o que comparando com o benchmark de 18.70\% é uma melhoria  bastante considerável. \\
+Comparando as bandas calculadas a uma média em cada hora: \\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Média_historica_de_Banda_de_Reserva.png}
+    \caption{Média historica de Banda de Reserva}
+\end{figure}
+
+Podemos ver que em termos de média horária, a Banda de Reserva calculada através do $\rho_{proposto}$ apresenta quase uma sobreposição por inteiro ao valor médio real. \\
+
+Retiramos as médias dos erros percentuais e podemos observar: \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Erro_médio_por_hora_Banda_de_Reserva.png}
+    \caption{Erro médio por hora Banda de Reserva}
+\end{figure}
+
+Em termos de média diária o erro pelo método proposto está bem abaixo da margem de erro do 5\% na banda, em todas as horas. E na outra tese apenas 10\% cai dentro dessa margem de erro. \\
+
+Como tal o $\rho_{proposto}$ a partir do estudo dos dados  históricos é: \
+
+\begin{table}[H] \centering \caption{Valores de $\rho$ propostos} \input{tabelas/table_p_proposto.tex} \end{table}
+
+Em relação a perdas por arredondamento, apresento o resultado dos erros por arrendamento em cada um da casas possíveis, concluindo que até à primeira casa decimal, pode ser feito arredondamento do parâmetro $\rho$, sem influenciar muito o erro: \\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/Erro_médio_por_hora_Banda_de_Reserva_Arredondamento.png}
+    \caption{Erro médio por hora Banda de Reserva (Arredondamento)}
+\end{figure}
+
+
+

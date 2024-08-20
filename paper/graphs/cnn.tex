@@ -1,0 +1,34 @@
+\begin{tikzpicture}[
+    node distance = 2cm,
+    auto,
+    block/.style={
+        rectangle,
+        draw,
+        align=center,
+        minimum width=1cm,
+        minimum height=1cm
+    },
+    line/.style={
+        draw,
+        -latex'
+    }
+]
+
+    % Place nodes
+    \node [block] (input) {Input};
+    \node [block, right=of input] (conv) {1D Convolution};
+    \node [block, right=of conv] (pool) {1D Maxpooling};
+    \node [block, right=of pool] (dropout) {Dropout};
+    \node [block, right=of dropout] (output) {Output};
+
+    % Draw edges
+    \path [line] (input) -- (conv);
+    \path [line] (conv) -- (pool);
+    \path [line] (pool) -- (dropout);
+    \path [line] (dropout) -- (output);
+
+    % Neuron
+    \node[draw, dashed, fit= (conv) (pool) (dropout), inner sep=0.5em] (square){};
+    \node[below=0.5cm] at (square) {Bloco Conv};
+
+\end{tikzpicture}
