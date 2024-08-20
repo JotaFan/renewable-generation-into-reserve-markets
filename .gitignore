@@ -14,3 +14,7 @@ old_results*
 **.png
 
 **reports_**
+**.aux
+**main.**
+!**main.tex
+**.pkl
