@@ -4,3 +4,13 @@
 dayly_plots*
 experiment_plots*
 old_results*
+**.keras
+**.npz
+**.json
+**.csv
+**ipynb_checkpoints
+**ruff_cache
+**vscode
+**.png
+
+**reports_**
