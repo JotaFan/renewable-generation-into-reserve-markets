@@ -40,7 +40,7 @@ Existem mais modelos de previsão estatística baseados nestes com algumas varia
 As variáveis em estudo por tipo de modelo foram retiradas das autocorrelações temporais usando os métodos de sugestão da ferramenta \hyperref[se:muaddib]{MuadDib}:\\
 
 
-\begin{table}[b] \centering %htbp
+\begin{table}[h] \centering
 \begin{tabular}{lrrrr}
     \toprule
      & p & q \\
@@ -50,6 +50,9 @@ As variáveis em estudo por tipo de modelo foram retiradas das autocorrelações
     ARMA & 1 & 1 \\
     \bottomrule
     \end{tabular}
+    \label{tab:varsstats} 
+    \caption{Variáveis de estudo dos modelos AR/MA}
 \end{table}
 
 
+Todos estes modelos foram testados usando o software disponível na package de python \href{https://www.statsmodels.org/stable/index.html}{statsmodel}, com a classe \href{https://www.statsmodels.org/stable/generated/statsmodels.tsa.arima.model.ARIMA.html}{ARIMA}.
