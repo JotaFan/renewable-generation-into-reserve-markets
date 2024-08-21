@@ -1,1 +1,0 @@
-{"name": "StackedCNN_softplus_selu", "rmse": 287.8582874782372, "abs erro": 2249601.9558532713, "erro comp": "True", "r2 score": -1.4317808584570315, "mape score": 53.56664399312133, "alloc missing": 218301.68486328126, "alloc surplus": 2031300.27098999, "optimal percentage": 84.44368131868131, "better allocation": 84.44368131868131, "beter percentage": 91.23168498168498}

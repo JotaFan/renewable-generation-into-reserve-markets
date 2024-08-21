@@ -1,1 +1,0 @@
-{"name": "VanillaCNN30epc", "rmse": 173.74167044449763, "abs erro": 1111574.9986220836, "erro comp": "True", "r2 score": 0.11411989926608856, "mape score": 15.95386607951652, "alloc missing": 624588.2909610271, "alloc surplus": 486986.70766105654, "optimal percentage": 61.29807692307693, "better allocation": 61.29807692307693, "beter percentage": 86.19505494505495, "epoca": "30"}

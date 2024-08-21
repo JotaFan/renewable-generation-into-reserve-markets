@@ -1,1 +1,0 @@
-{"name": "StackedCNN_delta_mean", "rmse": 201.7177914674479, "abs erro": 16090518.413297474, "erro comp": "True", "r2 score": -0.5823848467619266, "mape score": 7.574207624753183, "alloc missing": 2727384.4326952104, "alloc surplus": 13363133.980602264, "optimal percentage": 80.96660733960506, "better allocation": 80.96660733960506, "beter percentage": 100.0}

@@ -1,0 +1,58 @@
+    \begin{tikzpicture}[scale=1.2]
+    % Draw input nodes
+    \foreach \h [count=\hi ] in {$x_2$,$x_1$}{%
+          \node[input] (f\hi) at (0,\hi*1.25cm-1.5 cm) {\h};
+        }
+    % Dot dot dot ... x_n
+    \node[below=0.62cm] (idots) at (f1) {\vdots};
+    \node[input, below=0.62cm] (last_input) at (idots) {$x_n$};
+
+
+    % Draw neurons nodes
+    \foreach \h [count=\hi ] in {$N_2$,$N_1$}{%
+          \path (f\hi) -- node[neurons] (w\hi) {\h} (sum);
+
+          \draw[->] (f\hi) -- (w\hi);
+        }
+    % Dot dot dot ... w_n
+    \node[below=0.05cm] (wdots) at (w1) {\vdots};
+    \node[neurons, below=0.45cm] (last_neuron) at (wdots) {$N_n$};
+
+
+    % Draw output nodes
+    \foreach \h [count=\hi ] in {$y_2$,$y_1$}{%
+          \path (w\hi) -- node[input] (o\hi) {\h} (sum);
+        }
+    % Dot dot dot ... w_n
+    \node[below=0.05cm] (odots) at (o1) {\vdots};
+    \node[input, below=0.45cm] (last_output) at (odots) {$y_n$};
+
+
+
+
+    % Connect input nodes to hidden nodes
+    \foreach \i in {1,2}{
+        \foreach \j in {1,2}{
+            \draw [->] (f\i) -- (w\j);
+            \draw [->] (last_input) -- (w\j);
+            }
+        \draw [->] (f\i) -- (last_neuron);}
+    \draw [->] (last_input) -- (last_neuron);
+
+    % Connect hidden nodes to output nodes
+    \foreach \i in {1,2}{    
+        \foreach \j in {1,2}{
+            \draw [->] (w\i) -- (o\j);
+            \draw [->] (last_neuron) -- (o\j);
+            }
+        \draw [->] (w\i) -- (last_output);}
+    \draw [->] (last_neuron) -- (last_output);
+            
+
+
+    % Labels
+    \node[above=1cm]  at (f2) {inputs};
+    \node[above=1cm] at (w2) {Neuronios};
+    \node[above=1cm] at (o2) {Saidas};
+
+    \end{tikzpicture}

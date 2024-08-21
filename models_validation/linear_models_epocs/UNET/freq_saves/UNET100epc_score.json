@@ -1,1 +1,0 @@
-{"name": "UNET100epc", "rmse": 180.75445850956228, "abs erro": 1167790.9078591825, "erro comp": "True", "r2 score": 0.041162528889692296, "mape score": 17.777785696341777, "alloc missing": 604842.802602148, "alloc surplus": 562948.1052570344, "optimal percentage": 62.68315018315018, "better allocation": 62.68315018315018, "beter percentage": 86.10347985347985, "epoca": "100"}

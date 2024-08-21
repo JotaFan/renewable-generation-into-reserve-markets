@@ -1,0 +1,34 @@
+\chapter{Estudo 2: Dimensionamento dinâmico da potência alocada na reserva secundária}
+
+\section{Dados Utilizados\label{se:dadosestudo}}
+
+Os dados em estudo são do mercado energético espanol, retirados do site da \href{https://www.esios.ree.es/es}{ESIOS}.
+
+\resizebox{\linewidth}{!}{\csvautotabular{tabelas/indicators_metadata.csv}}
+
+
+
+\subsection{Aquisição dos Dados}
+
+No ambito da automatização destes dados foi modificado o repositorio \href{https://github.com/SanPen/ESIOS}{ESIOS} para ser usado como uma biblioteca de python, aberta, em pypi.\\
+Sendo uma ferramenta mais facilmente acessivel para a extrair dados do mercado espanhol, \href{https://pypi.org/project/pyesios/}{pyesios}. \\
+No âmbito de automatizar o processo, foram feitas contribuições a esta ferramenta para tornar mais acessível, e uma ferramenta aberta de python\\
+
+
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-4-Estudo_2A} \label{se:dadoscrus}
+
+
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-4-Estudo_2B} \label{se:tratamentodados}
+
+\subsection{Dados de treino}
+
+Após o tratamento apresentado as estatísticas gerais dos dados usados para treinar o modelo são:
+
+\begin{table}[H]
+    \caption{Dados de Treino}    
+    \resizebox{\linewidth}{!}{\input{tabelas/tabela_dados_treino_medias.tex}}
+    \end{table}

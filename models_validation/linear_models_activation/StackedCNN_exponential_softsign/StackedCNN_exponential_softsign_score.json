@@ -1,1 +1,0 @@
-{"name": "StackedCNN_exponential_softsign", "rmse": 250.31356072970794, "abs erro": 353784.60000000003, "erro comp": "True", "r2 score": -0.6441187330627511, "mape score": 0.8955409693943714, "alloc missing": NaN, "alloc surplus": NaN, "optimal percentage": 1.5796703296703296, "better allocation": 1.5796703296703296, "beter percentage": 19.448260073260073}

@@ -1,1 +1,0 @@
-{"name": "StackedCNN_98X_1Y", "rmse": 261.76062361527175, "abs erro": 754563.5920410156, "erro comp": "False", "r2 score": -1.5715403082717243, "mape score": 0.05664412922920675, "alloc missing": 724393.080078125, "alloc surplus": 30170.511962890625, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

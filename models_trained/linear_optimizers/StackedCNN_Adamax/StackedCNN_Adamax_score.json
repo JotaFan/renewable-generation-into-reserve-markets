@@ -1,1 +1,0 @@
-{"name": "StackedCNN_Adamax", "rmse": 1282.6149475923987, "abs erro": 112908109.25097656, "erro comp": "False", "r2 score": -60.75224722698839, "mape score": 0.3675379833563725, "alloc missing": 12879532.0, "alloc surplus": 100028577.25097656, "optimal percentage": 0.0, "better allocation": 0.0, "beter percentage": 0.0}

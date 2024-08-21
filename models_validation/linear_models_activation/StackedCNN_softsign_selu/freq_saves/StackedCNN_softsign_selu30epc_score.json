@@ -1,1 +1,0 @@
-{"name": "StackedCNN_softsign_selu30epc", "rmse": 2053.613154215852, "abs erro": 17501165.79565687, "erro comp": "False", "r2 score": -122.76682095505629, "mape score": 323.703315010775, "alloc missing": 73467.70281019212, "alloc surplus": 17427698.09284668, "optimal percentage": 0.011446886446886446, "better allocation": 0.0, "beter percentage": 2.976190476190476, "epoca": "30"}

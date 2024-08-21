@@ -1,1 +1,0 @@
-{"name": "StackedCNN_no_weight", "rmse": 178.2019696764233, "abs erro": 1100714.2188896178, "erro comp": "True", "r2 score": 0.06805139859787523, "mape score": 14.085498898999413, "alloc missing": 697157.8642864227, "alloc surplus": 403556.3546031952, "optimal percentage": 57.48626373626373, "better allocation": 57.48626373626373, "beter percentage": 85.35943223443223}

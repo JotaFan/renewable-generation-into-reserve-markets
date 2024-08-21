@@ -1,1 +1,0 @@
-{"name": "StackedLSTMA50epc", "rmse": 179.80808970536611, "abs erro": 1201484.3797851563, "erro comp": "True", "r2 score": 0.051176538207890254, "mape score": 20.06737922091093, "alloc missing": 599627.7263504029, "alloc surplus": 601856.6534347534, "optimal percentage": 63.9308608058608, "better allocation": 63.9308608058608, "beter percentage": 86.46978021978022, "epoca": "50"}

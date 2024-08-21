@@ -1,1 +1,0 @@
-{"name": "StackedCNN_tanh_softplus", "rmse": 163.42065753480972, "abs erro": 10056467.791168213, "erro comp": "True", "r2 score": -0.038574399956605276, "mape score": 3.174506367848443, "alloc missing": 7022446.918777465, "alloc surplus": 3034020.8723907466, "optimal percentage": 52.88583778286296, "better allocation": 52.88583778286296, "beter percentage": 99.98728705822528}

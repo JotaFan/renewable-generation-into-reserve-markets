@@ -1,1 +1,0 @@
-{"name": "StackedCNN_SGD", "rmse": 158.90578174348772, "abs erro": 10251962.172674559, "erro comp": "True", "r2 score": 0.018018955427485328, "mape score": 3.6947186478334184, "alloc missing": 6211198.285754394, "alloc surplus": 4040763.8869201657, "optimal percentage": 58.247520976353925, "better allocation": 58.247520976353925, "beter percentage": 100.0}
