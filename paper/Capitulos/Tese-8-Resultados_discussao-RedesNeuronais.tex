@@ -1,0 +1,71 @@
+\section{Redes Neuronais \label{se:resml}}
+
+Os vários métodos percorreram com muitos modelos, aqui apresento apenas os melhores baseados em GPD Positivo da experiência toda.\\
+
+
+\begin{table}[H]
+    \caption{Resultados métricas Modelos Estatísticos}    
+    \resizebox{\linewidth}{!}{\input{tabelas/tabela_res_metrics.tex}}
+    \label{tab:mlresmetrics}
+    \end{table}
+
+O melhor modelo para alocação a Descer apresenta um ganho de desempenho em relação ao benchmark de 33\%, e o a Subir de 43\% na soma da janela temporal de validação.\\
+Estes modelos têm ambas as alocações e os erros menores que o benchmark. Considerando que os dados que permitem quantificar a mais valia económica de reduzir a alocação de reserva secundária em falta devido não são dados públicos, o objetivo passa por manter esta alocações com valores mais baixos que o benchmark (GPD-F positivo mas próximo de 0) e minimizar a alocação em excesso, maximizando o GPD-D, ou juntando as condições maximizando o GPD Positivo. Desta forma a primeira arquitetura de cada tabela é aquela que apresenta melhores resultados quantificáveis quer do ponto de vista operacional como económico.\\
+Escolhendo o modelo com melhores resultados em GPD Positivo podemos ver algumas janelas temporais.\\
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/alocacoes_temporais_upward_prediction_gpd_p.png}
+    \caption{Janelas temporais energia a subir}
+    \label{fig:mltimewindowsup}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/alocacoes_temporais_downward_prediction_gpd_p.png}
+    \caption{Janelas temporais energia a descer}
+    \label{fig:mltimewindowsdown}
+\end{figure}
+
+Aqui é visualmente notável que o modelo mantém uma previsão mais perto da energia usada do que o benchmark. Mesmo nas piores janelas temporais, o erro de previsão acumulado é claramente menor que o do método actual.\\
+Quero dar destaque também ao facto de as previsões seguirem bastante mais fielmente as curvas e picos apresentados. Especialmente nas janelas de mês onde temos mais amostras, conseguimos perceber que o modelo quase sempre acompanha picos da energia usada voltado a baixar quando estes passam. destacando-se assim do actual método que mantém uma linha de base bastante mais elevada (desperdiçando mais recursos) e com flutuações que não descrevem tão bem o real. \\
+Esta flexibilidade no modelo de redes neuronais permite ao operador ter um sinal muito mais flexível diminuindo a alocação desperdiçada.\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/alocation_sum_over_time.png}
+    \caption{Soma de Banda Secundária}
+    \label{fig:mltimewindowssum}
+\end{figure}
+
+Os gráficos anteriores vêm rectificar esta mesma ideia, olhando para a Energia cumulativa dentro janelas em destaques vemos que o método proposto mantém quase sempre uma melhoria ao método utilizado. Mesmo quando passamos a janelas diárias e semanais embora aumente consideravelmente as vezes que o método proposto não é o melhor que o actual, mantém-se a premissa. E mais importante, o desenho das flutuações é bastante mais fiel ao real.\\
+
+
+\begin{table}[H]
+    \caption{Resultados Modelos}    
+    \resizebox{\linewidth}{!}{\input{tabelas/tabela_modelos_res.tex}}
+    \label{tab:mlres}
+    \end{table}
+
+
+
+\begin{table}[H]
+    \caption{$\Delta$\% das médias dos Modelos}    
+    \resizebox{\linewidth}{!}{\input{tabelas/perc_delta_res.tex}}
+    \label{tab:mlres_deltas}
+    \end{table}
+
+O método proposto apresenta uma melhoria total de ~44\% na alocação a subir e ~37\% na alocação a descer face ao método usado no mercado. As melhorias médias são de ~35\% e ~25\% respectivamente, o que também é uma melhoria face ao estado da arte \cite{Algarvio2024} com 13\% e 8\%.\\
+Libertando em média 30\% dos recursos horários, e baixando a necessidade de activar a reserva terciária em 45\% e 53\%. \\
+
+As correlações entre o modelo e real são também mais elevadas que entre \hyperref[fig:featurecorrelation]{modelo e benchmark}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/heatmap_correlation_pred.png}
+    \caption{Correlação entre previsão e real}
+    \label{fig:predcorrelation}
+  \end{figure}
