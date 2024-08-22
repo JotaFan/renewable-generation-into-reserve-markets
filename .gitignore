@@ -17,5 +17,6 @@ old_results*
 **.aux
 **main.**
 !**main.tex
+!**main.pdf
 **.pkl
 **xlsx
