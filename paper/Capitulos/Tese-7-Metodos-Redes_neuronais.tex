@@ -1,11 +1,9 @@
 \section{Redes Neuronais}
 
 As redes neuronais podem ser descritas como uma função desconhecida f(x)=y onde durante o treino a função f é criada através da manipulação dos pesos da sua arquitetura usando os dados de treino, x, de forma a diminuir ao máximo uma função de perda . Sendo f'(x)=y' um modelo já treinado onde y' é a previsão, a função de perda fp(y, y') idealmente igual a 0, com y'=y.\\
-Neste trabalho o x são todos os dados apresentados no capitulo \hyperref[ch:estudo_2]{Estudo 2}, em grupos de 128 (horas), e o y é a energia usada, "UpwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a subir e "DownwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a descer, nas 24 horas subsequentes. \\
-Assim utilizamos os 168 horas (1 semana) para prever as 24 horas seguintes. A fp é um dos factores de estudo, assim como outros parâmetros dentro das arquiteturas de modelos, f. \\
+Neste trabalho o x são todos os dados apresentados no capitulo \hyperref[ch:estudo_2]{Estudo 2}, em grupos de 128 (horas), e o y é a energia usada, "UpwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a subir e "DownwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a descer, nas 24 horas subsequentes. A fp é um dos factores de estudo, assim como outros parâmetros dentro das arquiteturas de modelos, f.\\
+Assim utilizamos os 168 horas (1 semana) para prever as 24 horas seguintes. As 24 horas seguintes são o objectivo do estudo, energia a alocar no dia seguinte. As 168 horas são escolhidas graças às \hyperref[tab:tempcorr]{maiores autocorrelações temporais}, de onde as maiores fora das primeiro 48 horas são 144, 168, 192 horas ou seja, 6, 7 e 8 dias respectivamente, onde em ambos os casos 7 dias era o valor com maior correlação.\\
 As condições em estudo são feitas através da ferramenta \hyperref[se:muaddib]{MuadDib}, seguindo vários percursos entre as combinações possíveis, de modo a conseguir a combinação óptima, maior GPD Positivo.\\
-
-
 
 
 \subsection{Arquitecturas}

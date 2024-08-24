@@ -7,7 +7,7 @@ Os dados que proponho a prever são os de Energia Usada na Banda de Reserva Secu
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plots/consumo_originais.png}
+  \includegraphics[width=\textwidth]{plots/consumo_originais.png}
   \caption{Serie Temporal dos dados alvo}
   \label{fig:targettimeseries}
 \end{figure}
@@ -17,7 +17,7 @@ Para termos uma melhor percepção dos mesmos segue algumas janelas temporais ma
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.8\textwidth]{plots/target_timeseries_windows.png}
+  \includegraphics[width=\textwidth]{plots/target_timeseries_windows.png}
   \caption{Janelas Temporais dos dados alvo}
   \label{fig:targettimeserieswindows}
 \end{figure}
@@ -37,12 +37,12 @@ A distribuição destes dados é claramente exponencial. O que é importante par
 
 \subsection{Correlações}
 
+Os modelos vão depender bastante de correlação entre variáveis.
+
+Nesta secção queremos tentar identificar se há visiveis relações entre as variáveis, e se há relações temporais  visiveis nas colunas alvo.
+
+
 \subsubsection{Correlações entre atributos}
-
-Os modelos vão depender bastante de correlação entre variaveis.
-
-Nesta secção queremos tentar identificar se há visiveis relações entre as variaveis, e se há relações temporais  visiveis nas colunas alvo.
-
 
 
 \begin{figure}[H]
@@ -52,9 +52,10 @@ Nesta secção queremos tentar identificar se há visiveis relações entre as v
   \label{fig:featurecorrelation}
 \end{figure}
 
+Esta figura apresenta a dispersão de valores entre a energia usada, primeiras três linhas a energia para cima e as seguintes a energia para baixo, e os outros atributos presentes.\\
 As correlações entre variáveis parecem muitos escassas, o que apresenta já que a previsão destes dados usando estas variáveis vai ser um problema difícil.\\
 Por norma é feito uma seleção de atributos baseado nestas correlações, eliminando assim os atributos que ajudam menos, ou até prejudicam os modelos.\\
-Segue os valores de correlação onde podemos ver numericamente que existe muito pouca correlação entre os atributos.\\
+Segue os valores de correlação onde podemos ver numericamente que existe muito pouca correlação entre os atributos. Onde a primeira coluna são os valores de correlação para a energia usada a subir e a segunda coluna as correlações da energia usada a descer.\\
 
 \begin{figure}[H]
   \centering
@@ -68,12 +69,21 @@ Segue os valores de correlação onde podemos ver numericamente que existe muito
 \begin{figure}[H]
   \centering
   \includegraphics[width=\textwidth]{plots/autocorrelation.png}
-  \caption{Serie Temporal dos dados alvo}
+  \caption{Autocorrelação Temporal}
   \label{fig:autocorrelation}
 \end{figure}
 
 A autocorrelação, em ambos os alvos, é mais forte nas 3 horas mais próximas, e nos pontos com diferença de 12 e 24 horas. \\
 É de notar que estes valores são baixos, prometendo já também uma baixa regressividade temporal. \\
+Os melhores saltos temporais e suas correlações são mostradas na tabelas em baixo:\\
+
+
+\begin{table}[H]
+  \caption{Autocorrelação Temporal}    
+  \resizebox{\linewidth}{!}{\input{tabelas/autocorrelation.tex}}
+  \label{tab:tempcorr}
+  \end{table}
+
 Outro ponto a denotar é que os objectos não têm um comportamento completamente linear, i.e., parece existir um comportamento discreto na questão ser alocado ou não esta reservas secundárias, e caso seja alocado, aí existir alguma linearidade. \\
 Logo qualquer tipo de modelação terá de resolver primeiramente este problema. \\
 Estas relações mostram que em termos de atributos usados vai ser um desafio complicado para qualquer tipo de modelo. \\
