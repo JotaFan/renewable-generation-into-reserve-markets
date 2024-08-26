@@ -87,7 +87,7 @@ Comparando as bandas calculadas a uma média em cada hora: \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/Média_historica_de_Banda_de_Reserva.png}
+    \includegraphics[width=\textwidth]{plots/média_historica_de_banda_de_reserva.png}
     \caption{Média historica de Banda de Reserva}
 \end{figure}
 
@@ -97,7 +97,7 @@ Retiramos as médias dos erros percentuais e podemos observar: \\
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/Erro_médio_por_hora_Banda_de_Reserva.png}
+    \includegraphics[width=\textwidth]{plots/erro_médio_por_hora_banda_de_reserva.png}
     \caption{Erro médio por hora Banda de Reserva}
 \end{figure}
 
@@ -106,6 +106,12 @@ Em termos de média diária o erro pelo método proposto está bem abaixo da mar
 Como tal o $\rho_{proposto}$ a partir do estudo dos dados  históricos é: \
 
 \begin{table}[H] \centering \caption{Valores de $\rho$ propostos} \input{tabelas/table_p_proposto.tex} \end{table}
+
+
+% \begin{table}[H]
+%     \caption{Valores de $\rho$ propostos}    
+%     \resizebox{\linewidth}{!}{\input{tabelas/table_p_proposto.tex}}
+%     \end{table}
 
 Em relação a perdas por arredondamento, apresento o resultado dos erros por arrendamento em cada um da casas possíveis, concluindo que até à primeira casa decimal, pode ser feito arredondamento do parâmetro $\rho$, sem influenciar muito o erro: \\
 
@@ -118,3 +124,4 @@ Em relação a perdas por arredondamento, apresento o resultado dos erros por ar
 
 
 
+Neste estudo podemos comprovar que usando um $\rho$ extrapolado dos dados históricos, e um $L_{max}$ sendo o consumo real e não o consumo máximo calculado, os erros médios por hora ficam abaixo dos 5\%.\\
