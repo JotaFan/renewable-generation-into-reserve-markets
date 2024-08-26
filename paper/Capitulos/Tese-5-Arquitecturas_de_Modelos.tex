@@ -3,7 +3,7 @@
 Grande parte da literatura sobre previsões em modelos de apredizagem apresenta as mesmas arquiteturas, sendo que são depois aprimoradas consoate os dados e o problema. \\
 Apresento aqui as arquitecturas mais usadas em previsões, como também algumas usadas noutros ramos tentado prever a compatibilidade neste problema. \\
 % TODO: meter citaçao para o uso de cada uma em previsões
-Neste trabalho vamos usar arquiteturas de FCNN (Fully connected neural network), CNN (Convolutional Neural Networks), LSTM (Long short-term memory) e Transformer.\\
+Neste trabalho vamos usar arquiteturas de FCNN (Fully Connected Neural Network), CNN (Convolutional Neural Networks), LSTM (Long Short-Term Memory) e Transformer.\\
 
 
 
@@ -55,9 +55,17 @@ As convoluções podem realizar as operações em mais dimensões, é comum usar
 
 \subsection{UNET\label{se:unet_sec}}
 
-Um desenho especial de CNN, normalmente usando em modelação de imagens, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\\
+Um desenho especial de CNN, normalmente usando em modelação de imagens, e primeiro proposto em \cite{Shelhamer2014}, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\\
 Nas suas ligações UNET junta informação de filtros passados (não de nível temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.\\
-É chamada assim pois é uma rede (NET) que forma um U na sua expansão e contracção e ligações entre estes.\\
+É chamada assim pois é uma rede (NET) que forma um U na sua expansão, contracção e ligações entre estes.\\
+Em cada camada de encoding vai usando convulucões para criar novos filtros e diminuir a dimensionalidade, enquanto que na fase de decoding vai usar convoluções para aumentar a dimensionalidade e diminuir o número de filtros, adicionando a camada decoder de tamanho análogo.\\
+
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{\input{graphs/unet.tex}}
+	\caption{Ilustração uma rede UNET.}
+	\label{fig:unet_graph}
+\end{figure}
 
 
 \section{RNN\label{se:rnn_sec}}
@@ -70,21 +78,17 @@ Isso é feito através de loops internos que permitem à rede "lembrar" informa�
 As redes Long Short-Term Memory (LSTM) são um tipo especial de RNN projetado para superar os problemas de memória de longo prazo encontrados nas RNNs. Isto é conseguido através de uma estrutura de célula que mantém informações ao longo do tempo, permitindo que a rede lembre detalhes importantes mesmo após muitos passos no tempo.\\
 As LSTMs usam mecanismos de portão para controlar o fluxo de informações, permitindo que elas ignorem informações irrelevantes e mantenham as informações relevantes. Isso torna-as particularmente eficazes em tarefas que exigem o entendimento de dependências de longo prazo em dados sequenciais.\\
 
-% TODO imagem qq de lstm
 
-O uso de LSTM para previsões é uma area comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
+O uso de LSTM para previsões é uma área comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
 
 
 \section{Transformer\label{se:transformer_sec}}
 
-Os Transformers são um tipo de arquitetura de modelo que utiliza mecanismos de atenção para pesar a importância de diferentes partes de um dado de entrada. Em vez de processar os dados sequencialmente, como as RNNs, os Transformers processam todos os elementos do dado de entrada simultaneamente. \\
-Isso é feito através de um mecanismo de atenção que calcula uma pontuação de atenção para cada par de elementos no dado de entrada, indicando quão relevante um elemento é para o outro. Essas pontuações de atenção são então usadas para ponderar a contribuição de cada elemento ao resultado final. \\
+Os Transformers são um tipo de arquitetura de modelo que utiliza mecanismos de atenção para pesar a importância de diferentes partes de um dado de entrada, primeiro apresentado em \cite{Vaswani2017}.\\
+Em vez de processar os dados sequencialmente, como as RNNs, os Transformers processam todos os elementos do dado de entrada simultaneamente. Isso é feito através de um mecanismo de atenção que calcula uma pontuação de atenção para cada par de elementos no dado de entrada, indicando quão relevante um elemento é para o outro. Essas pontuações de atenção são então usadas para ponderar a contribuição de cada elemento ao resultado final. \\
 Isso permite aos Transformers capturar dependências de longo alcance nos dados de forma eficiente, tornando-os extremamente eficazes para tarefas de processamento de linguagem natural, como tradução automática e sumarização de texto.\\
-
-% TODO: imagem
-%TODO: cite
 % TODO: ref para cahtgpt e dall-e e assim
-Este tipo de desenho é a base para os modelos generativos mais conhecidos como o chatGPT para linguagem ou o Dall-E para imagens.
+Este tipo de desenho é a base para os modelos generativos mais conhecidos como o chatGPT para linguagem ou o Dall-E para imagens.\\
 
 
 
@@ -100,181 +104,181 @@ Este tipo de desenho é a base para os modelos generativos mais conhecidos como 
 
 
 
-\section{Camadas\label{se:layers}}
+% \section{Camadas\label{se:layers}}
 
-Para uma construção de modelos usando a ferramenta \href{https://keras.io/}{keras} a unidade básica são as camadas. Estas representação um operação, com uma entrada, e uma saida, e com possiveis parametrizaçoes específicas. \\
-Estas camadas ligadas entre si, perfazem um \"profundo\" de camadas neuronais, chamado profundo pois tem mais  que uma camada. \\
+% Para uma construção de modelos usando a ferramenta \href{https://keras.io/}{keras} a unidade básica são as camadas. Estas representação um operação, com uma entrada, e uma saida, e com possiveis parametrizaçoes específicas. \\
+% Estas camadas ligadas entre si, perfazem um \"profundo\" de camadas neuronais, chamado profundo pois tem mais  que uma camada. \\
 
-Apresento aqui as camadas utilizadas nos modelos aplicados.\\
+% Apresento aqui as camadas utilizadas nos modelos aplicados.\\
 
-\subsection{Dense\label{se:dense_layer}}
+% \subsection{Dense\label{se:dense_layer}}
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/neuronio.tex}}
-	\caption{Ilustração de um neurónio. Adaptado de Haykin1999\cite{Haykin1999}}
-	\label{fig:neuronio}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/neuronio.tex}}
+% 	\caption{Ilustração de um neurónio. Adaptado de Haykin1999\cite{Haykin1999}}
+% 	\label{fig:neuronio}
+% \end{figure}
 
 
-A camada dense pega num input, cria um número de neurónios, \textit{N}, também chamado número de filtros, onde cada neurónio (filtro), recebe informação de cada uma das entradas, e todos os neuronios ligam a todas as dimensões de saida. \\
-Cada neurónio gera uma operação, inicialmente aleatória, para tentar reproduzir uma função que traduza a entrada na saída ideal. \\
-Esta camada é altamente influenciada pelo \textit{Perceptão} inicialmente proposto por Franck Rosenblatt\cite{Rosenblatt1958}. Este apresentava um \textit{Perceptão} que fazia uma decisão binária baseado na somas pesadas de todas as entradas. \\
-A ideia é a base utilizada actualmente, mas apresentava algumas limitações, e muita computação, o proposto por Minsky and Papert\cite{Minsky1969}, eleva a ideia com a introdução da funcção de activação e o bias. \\
-A utilização mais recorrente actual é a proposta por Haykin\cite{Haykin1999}, que baseada nas anteriores tem a seguinte apresentação:
+% A camada dense pega num input, cria um número de neurónios, \textit{N}, também chamado número de filtros, onde cada neurónio (filtro), recebe informação de cada uma das entradas, e todos os neuronios ligam a todas as dimensões de saida. \\
+% Cada neurónio gera uma operação, inicialmente aleatória, para tentar reproduzir uma função que traduza a entrada na saída ideal. \\
+% Esta camada é altamente influenciada pelo \textit{Perceptão} inicialmente proposto por Franck Rosenblatt\cite{Rosenblatt1958}. Este apresentava um \textit{Perceptão} que fazia uma decisão binária baseado na somas pesadas de todas as entradas. \\
+% A ideia é a base utilizada actualmente, mas apresentava algumas limitações, e muita computação, o proposto por Minsky and Papert\cite{Minsky1969}, eleva a ideia com a introdução da funcção de activação e o bias. \\
+% A utilização mais recorrente actual é a proposta por Haykin\cite{Haykin1999}, que baseada nas anteriores tem a seguinte apresentação:
 
 
-O conjunto destes neuroneis perfaz a camada de dense:
+% O conjunto destes neuroneis perfaz a camada de dense:
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/dense.tex}}
-	\caption{Ilustração de uma camada dense.}
-	\label{fig:dense}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/dense.tex}}
+% 	\caption{Ilustração de uma camada dense.}
+% 	\label{fig:dense}
+% \end{figure}
 
 
 
-\subsection{Convolution\label{se:conv_layer}}
+% \subsection{Convolution\label{se:conv_layer}}
 
-A camada de convoluções difere da dense no sentido em que os filtros (neurónios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada.
-Nas convoluções é criada uma janela móvel que percorre a camada, criando um saida desse conjunto de pontos. Esta janela move-se sempre subsequentemente.\\
-Esta operação é normalmente feita na dimensão (ou dimensões) em que queremos perceber padrões. Nos nossos dados a convolução será na dimensão temporal. \\
-Se tivermos uma matriz com nove passos temporais (N,9,1), se o tamanho da janela de convulução for 3, teremos uma saida de tamanho 6 (N, 6, 1).
+% A camada de convoluções difere da dense no sentido em que os filtros (neurónios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada.
+% Nas convoluções é criada uma janela móvel que percorre a camada, criando um saida desse conjunto de pontos. Esta janela move-se sempre subsequentemente.\\
+% Esta operação é normalmente feita na dimensão (ou dimensões) em que queremos perceber padrões. Nos nossos dados a convolução será na dimensão temporal. \\
+% Se tivermos uma matriz com nove passos temporais (N,9,1), se o tamanho da janela de convulução for 3, teremos uma saida de tamanho 6 (N, 6, 1).
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/conv1D.tex}}
-	\caption{Ilustração da operação de Convolução}
-	\label{fig:conv_layer1D}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/conv1D.tex}}
+% 	\caption{Ilustração da operação de Convolução}
+% 	\label{fig:conv_layer1D}
+% \end{figure}
 
-Anteriomente ignoramos o número de filtros. Mas as convuluções criam o número pedido de filtros para cada janela temporal. Aqui cada filtro vai funcionar como na camada dense, onde cada um começa com uma operação pseudo aleatoria. Esta operação está normalmente é feita na dimensão dos atributos. Ou seja, a quantidade de filtros que esta camada irá produzir por convulução. \\
-Se tivermos a mesma entrada que anterioemente mas com 4 atributos (N, 9, 4), e se definir o número de filtros para 2 teremos uma saida (N, 6, 2). \\
-Ou seja dois filtros por cada janela temporal. 
+% Anteriomente ignoramos o número de filtros. Mas as convuluções criam o número pedido de filtros para cada janela temporal. Aqui cada filtro vai funcionar como na camada dense, onde cada um começa com uma operação pseudo aleatoria. Esta operação está normalmente é feita na dimensão dos atributos. Ou seja, a quantidade de filtros que esta camada irá produzir por convulução. \\
+% Se tivermos a mesma entrada que anterioemente mas com 4 atributos (N, 9, 4), e se definir o número de filtros para 2 teremos uma saida (N, 6, 2). \\
+% Ou seja dois filtros por cada janela temporal. 
 
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/conv_layer.tex}}
-	\caption{Ilustração da camada de Convolução}
-	\label{fig:conv_layer}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/conv_layer.tex}}
+% 	\caption{Ilustração da camada de Convolução}
+% 	\label{fig:conv_layer}
+% \end{figure}
 
-As convuluções podem realizar as operaçoes em mais dimensões, é comun usar 2D para imegens, e 3D para videos. Nete trabalho apenas trabelhemos com convulucões 1D.\\
+% As convuluções podem realizar as operaçoes em mais dimensões, é comun usar 2D para imegens, e 3D para videos. Nete trabalho apenas trabelhemos com convulucões 1D.\\
 
 
-\subsection{MaxPooling\label{se:max_pooling}}
+% \subsection{MaxPooling\label{se:max_pooling}}
 
-As camadas de pooling fazem operaçoes para redimensionar os filtros anteriores. \\
-Usando também uma janela movel, estas camadas esccolhem um dos valores da janelas para o resultado na saida. Operaações comuns de pooling são, o maximo, ou a media desses valores. Sendo que a operação é feita na dimensáo, ou nas dimensões, não dos filtros. \\
-Ou seja, se tivermos um tensor de formato (N, 4, 4), e tivermos uma janela de tamanho 3, iremos produzir uma reposta com o formato (N, 2, 4).\\
-Estas camadas são usadas principalmente para permitir uma escolha dos filtros mais relevantes e assim combater tanto overfitting como acelarar o processo de treino. \cite{Matoba2022}
-A camada usada nestas arquitecturas é MaxPooling, que escolhe o maior valor dentro da janela de strides, e aplica na saida. \\
+% As camadas de pooling fazem operaçoes para redimensionar os filtros anteriores. \\
+% Usando também uma janela movel, estas camadas esccolhem um dos valores da janelas para o resultado na saida. Operaações comuns de pooling são, o maximo, ou a media desses valores. Sendo que a operação é feita na dimensáo, ou nas dimensões, não dos filtros. \\
+% Ou seja, se tivermos um tensor de formato (N, 4, 4), e tivermos uma janela de tamanho 3, iremos produzir uma reposta com o formato (N, 2, 4).\\
+% Estas camadas são usadas principalmente para permitir uma escolha dos filtros mais relevantes e assim combater tanto overfitting como acelarar o processo de treino. \cite{Matoba2022}
+% A camada usada nestas arquitecturas é MaxPooling, que escolhe o maior valor dentro da janela de strides, e aplica na saida. \\
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/pooling_layer.tex}}
-	\caption{Ilustrção do efeito da camada de Pooling}
-	\label{fig:pooling}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/pooling_layer.tex}}
+% 	\caption{Ilustrção do efeito da camada de Pooling}
+% 	\label{fig:pooling}
+% \end{figure}
 
 
 
-\subsection{\href{https://keras.io/api/layers/regularization_layers/dropout/}{Dropout}\label{se:dropout}}
+% \subsection{\href{https://keras.io/api/layers/regularization_layers/dropout/}{Dropout}\label{se:dropout}}
 
-Dropout é uma camada que elimina/ignora alguns dos neuronios da camada anterior. Este procedimente impede o overfitting, ajudando na generalização. \\
+% Dropout é uma camada que elimina/ignora alguns dos neuronios da camada anterior. Este procedimente impede o overfitting, ajudando na generalização. \\
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/dropout.tex}}
-	\caption{Ilustrção do efeito da camada de dropout}
-	\label{fig:dropout}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/dropout.tex}}
+% 	\caption{Ilustrção do efeito da camada de dropout}
+% 	\label{fig:dropout}
+% \end{figure}
 
 
 
-\section{Blocos\label{se:blocos}}
+% \section{Blocos\label{se:blocos}}
 
-Todas as arquiteturas em análise irão ter por base um bloco de camadas neuronais. A formação dessas arquitecturas passa pelas diferentes maneiras que se pode utilizar o bloco principal. Repetições em serie ou em paralelo são um exemplo. \\
+% Todas as arquiteturas em análise irão ter por base um bloco de camadas neuronais. A formação dessas arquitecturas passa pelas diferentes maneiras que se pode utilizar o bloco principal. Repetições em serie ou em paralelo são um exemplo. \\
 
-\subsection{Bloco Dense\label{se:dense}}
+% \subsection{Bloco Dense\label{se:dense}}
 
-O bloco dense sendo ele o mais simples é formado por duas camadas Dense \ref{se:dense_layer} \cite{}, em que a primeira apresenta um número maior de filtros que a segunda. \\
-Estas camadas não são mais do que uma criação de filtros aleatórios combinando as entradas, para criar todos os filtros de saida. São a base das camadas intrepretativas. A acumulação em série (stacked) de camadas de dense está ligada a melhorias nas capacidades predictivas dos modelos \cite{VLHelen2021}. \\
-Exemplo ilustrativo do nosso bloco basico onde entrariam 16 filtros na primeira camada e para finalizar o bloco com 2 filtros \\
+% O bloco dense sendo ele o mais simples é formado por duas camadas Dense \ref{se:dense_layer} \cite{}, em que a primeira apresenta um número maior de filtros que a segunda. \\
+% Estas camadas não são mais do que uma criação de filtros aleatórios combinando as entradas, para criar todos os filtros de saida. São a base das camadas intrepretativas. A acumulação em série (stacked) de camadas de dense está ligada a melhorias nas capacidades predictivas dos modelos \cite{VLHelen2021}. \\
+% Exemplo ilustrativo do nosso bloco basico onde entrariam 16 filtros na primeira camada e para finalizar o bloco com 2 filtros \\
 
 
 
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/dense_block.tex}}
-	\caption{Ilustrção do bloco de Dense}
-	\label{fig:dense_block}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/dense_block.tex}}
+% 	\caption{Ilustrção do bloco de Dense}
+% 	\label{fig:dense_block}
+% \end{figure}
 
 
 
 
-\subsection{Bloco CNN\label{se:cnn}}
+% \subsection{Bloco CNN\label{se:cnn}}
 
-Bloco de CNN é aqui definido como uma convolução na dimensão temporal seguido de camadas para combater o overfitting, MaxPooling e Dropout. \\
+% Bloco de CNN é aqui definido como uma convolução na dimensão temporal seguido de camadas para combater o overfitting, MaxPooling e Dropout. \\
 
 
-%figura otima: https://www.researchgate.net/publication/344229502_A_Novel_Deep_Learning_Model_for_the_Detection_and_Identification_of_Rolling_Element-Bearing_Faults/figures?lo=1
+% %figura otima: https://www.researchgate.net/publication/344229502_A_Novel_Deep_Learning_Model_for_the_Detection_and_Identification_of_Rolling_Element-Bearing_Faults/figures?lo=1
 
 
-\begin{figure}[H]
-	\centering
-	\resizebox{\linewidth}{!}{\input{graphs/cnn.tex}}
-	\caption{Ilustração do bloco de CNN}
-	\label{fig:cnn_block}
-\end{figure}
+% \begin{figure}[H]
+% 	\centering
+% 	\resizebox{\linewidth}{!}{\input{graphs/cnn.tex}}
+% 	\caption{Ilustração do bloco de CNN}
+% 	\label{fig:cnn_block}
+% \end{figure}
 
 
 
-\subsection{Bloco LSTM\label{se:lstm}}
+% \subsection{Bloco LSTM\label{se:lstm}}
 
-O uso de LSTM para previsões é uma area comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
-O bloco LSTM é a aplicação das RNN, aqui sendo apenas definido como uma camada de LSTM. \\
-Estes blocos mantêm dentro de si ligações a diferentes camadas temporais, e cada filtro criado, mantêm uma "memória" dos filtros passados. \\
-Bastante utilizado em modelação de linguagem.
+% O uso de LSTM para previsões é uma area comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
+% O bloco LSTM é a aplicação das RNN, aqui sendo apenas definido como uma camada de LSTM. \\
+% Estes blocos mantêm dentro de si ligações a diferentes camadas temporais, e cada filtro criado, mantêm uma "memória" dos filtros passados. \\
+% Bastante utilizado em modelação de linguagem.
 
-imagem
+% imagem
 
 
-\section{Arquiteturas \label{se:arquitecturas}}
+% \section{Arquiteturas \label{se:arquitecturas}}
 
-\subsection{Vanilla \label{se:vannila}}
+% \subsection{Vanilla \label{se:vannila}}
 
-O termo "Vanilla" aqui é aplicado para aquitecturas que apenas usam um bloco de cada, um de entrada, um principal, e um interpretativo. \\
-Como exemplo a arquitetura de "VanillaCNN" utiliza o bloco de convulução apenas para terminar com uma camda interpretativa.
+% O termo "Vanilla" aqui é aplicado para aquitecturas que apenas usam um bloco de cada, um de entrada, um principal, e um interpretativo. \\
+% Como exemplo a arquitetura de "VanillaCNN" utiliza o bloco de convulução apenas para terminar com uma camda interpretativa.
 
 
-\subsection{Stacked\label{se:stacked}}
+% \subsection{Stacked\label{se:stacked}}
 
-Stacked refere-se a "amontoado" onde se utiliza o bloco principal várias vezes em série.E apenas um bloco de  entrada e um interpretativo. \\
-Como exemplo a arquitetura de "StackedCNN" utiliza dois blocos (ou mais) de convulução depois da camada de entrada, e finaliza com uma camada interpretativa.
+% Stacked refere-se a "amontoado" onde se utiliza o bloco principal várias vezes em série.E apenas um bloco de  entrada e um interpretativo. \\
+% Como exemplo a arquitetura de "StackedCNN" utiliza dois blocos (ou mais) de convulução depois da camada de entrada, e finaliza com uma camada interpretativa.
 
-imagem da mesma
+% imagem da mesma
 
 
 
-\subsection{UNET\label{se:UNET}}
+% \subsection{UNET\label{se:UNET}}
 
-Normalmente usando em modelção de imagens, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\\
-O bloco principal contextualmente o mesmo que o CNN.\\
-Nas suas ligações UNET junta informação de filtros passados (não de nivel temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.\\
-É habitual também adicionar aos blocos principais portões de atenção, portões residuais. Estas duas tecnicas são também estudadas aqui.\\
-É chamada assim pois é uma rede (NET) que forma um U na sua expansão e contracção.\\
+% Normalmente usando em modelção de imagens, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\\
+% O bloco principal contextualmente o mesmo que o CNN.\\
+% Nas suas ligações UNET junta informação de filtros passados (não de nivel temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.\\
+% É habitual também adicionar aos blocos principais portões de atenção, portões residuais. Estas duas tecnicas são também estudadas aqui.\\
+% É chamada assim pois é uma rede (NET) que forma um U na sua expansão e contracção.\\
 
-Como exemplo a arquitetura de "UNET"
+% Como exemplo a arquitetura de "UNET"
 
-imagem da mesma
+% imagem da mesma
 
 
-\section{Considerações adicionais\label{se:modelos_plus}}
+% \section{Considerações adicionais\label{se:modelos_plus}}
 
-Os modelos testados são combinações destes blocos e aquitecturas. 
+% Os modelos testados são combinações destes blocos e aquitecturas. 
 
