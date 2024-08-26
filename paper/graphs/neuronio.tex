@@ -37,12 +37,12 @@
     \draw[->] (sum) -- (activation);
     \draw[->] (activation) -- ++(1,0);
     % Labels
-    \node[above=1cm]  at (f2) {inputs};
-    \node[above=1cm] at (w2) {weights};
-    \node[above=1cm] at (activation) {activation function};
+    \node[above=1cm]  at (f2) {Entradas};
+    \node[above=1cm] at (w2) {Pesos};
+    \node[above=1cm] at (activation) {Função de activação};
 
     % Neuron
     \node[draw, dashed, fit= (w2) (last_weight) (activation) (bias), inner sep=0.5em] (square){};
-    \node[below=0.2cm] at (square) {Neuronio};
+    \node[below=1.5cm] at (square) {Neurónio};
 
 \end{tikzpicture}
