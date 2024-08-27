@@ -19,16 +19,8 @@ Foram aprovadas a nível europeu (2020) medidas de alteração aos serviços de 
 As seguintes perguntas guiarão esta pesquisa.\\
 
 \begin{enumerate}[label=\alph*)]
-  \item É positivo para as vRES participar no mercado de reserva?
-  \item Como configurar essa participação para otimizar o lucro do ponto de vista das vRES?
-  \item Essa participação é positiva para o sistema eléctrico num todo?
-\end{enumerate}
-
-%TODO: escolher
-SUGESTAO NOVA:
-\begin{enumerate}[label=\alph*)]
-  \item Podemos mitigar a volatilidade das vRES no mercado de reservas secundária?
-  \item Alocação de previsão dinâmica pode ter um efeito positivo no mercado de reservas?
+  \item Podemos reduzir a incerteza de grandes penetrações de vRES na alocação de reserva secundária?
+  \item A alocação dinâmica pode ter um efeito positivo no mercado de reservas?
   \item É possível prever a necessidade de reserva necessária baixando a alocação desperdiçada?
 \end{enumerate}
 
@@ -36,13 +28,9 @@ Para responder a essas perguntas, utilizaremos dados de previsão de geração d
 
 \section{Organização do Documento \label{se:organização}}
 
-Este documento está divido em capitulos. Sendo que os primeiros apresentam uma introdução às ideias e temas \ref{ch:intro}, o estado de arte do temas na literatura publicada \ref{ch:revisao}, e por fim uma contextualização dos temas abordados \ref{ch:contexto}. \\
-Segue um capitulo de explicação dos dados usado \ref{ch:dados}, onde se apresentam os mesmos juntamente com alguns estudos preliminares para compreender a naturuza e qualidades dos mesmos. \\
-%TODO: adicinar onde os buscar e que estudos
-
-O capitulo seguinte entra no ambito experimental da dissertação, onde se apresenta as diferentes arquitecturas \ref{ch:arch} utilizadas, incluindo uma explicação dos componentes das mesmas. \\
-
-Os capítulos 6 e 7 são bastatante paralelos, sendo que o sexto \ref{ch:metodos} apresenta a metologia do trabalho, e explica todas as experiências, e o sétimo \ref{ch:resultados_discussao} apresenta apenas os resultados e conclusoes experiência a experiência. \\
-
-Termina com um capitulo conclusivo \ref{ch:conclusao} onde são avaliadas as experiências como um todo, e o seu impacto no ambito dos mercados de reserva. \\
-
+Este documento está dividido em capítulos. Sendo que os primeiros apresentam uma introdução às ideias e temas no 1, o estado de arte dos temas na literatura publicada no 2, e por fim uma contextualização dos temas abordados no 3.\\
+Os dois capítulos seguintes apresentam os dois diferentes estudos. No capítulo 4 é definido e apresentado o resultado do estudo da estimativa do parâmetro $\rho$ da fórmula de estimativa da REN.\\
+No capítulo 5 explora-se o segundo estudo, o dimensionamento dinâmico da alocação necessária. São apresentados os dados utilizados com um estudo preliminar sobre os mesmos, e o tratamento necessário para usar nos modelos.\\
+O capítulo 6 apresenta as diferentes famílias de modelos de machine learning utilizados nesta experiência, e o subsequente as ferramentas de programação criadas para realizar a mesma.\\
+Os 3 capítulos seguintes são os descritivos da experiência em si. Capítulo 7 são as métricas usadas e criadas para a validação da experiência, capítulo 8 é a estrutura e parametrização da mesma, e capítulo 9 apresenta os resultados.\\
+Termina com um capítulo conclusivo  onde são avaliadas as experiências como um todo, e o seu impacto no âmbito dos mercados de reserva.\\
