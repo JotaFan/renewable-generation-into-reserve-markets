@@ -1,33 +1,12 @@
 \chapter{Conclusões e sugestões futuras}
 
-Primeiramente podemos ver pela análise estatistica\ref{tb:statitics_scores} e aplicando a ideia\cite{Elsayed}, simples modelos estatisticos conseguiriam resolver o problema em mãos, melhor do que o que é utilizado actualmente\ref{tb:benchmark_val}, e melhor do que muitos dos modelos profundos que testamos. \\
-E se considerarmos ainda que os modelos estatiscos apresentados que apresentam estes resultados, utilizam apenas a variavel em questão, e não todos os outros atributos, a nível de aplicabilidade já são um melhoria. \\
-
-Com modelos relativamente simples conseguimos melhorias muito grandes na alocaçao de energia, em relaçao à alocada actualmente. Este metodos podem criar ganhos fincanceiros grandes.
-
-
-
-Aqui são dadas as respostas às perguntas de investigação formuladas na secção \ref{se:objetivos}. Não fazer aqui a discussão dos resultados. Essa discussão deve ser feita no capitulo \ref{ch:resultados_discussao}. Não esquecer de indicar sugestões futuras para que um colega possa dar continuidade ao trabalho desenvolvido. 
-
-
-sintexe excutiva:
-
-Os modelos de redes neuronais para previsões são um campo já bastante explorado. As varias gerações de arquiteturas sempre tentaram resolver este problema.
-
-
-Como podemos verificar neste estudo esses metodos são mais eficazes que a técnica actualmente aplicada para a previsão de alocação secundária.
-
-Uma primeira análise apenas linear já consegue resultados mais lucrativos que o modelo aplicado, então o poder das redes neuronais consegue ampliar essa capacidade.
-Contudo a escolha e aplicação das mesmas deve estar fortemente ligado ao tipo de estrutura que se pretende construir para a mesma.
-Em casos de grande capacidade computacional e previsões recorrentes os modelos de arquiteturas mais recente, e os modelos mais complexos, como UNET e a família de Transformers, são os que mostram mais fiabilidade.
-No entanto se estes calculos só podem ser efectuados em maquinas menos poderosas, pode-se ter de ficar pelos arquiteturas mais simples, e mais antigas (dar exemplos).
-
-Independentemente do caso especifico, é bastante possivel melhorar o modelo actual de previsão usando redes neuronais, sendo que estas vao manter ainda a capacidade de ir aprendendo com dados novos, dando ainda mais robustez e dinamimo às previsões.
-
-
-Embora os resultados sejam positivos do ponto de vista do problema a procurar ser resolvido, penso que poderia ser atacado de maneira mais eficaz.
-Os primeiros passos para um modelo mais rebusto seria a escolha de dados de treino. Neste estudo usamos dados de outras previsões, dados esse que são eles proprios artificias na sua maioria. Isto não só adiciona mais uma camada de abstração, como representa uma perda na qualidade de informação.
-Ao invés destes dados de previsões um primeiro passo seria criar um modelo apenas com dados reais de consumo e produção.
-Em adicão a isto os principais dados a utilizar numa procura de melhor modelo seriam os de outras reservas, primária e terciária. Visto estas estarem intrincecamente ligadas com a reserva secundãria, deduzo que a informação contida nestes seria bem mais eficaz na produção de modelos de previsão de reserva de energia secundária.
-
-Outra recomendação a ter em mente para futuros modelos requer já um conhecimento destes sistemas superior, e a criação de camadas neuronais com restrições na modelaçao das variáveis. Este tipo de camadas vai permitir modelos muito mais robustos, visto nao aprenderem fora do contexto necessário, e tambem modelos muito mais leves, o que irá permitir uma adopção dos mesmos mais eficaz.
+Primeiramente podemos ver pela análise estatística \ref{tab:statsres} e aplicando a ideia \cite{Elsayed}, simples modelos estatísticos conseguiriam baixar bastante o erro de previsão, melhor do que o que é utilizado actualmente \ref{tab:benchmarkmetrics}, embora tenham aumentado a necessidade de alocação na reserva terciária.\\
+E se considerarmos ainda que os modelos estatísticos apresentados que apresentam estes resultados, utilizam apenas a variável em questão, e não todos os outros atributos, a nível de aplicabilidade já são uma melhoria. \\
+Em relação a métodos \textit{machine learning}, com poucos recursos computacionais, conseguimos já modelos que superam o método actual.\\
+Com modelos relativamente simples conseguimos melhorias muito grandes na alocação de energia, em relação à alocada actualmente. Estes métodos podem criar grandes ganhos financeiros, e diminuir a quantidade de recursos desperdiçados, logo têm um efeito positivo no mercado de reservas.\\
+Os resultados aqui apresentados provam que vários tipos de modelos de \textit{machine learning} conseguem realizar previsões bem mais exactas, e que diminuem os recursos usados. Para uso em mercado real estes podem ser adaptados para responder ao mercado em questão, e ao contrário de uma fórmula, podem ir “aprendendo” e melhorando com o passar do tempo.\\
+O que mostra que usando estes métodos dinâmicos podemos sim reduzir as incertezas da penetração das vRES na alocação de energia secundária.\\
+O futuro da indústria pode passar por este tipo de metodologias. Uma maneira de melhorar ainda mais estes resultados seria o uso de outras variáveis para o modelo. Variáveis essas como os dados de reserva primária, dados meteorológicos e principalmente dados não de DA mas reais.\\
+Um aumento computacional poderia também ter um aumento significativo nas previsões, usando mais quantidade de dados, usando modelos mais pesados e complexos, mais dados históricos, modelações com dados de mercados diferentes com convergência para o mercado necessário.\\
+Outra possibilidade pode ser o uso de \textit{machine learning} para a reparametrização de novas fórmulas baseadas nas já existentes e em uso.\\
+Vários caminhos e maneiras podem surgir para aplicar o uso de modelos de \textit{machine learning} em alocação dinâmica de reservas, onde operadores diferentes podem ter arquiteturas e modelos completamente diferentes.
