@@ -9,8 +9,8 @@ As condições em estudo são feitas através da ferramenta \hyperref[se:muaddib
 \subsection{Arquitecturas}
 
 % TODO: add ref to fcnn etc no capitulo a explicar isso
-FCNN, CNN , RNN são as arquitecturas mais simples que vamos estudar. Estas vão apenas pegar nos blocos e vamos criar as mesmas "Vanila" e "Stacked" com 2 blocos (ex: StackedCNN) ou 6 blocos (ex: Stacked6CNN).\\
-UNET, LSTM são arquiteturas mais complexas e pesadas. Como descrito anteriormente uma mais utilizada em análise de imagens, e outra em análise de texto respectivamente.\\
+\gls{FCNN}, \gls{CNN} , RNN são as arquitecturas mais simples que vamos estudar. Estas vão apenas pegar nos blocos e vamos criar as mesmas "Vanila" e "Stacked" com 2 blocos (ex: StackedCNN) ou 6 blocos (ex: Stacked6CNN).\\
+UNET, \gls{LSTM} são arquiteturas mais complexas e pesadas. Como descrito anteriormente uma mais utilizada em análise de imagens, e outra em análise de texto respectivamente.\\
 Transformers são as mais pesadas qualidade comum da família de "generative AI".
 
 \subsection{Função de Perda}
@@ -29,10 +29,10 @@ De maneira que partimos esta experiência em duas partes. A primeira parte, Fun�
 
 
 \subsubsection{Funções de Perda}
-Depois de escolhidos os pesos nos diferentes grupos são testadas as funções a aplicar. Aqui vamos manter simples e testar apenas as mais comuns em problemas de regressão linear: Mean Absolute Error (MAE), Mean Squared Error (MSE), Mean Logarithmic Error (MLE).\\
-MAE é usada no geral em problemas em que os dados têm um histograma linear, e um erro normalmente distribuído.\\
-MSE é usado para atribuir maior peso aos erros maiores, do que no MAE. Fazendo com que o modelo se concentre mais em aprender a diminuir erros maiores.\\
-MSLE é sugerido em dados que têm uma histograma exponencial.\\
+Depois de escolhidos os pesos nos diferentes grupos são testadas as funções a aplicar. Aqui vamos manter simples e testar apenas as mais comuns em problemas de regressão linear: Mean Absolute Error (\gls{MAE}), Mean Squared Error (\gls{MSE}), Mean Logarithmic Error (\gls{MSLE}).\\
+\gls{MAE} é usada no geral em problemas em que os dados têm um histograma linear, e um erro normalmente distribuído.\\
+\gls{MSE} é usado para atribuir maior peso aos erros maiores, do que no \gls{MAE}. Fazendo com que o modelo se concentre mais em aprender a diminuir erros maiores.\\
+\gls{MSLE} é sugerido em dados que têm uma histograma exponencial.\\
 
 % TODO: meter formulas? depende do espaço
 
