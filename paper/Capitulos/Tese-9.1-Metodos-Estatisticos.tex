@@ -1,7 +1,7 @@
 \section{Estatisticos}
 
 Em estatística conseguimos encontrar vários métodos de estudo de séries temporais. Estes métodos são normalmente usados como primeira abordagem para fazer previsões.\\
-Estes modelos podem ser auto-regressivos (AR), onde vão fazer previsões baseados num número (p) de dados anteriores. Estes modelos são construídos com a noção de que um valor é linearmente dependente de p valores anteriores numa série temporal.\\
+Estes modelos podem ser auto-regressivos (\gls{AR}), onde vão fazer previsões baseados num número (p) de dados anteriores. Estes modelos são construídos com a noção de que um valor é linearmente dependente de p valores anteriores numa série temporal.\\
 
 \begin{alignat*}{2} 
     & X_{t} : \text{Valor no } t \text{ a prever.} &\quad& p : \text{O número observaçoes anteriores.} \\
@@ -11,25 +11,25 @@ Estes modelos podem ser auto-regressivos (AR), onde vão fazer previsões basead
 \end{alignat*}
 
 \bigskip
-AR - Auto-Regressivos \\
+\gls{AR} - Auto-Regressivos \\
 
 \begin{equation} \label{eq:ar} 
     X_{t} = \sum_{i=1}^{p}\varphi_{i} X_{t-i} 
 \end{equation}
 \smallskip
 
-Outra família destes modelos são os de média móvel (MA), onde a média de um número de observações (q) em conjunto com os erros ($\epsilon$) e os coeficientes ($\theta$) é usada para prever os valores seguintes.\\
+Outra família destes modelos são os de média móvel (\gls{MA}), onde a média de um número de observações (q) em conjunto com os erros ($\epsilon$) e os coeficientes ($\theta$) é usada para prever os valores seguintes.\\
 \bigskip
-MA - Média Móvel \\
+\gls{MA} - Média Móvel \\
 
 \begin{equation} \label{eq:ma} 
     X_{t} = \mu + \sum_{i=1}^{q}(\theta_{i} \epsilon_{t-i}) + \epsilon_{t}
 \end{equation}
 \smallskip
-Estes dois tipos de modelos podem ser juntos criando os modelos auto-regressivos de média móvel (ARMA). que junta as capacidades dos modelos anteriores.\\
+Estes dois tipos de modelos podem ser juntos criando os modelos auto-regressivos de média móvel (\gls{ARMA}). que junta as capacidades dos modelos anteriores.\\
 
 \bigskip
-MA - Média Móvel \\
+\gls{MA} - Média Móvel \\
 
 \begin{equation} \label{eq:ma} 
     X_{t} = \sum_{i=1}^{p}\varphi_{i} X_{t-i}  + \mu + \sum_{i=1}^{q}(\theta_{i} \epsilon_{t-i}) + \epsilon_{t}
@@ -45,9 +45,9 @@ As variáveis em estudo por tipo de modelo foram retiradas das autocorrelações
     \toprule
      & p & q \\
     \midrule
-    AR & 1/ 2 / 23 / 24 / 25 / 48 / 144 / 168 / 192 / 336 & NA \\
-    MA & NA & 1 / 24 \\
-    ARMA & 1 & 1 \\
+    \gls{AR} & 1/ 2 / 23 / 24 / 25 / 48 / 144 / 168 / 192 / 336 & NA \\
+    \gls{MA} & NA & 1 / 24 \\
+    \gls{ARMA} & 1 & 1 \\
     \bottomrule
     \end{tabular}
     \label{tab:varsstats} 
