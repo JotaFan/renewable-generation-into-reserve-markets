@@ -1,6 +1,45 @@
 \chapter{Contextos\label{ch:contextos}}
 
-\section{Mercado de Serviços de Sistema \label{se:servicos_sistema}}
+\section{Mercados de Energia}
+
+\subsection{Mercado Ibérico de Electricidade \label{se:mibel}}
+
+O \gls{MIBEL} é um exemplo de integração de mercados de energia entre países, funcionando como um elo entre os mercados de eletricidade de Portugal, \gls{OMIP} e Espanha, \gls{OMIE}. Este mercado grossista compreende diferentes formatos de negociação, cada um desempenhando um papel específico na gestão da compra e venda de eletricidade. \\
+O \gls{OMIP} é responsável pela negociação a prazo de energia elétrica enquanto que o  \gls{OMIE} é responsável pela negociação diária de energia elétrica.\\
+O \gls{MIBEL} é estruturado para fornecer uma plataforma eficiente e transparente para a transação de energia, garantindo a competitividade e a segurança de fornecimento. Vamos explorar os principais componentes deste modelo.\\
+
+
+\subsubsection{Mercado em Bolsa (Mercado Spot) \label{se:mercado_bolsa}}
+O mercado em bolsa, também conhecido como mercado spot, é uma das principais formas de negociação no \gls{MIBEL}. Este mercado é dividido em duas vertentes: o mercado diário e o mercado intradiário. No mercado diário, as propostas de compra e venda de eletricidade são apresentadas para o dia seguinte, permitindo que os agentes ajustem suas previsões de produção e consumo com base nas condições de mercado mais recentes. Já o mercado intradiário permite a negociação para as horas seguintes, oferecendo maior flexibilidade para ajustes de última hora, o que é especialmente útil para acomodar variações inesperadas na oferta e demanda. Este sistema dinâmico assegura que a eletricidade é negociada em tempo real, refletindo as necessidades e capacidades do sistema elétrico com um horizonte de curto prazo.\\
+
+
+\subsubsection{Mercado de Contratação a Prazo \label{se:mercado_prazo}}
+Além do mercado spot, o \gls{MIBEL} inclui o mercado de contratação a prazo, onde os agentes estipulam compromissos de compra e venda de eletricidade com semanas, meses, ou até anos de antecedência. Este mercado permite aos participantes fixar preços e volumes de energia para o futuro, mitigando os riscos associados à volatilidade dos preços no curto prazo. A contratação a prazo proporciona uma maior previsibilidade e estabilidade financeira para os produtores e consumidores de energia, permitindo um planejamento estratégico mais robusto. Os contratos podem variar em termos de maturidade, desde acordos de curto prazo até contratos de longo prazo, dependendo das necessidades e estratégias dos agentes envolvidos.\\
+
+
+\subsubsection{Mercado Livre de Contratação Bilateral Física \label{se:mercado_bilateral}}
+Outra componente importante do \gls{MIBEL} é o mercado livre de contratação bilateral física, onde os agentes negociam diretamente a compra e venda de eletricidade para uma determinada maturidade no futuro. Este formato permite uma maior personalização dos contratos, uma vez que as condições podem ser ajustadas diretamente entre as partes envolvidas, sem a intervenção de um mercado centralizado. Esse tipo de negociação é particularmente vantajoso para grandes consumidores e produtores que procuram acordos específicos para atender às suas necessidades operacionais ou estratégias de hedge contra flutuações de preços. A liberdade de negociação bilateral física oferece um nível adicional de flexibilidade e controle sobre as transações, promovendo uma maior eficiência no mercado.\\
+
+\subsubsection{Mercado de Serviços de Sistema \label{se:servicos_sistema_mibel}}
+Por fim, o mercado de serviços de sistema desempenha um papel crítico na manutenção do equilíbrio entre a produção e o consumo de energia elétrica em tempo real. Este mercado é responsável por garantir que a rede elétrica opere de forma segura e estável, ativando reservas e ajustando a produção conforme necessário para responder a variações inesperadas na demanda ou na oferta. O mercado de serviços de sistema engloba uma série de mecanismos, incluindo a ativação de reservas de frequência e o despacho de unidades geradoras flexíveis, que são essenciais para a gestão da estabilidade da rede. A participação neste mercado é muitas vezes obrigatória para certos tipos de geradores, especialmente aqueles que possuem a capacidade de resposta rápida, como hidroelétricas e centrais térmicas.\\
+Os mercados de serviços de sistema, português e espanhol, são geridos independentemente, onde o \gls{GGS} é o operador do mercado no respectivo país. \gls{REN} em Portugal e \gls{REE} em Espanha.\\
+\bigskip
+\bigskip
+Em resumo, o \gls{MIBEL} é um mercado complexo e multifacetado que oferece uma ampla gama de formatos de negociação para atender às diversas necessidades dos agentes de mercado. Desde a negociação em tempo real no mercado spot até compromissos de longo prazo no mercado de contratação a prazo e acordos personalizados no mercado bilateral, o \gls{MIBEL} proporciona um ambiente robusto para a transação de eletricidade, promovendo a eficiência, a flexibilidade e a segurança do fornecimento de energia na Península Ibérica.\cite{Rassid2017}\\
+
+
+
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{\input{graphs/mibel.tex}}
+	\caption{Organizaçao MIBEL. Adaptado de \cite{Rassid2017}}
+	\label{fig:mibel_org}
+\end{figure}
+
+
+
+
+\subsection{Mercado de Serviços de Sistema \label{se:servicos_sistema}}
 %\cite{Lopes2021}
 %\cite{Watson1984}
 %\citep{Schweppe1988}
@@ -22,25 +61,25 @@
 % Com bons resultados apresentados em estudo de energias renováveis, a aplicação dos mesmos métodos para as reservas de sistema parece um passo natural. \\
 
 
-\subsection{Introdução ao Mercado de Serviços de Sistema \label{se:intro_servicos_sistema}}
+\subsubsection{Introdução ao Mercado de Serviços de Sistema \label{se:intro_servicos_sistema}}
 
 O mercado de serviços de sistema é uma componente fundamental dos mercados de energia, desempenhando um papel crucial na manutenção da segurança e estabilidade das redes elétricas \cite{dgegmss}. Esses serviços são essenciais para garantir que a produção e o consumo de energia permaneçam em equilíbrio, um requisito vital para o funcionamento seguro e eficiente de qualquer sistema eléctrico. A principal função dos serviços de sistema é assegurar a qualidade da energia fornecida, monitorizando parâmetros críticos como a frequência, a potência activa e reactiva, controlando a tensão na rede, arranque automático e outras técnicas de sistemas. Esse controlo é realizado através da coordenação entre os geradores e os consumidores, com o objetivo de responder rapidamente a variações na oferta e na procura de energia \cite{Rassid2017} \cite{Carneiro2016}.\\
 No contexto europeu, a regulação desses serviços é coordenada pela \gls{ENTSO-E}, que estabelece os requisitos e normas para a operação dos sistemas de energia, e a operação dos mesmos é da responsabilidade dos \gls{TSO} nacionais. Essas reservas são activadas conforme necessário para manter a frequência da rede no seu valor nominal de 50Hz, ajustando a potência activa dos geradores em resposta a variações imprevistas na demanda ou na oferta de energia.\\
-As reservas de frequência são divididas em três categorias principais: primária, \gls{FCR}, secundária, \gls{aFRR} e terciária, \gls{mFRR}. Cada uma com funções específicas e tempos de resposta distintos. A reserva primária é activada automaticamente e de forma quase instantânea, dentro de segundos após um distúrbio na rede, para estabilizar rapidamente a frequência. A reserva secundária entra em ação logo em seguida, substituindo gradualmente a reserva primária e ajustando a frequência de volta ao seu valor programado. Finalmente, a reserva terciária é utilizada para corrigir desvios de longo prazo e libertar as outras reservas para possíveis eventos futuros, completando o ciclo de controlo da frequência e assegurando que o sistema retorne a um estado de equilíbrio estável.\\
+As reservas de frequência são divididas em três categorias principais: primária, \gls{FCR}, secundária, \gls{aFRR}, e terciária, \gls{mFRR}. Cada uma com funções específicas e tempos de resposta distintos. A reserva primária é activada automaticamente e de forma quase instantânea, dentro de segundos após um distúrbio na rede, para estabilizar rapidamente a frequência. A reserva secundária entra em ação logo em seguida, substituindo gradualmente a reserva primária e ajustando a frequência de volta ao seu valor programado. Finalmente, a reserva terciária é utilizada para corrigir desvios de longo prazo e libertar as outras reservas para possíveis eventos futuros, completando o ciclo de controlo da frequência e assegurando que o sistema retorne a um estado de equilíbrio estável.\\
 A harmonização dos mercados europeus de eletricidade, especialmente nos mercados diários, intradiários e de balanço, é uma realidade em desenvolvimento que busca reduzir custos e melhorar as condições de participação para todos os envolvidos \cite{Algarvio2019}. No entanto, a integração das \gls{vRES}, como a eólica e a solar, apresenta desafios adicionais devido à sua natureza intermitente e dependente de condições climáticas. Embora tecnicamente viável, devido a este paradigma de imprevisibilidade e ao facto de serem fontes não despacháveis, a participação dessas fontes nos mercados de balanço enfrenta restrições significactivas para garantir a segurança e a estabilidade da rede.\\
 A atual infraestrutura dos mercados de serviços de sistema precisa, portanto, ser adaptada para acomodar essas novas fontes de energia. Uma parte essencial dessa adaptação é o desenvolvimento de métodos mais robustos para prever a necessidade de reservas, que levem em consideração a variabilidade das \gls{vRES}. Actualmente, as previsões são baseadas principalmente em fórmulas criadas pelas operadoras, mas esta abordagem muitas vezes falha em capturar a complexidade e a incerteza associadas à produção renovável. Assim, há uma crescente exploração de técnicas avançadas, como o uso de modelos de \textit{machine learning}, para melhorar a precisão das previsões e otimizar a gestão das reservas.
 Além disso, a evolução para um mercado pan-europeu harmonizado de serviços de sistema envolve não apenas a uniformização de regras e requisitos técnicos, mas também a criação de incentivos económicos que tornem a participação atraente para todos os tipos de produtores de energia, incluindo os renováveis. Isso é particularmente importante, uma vez que os mercados de balanço são fundamentais para garantir que as redes elétricas possam operar de forma estável e segura, mesmo com altas penetrações de \gls{vRES}. Ao permitir que essas fontes renováveis participem de forma mais activa e competitiva nos mercados de balanço, espera-se não apenas reduzir os custos de operação dos sistemas eléctricos, mas também aumentar a viabilidade económica das \gls{vRES}.\\
 Com a crescente dependência de fontes de energia renovável e a necessidade de sistemas eléctricos mais resilientes e flexíveis, o papel dos serviços de sistema continuará a expandir-se e a evoluir, exigindo inovações tanto na gestão técnica quanto na regulação econômica dos mercados de energia.\\
 
 
-\subsection{Estrutura e Funcionamento das Reservas de Frequência \label{se:reservas_freq}}
+\subsubsection{Estrutura e Funcionamento das Reservas de Frequência \label{se:reservas_freq}}
 
 
 A reserva primária, \gls{FCR}, é o primeiro nível de resposta e é acionada automaticamente em questão de segundos após a detecção de um desvio de frequência, que pode ocorrer devido a falhas na produção ou variações repentinas na procura. Esta reserva é activada até 15 segundos após o distúrbio e permanece activa por cerca de 30 segundos, ou até que a reserva secundária possa assumir o controlo. A \gls{FCR} é geralmente suportada por geradores que possuem capacidade técnica para resposta rápida, como hidroelétricas e algumas unidades térmicas. Este serviço é obrigatório para todos os geradores conectados à rede que possuem a capacidade técnica necessária, e não é remunerado em muitos mercados europeus, incluindo o mercado ibérico.\\
-A reserva secundária \gls{aFRR} entra em ação logo após a activação da reserva primária, com o objetivo de restaurar a frequência da rede ao seu valor programado de 50 Hz e libertar a \gls{FCR} para responder a possíveis distúrbios subsequentes. A \gls{aFRR} é activada automaticamente até 30 segundos após o desvio inicial e pode levar até 15 minutos para corrigir completamente o desequilíbrio. Este tipo de reserva é contratado em mercados específicos de banda de reserva, nos quais os geradores submetem ofertas para fornecer a capacidade necessária.\\
-A reserva terciária \gls{mFRR} é o último nível de resposta e é utilizada principalmente para corrigir desequilíbrios de longo prazo e libertar a \gls{aFRR} para outros usos. Ao contrário das reservas primária e secundária, a \gls{mFRR} é activada manualmente pelos \gls{TSO} e pode levar até 15 minutos a estar completamente activa. Esta reserva é frequentemente utilizada para ajustar a geração ou o consumo de energia de acordo com desvios significativos e prolongados, que não podem ser compensados de forma eficaz pelas reservas de resposta mais rápida. A \gls{mFRR} é geralmente suportada por geradores que podem oferecer flexibilidade em suas operações, como algumas centrais térmicas e hidroelétricas de grande porte.\\
+A reserva secundária, \gls{aFRR}, entra em ação logo após a activação da reserva primária, com o objetivo de restaurar a frequência da rede ao seu valor programado de 50 Hz e libertar a \gls{FCR} para responder a possíveis distúrbios subsequentes. A \gls{aFRR} é activada automaticamente até 30 segundos após o desvio inicial e pode levar até 15 minutos para corrigir completamente o desequilíbrio. Este tipo de reserva é contratado em mercados específicos de banda de reserva, nos quais os geradores submetem ofertas para fornecer a capacidade necessária.\\
+A reserva terciária, \gls{mFRR}, é o último nível de resposta e é utilizada principalmente para corrigir desequilíbrios de longo prazo e libertar a \gls{aFRR} para outros usos. Ao contrário das reservas primária e secundária, a \gls{mFRR} é activada manualmente pelos \gls{TSO} e pode levar até 15 minutos a estar completamente activa. Esta reserva é frequentemente utilizada para ajustar a geração ou o consumo de energia de acordo com desvios significativos e prolongados, que não podem ser compensados de forma eficaz pelas reservas de resposta mais rápida. A \gls{mFRR} é geralmente suportada por geradores que podem oferecer flexibilidade em suas operações, como algumas centrais térmicas e hidroelétricas de grande porte.\\
 
-\subsection{Previsão de Necessidades de Reservas \label{se:pred_impact_vres}}
+\subsubsection{Previsão de Necessidades de Reservas \label{se:pred_impact_vres}}
 
 A previsão das necessidades de reservas de frequência é uma componente essencial na gestão eficiente dos sistemas eléctricos, especialmente num cenário de crescente penetração das \gls{vRES}.\\
 O uso de técnicas de \textit{machine learning} tem sido explorado como uma solução promissora para melhorar essas previsões. Estes modelos podem analisar grandes volumes de dados, identificar padrões complexos e ajustar previsões em tempo real, levando em consideração factores como mudanças nas condições meteorológicas e padrões de consumo de energia. Ao incorporar a variabilidade das \gls{vRES} nos modelos de previsão, é possível reduzir a incerteza e melhorar a alocação das reservas de frequência, resultando numa operação mais eficiente do sistema eléctrico.\\
@@ -49,7 +88,7 @@ Apesar dos avanços na previsão de necessidades de reservas, ainda existem desa
 O desenvolvimento contínuo de técnicas avançadas de previsão e a integração de soluções baseadas em dados serão fundamentais para enfrentar esses desafios. À medida que mais dados históricos se tornam disponíveis e os modelos de previsão evoluem, espera-se que a gestão das reservas de frequência se torne cada vez mais eficiente, contribuindo para um sistema eléctrico mais resiliente e capaz de integrar altos níveis de energias renováveis. Isso não apenas reduzirá os custos operacionais, mas também contribuirá para a segurança energética e para a transição para um sistema energético mais sustentável.\\
 
 
-%\section{\gls{MIBEL} \label{se:mibel}}
+%\subsection{\gls{MIBEL} \label{se:mibel}}
 %\cite{Bessa2012}
 %\cite{Fernandes2016}
 %\citep{Agostini2021}
