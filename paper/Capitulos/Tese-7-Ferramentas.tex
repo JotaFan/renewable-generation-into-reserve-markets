@@ -16,7 +16,7 @@ Esta ferramenta agrega os dados em tensores de formato \textit{(N, t, a)}, onde 
 A ferramenta permite também definir o tempo de salto entre cada entrada.\\
 Usando como exemplo uma janela temporal de 168 (horas, uma semana) para treino, e 24 (horas) para o alvo. Com um salto temporal de 1 a primeira entrada teria como treino as primeiras 168 horas dos dados, e como alvo as 24 horas consequentes. A segunda entrada seria a partir da segunda hora dos dados, e assim consecutivamente. Para um caso em que o tempo de salto seria 24, a primeira entrada mantinha-se, mas a segunda começaria 24 horas depois, e não apenas uma.\\
 
-Como estamos também a lidar com dados desfasados, o gerador atribui este desfasamento em atributos a especificar. No caso em estudo temos que os atributos são de DA (day-ahead), logo estão desfasados 24 horas. O que implica termos de aplicar este desfasamento nos dados que não são DA, nomeadamente os dados alvo. Esta propriedade permite também o fácil uso da ferramenta noutros dados desfasados, como as previsões a 3 ou 8 horas.\\
+Como estamos também a lidar com dados desfasados, o gerador atribui este desfasamento em atributos a especificar. No caso em estudo temos que os atributos são de \gls{DA}, logo estão desfasados 24 horas. O que implica termos de aplicar este desfasamento nos dados que não são \gls{DA}, nomeadamente os dados alvo. Esta propriedade permite também o fácil uso da ferramenta noutros dados desfasados, como as previsões a 3 ou 8 horas.\\
 
 \section{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}\label{se:muaddib}}
 
