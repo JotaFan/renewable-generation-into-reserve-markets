@@ -141,6 +141,8 @@
 %Bibliotecas
 \usepackage{biblatex}
 %\usepackage[portugues]{babel} %Can be switched to english
+% \usepackage{babel} %Can be switched to english
+
 %\usepackage{csvsimple}
 \usepackage{csvsimple-l3}
 \usepackage{float}
@@ -154,7 +156,7 @@
 \usepackage{tabularx}
 %\usepackage[scaled]{helvet}
 %\renewcommand*\familydefault{\sfdefault}
-% \newcommand{\newbilingualacronym}[4]{ \newacronym [longsp=#2, longplsp=#3]{#1}{#2}{#2} \newcommand{\glsentrylongsp}[1]{#4} }
+
 \loadglsentries{glossaries_acronyms}
 \newglossarystyle{customstyle}{ 
     \setglossarystyle{long}% Base on the 'long' style
@@ -171,8 +173,6 @@
             }
 
     \renewcommand*{\glsgroupskip}{\noindent \raggedright  \vspace{1pt} \par}% Spacing between groups
-    % \renewcommand*{\glssubentryitem}[1]{\noindent \raggedright \fontsize{9}{9} \selectfont \par}% Subentries formatting
-    % \renewcommand*{\glsentryitem}[1]{\noindent \raggedright \fontsize{9}{9} \selectfont \par}% Entries formatting
     \renewcommand*{\glossentry}[2]{%
         \noindent \raggedright \text{\glsentryitem{##1}\glossentryname{##1}} % Acronym bold and aligned left
         & \noindent \raggedright \glossentrydesc{##1}\tabularnewline % Description aligned left
@@ -227,6 +227,10 @@
 
 \renewcommand{\cftfigpresnum}{\textbf{Figura\ }}
 \renewcommand{\cfttabpresnum}{\textbf{Tabela\ }}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabela}
+\renewcommand{\listtablename}{Lista de Tabelas}
+\renewcommand{\listfigurename}{Lista de Figuras}
 
 \newlength{\mylenf}
 \settowidth{\mylenf}{\cftfigpresnum}
