@@ -2,7 +2,6 @@
 
 Grande parte da literatura sobre previsões em modelos de \textit{machine learning} apresenta as mesmas arquiteturas, sendo que são depois aprimoradas consoate os dados e o problema. \\
 Apresento aqui as arquitecturas mais usadas em previsões, como também algumas usadas noutros ramos tentado prever a compatibilidade neste problema. \\
-% TODO: meter citaçao para o uso de cada uma em previsões
 Neste trabalho vamos usar arquiteturas de \gls{FCNN}, \gls{CNN}, \gls{LSTM} e Transformer.\\
 
 
@@ -26,7 +25,6 @@ A ideia é a base utilizada actualmente, mas apresentava algumas limitações, e
 
 
 \subsection{CNN\label{se:cnn_sec}}
-% TODO: add cites do conv 
 As Redes Neuronais Convolucionais (\gls{CNN}) diferem das \gls{FCNN} no sentido em que os filtros (neurónios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada. Nas convoluções é criada uma janela móvel que percorre a camada, criando um saída desse conjunto de pontos. Esta janela move-se sempre subsequentemente.\\
 Esta operação é normalmente feita na dimensão (ou dimensões) em que queremos perceber padrões.\
 Nos nossos dados a convolução será na dimensão temporal.\\
