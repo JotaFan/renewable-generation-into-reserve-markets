@@ -1,14 +1,13 @@
 \section{Redes Neuronais}
 
-As redes neuronais podem ser descritas como uma função desconhecida f(x)=y onde durante o treino a função f é criada através da manipulação dos pesos da sua arquitetura usando os dados de treino, x, de forma a diminuir ao máximo uma função de perda . Sendo f'(x)=y' um modelo já treinado onde y' é a previsão, a função de perda fp(y, y') idealmente igual a 0, com y'=y.\\
-Neste trabalho o x são todos os dados apresentados no capitulo \hyperref[ch:estudo_2]{Estudo 2}, em grupos de 128 (horas), e o y é a energia usada, "UpwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a subir e "DownwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a descer, nas 24 horas subsequentes. A fp é um dos factores de estudo, assim como outros parâmetros dentro das arquiteturas de modelos, f.\\
+As redes neuronais podem ser descritas como uma função desconhecida \textit{f(x)=y} onde durante o treino a função \textit{f} é criada através da manipulação dos pesos da sua arquitetura usando os dados de treino, x, de forma a diminuir ao máximo uma função de perda . Sendo \textit{f'(x)=y'} um modelo já treinado onde \textit{y'} é a previsão, a função de perda \textit{fp(y, y')} idealmente igual a 0, com \textit{y'=y.}\\
+Neste trabalho o \textit{x} são todos os dados apresentados no capitulo \hyperref[ch:estudo_2]{Estudo 2}, em grupos de 128 (horas), e o \textit{y} é a energia usada, "UpwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a subir e "DownwardUsedSecondaryReserveEnergy" no modelo de previsão de energia a descer, nas 24 horas subsequentes. A \textit{fp} é um dos factores de estudo, assim como outros parâmetros dentro das arquiteturas de modelos, \textit{f}.\\
 Assim utilizamos os 168 horas (1 semana) para prever as 24 horas seguintes. As 24 horas seguintes são o objectivo do estudo, energia a alocar no dia seguinte. As 168 horas são escolhidas graças às \hyperref[tab:tempcorr]{maiores autocorrelações temporais}, de onde as maiores fora das primeiro 48 horas são 144, 168, 192 horas ou seja, 6, 7 e 8 dias respectivamente, onde em ambos os casos 7 dias era o valor com maior correlação.\\
 As condições em estudo são feitas através da ferramenta \hyperref[se:muaddib]{MuadDib}, seguindo vários percursos entre as combinações possíveis, de modo a conseguir a combinação óptima, maior GPD Positivo.\\
 
 
 \subsection{Arquitecturas}
 
-% TODO: add ref to fcnn etc no capitulo a explicar isso
 \gls{FCNN}, \gls{CNN} , RNN são as arquitecturas mais simples que vamos estudar. Estas vão apenas pegar nos blocos e vamos criar as mesmas "Vanila" e "Stacked" com 2 blocos (ex: StackedCNN) ou 6 blocos (ex: Stacked6CNN).\\
 UNET, \gls{LSTM} são arquiteturas mais complexas e pesadas. Como descrito anteriormente uma mais utilizada em análise de imagens, e outra em análise de texto respectivamente.\\
 Transformers são as mais pesadas qualidade comum da família de "generative AI".
@@ -23,13 +22,13 @@ Nos primeiros testes mais simples foi imediato a discrepância entre os erros da
     \label{fig:resexparchs}
   \end{figure}
 
-Na energia em falta, estamos a lidar com valores na dimensão de $10^{6}$ nos resultados, sendo que o benchmark está nos $10^{5}$10. Logo estão bastante acima do que queremos. Por outro lado na Energia em Demasia temos resultados na ordem dos $10^{6}$ e o benchmark está na ordem dos $10^{7}$. Isto dá-nos espaço para aumentar os resultados da Energia em Demasia mantendo-os ainda abaixo do benchmark para diminuir os resultados da Energia em Falta com objectivo de a ter também abaixo do benchmark.\\
+Na energia em falta, estamos a lidar com valores na dimensão de $10^{6}$ nos resultados, sendo que o benchmark está nos $10^{5}$. Logo estão bastante acima do que queremos. Por outro lado na Energia em Demasia temos resultados na ordem dos $10^{6}$ e o benchmark está na ordem dos $10^{7}$. Isto dá-nos espaço para aumentar os resultados da Energia em Demasia mantendo-os ainda abaixo do benchmark para diminuir os resultados da Energia em Falta com objectivo de a ter também abaixo do benchmark.\\
 Para combater esta desigualdade foram criadas várias funções de perda para atribuir melhor peso a ambas de modo a atingir melhor o objectivo geral.\\
 De maneira que partimos esta experiência em duas partes. A primeira parte, Função de Perda Avançada, vai estudar diferentes maneiras de distribuir pesos entre a energia alocada em demasia e a em falta. A segunda vai escolher qual a melhor função de perda a aplicar nessa distribuição de pesos, ou vice-versa.\\
 
 
 \subsubsection{Funções de Perda}
-Depois de escolhidos os pesos nos diferentes grupos são testadas as funções a aplicar. Aqui vamos manter simples e testar apenas as mais comuns em problemas de regressão linear: Mean Absolute Error (\gls{MAE}), Mean Squared Error (\gls{MSE}), Mean Logarithmic Error (\gls{MSLE}).\\
+Depois de escolhidos os pesos nos diferentes grupos são testadas as funções a aplicar. Aqui vamos manter simples e testar apenas as mais comuns em problemas de regressão linear: \gls{MAE}, \gls{MSE}, \gls{MSLE}.\\
 \gls{MAE} é usada no geral em problemas em que os dados têm um histograma linear, e um erro normalmente distribuído.\\
 \gls{MSE} é usado para atribuir maior peso aos erros maiores, do que no \gls{MAE}. Fazendo com que o modelo se concentre mais em aprender a diminuir erros maiores.\\
 \gls{MSLE} é sugerido em dados que têm uma histograma exponencial.\\
@@ -51,7 +50,7 @@ Este pesos são passados directamente à função de perda em uso.\\
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/ratio_mw.png}
-    \caption{Resultados de alocações totais em diferentes racios}
+    \caption{Resultados de alocações totais em diferentes rácios}
     \label{fig:resexpratiomw}
   \end{figure}
 
