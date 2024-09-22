@@ -1,17 +1,17 @@
-\section{Arquitecturas de Modelos\label{se:arquiteturas_modelos}}
+\subsection{Arquitecturas de Modelos \textit{machine learning}\label{se:arquiteturas_modelos}}
 
-Grande parte da literatura sobre previsões em modelos de \textit{machine learning} apresenta as mesmas arquiteturas, sendo que são depois aprimoradas consoate os dados e o problema. \\
-Apresento aqui as arquitecturas mais usadas em previsões, como também algumas usadas noutros ramos tentado prever a compatibilidade neste problema. \\
-Neste trabalho vamos usar arquiteturas de \gls{FCNN}, \gls{CNN}, \gls{LSTM} e Transformer.\\
-
-
+Grande parte da literatura sobre previsões em modelos de \textit{machine learning} apresenta as mesmas arquiteturas, sendo que são depois aprimoradas consoante os dados e o problema.\par
+Apresento aqui as arquitecturas mais usadas em previsões, como também algumas usadas noutros ramos tentado prever a compatibilidade neste problema.\par
+Neste trabalho vamos usar arquiteturas de \gls{FCNN}, \gls{CNN}, \gls{LSTM} e \textit{Transformer}.\par
 
 
-\subsection{FCNN\label{se:fcnn_sec}}
 
-A arquitetura mais simples \gls{FCNN}, Redes Neuronais Totalmente Conectadas , é constituída por camadas em que cada neurónio está ligado a todos os neurónios da camada seguinte. Isto significa que cada caraterística de entrada tem um peso associado, e esses pesos são aprendidos durante o treino. A saída de cada neurónio é calculada através da aplicação de uma função de ativação à soma ponderada das suas entradas.\\
-Cada neurónio gera uma operação, inicialmente aleatória, para tentar reproduzir uma função que traduza a entrada na saída ideal.\\
-Esta arquitectura tem como base o Perceptão inicialmente proposto em \cite{Rosenblatt1958}. Este apresentava um Perceptão que fazia uma decisão binária baseado nas somas pesadas de todas as entradas.\\
+
+\subsubsection{FCNN\label{se:fcnn_sec}}
+
+A arquitetura mais simples \gls{FCNN}, Redes Neuronais Totalmente Conectadas, é constituída por camadas em que cada neurónio está ligado a todos os neurónios da camada seguinte. Isto significa que cada caraterística de entrada tem um peso associado, e esses pesos são aprendidos durante o treino. A saída de cada neurónio é calculada através da aplicação de uma função de ativação à soma ponderada das suas entradas.\par
+Cada neurónio gera uma operação, inicialmente aleatória, para tentar reproduzir uma função que traduza a entrada na saída ideal.\par
+Esta arquitectura tem como base o Perceptão inicialmente proposto em \cite{Rosenblatt1958}. Este apresentava um Perceptão que fazia uma decisão binária baseado nas somas pesadas de todas as entradas.\par
 A ideia é a base utilizada actualmente, mas apresentava algumas limitações, e muita computação, o proposto por \cite{Minsky1969}, eleva a ideia com a introdução da função de activação e o bias. A utilização mais recorrente actual é a proposta em \cite{Haykin1999}.
 
 
@@ -24,11 +24,11 @@ A ideia é a base utilizada actualmente, mas apresentava algumas limitações, e
 
 
 
-\subsection{CNN\label{se:cnn_sec}}
-As Redes Neuronais Convolucionais (\gls{CNN}) diferem das \gls{FCNN} no sentido em que os filtros (neurónios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada. Nas convoluções é criada uma janela móvel que percorre a camada, criando um saída desse conjunto de pontos. Esta janela move-se sempre subsequentemente.\\
+\subsubsection{CNN\label{se:cnn_sec}}
+As Redes Neuronais Convolucionais (\gls{CNN}) diferem das \gls{FCNN} no sentido em que os filtros (neurónios) não são criados aleatoriamente, mas sim cada filtro trata de uma parte da camada de entrada. Nas convoluções é criada uma janela móvel que percorre a camada, criando um saída desse conjunto de pontos. Esta janela move-se sempre subsequentemente.\par
 Esta operação é normalmente feita na dimensão (ou dimensões) em que queremos perceber padrões.\
-Nos nossos dados a convolução será na dimensão temporal.\\
-Se tivermos uma matriz com nove passos temporais (N,9,1), se o tamanho da janela de convolução for 3, teremos uma saída de tamanho 6 (N, 6, 1).\\
+Nos nossos dados a convolução será na dimensão temporal.\par
+Se tivermos uma matriz com nove passos temporais (N,9,1), se o tamanho da janela de convolução for 3, teremos uma saída de tamanho 6 (N, 6, 1).\par
 \begin{figure}[H]
 	\centering
 	\resizebox{\linewidth}{!}{\input{graphs/conv1D.tex}}
@@ -36,10 +36,10 @@ Se tivermos uma matriz com nove passos temporais (N,9,1), se o tamanho da janela
 	\label{fig:conv_layer1D}
 \end{figure}
 
-Anteriormente ignoramos o número de filtros. Mas as convoluções criam o número pedido de filtros para cada janela temporal. Aqui cada filtro vai funcionar como na camada \gls{FCNN}, onde cada um começa com uma operação pseudo aleatória. Esta operação normalmente é feita na dimensão dos atributos.\\
-Ou seja, a quantidade de filtros que esta camada irá produzir por convolução.\\
-Se tivermos a mesma entrada que anteriormente mas com 4 atributos (N, 9, 4), e se definir o número de filtros para 2 teremos uma saída (N, 6, 2).\\
-Ou seja, dois filtros por cada janela temporal.\\
+Anteriormente ignoramos o número de filtros. Mas as convoluções criam o número pedido de filtros para cada janela temporal. Aqui cada filtro vai funcionar como na camada \gls{FCNN}, onde cada um começa com uma operação pseudo aleatória. Esta operação normalmente é feita na dimensão dos atributos.\par
+Ou seja, a quantidade de filtros que esta camada irá produzir por convolução.\par
+Se tivermos a mesma entrada que anteriormente mas com 4 atributos (N, 9, 4), e se definir o número de filtros para 2 teremos uma saída (N, 6, 2).\par
+Ou seja, dois filtros por cada janela temporal.\par
 
 
 \begin{figure}[H]
@@ -49,14 +49,14 @@ Ou seja, dois filtros por cada janela temporal.\\
 	\label{fig:conv_layer}
 \end{figure}
 
-As convoluções podem realizar as operações em mais dimensões, é comum usar 2D para imagens, e 3D para vídeos. Neste trabalho apenas trabalhamos com convoluções 1D.\\
+As convoluções podem realizar as operações em mais dimensões, é comum usar 2D para imagens, e 3D para vídeos. Neste trabalho apenas trabalhamos com convoluções 1D.\par
 
-\subsubsection{UNET\label{se:unet_sec}}
-
-Um desenho especial de \gls{CNN}, normalmente usando em modelação de imagens, e primeiro proposto em \cite{Shelhamer2014}, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\\
-Nas suas ligações UNET junta informação de filtros passados (não de nível temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.\\
-É chamada assim pois é uma rede (NET) que forma um U na sua expansão, contracção e ligações entre estes.\\
-Em cada camada de encoding vai usando convulucões para criar novos filtros e diminuir a dimensionalidade, enquanto que na fase de decoding vai usar convoluções para aumentar a dimensionalidade e diminuir o número de filtros, adicionando a camada decoder de tamanho análogo.\\
+\paragraph{UNET\label{se:unet_sec}}
+\text{ }  \par
+Um desenho especial de \gls{CNN}, normalmente usando em modelação de imagens, e primeiro proposto em \cite{Shelhamer2014}, a arquitectura UNET passa por criar uma rede de expansão dos filtros, usando convoluções, e de seguida uma rede de contracção dos mesmo, até aos tamanhos pretendidos.\par
+Nas suas ligações UNET junta informação de filtros passados (não de nível temporal mas de rede neuronal) para realçar informação já trabalhada, e assim identificar padrões de vários contextos diferentes.\par
+É chamada assim pois é uma rede (NET) que forma um U na sua expansão, contracção e ligações entre estes.\par
+Em cada camada de encoding vai usando convulucões para criar novos filtros e diminuir a dimensionalidade, enquanto que na fase de decoding vai usar convoluções para aumentar a dimensionalidade e diminuir o número de filtros, adicionando a camada decoder de tamanho análogo.\par
 
 \begin{figure}[H]
 	\centering
@@ -66,27 +66,28 @@ Em cada camada de encoding vai usando convulucões para criar novos filtros e di
 \end{figure}
 
 
-\subsection{RNN\label{se:rnn_sec}}
+\subsubsection{RNN\label{se:rnn_sec}}
 
-As Redes Neuronais Recorrentes (RNN) são projetadas para processar sequências de dados, onde a ordem dos elementos é importante. Elas funcionam passando informações de um neurónio para outro em uma cadeia, o que permite que cada neurónio seja influenciado pelo estado anterior da rede.\\
-Isso é feito através de loops internos que permitem à rede "lembrar" informações de etapas anteriores. No entanto, as RNNs enfrentam dificuldades ao tentar lembrar informações de longo prazo, devido ao problema conhecido como desvanecimento do gradiente, onde os gradientes se tornam muito pequenos e impedem a atualização eficaz dos pesos da rede.\\
+As Redes Neuronais Recorrentes (RNN) são projetadas para processar sequências de dados, onde a ordem dos elementos é importante. Elas funcionam passando informações de um neurónio para outro em uma cadeia, o que permite que cada neurónio seja influenciado pelo estado anterior da rede.\par
+Isso é feito através de loops internos que permitem à rede "lembrar" informações de etapas anteriores. No entanto, as RNNs enfrentam dificuldades ao tentar lembrar informações de longo prazo, devido ao problema conhecido como desvanecimento do gradiente, onde os gradientes se tornam muito pequenos e impedem a atualização eficaz dos pesos da rede.\par
 
-\subsubsection{LSTM\label{se:lstms_sec}}
+\paragraph{LSTM\label{se:lstms_sec}}
+\text{ }  \par
 
-As redes \gls{LSTM} são um tipo especial de RNN projetado para superar os problemas de memória de longo prazo encontrados nas RNNs. Isto é conseguido através de uma estrutura de célula que mantém informações ao longo do tempo, permitindo que a rede lembre detalhes importantes mesmo após muitos passos no tempo.\\
-As \gls{LSTM}s usam mecanismos de portão para controlar o fluxo de informações, permitindo que elas ignorem informações irrelevantes e mantenham as informações relevantes. Isso torna-as particularmente eficazes em tarefas que exigem o entendimento de dependências de longo prazo em dados sequenciais.\\
-
-
-O uso de \gls{LSTM} para previsões é uma área comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} \\
+As redes \gls{LSTM} são um tipo especial de RNN projetado para superar os problemas de memória de longo prazo encontrados nas RNNs. Isto é conseguido através de uma estrutura de célula que mantém informações ao longo do tempo, permitindo que a rede lembre detalhes importantes mesmo após muitos passos no tempo.\par
+As \gls{LSTM}s usam mecanismos de portão para controlar o fluxo de informações, permitindo que elas ignorem informações irrelevantes e mantenham as informações relevantes. Isso torna-as particularmente eficazes em tarefas que exigem o entendimento de dependências de longo prazo em dados sequenciais.\par
 
 
-\subsection{Transformer\label{se:transformer_sec}}
+O uso de \gls{LSTM} para previsões é uma área comum, mas aqui é seguido através das ideas partilhas em \cite{Hewamalage2021}, e reforçado pelo uso em previsões energéticas demonstados em \cite{Costa2022} .\par
 
-Os Transformers são um tipo de arquitetura de modelo que utiliza mecanismos de atenção para pesar a importância de diferentes partes de um dado de entrada, primeiro apresentado em \cite{Vaswani2017}.\\
-Em vez de processar os dados sequencialmente, como as RNNs, os Transformers processam todos os elementos do dado de entrada simultaneamente. Isso é feito através de um mecanismo de atenção que calcula uma pontuação de atenção para cada par de elementos no dado de entrada, indicando quão relevante um elemento é para o outro. Essas pontuações de atenção são então usadas para ponderar a contribuição de cada elemento ao resultado final. \\
-Isso permite aos Transformers capturar dependências de longo alcance nos dados de forma eficiente, tornando-os extremamente eficazes para tarefas de processamento de linguagem natural, como tradução automática e sumarização de texto.\\
+
+\subsubsection{\textit{Transformer}\label{se:transformer_sec}}
+
+Os Transformers são um tipo de arquitetura de modelo que utiliza mecanismos de atenção para pesar a importância de diferentes partes de um dado de entrada, primeiro apresentado em \cite{Vaswani2017}.\par
+Em vez de processar os dados sequencialmente, como as RNNs, os Transformers processam todos os elementos do dado de entrada simultaneamente. Isso é feito através de um mecanismo de atenção que calcula uma pontuação de atenção para cada par de elementos no dado de entrada, indicando quão relevante um elemento é para o outro. Essas pontuações de atenção são então usadas para ponderar a contribuição de cada elemento ao resultado final.\par
+Isso permite aos Transformers capturar dependências de longo alcance nos dados de forma eficiente, tornando-os extremamente eficazes para tarefas de processamento de linguagem natural, como tradução automática e sumarização de texto.\par
 % TODO: ref para cahtgpt e dall-e e assim
-Este tipo de desenho é a base para os modelos generativos mais conhecidos como o chatGPT para linguagem ou o Dall-E para imagens.\\
+Este tipo de desenho é a base para os modelos generativos mais conhecidos como o chatGPT para linguagem ou o Dall-E para imagens.\par
 
 
 

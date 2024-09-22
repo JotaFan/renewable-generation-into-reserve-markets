@@ -1,8 +1,8 @@
 \chapter{Métricas}
 
-As métricas utilizadas serviram maioritariamente dois propósitos, com valorizações distintas na escolha de melhores modelos. \\
-O primeiro intuito é de estudo de cada modelo, utilizando as métricas comuns de regressão linear, comparando os valores reais com os valores das previsões.\\
-Outro objectivo das métricas aplicadas e este mais relevante, era o estudo comparativo do desempenho de cada modelo com o modelo de benchmark.\\
+As métricas utilizadas serviram maioritariamente dois propósitos, com valorizações distintas na escolha de melhores modelos.\par
+O primeiro intuito é de estudo de cada modelo, utilizando as métricas comuns de regressão linear, comparando os valores reais com os valores das previsões.\par
+Outro objectivo das métricas aplicadas e este mais relevante, era o estudo comparativo do desempenho de cada modelo com o modelo de benchmark.\par
 
 \begin{alignat*}{3} 
 & t : \text{Valor real.} &\qquad& p : \text{Previsão} &\qquad& n : \text{número de amostras} \\
@@ -19,7 +19,7 @@ RMSE - Root Mean Squared Error \\
 \end{equation}
 \smallskip
 
-Métrica comum em problemas de regressão, dando mais peso a erros maiores, mas retorna um valor que pode ser diretamente comparado ao valor em estudo. Neste caso podemos considerar que o RMSE representa o erro quadrático em MWh. \\
+Métrica comum em problemas de regressão, dando mais peso a erros maiores, mas retorna um valor que pode ser diretamente comparado ao valor em estudo. Neste caso podemos considerar que o RMSE representa o erro quadrático em MWh.\par
 \bigskip
 SAE - Sum Abs Error \\
 
@@ -29,7 +29,7 @@ SAE - Sum Abs Error \\
 \end{equation}
 \smallskip
 
-Este simboliza a soma absoluta de todos os erros, dentro da janela temporal em questão. Que representa a quantidade total da energia alocada/não alocada em erro, este é também a soma das duas próximas métricas.\\
+Este simboliza a soma absoluta de todos os erros, dentro da janela temporal em questão. Que representa a quantidade total da energia alocada/não alocada em erro, este é também a soma das duas próximas métricas.\par
 \bigskip
 AllocF - Alocação em Falta \\
 
@@ -42,7 +42,7 @@ AllocF - Alocação em Falta \\
 \end{equation}
 \smallskip
 
-Representa a soma total de toda a energia que faltou ser alocada. \\
+Representa a soma total de toda a energia que faltou ser alocada.\par
 \bigskip
 AllocD - Alocação em Demasia \\
 
@@ -55,7 +55,7 @@ AllocD - Alocação em Demasia \\
 \end{equation}
 \smallskip
 
-Representa a soma total de toda a energia que for alocada em demasia. \\
+Representa a soma total de toda a energia que for alocada em demasia.\par
 
 \section{Métricas de comparação modelo/benchmark}
 
@@ -66,9 +66,9 @@ GPD - Ganho Percentual de Desempenho
 \end{equation}
 \smallskip
 
-O Ganho Percentual de Desempenho é a nossa métrica basilar. Representa, dentro da janela temporal de validação, a percentagem de melhoria do modelo em relação ao benchmark. Isto é representa a percentagem de energia que foi melhor alocada que o modelo. Onde 100\% representa uma melhoria perfeita, onde o modelo não tem erro. E 0\% representa nenhuma melhoria, ou seja, igual ao benchmark. Pode também ter valores negativos, que representa a percentagem em que o modelo é pior que o benchmark, podendo ser infinitamente pior.\\
-Esta métrica é representativa da totalidade de energia, tanto alocado como em falta. \\
-As próximas métricas são variações desta que ajudam a escolher o melhor modelo em cada experiência, conseguindo distinguir entre alocação em falta e em demasia.\\
+O Ganho Percentual de Desempenho é a nossa métrica basilar. Representa, dentro da janela temporal de validação, a percentagem de melhoria do modelo em relação ao benchmark. Isto é representa a percentagem de energia que foi melhor alocada que o modelo. Onde 100\% representa uma melhoria perfeita, onde o modelo não tem erro. E 0\% representa nenhuma melhoria, ou seja, igual ao benchmark. Pode também ter valores negativos, que representa a percentagem em que o modelo é pior que o benchmark, podendo ser infinitamente pior.\par
+Esta métrica é representativa da totalidade de energia, tanto alocado como em falta.\par
+As próximas métricas são variações desta que ajudam a escolher o melhor modelo em cada experiência, conseguindo distinguir entre alocação em falta e em demasia.\par
 \bigskip
 GPDF - Ganho Percentual de Desempenho (alocação em) Falta\\
 
@@ -77,7 +77,7 @@ GPDF - Ganho Percentual de Desempenho (alocação em) Falta\\
 \end{equation}
 \smallskip
 
-O mesmo que o GPD mas apenas para as somas totais de alocação em falta.\\
+O mesmo que o GPD mas apenas para as somas totais de alocação em falta.\par
 \bigskip
 GPDD - Ganho Percentual de Desempenho (alocação em) Demasia\\
 
@@ -86,7 +86,7 @@ GPDD - Ganho Percentual de Desempenho (alocação em) Demasia\\
 \end{equation}
 \smallskip
 
-O mesmo que o GPD mas apenas para as somas totais de alocação em falta.\\
+O mesmo que o GPD mas apenas para as somas totais de alocação em falta.\par
 \bigskip
 GPD Norm - Ganho Percentual de Desempenho Normalizado \\
 
@@ -95,7 +95,7 @@ GPD Norm - Ganho Percentual de Desempenho Normalizado \\
 \end{equation}
 \smallskip
 
-Aqui o GPD é calculado a partir dos já calculados GPDF e GPDD, sendo a média destes. Desta maneira conseguimos ter uma percentagem de melhoria em relação ao benchmark, onde a melhoria da alocação em demasia e a melhoria da alocação em falta têm o mesmo peso. \\
+Aqui o GPD é calculado a partir dos já calculados GPDF e GPDD, sendo a média destes. Desta maneira conseguimos ter uma percentagem de melhoria em relação ao benchmark, onde a melhoria da alocação em demasia e a melhoria da alocação em falta têm o mesmo peso.\par
 
 \bigskip
 GPD $Norm^{2}$ - Ganho Percentual de Desempenho Normalizado (negativos) Quadrado
@@ -114,8 +114,8 @@ GPD $Norm^{2}$ - Ganho Percentual de Desempenho Normalizado (negativos) Quadrado
 \smallskip
 
 
-O mesmo que GPD norm mas os GPDF ou GPFD que sejam negativos o seu valor é ao quadrado e mantendo-se negativo. Serve para dar mais peso aos valores negativos, assim não tendo GPD altos mesmo se um dos GPD for negativo (pior que o benchmark). \\
-Esta métrica é a principal na escolha do melhor modelo em cada experiência visto manter ambos os GPD mas penalizando se algum deles é negativo. \\
+O mesmo que GPD norm mas os GPDF ou GPFD que sejam negativos o seu valor é ao quadrado e mantendo-se negativo. Serve para dar mais peso aos valores negativos, assim não tendo GPD altos mesmo se um dos GPD for negativo (pior que o benchmark).\par
+Esta métrica é a principal na escolha do melhor modelo em cada experiência visto manter ambos os GPD mas penalizando se algum deles é negativo.\par
 \bigskip
 GPD Positivo  - Ganho Percentual de Desempenho Positivo
 
@@ -129,4 +129,4 @@ GPD Positivo  - Ganho Percentual de Desempenho Positivo
 \smallskip
 
 
-Esta métrica é igual a GPD mas apenas nos casos em que ambos são positivos, logo o modelo é melhor que o benchmark, senão é zero. Serve para medir o GPD real, mas apenas nos casos em que o modelo já surpassa o benchmark.\\
+Esta métrica é igual a GPD mas apenas nos casos em que ambos são positivos, logo o modelo é melhor que o benchmark, senão é zero. Serve para medir o GPD real, mas apenas nos casos em que o modelo já surpassa o benchmark.\par
