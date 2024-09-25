@@ -215,8 +215,8 @@
    {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
 \titlespacing*{\chapter}{0pt}{-20pt}{40pt}
 \titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\huge}
-
-%\numberwithin{section}{chapter}
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter\quad}{0pt}{\Huge}
+% \numberwithin{section}{chapter}
 \usepackage{multirow}
 \usepackage{chngcntr}  
 \usepackage{tocloft}
@@ -323,15 +323,27 @@
 \newpage
 \thispagestyle{plain}
 \input{Capitulos/Tese-3-Contextos}\label{ch:contexto}
+
+
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-4-Estudo_1} \label{ch:estudo_1}
+
+
 % Dados
 
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-4-Estudo_1} \label{ch:estudo_1}
+\input{Capitulos/Tese-5-Ferramentas_Metodos} \label{ch:ferr_met}
 
 \newpage
 \thispagestyle{plain}
-\input{Capitulos/Tese-5-Estudo_2} \label{ch:estudo_2}
+\input{Capitulos/Tese-5-Metricas_Dados} \label{ch:metrics_data}
+
+
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-5-Estudo_2} \label{ch:estudo_2}
 
 
 % Arquiteturas a estudar
@@ -339,17 +351,17 @@
 % \thispagestyle{plain}
 % \input{Capitulos/Tese-6-Arquitecturas_de_Modelos}\label{ch:arch}
 % Ferramentas
-\newpage
-\thispagestyle{plain}
-\input{Capitulos/Tese-7-Ferramentas}\label{ch:ferramentas}
-\newpage
-\thispagestyle{plain}
-\input{Capitulos/Tese-8-Metricas}\label{ch:metricas}
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-7-Ferramentas}\label{ch:ferramentas}
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-8-Metricas}\label{ch:metricas}
 
 % Métodos
-\newpage
-\thispagestyle{plain}
-\input{Capitulos/Tese-9-Metodos}\label{ch:metodos}
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-9-Metodos}\label{ch:metodos}
 % Resultados e discussão
 \newpage
 \thispagestyle{plain}
