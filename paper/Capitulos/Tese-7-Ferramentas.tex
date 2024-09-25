@@ -7,11 +7,11 @@ Com o propósito de desenvolver este estudo, e deixar ferramentas para a replica
 
 \subsection{Construtor de modelos}
 
-Seguindo as arquitecturas descritas anteriormente esta ferramenta constrói os modelos automaticamente, sendo que precisamos apenas de fornecer os parâmetros variáveis. Permitindo assim um fácil teste de vários tipo de modelos, não tendo de reescrever código para cada um deles.\par
+Seguindo as arquitecturas descritas anteriormente esta ferramenta constrói os modelos automaticamente, sendo que precisamos apenas de fornecer os parâmetros variáveis. Permitindo assim um fácil teste de vários tipos de modelos, não tendo de reescrever código para cada um deles.\par
 
 \subsection{\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/generator.py}{Gerador de dados}}
 
-O gerador construido trata da formatação dos dados para entrada nos modelos. Formatação esse que se baseia nos valores de janelas temporais a usar, e na divisão treino/teste.\par
+O gerador construído trata da formatação dos dados para entrada nos modelos. Formatação essa que se baseia nos valores de janelas temporais a usar, e na divisão treino/teste.\par
 Esta ferramenta agrega os dados em tensores de formato \textit{(N, t, a)}, onde \textit{N} é o número de casos, \textit{t} é a janela temporal, e \textit{a} é o número de atributos.\par
 A ferramenta permite também definir o tempo de salto entre cada entrada.\par
 Usando como exemplo uma janela temporal de 168 (horas, uma semana) para treino, e 24 (horas) para o alvo. Com um salto temporal de 1 a primeira entrada teria como treino as primeiras 168 horas dos dados, e como alvo as 24 horas consequentes. A segunda entrada seria a partir da segunda hora dos dados, e assim consecutivamente. Para um caso em que o tempo de salto seria 24, a primeira entrada mantinha-se, mas a segunda começaria 24 horas depois, e não apenas uma.\par

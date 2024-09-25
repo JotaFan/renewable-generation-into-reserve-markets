@@ -11,7 +11,7 @@ O \gls{MIBEL} é estruturado para fornecer uma plataforma eficiente e transparen
 
 \paragraph{Mercado em Bolsa (Mercado Spot) \label{se:mercado_bolsa}}
 \text{ }  \par
-O mercado em bolsa, também conhecido como mercado spot, é uma das principais formas de negociação no \gls{MIBEL}. Este mercado é dividido em duas vertentes: o mercado diário e o mercado intradiário. No mercado diário, as propostas de compra e venda de eletricidade são apresentadas para o dia seguinte, permitindo que os agentes ajustem suas previsões de produção e consumo com base nas condições de mercado mais recentes. Já o mercado intradiário permite a negociação para as horas seguintes, oferecendo maior flexibilidade para ajustes de última hora, o que é especialmente útil para acomodar variações inesperadas na oferta e demanda. Este sistema dinâmico assegura que a eletricidade é negociada em tempo real, refletindo as necessidades e capacidades do sistema elétrico com um horizonte de curto prazo.\par
+O mercado em bolsa, também conhecido como mercado spot, é uma das principais formas de negociação no \gls{MIBEL}. Este mercado é dividido em duas vertentes: o mercado diário e o mercado intradiário. No mercado diário, as propostas de compra e venda de eletricidade são apresentadas para o dia seguinte, permitindo que os agentes ajustem suas previsões de produção e consumo com base nas condições de mercado mais recentes. Já o mercado intradiário permite a negociação para as horas seguintes, oferecendo maior flexibilidade para ajustes de última hora, o que é especialmente útil para acomodar variações inesperadas na oferta e procura. Este sistema dinâmico assegura que a eletricidade é negociada em tempo real, refletindo as necessidades e capacidades do sistema elétrico com um horizonte de curto prazo.\par
 
 
 \paragraph{Mercado de Contratação a Prazo \label{se:mercado_prazo}}
@@ -25,7 +25,7 @@ Outra componente importante do \gls{MIBEL} é o mercado livre de contratação b
 
 \paragraph{Mercado de Serviços de Sistema \label{se:servicos_sistema_mibel}}
 \text{ }  \par
-Por fim, o mercado de serviços de sistema desempenha um papel crítico na manutenção do equilíbrio entre a produção e o consumo de energia elétrica em tempo real. Este mercado é responsável por garantir que a rede elétrica opere de forma segura e estável, ativando reservas e ajustando a produção conforme necessário para responder a variações inesperadas na demanda ou na oferta. O mercado de serviços de sistema engloba uma série de mecanismos, incluindo a ativação de reservas de frequência e o despacho de unidades geradoras flexíveis, que são essenciais para a gestão da estabilidade da rede. A participação neste mercado é muitas vezes obrigatória para certos tipos de geradores, especialmente aqueles que possuem a capacidade de resposta rápida, como hidroelétricas e centrais térmicas.\par
+Por fim, o mercado de serviços de sistema desempenha um papel crítico na manutenção do equilíbrio entre a produção e o consumo de energia elétrica em tempo real. Este mercado é responsável por garantir que a rede elétrica opere de forma segura e estável, ativando reservas e ajustando a produção conforme necessário para responder a variações inesperadas na procura ou na oferta. O mercado de serviços de sistema engloba uma série de mecanismos, incluindo a ativação de reservas de frequência e o despacho de unidades geradoras flexíveis, que são essenciais para a gestão da estabilidade da rede. A participação neste mercado é muitas vezes obrigatória para certos tipos de geradores, especialmente aqueles que possuem a capacidade de resposta rápida, como hidroelétricas e centrais térmicas.\par
 Os mercados de serviços de sistema, português e espanhol, são geridos independentemente, onde o \gls{GGS} é o operador do mercado no respectivo país. \gls{REN} em Portugal e \gls{REE} em Espanha.\par
 \bigskip
 \bigskip
@@ -49,8 +49,9 @@ Em resumo, o \gls{MIBEL} é um mercado complexo e multifacetado que oferece uma 
 % \text{ }  \par
 
 O mercado de serviços de sistema é uma componente fundamental dos mercados de energia, desempenhando um papel crucial na manutenção da segurança e estabilidade das redes elétricas \cite{dgegmss}. Esses serviços são essenciais para garantir que a produção e o consumo de energia permaneçam em equilíbrio, um requisito vital para o funcionamento seguro e eficiente de qualquer sistema eléctrico. A principal função dos serviços de sistema é assegurar a qualidade da energia fornecida, monitorizando parâmetros críticos como a frequência, a potência activa e reactiva, controlando a tensão na rede, arranque automático e outras técnicas de sistemas. Esse controlo é realizado através da coordenação entre os geradores e os consumidores, com o objetivo de responder rapidamente a variações na oferta e na procura de energia \cite{Rassid2017} \cite{Carneiro2016}.\par
-No contexto europeu, a regulação desses serviços é coordenada pela \gls{ENTSO-E}, que estabelece os requisitos e normas para a operação dos sistemas de energia, e a operação dos mesmos é da responsabilidade dos \gls{TSO} nacionais. Essas reservas são activadas conforme necessário para manter a frequência da rede no seu valor nominal de 50Hz, ajustando a potência activa dos geradores em resposta a variações imprevistas na demanda ou na oferta de energia.\par
-As reservas de frequência são divididas em três categorias principais: primária, \gls{FCR}, secundária, \gls{aFRR}, e terciária, \gls{mFRR}. Cada uma com funções específicas e tempos de resposta distintos. A reserva primária é activada automaticamente e de forma quase instantânea, dentro de segundos após um distúrbio na rede, para estabilizar rapidamente a frequência. A reserva secundária entra em ação logo em seguida, substituindo gradualmente a reserva primária e ajustando a frequência de volta ao seu valor programado. Finalmente, a reserva terciária é utilizada para corrigir desvios de longo prazo e libertar as outras reservas para possíveis eventos futuros, completando o ciclo de controlo da frequência e assegurando que o sistema retorne a um estado de equilíbrio estável.\par
+No contexto europeu, a regulação desses serviços é coordenada pela \gls{ENTSO-E}, que estabelece os requisitos e normas para a operação dos sistemas de energia, e a operação dos mesmos é da responsabilidade dos \gls{TSO} nacionais. Essas reservas são activadas conforme necessário para manter a frequência da rede no seu valor nominal de 50Hz, ajustando a potência activa dos geradores em resposta a variações imprevistas na procura ou na oferta de energia.\par
+As reservas de frequência,ou reservas de controlo, são divididas em três categorias principais: primária, \gls{FCR}, secundária, \gls{aFRR}, e terciária, \gls{mFRR}. Cada uma com funções específicas e tempos de resposta distintos. A reserva primária é activada automaticamente e de forma quase instantânea, dentro de segundos após um distúrbio na rede, para estabilizar rapidamente a frequência. A reserva secundária entra em ação logo em seguida, substituindo gradualmente a reserva primária e ajustando a frequência de volta ao seu valor programado. Finalmente, a reserva terciária é utilizada para corrigir desvios de longo prazo e libertar as outras reservas para possíveis eventos futuros, completando o ciclo de controlo da frequência e assegurando que o sistema retorne a um estado de equilíbrio estável.\par
+Todas estas correções no sistema podem ser efectuadas tanto a injectar mais potência na rede, como a diminuir a potência existente, a estas chamamos Banda a Subir e Banda a Descer, respectivamente.\par
 A harmonização dos mercados europeus de eletricidade, especialmente nos mercados diários, intradiários e de balanço, é uma realidade em desenvolvimento que busca reduzir custos e melhorar as condições de participação para todos os envolvidos \cite{Algarvio2019}. No entanto, a integração das \gls{vRES}, como a eólica e a solar, apresenta desafios adicionais devido à sua natureza intermitente e dependente de condições climáticas. Embora tecnicamente viável, devido a este paradigma de imprevisibilidade e ao facto de serem fontes não despacháveis, a participação dessas fontes nos mercados de balanço enfrenta restrições significativas para garantir a segurança e a estabilidade da rede.\par
 A actual infraestrutura dos mercados de serviços de sistema precisa, portanto, ser adaptada para acomodar essas novas fontes de energia. Uma parte essencial dessa adaptação é o desenvolvimento de métodos mais robustos para prever a necessidade de reservas, que levem em consideração a variabilidade das \gls{vRES}. Actualmente, as previsões são baseadas principalmente em fórmulas criadas pelas operadoras, mas esta abordagem muitas vezes falha em capturar a complexidade e a incerteza associadas à produção renovável. Assim, há uma crescente exploração de técnicas avançadas, como o uso de modelos de \textit{machine learning}, para melhorar a precisão das previsões e otimizar a gestão das reservas.
 Além disso, a evolução para um mercado pan-europeu harmonizado de serviços de sistema envolve não apenas a uniformização de regras e requisitos técnicos, mas também a criação de incentivos económicos que tornem a participação atraente para todos os tipos de produtores de energia, incluindo os renováveis. Isso é particularmente importante, uma vez que os mercados de balanço são fundamentais para garantir que as redes elétricas possam operar de forma estável e segura, mesmo com altas penetrações de \gls{vRES}. Ao permitir que essas fontes renováveis participem de forma mais activa e competitiva nos mercados de balanço, espera-se não apenas reduzir os custos de operação dos sistemas eléctricos, mas também aumentar a viabilidade económica das \gls{vRES}.\par
@@ -65,8 +66,7 @@ A reserva primária, \gls{FCR}, é o primeiro nível de resposta e é acionada a
 A reserva secundária, \gls{aFRR}, entra em ação logo após a activação da reserva primária, com o objetivo de restaurar a frequência da rede ao seu valor programado de 50 Hz e libertar a \gls{FCR} para responder a possíveis distúrbios subsequentes. A \gls{aFRR} é activada automaticamente até 30 segundos após o desvio inicial e pode levar até 15 minutos para corrigir completamente o desequilíbrio. Este tipo de reserva é contratado em mercados específicos de banda de reserva, nos quais os geradores submetem ofertas para fornecer a capacidade necessária.\par
 A reserva terciária, \gls{mFRR}, é o último nível de resposta e é utilizada principalmente para corrigir desequilíbrios de longo prazo e libertar a \gls{aFRR} para outros usos. Ao contrário das reservas primária e secundária, a \gls{mFRR} é activada manualmente pelos \gls{TSO} e pode levar até 15 minutos a estar completamente activa. Esta reserva é frequentemente utilizada para ajustar a geração ou o consumo de energia de acordo com desvios significativos e prolongados, que não podem ser compensados de forma eficaz pelas reservas de resposta mais rápida. A \gls{mFRR} é geralmente suportada por geradores que podem oferecer flexibilidade em suas operações, como algumas centrais térmicas e hidroelétricas de grande porte.\par
 
-\paragraph{Previsão de Necessidades de Reservas \label{se:pred_impact_vres}}
-\text{ }  \par
+\subsection{Previsão de Necessidades de Reservas \label{se:pred_impact_vres}}
 
 A previsão das necessidades de reservas de frequência é uma componente essencial na gestão eficiente dos sistemas eléctricos, especialmente num cenário de crescente penetração das \gls{vRES}.\par
 O uso de técnicas de \textit{machine learning} tem sido explorado como uma solução promissora para melhorar essas previsões. Estes modelos podem analisar grandes volumes de dados, identificar padrões complexos e ajustar previsões em tempo real, levando em consideração factores como mudanças nas condições meteorológicas e padrões de consumo de energia. Ao incorporar a variabilidade das \gls{vRES} nos modelos de previsão, é possível reduzir a incerteza e melhorar a alocação das reservas de frequência, resultando numa operação mais eficiente do sistema eléctrico.\par
@@ -74,11 +74,62 @@ Outro factor crítico na previsão das necessidades de reservas de frequência �
 Apesar dos avanços na previsão de necessidades de reservas, ainda existem desafios consideráveis. A precisão das previsões pode ser limitada pela qualidade dos dados disponíveis, bem como pela capacidade dos modelos de capturar todas as variáveis relevantes que afetam a operação da rede. Além disso, a crescente interconexão dos sistemas eléctricos e o aumento da troca de energia entre países exigem uma abordagem coordenada e colaborativa para a previsão de reservas, considerando tanto as condições locais quanto regionais.\par
 O desenvolvimento contínuo de técnicas avançadas de previsão e a integração de soluções baseadas em dados serão fundamentais para enfrentar esses desafios. À medida que mais dados históricos se tornam disponíveis e os modelos de previsão evoluem, espera-se que a gestão das reservas de frequência se torne cada vez mais eficiente, contribuindo para um sistema eléctrico mais resiliente e capaz de integrar altos níveis de energias renováveis. Isso não apenas reduzirá os custos operacionais, mas também contribuirá para a segurança energética e para a transição para um sistema energético mais sustentável.\par
 
+\subsubsection{Previsão de Banda Secundária no Mercado Ibérico de Electricidade \label{se:pred_mibel}}
+A nível Europeu a \gls{ENTSO-E} providencia várias metodologias para o dimensionamento das reservas de controlo descritas em \cite{handbook2009policy}. A quantidade mínima recomendada de alocação necessária para a reserva de controlo secundária pode ser descrita da seguinte forma:\par
 
-%\subsubsection{\gls{MIBEL} \label{se:mibel}}
-%\cite{Bessa2012}
-%\cite{Fernandes2016}
-%\citep{Agostini2021}
+\begin{equation} \label{eq:BRENTSOE} 
+    BR = \sqrt{a \times  L_{max} + b^{2}} - b 
+\end{equation}
+onde:
+\begin{itemize}
+  \item $BR$: Banda de Reserva de regulação secundária mínima necessária (MW).
+  \item $a$ e $b$: Coeficientes empiricos, $a$=10MW e $b$=150MW .
+  \item $L_{max}$: Consumo máximo antecipado (MW).
+\end{itemize}
+
+
+\paragraph{Portugal \label{se:prev_portugal}}
+\text{ }  \par
+
+No mercado portugês para dimensionar a \gls{aFRR} a \gls{REN} utiliza por base a equação \ref{eq:BRENTSOE} multiplicando um parâmetro horário, $\rho$:
+
+\begin{equation} \label{eq:BRREN} 
+    BR = \rho \times \sqrt{a \times  L_{max} + b^{2}} - b 
+\end{equation}
+onde:
+\begin{itemize}
+  \item $\rho$: Paramêtro horário.
+\end{itemize}
+
+
+Na equação \ref{eq:BRREN} BR equivale à soma de banda a subir e banda a descer, onde aqui é sempre considerado que banda a subir são $\frac{2}{3}$ da Banda de Reserva total e a banda a descer é o restante $\frac{1}{3}$.\par
+Este método de cálculo permite manter as reservas a corresponder às necessidades do sistema, mas têm uma alocação em demasia grande. Podemos verificar que no período 2013 a 2023, inclusive, as médias por hora têm cerca de 434\% de alocação em demasia. O que corresponde a cerca de 220 MWh desperdiçados a cada hora. \par
+
+\begin{table}[H]
+	\centering
+    \caption{Média das Bandas Calculada e Usada (REN)}    
+    \resizebox{!}{!}{\input{tabelas/tabela_media_banda_portugal.tex}}
+    \label{tab:media_bandas_pt}
+    \end{table}
+
+Estando actualmente o \gls{TSO} português a utilizar esta fórmula, e a obter estes resultados, este é um bom caso de estudo de optimização dos parâmetros da fórmula. Sendo que \textit{a} e \textit{b} são dados pela entidade europeia, proponho estudar o parâmetro horário de modo a baixar o erro apresentado.\par
+
+\paragraph{Espanha \label{se:prev_espanha}}
+\text{ }  \par
+
+No mercado espanhol não encontramos directivas de uso de uma fórmula como o caso portugês. Nem encontramos uma simetria directa entre as bandas a subir e a descer. Mas podemos ver que a média horária dentro do mesmo período apresenta disparidades ainda maiores.\par
+
+\begin{table}[H]
+	\centering
+    \caption{Média das Bandas Calculada e Usada (REE)}    
+    \resizebox{!}{!}{\input{tabelas/tabela_media_banda_espanha.tex}}
+    \label{tab:media_bandas_es}
+    \end{table}
+
+
+Como temos uma boa quantidade de dados históricos e uma falta de definição e formulação exacta da necessidade, o caso espanhol é um bom caso de estudo para previsões usando \textit{machine learning}.\par
+
+
 
 
 \thispagestyle{plain}
