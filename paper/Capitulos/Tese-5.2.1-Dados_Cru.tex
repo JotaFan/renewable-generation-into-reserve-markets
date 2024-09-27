@@ -1,0 +1,96 @@
+
+\subsubsection{Estudo dos dados}
+
+Os dados que proponho a prever são os de Energia Usada na Banda de Reserva Secundária, tanto a subir como a descer: "UpwardUsedSecondaryReserveEnergy","DownwardUsedSecondaryReserveEnergy".\par
+
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/consumo_originais.png}
+  \caption{Série Temporal dos dados alvo}
+  \label{fig:targettimeseries}
+\end{figure}
+
+
+Para termos uma melhor percepção dos mesmos segue algumas janelas temporais mais pequenas.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/target_timeseries_windows.png}
+  \caption{Janelas Temporais dos dados alvo}
+  \label{fig:targettimeserieswindows}
+\end{figure}
+
+
+Estas mostram claramente que ambos os atributos mantêm um comportamento tanto discreto, como linear, isto é, que ou existe algum valor, ou é zero, e se existe valor este tem comportamento linear.\par
+A distribuição destes dados é claramente exponencial. O que é importante para a escolha de alguns parâmetros na modelação.\par
+
+		
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/target_histograms.png}
+  \caption{Frequência dos dados alvos}
+  \label{fig:targethistograms}
+\end{figure}
+
+
+\paragraph{Correlações}
+\text{ }  \par
+
+Os modelos vão depender bastante de correlação entre variáveis.
+
+Nesta secção queremos tentar identificar se há visiveis relações entre as variáveis, e se há relações temporais  visiveis nas colunas alvo.
+
+
+\subparagraph{Correlações entre atributos}
+\text{ }  \par
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/feature_correlation.png}
+  \caption{Correlação entre atributos}
+  \label{fig:featurecorrelation}
+\end{figure}
+
+Esta figura apresenta a dispersão de valores entre a energia usada, primeiras três linhas a energia para cima e as seguintes a energia para baixo, e os outros atributos presentes.\par
+As correlações entre variáveis parecem muitos escassas, o que apresenta já que a previsão destes dados usando estas variáveis vai ser um problema difícil.\par
+Por norma é feito uma seleção de atributos baseado nestas correlações, eliminando assim os atributos que ajudam menos, ou até prejudicam os modelos.\par
+Segue os valores de correlação onde podemos ver numericamente que existe muito pouca correlação entre os atributos. Onde a primeira coluna são os valores de correlação para a energia usada a subir e a segunda coluna as correlações da energia usada a descer.\par
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/correlation_heatmap.png}
+  \caption{Valores de correlação entre atributos}
+  \label{fig:correlationheatmap}
+\end{figure}
+
+\subparagraph{Correlações Temporais}
+\text{ }  \par
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{plots/autocorrelation.png}
+  \caption{Autocorrelação Temporal}
+  \label{fig:autocorrelation}
+\end{figure}
+
+A autocorrelação, em ambos os alvos, é mais forte nas 3 horas mais próximas, e nos pontos com diferença de 12 e 24 horas.\par
+É de notar que estes valores são baixos, prometendo já também uma baixa regressividade temporal.\par
+Os melhores saltos temporais e suas correlações são mostradas na tabelas em baixo:\\
+
+
+\begin{table}[H]
+  \caption{Autocorrelação Temporal}    
+  \resizebox{\linewidth}{!}{\input{tabelas/autocorrelation.tex}}
+  \label{tab:tempcorr}
+  \end{table}
+
+Outro ponto a denotar é que os objectos não têm um comportamento completamente linear, i.e., parece existir um comportamento discreto na questão ser alocado ou não esta reservas secundárias, e caso seja alocado, aí existir alguma linearidade.\par
+Logo qualquer tipo de modelação terá de resolver primeiramente este problema.\par
+Estas relações mostram que em termos de atributos usados vai ser um desafio complicado para qualquer tipo de modelo.\par
+No âmbito desta dissertação queremos verificar a qualidade das previsões usando estes mesmo atributos, logo, não será feita seleção dos mesmos.\par
+A nível da relação temporal, a maior parte dos modelos que iremos testar aplica um janela na dimensão temporal, usando todos os valores nessa janela, e aplicando os pesos nessas distâncias que mais se enquadram. Logo também não é relevante escolher apenas as distâncias temporais com maior correlação, pois os modelos vão fazer essa pesagem.\par
+
+

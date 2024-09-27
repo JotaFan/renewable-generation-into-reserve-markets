@@ -1,0 +1,55 @@
+% \part{Dimensionamento dinâmico da potência alocada na reserva secundária}
+
+\section{Dados}
+
+\subsection{Dados Mercado Portugês\label{se:dados_pt}}
+
+Todos os dados necessários são disponibilizados pelo operador do sistema no \href{https://mercado.ren.pt/PT/Electr}{site da \gls{REN}}, com exceção do consumo máximo expectável. Este parâmetro é então substituído pelo consumo real, como uma aproximação à formulação indicada previamente.\par
+Os dados estudados contêm entradas horárias desde 2010 até ao fim de 2018. Com as seguintes variáveis:\\
+
+\begin{table}[H] \centering \caption{Dados REN} \input{tabelas/tabela_dados_estudo_1_variaveis.tex} \end{table}
+
+
+
+\subsection{Dados Mercado Espanhol\label{se:dados_es}}
+
+
+\subsubsection{Dados Utilizados\label{se:dadosestudo}}
+
+Os dados em estudo são do mercado energético espanol, retirados do site da \href{https://www.esios.ree.es/es}{\gls{ESIOS}}.
+
+
+\begin{table}[H]
+    \caption{Indicadores retirados do site da ESIOS}    
+    \resizebox{\linewidth}{!}{\csvautotabular{tabelas/indicators_metadata.csv}}
+\end{table}
+
+
+\paragraph{Aquisição dos Dados}
+\text{ }  \par
+
+No ambito da automatização destes dados foi modificado o repositorio \href{https://github.com/SanPen/\gls{ESIOS}}{\gls{ESIOS}} para ser usado como uma biblioteca de python, aberta, em pypi.\par
+Sendo uma ferramenta mais facilmente acessivel para a extrair dados do mercado espanhol, \href{https://pypi.org/project/pyesios/}{pyesios}.\par
+No âmbito de automatizar o processo, foram feitas contribuições a esta ferramenta para tornar mais acessível, e uma ferramenta aberta de python.\par
+
+
+\thispagestyle{plain}
+\input{Capitulos/Tese-5.2.1-Dados_Cru} \label{se:dadoscrus}
+
+
+
+\thispagestyle{plain}
+\input{Capitulos/Tese-5.2.2-Tratamento_Dados} \label{se:tratamentodados}
+
+\subsubsection{Dados de treino}
+
+Após o tratamento apresentado as estatísticas gerais dos dados usados para treinar o modelo são:
+
+\begin{table}[H]
+    \caption{Dados de Treino}    
+    \resizebox{\linewidth}{!}{\input{tabelas/tabela_dados_treino_medias.tex}}
+    \end{table}
+
+
+\thispagestyle{plain}
+\input{Capitulos/Tese-5.2.3-Dados_Validacao} \label{se:val_data}
