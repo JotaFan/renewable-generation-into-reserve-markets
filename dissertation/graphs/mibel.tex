@@ -1,0 +1,29 @@
+\begin{tikzpicture} [ node distance = 1cm, auto, block/.style={ rectangle, draw, align=center, minimum width=2cm, minimum height=1cm }, line/.style={ draw, -latex' } ]
+
+    \node [block] (top) {Mercados Organizados};
+    \node [block, below=of top](spot) {Mercado Spot \gls{OMIE}}; 
+
+    \node [block, left=of spot](prazo) {Contractos a prazo \gls{OMIP}}; 
+    \node [block, right=of spot](ss) {Serviços de Sistema};
+
+    \draw [line] (top) -| (prazo);
+    \draw [line] (top) -- (spot);
+    \draw [line] (top) -| (ss);
+    
+    \node[fit=(top)(spot)(prazo)(ss)] (group) {};
+
+    \node[block, left=of group, minimum width=1cm, minimum height=4cm] (left_block) {Contractos Bilaterais};
+
+    \node[fit=(left_block)(prazo)(spot)] (group2) {};
+
+    \path let \p1 = (left_block.west), \p2 = (spot.east) in
+        node [block, below=of group2, minimum width={\x2-\x1}] (group2) {Negociação Mibel};
+
+
+    \node[block, below right=of ss, xshift=-1cm] (ren) {Portugal \gls{REN}};
+    \node[block, below=of ren] (ree) {Espanha \gls{REE}};
+    \draw [line] (ss) |- (ren);
+    \draw [line] (ss) |- (ree);
+
+
+    \end{tikzpicture}

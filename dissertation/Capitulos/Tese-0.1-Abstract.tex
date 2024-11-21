@@ -1,0 +1,14 @@
+\chapter{Abstract}
+\justifying
+
+The growing penetration of \gls{vRES} into the electricity system, such as solar or wind, is significantly transforming the electricity markets due to their intermittent and unpredictable nature. This makes forecasting energy production and consumption more challenging, especially as markets close between 1 and 37 hours before the actual delivery of energy, which can lead to discrepancies between contracted and required energy. Maintaining the balance between supply and demand in real time is vital for the security and stability of the network, a task that falls mainly to the \gls{TSO}.\par
+\gls{TSO}s use power reserve markets, where they symmetrically purchase upward and downward secondary power based on demand forecasts for subsequent hours. However, this approach is ineffective in the face of renewable fluctuations, leading to the need for more dynamic and precise adjustments.\par
+This work proposes a study of the parameters of the Portuguese \gls{TSO} formula for forecasting the reserve requirement ($\rho$), where, using historical hourly data for the period 2010 to 2019, the $\rho$ that presents the smallest error in the forecast is calculated, reaching errors of less than 5\%.\par
+This work also proposes a \textit{machine learning} model to dynamically calculate secondary power reserves using open operational data from the Spanish \gls{TSO}. The model was trained with data from 2014 to 2023 and validated with reference data from 2019 to 2022. The proposed methodology demonstrates a significant improvement in the utilisation of secondary power reserves, with an increase of approximately 47\% in the efficiency of upward reserves and around 42\% in downward reserves. This advance contributes to more efficient and balanced management of the electricity system, especially in scenarios with high \gls{vRES} penetration.
+
+
+
+\vspace{0.5cm} %adiciona um espaço de 0.5cm entre o texto e as palavras chave.
+
+\keywordsP{reserve systems,energy markets, neural networks, forecast}
+%notice that # requires a \ so that latex correctly interprets it as a special character. This also happens with % for example.

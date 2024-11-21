@@ -1,0 +1,87 @@
+\subsubsection{Redes Neuronais}
+
+As redes neuronais podem ser descritas como uma função desconhecida \textit{f(x)=y} onde durante o treino a função \textit{f} é criada através da manipulação dos pesos da sua arquitetura usando os dados de treino, x, de forma a diminuir ao máximo uma função de perda . Sendo \textit{f'(x)=y'} um modelo já treinado onde \textit{y'} é a previsão, a função de perda \textit{fp(y, y')} idealmente igual a 0, com \textit{y'=y.}.\par
+Neste trabalho o \textit{x} são todos os dados apresentados no capitulo \hyperref[ch:estudo_2]{Estudo 2}, em grupos de 128 (horas), e o \textit{y} é a energia usada, "\textit{UpwardUsedSecondaryReserveEnergy}" no modelo de previsão de energia a subir e "\textit{DownwardUsedSecondaryReserveEnergy}" no modelo de previsão de energia a descer, nas 24 horas subsequentes. A \textit{fp} é um dos factores de estudo, assim como outros parâmetros dentro das arquiteturas de modelos, \textit{f}.\par
+Assim utilizamos os 168 horas (1 semana) para prever as 24 horas seguintes. As 24 horas seguintes são o objectivo do estudo, energia a alocar no dia seguinte. As 168 horas são escolhidas graças às \hyperref[tab:tempcorr]{maiores autocorrelações temporais}, de onde as maiores fora das primeiras 48 horas são 144, 168, 192 horas ou seja, 6, 7 e 8 dias respectivamente, onde em ambos os casos 7 dias era o valor com maior correlação.\par
+As condições em estudo são feitas através da ferramenta \hyperref[se:muaddib]{MuadDib}, seguindo vários percursos entre as combinações possíveis, de modo a conseguir a combinação óptima.\par
+
+%TODO: check google doc
+\paragraph{Arquitecturas}
+\text{ }  \par
+
+\gls{FCNN}, \gls{CNN}, RNN são as arquitecturas mais simples que nos propomos estudar.\par
+UNET, \gls{LSTM} são arquiteturas mais complexas e pesadas. Como descrito anteriormente uma mais utilizada em análise de imagens, e outra em análise de texto respectivamente.\par 
+Por fim, \textit{Transformers} são as arquitecturas mais pesadas - qualidade comum da família de \textit{"generative AI"}.
+
+\paragraph{Função de Perda}
+\text{ }  \par
+
+Nos primeiros testes mais simples foi imediata a discrepância entre os erros da energia alocada em demasia e em falta, sendo que estes erros estão em dimensões completamente diferentes.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/allocs_results_shadow.png}
+    \caption{Resultados de alocações totais em diferentes arquiteturas}
+    \label{fig:resexparchs}
+  \end{figure}
+
+Na energia em falta, estamos a lidar com valores na dimensão de $10^{6}$ nos resultados, sendo que o \textit{benchmark} está nos $10^{5}$. Logo estão bastante acima do que queremos. Por outro lado, na Energia em Demasia temos resultados na ordem dos $10^{6}$ e o \textit{benchmark} está na ordem dos $10^{7}$. Estes resultados possibilitam-nos para aumentar os resultados da Energia em Demasia mantendo-os ainda abaixo do \textit{benchmark} para diminuir os resultados da Energia em Falta com objectivo de a ter também abaixo do \textit{benchmark}.\par
+Para combater esta desigualdade foram criadas várias funções de perda para atribuir melhor peso a ambas de modo a atingir o objectivo geral.\par
+Deste modo, dividimos esta experiência em duas partes: na primeira parte, Função de Perda Avançada, vão ser estudadas diferentes maneiras de distribuir pesos entre a energia alocada em demasia e a em falta. A segunda vai ser escolhida qual a melhor função de perda a aplicar nessa distribuição de pesos, e vice-versa.\par
+
+
+\subparagraph{Funções de Perda}
+\text{ }  \par
+Depois de escolhidos os pesos nos diferentes grupos serão testadas as funções a aplicar. Aqui serão apenas testadas as funções mais comuns em problemas de regressão linear: \gls{MAE}, \gls{MSE}, \gls{MSLE}.\par
+\gls{MAE} é usada no geral em problemas em que os dados têm um histograma linear, e um erro normalmente distribuído.\par
+\gls{MSE} é usado para atribuir mais peso aos erros maiores, fazendo com que o modelo se concentre mais em aprender a diminuir erros maiores.\par
+\gls{MSLE} é sugerido em dados que têm uma histograma exponencial.\par
+
+% TODO: meter formulas? depende do espaço
+
+
+\subparagraph{Função de Perda Avançada}\label{se:advancedloss}
+\text{ }  \par
+Para escolher a melhor maneira de distribuir pesos foi criada uma função de perda com diferentes regras, que distribuem o peso da amostra:
+\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py#L33}{Mirror Weights (Pesos Espelhados)},
+que vai distribuir os pesos da amostra consoante um rácio predefinido e o próprio erro da amostra.\par
+Os pesos nas amostras vão ser divididos entre os erros negativos (alocação em demasia) e os positivos (alocação em falta). Consoante uma variável lógica,  uns terão peso 1 e os outros serão o próprio erro em absoluto. Dando assim um peso equivalente ao erro, quanto maior o erro maior o peso da amostra na função de perda, do lado da amostra escolhido (em demasia ou em falta).\par
+O rácio pode ser multiplicado um rácio tanto a um dos pesos como a outro, sendo estes rácios que irão equilibrar as diferenças entre a alocação em falta e a em demasia. Refira-se que o sinal do rácio influencia qual o lado a ser multiplicado.\par
+Este pesos são passados directamente à função de perda em uso.\par
+
+% TODO: meter formulas? depende do espaço
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/ratio_mw.png}
+    \caption{Resultados de alocações totais em diferentes rácios}
+    \label{fig:resexpratiomw}
+  \end{figure}
+
+Estas variações no rácio produzem diferentes dimensões nas alocações, modificando assim a sua posição em relação ao \textit{benchmark}. Aqui para cada arquitetura o rácio ideal para o melhor GPD Positivo diferencia ligeiramente, tendo sido procurado com tentativa/erro baseado em assunções perante a aparente distribuição rácio/alocações.\par
+
+
+\paragraph{Função de Activação}
+\text{ }  \par
+
+Como mostrado em \cite{Vaswani2017}, e \cite{Liu2022}, o uso de uma activação mais apropriada aos dados pode ser crucial para um salto na qualidade do modelo.\par
+Vamos dividir as função de activação usadas nas camadas intermédias e a usada na camada final. Isto porque as camadas intermédias tendem a funcionar melhor com a mesma activação e a camada final é que mais define o valor que sai do modelo.\par
+Esta experiência vai testar a combinações das seguintes activações nas duas variáveis descritas anteriormente: linear, relu, gelu.\par
+
+
+\paragraph{Pesos}
+\text{ }  \par
+
+Esta experiência serve para testar diferentes pesos por amostra e não por grupo como na experiência anterior. Aqui os pesos são aplicados no momento da função de perda final.\par
+Normalmente, estes pesos são usados para dar mais significado a amostras com menor amostragem, o que é mais facilmente aplicável em modelos de classificação. Como este é um problema de regressão linear com séries temporais vamos testar aplicar os pesos que se descrevem \textit{infra}, ou nenhum peso.\par
+Este peso é multiplicado pelo peso em \hyperref[se:advancedloss]{\textit{Mirror Weights}}.
+
+
+\subparagraph{Temporais}
+\text{ }  \par
+Aqui a primeira amostra tem o menor valor de peso (1) e todas as amostras seguintes incrementam 1, dando mais peso consecutivamente a amostras mais recentes. Este tipo de pesos são testados em vários casos de séries temporais onde o objectivo é prever o futuro, podendo assim dar mais peso a tendências e valores mais recentes.\par
+
+\subparagraph{Distância à média}
+\text{ }  \par
+Neste peso cada amostra tem como valor a sua distância à média total dos dados, o que servirá para o modelo conseguir criar pesos relevantes a valores mais distantes à média.\par
+Logo as amostras que tenham picos de valores terão um peso maior, forçando o modelo a aprender melhor estas ocasiões.
+

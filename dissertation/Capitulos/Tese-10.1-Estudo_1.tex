@@ -1,0 +1,92 @@
+\section{Estimativa do parâmetro $\rho$ da fórmula da REN}
+
+
+Arredondando o $\rho_{proposto}$, da fórmula \ref{eq:rhoproposed}, a uma casa decimal, podemos verificar que o histograma das diferentes propostas difere bastante,sendo que esta apresenta uma curva de distribuição normal.\par
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/histograma_parametro_p.png}
+    \caption{Histograma $\rho$}
+  \end{figure}
+
+
+Atentando as distribuições por hora: \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\textwidth]{plots/valor_do_parametro_ρ_(hora).png}
+    \caption{Valor do paramêtro $\rho$ (hora)}
+  \end{figure}
+
+O $\rho_{proposto}$ apresenta um grande variabilidade em todas as horas, embora de notar que em todas tem um maior peso perto da mediana. O $\rho$ de comparação embora sempre dentro da distribuição note-se que cai quase sempre em zonas com pouco peso nestes dados históricos.\par
+Calculamos $\rho$ possíveis para proposta final usando as seguintes aproximações: média, mediana, e média ponderada ao consumo, e à banda.\par
+
+As distribuições por hora são as seguintes:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{plots/comparação_de_ρ_propostos_por_hora.png}
+    \caption{Comparação $\rho$ por hora}
+\end{figure}
+
+Todas seguem um percurso semelhante ao longo do dia, o qual também pode ser extrapolado para Carneiro2016. A média e mediana destacam-se seguindo muito parecidas, enquanto que as ponderadas também parecidas entre elas são bastante mais discretas.\par
+Para a escolha da normalização deste parâmetro à Hora, estudou-se o erro entre a Banda Reserva calculada através das normalizações e a Banda Reserva disponível nos dados.\par
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{plots/comparação_das_metricas_de_erro.png}
+    \caption{Comparaçao dos erros por $\rho$}
+\end{figure}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Erros de Banda de Reserva por método de normalização $\rho$}    
+    \resizebox{0.65\linewidth}{!}{\input{tabelas/tabela_estudo_1_medias.tex}}
+    \end{table}
+
+
+A normalização com erros mais baixos é a média. Com um erro médio (de todo o histórico) para o consumo real de 8.8\% o que comparando com o \textit{benchmark} de 29.36\% é uma melhoria  bastante considerável. Comparando as bandas calculadas a uma média em cada hora:\par
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/média_historica_de_banda_de_reserva.png}
+    \caption{Média historica de Banda de Reserva}
+\end{figure}
+
+Podemos ver que em termos de média horária, a Banda de Reserva calculada através do $\rho_{proposto}$ apresenta quase uma sobreposição por inteiro ao valor médio real.\par
+
+Retiramos as médias dos erros percentuais e podemos observar: \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/erro_médio_por_hora_banda_de_reserva.png}
+    \caption{Erro médio por hora Banda de Reserva}
+\end{figure}
+
+Em termos de média diária o erro pelo método proposto está bem abaixo da margem de erro do 5\% na banda, em todas as horas. E na outra tese apenas 10\% cai dentro dessa margem de erro.\par
+
+Como tal o $\rho_{proposto}$ a partir do estudo dos dados  históricos é: \
+
+\begin{table}[H] \centering \caption{Valores de $\rho$ propostos} \input{tabelas/table_p_proposto.tex} \end{table}
+
+
+% \begin{table}[H]
+%     \caption{Valores de $\rho$ propostos}    
+%     \resizebox{\linewidth}{!}{\input{tabelas/table_p_proposto.tex}}
+%     \end{table}
+
+% Em relação a perdas por arredondamento, apresento o resultado dos erros por arrendamento em cada um da casas possíveis, concluindo que até à primeira casa decimal, pode ser feito arredondamento do parâmetro $\rho$, sem influenciar muito o erro: \\
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/Erro_médio_por_hora_Banda_de_Reserva_Arredondamento.png}
+%     \caption{Erro médio por hora Banda de Reserva (Arredondamento)}
+% \end{figure}
+
+
+
+Neste estudo podemos comprovar que usando um $\rho$ extrapolado dos dados históricos, e um $L_{max}$ sendo o consumo real e não o consumo máximo calculado, os erros médios por hora ficam abaixo dos 5\%.\par

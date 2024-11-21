@@ -1,0 +1,391 @@
+%Documento elaborado através da modificação de Template_ Tese_ MAEG por RJF. 
+%Com contribuições e modificações dos alunos do DEGGE e Phd student 
+%Angelo Soares (arsoares@fc.ul.pt) com orientação de Carla M. Silva.
+%11/11/2021
+% Para escrever neste documento, expandam a secção Capitulos e escrevam no capitulo apropriado.
+% Após a escrita, seleccionem "main.tex" e recompilem. Tudo o que escreverem nos capitulos irá 
+% aparecer. 
+
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------ ALTERAR CAPA ----------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+%A Neste main.tex as únicas alterações que precisam de fazer são referentes à Capa da
+%dissertação. Sigam as indicações seguintes: Façam ctrl+F para procurar "includepdf" e leiam 
+%as notas por baixo do \includepdf.
+
+% ------------------------------------------------------------------------------------------------------%
+
+%Outras Notas: 
+%1. Ler o conteudo em "library.bib".
+%2. O GOOGLE é vosso amigo, todas e quaisquer modificações necessárias, seja para introduzir um
+%certo tipo de formatação, seja para colocar uma figura ou tabela com especificações particulares,
+%usem o GOOGLE, existem N exemplos para todo o tipo de alteração em latex. Com quase copy+paste
+%code.
+% ------------------------------------------ IMPORTANTE -----------------------------------------------%
+%3. Neste documento existem algumas colisoes de pacotes, nomeadamente o tocloft e o book report
+%e a maneira %como o chapter foi elaborado. Exemplo: Se os alunos quiserem colocar o prefixo "1."
+%antes da introdução, ou seja "1. Introdução". No Indice ficaria "1 1. Introdução".
+%ALTERNATIVA: Escrevam a dissertação na totalidade. No fim, façam download do PDF (cliquem segundo
+%Icone após o Recompile). Com esse ficheiro PDF, abram-no no PDF reader (adobe acrobat pro) e 
+%editem acrescentando o número do capitulo para ficar igual ao que está no Indice "1. Introdução".
+%É a forma mais simples de resolver.
+
+%Se alguem por curiosidade encontrar outra solução usando o tocloft package, como por exemplo, 
+%ocultar o número do capitulo no TOC sem usar \chapter* ou interferir com o hyperref enviem essa
+%info para o email supramencionado, muito obrigado.
+%Boa sorte
+
+
+\documentclass[11pt,a4paper,twoside,openright]{book}
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------- PREAMBLE -------------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+\usepackage{mathptmx} % Fonte mais próxima de Times New Roman
+% Alterar margens do documento
+\usepackage[margin=2.5cm]{geometry}
+\renewcommand{\baselinestretch}{1.15}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\usepackage[acronym,nomain,nonumberlist,nopostdot,toc]{glossaries}
+\glsaddall
+
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter. #1 }}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[RO]{\small{\rightmark}}
+\fancyhead[LE]{\small{\leftmark}}
+\setlength{\headheight}{12pt}
+\addtolength{\topmargin}{-10.5pt}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+  \fancyhead{}
+  \renewcommand{\headrulewidth}{0pt}
+}
+\usepackage[utf8]{inputenc}
+\usepackage{neuralnetwork}
+\usepackage{datatool}
+\usepackage{mathtools}
+\usepackage[backend=biber, natbib=true, style=numeric-comp, sorting=none]{biblatex} %Numeric style
+%\usepackage[backend=biber,style=authoryear,maxcitenames=1,autocite=inline,natbib=true]{biblatex}
+%\addbibresource{library} %O ficheiro .bib que a bibliografia vai usar
+%\bibliography{library}
+%\addbibresource{library.bib} %O ficheiro .bib que a bibliografia vai usar
+\bibliography{library}
+\addbibresource{library.bib}
+
+
+\usepackage{tikz}
+    \usetikzlibrary{positioning, calc}
+	\usetikzlibrary{fit}
+	\usetikzlibrary{matrix, arrows}
+ \usepgflibrary{shapes.misc} 
+\tikzset{basic/.style={draw,fill=none,
+                       text badly centered,minimum width=1.5em}}
+\tikzset{input/.style={basic,circle,minimum width=1.75em}}
+\tikzset{small_input/.style={basic,circle,minimum width=0.4em}}
+\tikzset{weights/.style={basic,rectangle,minimum width=1em}}
+\tikzset{neurons/.style={basic,rectangle,minimum width=1em, dashed}}
+\tikzset{functions/.style={basic,circle, minimum width=2em}}
+\newcommand{\addaxes}{\draw (0em,0.5em) -- (0em,-0.5em)
+                            (-0.5em,0em) -- (0.5em,0em);}
+\newcommand{\relu}{\draw[line width=0.75pt] (-0.5em,0) -- (0,0)
+                                (0,0) -- (0.375em,0.375em);}
+\newcommand{\stepfunc}{\draw[line width=0.75pt] (0.325em,0.325em) -- (0,0.325em) 
+                                    -- (0,-0.325em) -- (-0.325em,-0.325em);}
+%\bibliographystyle XXX
+%\usepackage[numbers]{natbib}1
+\usepackage{nicematrix}
+% Package que permite incluir imagens
+\usepackage{graphicx}
+% Comentar para não incluir a lista de figuras e tabelas no índice
+\usepackage[nottoc]{tocbibind}
+
+% Para citar referências
+%\usepackage{natbib}
+%\setcitestyle{numbers}
+%\bibliographystyle{humannat}
+%\setcitestyle{authoryear}
+
+%Indentar primeiro parágrafo
+\usepackage{indentfirst}
+
+% Incluir até à subsecção no índice
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Permite remover os espaços entre itens
+\usepackage{enumitem}
+
+% Caption para imagens
+\usepackage[font=footnotesize]{caption}
+\usepackage{adjustbox}
+% \usepackage{etoolbox} % Ensure this package is loaded
+% \AtBeginEnvironment{table}{\small} % Apply \small or any other size you prefer
+% \DeclareCaptionFont{tablesize}{\fontsize{9}{10}\selectfont} % Adjust sizes as needed
+% \captionsetup[table]{font=tablesize}
+
+% Referenciar anexos
+\usepackage[toc,page]{appendix}
+
+%Adicionar pdfs
+\usepackage{pdfpages}
+
+%Alterar nome de capitulo para a referencia
+\usepackage{fmtcount}
+\usepackage{url}
+
+%Para expressões Matemáticas
+\usepackage{amsmath}
+\usepackage{bm}
+
+%Bibliotecas
+\usepackage{biblatex}
+%\usepackage[portugues]{babel} %Can be switched to english
+% \usepackage{babel} %Can be switched to english
+
+%\usepackage{csvsimple}
+\usepackage{csvsimple-l3}
+\usepackage{float}
+\raggedbottom
+\usepackage{subcaption}
+\usepackage{eurosym}
+\usepackage{booktabs}
+\usepackage{ragged2e}
+% \usepackage[T1]{fontenc}
+\usepackage{csquotes}
+\usepackage{tabularx}
+%\usepackage[scaled]{helvet}
+%\renewcommand*\familydefault{\sfdefault}
+
+\loadglsentries{glossaries_acronyms}
+\newglossarystyle{customstyle}{ 
+    \setglossarystyle{long}% Base on the 'long' style
+    \renewenvironment{theglossary}{%
+        \begin{longtable}[l]{@{}ll@{}} % Use a table with no indentation
+    }{\end{longtable}}
+    
+    \renewcommand*{\glossarypreamble}{\setlength{\leftskip}{0pt}}
+    \renewcommand*{\glossaryheader}{\noindent}% No extra formatting for the glossary header
+    \renewcommand*{\glossarysection}[4]{% Define how sections (alphabet groups) are formatted
+                {\selectfont\textbf{##2}\par} % Title formatting
+                \noindent \raggedright \fontsize{9}{9}\selectfont\par % Entry formatting
+                \setlength{\leftskip}{0pt}
+            }
+
+    \renewcommand*{\glsgroupskip}{\noindent \raggedright  \vspace{1pt} \par}% Spacing between groups
+    \renewcommand*{\glossentry}[2]{%
+        \noindent \raggedright \text{\glsentryitem{##1}\glossentryname{##1}} % Acronym bold and aligned left
+        & \noindent \raggedright \glossentrydesc{##1}\tabularnewline % Description aligned left
+    }
+
+    }
+
+
+\makeglossaries
+%Comando que cria abreviaturas usado no Nomenclatura
+\newcommand{\abbreviations}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Abreviaturas}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+%Criar Siglas
+\newcommand{\siglas}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Siglas e acrónimos}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+%Cria simbologia
+\newcommand{\simbolos}[1]{%
+\vspace{12pt}\noindent{\selectfont\textbf{Simbologia}\par\vspace{6pt}\noindent {\fontsize{9}{9}\selectfont #1}\par}}
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+    \hbox{}
+    \thispagestyle{plain}
+    \newpage
+    \if@twocolumn\hbox{}\newpage\fi\fi\fi}
+\makeatother \clearpage{\pagestyle{plain}\cleardoublepage}
+
+\providecommand{\keywords}[1]{\textbf{Keywords:} #1}
+\providecommand{\keywordsP}[1]{\textbf{Palavras chave:} #1}
+
+
+\usepackage{fontspec} \setmainfont{Times New Roman}
+
+%Remover Chapter N on the header
+\usepackage{titlesec}
+\usepackage{lipsum}
+\titleformat{\chapter}[display]
+   {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
+\titlespacing*{\chapter}{0pt}{-20pt}{40pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries}{}{0pt}{\huge}
+\titleformat{\chapter}[hang]{\normalfont\huge\bfseries}{\thechapter\quad}{0pt}{\Huge}
+% \numberwithin{section}{chapter}
+\usepackage{multirow}
+\usepackage{chngcntr}  
+\usepackage{tocloft}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,  % color of internal links
+    filecolor=black,  % color of links to local 
+      urlcolor=blue,
+}
+%\counterwithout{figure}{chapter}
+%\counterwithout{table}{chapter}
+
+\renewcommand{\cftfigpresnum}{\textbf{Figura\ }}
+\renewcommand{\cfttabpresnum}{\textbf{Tabela\ }}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabela}
+\renewcommand{\listtablename}{Lista de Tabelas}
+\renewcommand{\listfigurename}{Lista de Figuras}
+
+\newlength{\mylenf}
+\settowidth{\mylenf}{\cftfigpresnum}
+\setlength{\cftfignumwidth}{\dimexpr\mylenf+1.5em}
+\setlength{\cfttabnumwidth}{\dimexpr\mylenf+1.5em}
+
+\sloppy
+
+\makeatletter
+\newcommand\listoftablesandfigures{%
+    \chapter*{List of Tables and Figures}%
+    \phantomsection
+\@starttoc{lof}%
+\bigskip
+\@starttoc{lot}}
+\makeatother
+
+\PassOptionsToPackage{hyphens}{url}\usepackage{hyperref}
+
+% ------------------------------------------------------------------------------------------------------%
+% ------------------------------------------- END - PREAMBLE -------------------------------------------%
+% ------------------------------------------------------------------------------------------------------%
+
+\begin{document}
+
+
+% Capa
+\newpage
+\thispagestyle{empty}
+\includepdf{capa.pdf}\label{Capa}
+
+
+
+\let\cleardoublepage\clearpage
+
+
+\clearpage \thispagestyle{empty}\mbox{}\clearpage
+
+\frontmatter
+
+
+% AGRADECIMENTOS
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-0.2-Agradecimentos}
+\label{agradecimentos}
+
+% RESUMO
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-0-Resumo}
+\label{resumo}
+
+%Abstract
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-0.1-Abstract}
+\label{abstract}
+
+
+%Nomenclatura
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-0.3-Nomenclatura}
+\label{ch:nomenclatura}
+
+% ÍNDICE
+\input{Indice}
+
+\mainmatter
+\setlength{\parindent}{15pt} %Comentar retira a indentação inicial nos chapters
+\pagenumbering{arabic} %numeros em numeração árabe
+\justifying
+
+% INTRODUÇÃO
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-1-Introducao}
+\label{ch:intro}
+
+% Revisão bibliográfica
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-2-Revisao_bibliografica}
+\label{ch:revisao}
+
+% Contextos
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-3-Contextos}\label{ch:contexto}
+
+
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-4-Estudo_1} \label{ch:estudo_1}
+
+
+% Dados
+
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-5-Ferramentas_Metodos} \label{ch:ferr_met}
+
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-5-Metricas_Dados} \label{ch:metrics_data}
+
+
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-5-Estudo_2} \label{ch:estudo_2}
+
+
+% Arquiteturas a estudar
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-6-Arquitecturas_de_Modelos}\label{ch:arch}
+% Ferramentas
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-7-Ferramentas}\label{ch:ferramentas}
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-8-Metricas}\label{ch:metricas}
+
+% Métodos
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-9-Metodos}\label{ch:metodos}
+% Resultados e discussão
+\newpage
+\thispagestyle{plain}
+\input{Capitulos/Tese-10-Resultados_discussao}\label{ch:resultados_discussao}
+% Conclusões e sugestões futuras
+\newpage
+\thispagestyle{plain}
+\include{Capitulos/Tese-11-Conclusao}\label{ch:conclusao}
+% Referências Bibliográficas
+\renewcommand{\bibname}{Referências} %comando para rename a BIBLIOGRAFIA para REFERENCIAS
+\printbibliography
+\addcontentsline{toc}{chapter}{Referências}
+
+% Referências Bibliográficas
+\appendix
+% \newpage
+% \thispagestyle{plain}
+% \input{Capitulos/Tese-12-Anexos}
+% \label{ch:Anexos}
+
+\end{document}

@@ -1,0 +1,23 @@
+\section{Ferramentas}
+
+\subsection{\href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia}\label{se:alquimodelia}}
+
+
+Com o propósito de desenvolver o presente estudo, e disponibilizar ferramentas para a replicação do mesmo, foi criada uma biblioteca em \textit{python} para desenhar as arquitecturas em estudo.\par
+
+\subsubsection{Construtor de modelos}
+
+Seguindo as arquitecturas descritas anteriormente esta ferramenta constrói os modelos automaticamente, sendo apenas necessário fornecer os parâmetros variáveis, o que permitirá um fácil teste de vários tipo de modelos, não havendo a necessidade de reescrever código para cada um deles.\par
+
+\subsubsection{\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/generator.py}{Gerador de dados}}
+
+O gerador construido trata da formatação dos dados para entrada nos modelos. Formatação esse que se baseia nos valores de janelas temporais a usar, e na divisão treino/teste.\par
+Esta ferramenta agrega os dados em tensores de formato \textit{(N, t, a)}, onde \textit{N} é o número de casos, \textit{t} é a janela temporal, e \textit{a} é o número de atributos e permite igualmente definir o tempo de salto entre cada entrada.\par
+Considere-se como exemplo uma janela temporal de 168 (horas, uma semana) para treino, e 24 (horas) para o alvo. Com um salto temporal de 1 a primeira entrada teria como treino as primeiras 168 horas dos dados, e como alvo as 24 horas consequentes. A segunda entrada seria a partir da segunda hora dos dados, e assim consecutivamente. Para um caso em que o tempo de salto seria 24, a primeira entrada mantinha-se, mas a segunda começaria 24 horas depois, e não apenas uma.\par
+
+Como estamos também a lidar com dados desfasados, o gerador atribui este desfasamento em atributos a especificar. No caso em estudo temos que os atributos são de \gls{DA}, logo estão desfasados 24 horas. O que implica termos de aplicar este desfasamento nos dados que não são \gls{DA}, nomeadamente os dados alvo. Esta propriedade permite também o fácil uso da ferramenta noutros dados desfasados, como as previsões a 3 ou 8 horas.\par
+
+\subsection{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}\label{se:muaddib}}
+
+Esta ferramenta criada para desenvolver as experiências desta dissertação, permite ao utilizador apenas com os dados que quer utilizar e a especificação das métricas pretendidas, facilmente ter um modelo optimizado para os seus dados e problema.\par
+Ao usar a ferramenta o utilizador consegue testar vários modelos e hiper parametrizações diferentes, mantendo a vantagem de escrever código ao mínimo.\par
