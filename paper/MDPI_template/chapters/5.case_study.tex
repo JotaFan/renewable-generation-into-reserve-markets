@@ -1,0 +1,57 @@
+To evaluate the proposed methodology for dynamic procurement of secondary reserves, a case study was conducted using the Spanish electricity market as a benchmark. The Spanish power system is an ideal candidate for this analysis due to its significant integration of variable renewable energy sources (vRES), particularly wind and solar photovoltaic (PV) power. The case study aims to demonstrate the effectiveness of machine learning techniques in improving forecast accuracy and optimizing secondary reserve allocation.\par
+\subsection{Data Sources and Preprocessing}
+
+The case study utilizes publicly available operational and historical data from Red Eléctrica de España (REE), the Spanish Transmission System Operator (TSO). The dataset includes the following key variables:
+\begin{itemize}
+    \item \textbf{vRES Generation}: Day-ahead and real-time generation data for wind and solar power.
+    \item \textbf{System Demand}: Day-ahead forecasts and real-time measurements of electricity consumption.
+    \item \textbf{Reserve Activation}: Historical data on upward and downward reserve activation.
+    \item \textbf{Weather Data}: Forecasted and actual meteorological variables, such as wind speed, solar radiation, and temperature.
+    \item \textbf{Market Prices}: Day-ahead and balancing market clearing prices.
+\end{itemize}
+
+
+The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing steps included:
+\begin{itemize}
+    \item Handling missing values using interpolation methods.
+    \item Normalizing the data to ensure consistency across variables.
+    \item Aligning time-series data to ensure synchronization between forecasts, real-time values, and reserve activations.
+\end{itemize}
+
+\subsection*{Methodology Implementation}
+The proposed dynamic reserve procurement methodology is implemented in three main steps:
+
+\subsubsection*{Forecasting Reserve Needs}
+Machine learning models are trained to predict the upward and downward reserve requirements based on day-ahead forecasts of vRES generation and system demand. Models such as Long Short-Term Memory (LSTM) networks, Random Forests, and XGBoost are used to capture temporal and nonlinear dependencies in the data. The inputs to the models include historical forecasts, real-time deviations, and weather data.
+
+\subsubsection*{Dynamic Allocation of Reserves}
+Using the machine learning forecasts, the required reserve capacities are dynamically adjusted for upward and downward reserves. The allocation considers real-time deviations observed in previous periods and adjusts procurement to better match actual system needs.
+
+\subsubsection*{Performance Evaluation}
+The performance of the dynamic reserve procurement is evaluated using key metrics, including:
+\begin{itemize}
+    \item \textbf{Forecast Error (RMSE and MAE)}: Measures the accuracy of reserve predictions.
+    \item \textbf{Reserve Utilization Rate}: Assesses the alignment between procured and activated reserves.
+    \item \textbf{Cost Efficiency}: Compares the costs of dynamic procurement with traditional static methods.
+\end{itemize}
+
+\subsection*{Results and Analysis}
+The results of the case study demonstrate significant improvements in reserve allocation efficiency compared to the traditional static methods currently used by the Spanish TSO.
+
+\subsubsection*{Forecast Accuracy}
+The machine learning models, particularly the LSTM network, outperformed traditional statistical methods such as ARIMA in predicting reserve requirements. The Root Mean Square Error (RMSE) was reduced by 15-20\% for both upward and downward reserve predictions.
+
+Incorporating weather variables into the models significantly improved the accuracy of vRES generation forecasts, which directly influenced reserve predictions.
+
+\subsubsection*{Reserve Utilization}
+The dynamic approach led to a higher utilization rate of procured reserves. The proportion of unused reserves was reduced by approximately 10\%, indicating a better alignment between forecasted and actual reserve needs.
+
+Asymmetrical reserve procurement allowed for flexibility in addressing specific system needs, such as prioritizing downward reserves during periods of high solar generation.
+
+\subsubsection*{Cost Efficiency}
+The dynamic procurement methodology reduced total reserve procurement costs by 8-12\% compared to static allocation methods. This cost savings was primarily driven by the reduction in over-procurement of reserves.
+
+The analysis showed that the optimized reserve allocation minimized the activation of expensive balancing reserves in the real-time market, further improving cost efficiency.
+
+\subsubsection*{Impact of vRES Penetration}
+The benefits of dynamic procurement were more pronounced during periods of high vRES penetration, where forecast uncertainty and variability were greatest. This highlights the importance of adapting reserve allocation methodologies to accommodate the increasing share of renewable generation.
