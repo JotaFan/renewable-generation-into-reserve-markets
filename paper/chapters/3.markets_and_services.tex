@@ -1,0 +1,45 @@
+The operation of modern electricity systems relies heavily on well-structured markets to ensure the balance between generation and consumption. These markets encompass wholesale electricity markets, where energy is traded, and ancillary services markets, which guarantee the system's stability and reliability. The integration of \gls{vRES} has added complexity to these operations, requiring more dynamic approaches to market design and reserve allocation.\par
+
+\subsection{Wholesale Electricity Markets}
+
+Wholesale electricity markets facilitate the trading of electricity between generators, suppliers, and other market participants. These markets are typically divided into three main categories: \gls{DAM}, \gls{IDM}, and real-time balancing markets. In the \gls{DAM}, participants submit bids for energy delivery 12 to 37 hours before real-time operation. The market-clearing process determines the energy schedules and market prices based on supply and demand equilibrium \cite{dgegmss}. While the \gls{DAM} provides a foundation for energy trading, \gls{IDM} allow participants to make adjustments closer to real-time, responding to unforeseen changes in demand or \gls{vRES} generation.\par
+
+Balancing markets, on the other hand, operate in near real-time to address deviations between scheduled and actual energy delivery. \gls{TSO}s procure balancing services to ensure system equilibrium, activating reserves as needed. This process is particularly critical in systems with high \gls{vRES} penetration, where forecasting errors can cause significant imbalances.\cite{Rassid2017} \cite{Carneiro2016}\par
+
+\subsection{Ancillary Services and Reserve Requirements}
+
+Ancillary services are essential for maintaining grid stability and ensuring a reliable power supply. They include services such as frequency control, voltage regulation, and operating reserves. Among these, frequency control reserves play a crucial role in balancing supply and demand in real-time. These reserves are divided into three main categories:
+
+
+\begin{itemize}
+    \item	\gls{FCR}: Activated automatically within seconds to stabilize frequency deviations.
+    \item	\gls{aFRR}: Restore frequency to nominal levels and release FCR for subsequent use.
+    \item	\gls{mFRR}: Address longer-term imbalances through manual activation.
+\end{itemize}
+
+% \begin{figure}[H]
+% \includegraphics[width=10.5 cm]{../../dissertation/plots/actiavtion_example.png}
+% \caption{This is a figure. Schemes follow the same formatting. If there are multiple panels, they should be listed as: (\textbf{a}) Description of what is contained in the first panel. (\textbf{b}) Description of what is contained in the second panel. Figures should be placed in the main text near to the first time they are cited. A caption on a single line should be centered.\label{fig1}}
+% \end{figure}   
+% \unskip
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{../../dissertation/plots/actiavtion_example.png}
+  \caption{Ancillary Services response scheme. Adapted from \cite{handbook2009policy}}
+  \label{fig:targettimeserieswindows}
+\end{figure}
+
+In Europe, the \gls{ENTSO-E} provides guidelines for the procurement and activation of these reserves. Traditionally, \gls{TSO}s acquire reserves symmetrically (equal upward and downward capacities), based on deterministic demand forecasts. However, this approach often leads to inefficiencies in systems with high \gls{vRES} variability. \par
+
+The Spanish and Portuguese markets provide examples of differing reserve procurement methods. In Portugal, the \gls{TSO} employs a fixed ratio formula for secondary reserve sizing, which can result in excessive allocation. Conversely, the Spanish market lacks a standardized reserve procurement formula, relying instead on flexible, asymmetric procurement mechanisms \cite{Frade2019_market}. These differences highlight the need for market design improvements to better accommodate the variability of \gls{vRES}.
+
+\subsection{Dynamic Reserve Procurement and Market Adaptations}
+
+To address the challenges introduced by \gls{vRES}, dynamic reserve procurement methods have been proposed. Unlike static methods, dynamic approaches consider real-time or near real-time forecasts of energy demand and renewable generation, allowing \gls{TSO}s to adjust reserve allocations accordingly. This adaptability reduces over-procurement and minimizes costs, improving the efficiency of reserve markets.
+
+The adoption of advanced forecasting tools, particularly machine learning techniques, is central to enabling dynamic reserve procurement. By leveraging historical and operational data, machine learning models can predict reserve needs with greater accuracy, addressing the uncertainties associated with \gls{vRES} generation. Studies have shown that these models outperform traditional statistical methods, offering significant improvements in reserve management and cost reduction.
+
+In conclusion, the evolving electricity markets and ancillary services frameworks must adapt to the challenges posed by high \gls{vRES} penetration. Dynamic reserve procurement, supported by advanced forecasting techniques and market design improvements, offers a path toward more efficient and reliable power systems.
+
