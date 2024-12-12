@@ -17,7 +17,7 @@
 %% %%		v2.0 when Dr. Janine Daum started (March 2013)
 %% %%		v3.0 layout change September 2015
 %%%%		v4.0 layout change December 2020
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% IDENTIFICATION
 \NeedsTeXFormat{LaTeX2e}
@@ -64,6 +64,9 @@
 \RequirePackage{marginfix} % For command \clearmargin for manually moving the left column to the next page
 \RequirePackage{enotez} % For endnotes
 \RequirePackage{xstring} % For citation in left column
+\RequirePackage{glossaries} %
+\makeglossaries % Prepare the glossaries
+\loadglsentries{../../dissertation/glossaries_acronyms}
 
 %% OPTIONS
 % For transition period to change back to continuous page numbers
