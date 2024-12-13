@@ -67,7 +67,7 @@
 \RequirePackage{tikz} %
 \RequirePackage{glossaries} %
 \makeglossaries % Prepare the glossaries
-\loadglsentries{../../dissertation/glossaries_acronyms}
+\loadglsentries{glossaries_acronyms}
 \usetikzlibrary{positioning, calc}
 \usetikzlibrary{fit}
 \usetikzlibrary{matrix, arrows}

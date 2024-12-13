@@ -18,28 +18,57 @@ Ancillary services are essential for maintaining grid stability and ensuring a r
 \end{itemize}
 
 % \begin{figure}[H]
-% \includegraphics[width=10.5 cm]{../../dissertation/plots/actiavtion_example.png}
-% \caption{This is a figure. Schemes follow the same formatting. If there are multiple panels, they should be listed as: (\textbf{a}) Description of what is contained in the first panel. (\textbf{b}) Description of what is contained in the second panel. Figures should be placed in the main text near to the first time they are cited. A caption on a single line should be centered.\label{fig1}}
+% \includegraphics[width=10.5 cm]{plots/actiavtion_example_eng.png}
+% \caption{Ancillary Services response scheme. Adapted from \cite{handbook2009policy}}
 % \end{figure}   
 % \unskip
 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{../../dissertation/plots/actiavtion_example.png}
+  \includegraphics[width=\textwidth]{plots/actiavtion_example_eng.png}
   \caption{Ancillary Services response scheme. Adapted from \cite{handbook2009policy}}
-  \label{fig:targettimeserieswindows}
+  \label{fig:Ancillary_Services_response_scheme}
 \end{figure}
+\unskip
 
+
+
+\subsection{Iberian Reserve Markets}
+
+
+\gls{MIBEL} is the iberian example of energy market integration across countries. Acting as a bond between portuguese and spanish electricity markets, \gls{OMIP} and \gls{OMIE}. This joint market consists of bilateral, derivatives, and spot markets.\par
+Even though there is a joint market, each country's \gls{TSO}, \gls{REE} for Spain and \gls{REN} for Portugal, manages it's own ancillary services independently. 
+
+\subsubsection{Static Reserve Procurement}
 In Europe, the \gls{ENTSO-E} provides guidelines for the procurement and activation of these reserves. Traditionally, \gls{TSO}s acquire reserves symmetrically (equal upward and downward capacities), based on deterministic demand forecasts. However, this approach often leads to inefficiencies in systems with high \gls{vRES} variability. \par
+For Secundary Reserve \gls{ENTSO-E} proposes:
+\begin{linenomath}
+\begin{equation}\label{eq:BRENTSOE} 
+    R = \sqrt{a \times  L_{max} + b^{2}} - b 
+\end{equation}
+\end{linenomath}
+where:
 
-The Spanish and Portuguese markets provide examples of differing reserve procurement methods. In Portugal, the \gls{TSO} employs a fixed ratio formula for secondary reserve sizing, which can result in excessive allocation. Conversely, the Spanish market lacks a standardized reserve procurement formula, relying instead on flexible, asymmetric procurement mechanisms \cite{Frade2019_market}. These differences highlight the need for market design improvements to better accommodate the variability of \gls{vRES}.
+\begin{itemize}
+  \item $R$: Secondary Control Reserve.
+  \item $a$ e $b$: empiric coeficients, $a$=10MW and $b$=150MW .
+  \item $L_{max}$: maximum anticipated consumer load.
+\end{itemize}
 
-\subsection{Dynamic Reserve Procurement and Market Adaptations}
 
-To address the challenges introduced by \gls{vRES}, dynamic reserve procurement methods have been proposed. Unlike static methods, dynamic approaches consider real-time or near real-time forecasts of energy demand and renewable generation, allowing \gls{TSO}s to adjust reserve allocations accordingly. This adaptability reduces over-procurement and minimizes costs, improving the efficiency of reserve markets.
+The Spanish and Portuguese markets provide examples of differing reserve procurement methods. In Portugal, the \gls{TSO} employs a fixed ratio formula for secondary reserve sizing. Creating a symmetrical distribution for Upward and Downward bands, respectively $\frac{2}{3}$ and $\frac{1}{3}$ of the Reserve band.\par
+The given formula is based on \gls{ENTSO-E} equation \eqref{eq:BRENTSOE}, adding an hourly ratio $\rho$:
 
-The adoption of advanced forecasting tools, particularly machine learning techniques, is central to enabling dynamic reserve procurement. By leveraging historical and operational data, machine learning models can predict reserve needs with greater accuracy, addressing the uncertainties associated with \gls{vRES} generation. Studies have shown that these models outperform traditional statistical methods, offering significant improvements in reserve management and cost reduction.
 
-In conclusion, the evolving electricity markets and ancillary services frameworks must adapt to the challenges posed by high \gls{vRES} penetration. Dynamic reserve procurement, supported by advanced forecasting techniques and market design improvements, offers a path toward more efficient and reliable power systems.
+\begin{linenomath}
+  \begin{equation}\label{eq:BRREN} 
+    R = \rho \times \sqrt{a \times  L_{max} + b^{2}} - b 
+  \end{equation}
+  \end{linenomath}
+
+Conversely, the Spanish market lacks a standardized reserve procurement formula, relying instead on flexible procurement mechanisms \cite{Frade2019_market}. Where the upward and downard bands distribuition is not directly symmetric.
+These differences highlight the need for market design improvements to better accommodate the variability of \gls{vRES}.
+
+
 
