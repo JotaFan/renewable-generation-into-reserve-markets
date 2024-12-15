@@ -49,7 +49,7 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/correlation_heatmap_benchmark.png}
+    \includegraphics[width=0.75\textwidth]{plots/correlation_heatmap_benchmark.png}
     \caption{Attribute correlation benchmark}
     \label{fig:Attribute_correlation_benchmark}
   \end{figure}
@@ -93,25 +93,30 @@ The best results for each architeture can be seen below:
 Within the validation time, best model results can be summarized by:
 
 % meter tableas dos resutlados com benchmark
-% \input{tables/tabela_res_metrics.tex}
+\input{tables/tabela_modelos_res.tex}
 
 
-O método proposto apresenta uma melhoria total, durante o período de validação, de \textasciitilde47\% na alocação a subir e \textasciitilde42\% na alocação a descer face ao método usado no mercado. As melhorias médias são de \textasciitilde37\% e \textasciitilde29\% respectivamente, o que também é uma melhoria face ao estado da arte \cite{Algarvio2024} com 13\% e 8\%.\par
-
+The proposed model presente an overall improvement of \textasciitilde47\% in upward allocation amd \textasciitilde42\% in downward allocation, comparing to current allocation methods.\par
 
 Where the hourly means differences between benchmark and validation results are:
 
 % meter tableas dos resutlados dos deltas com benchmark
-% \input{tables/tabela_res_metrics.tex}
+\input{tables/perc_delta_res.tex}
 
-O método proposto liberta em média \textasciitilde33\% dos recursos horários, e baixando a necessidade de activar a reserva terciária em \textasciitilde52\% e \textasciitilde59\%.\par
+Average hourly improvements are of \textasciitilde37\% and \textasciitilde29\% respectively, which also is an improvement on state of the art \cite{Algarvio2024} with 13\% and 8\%.
+The current study can free in average \textasciitilde33\% of hourly resources, lowering the need to activate the third reserve in \textasciitilde52\% and \textasciitilde59\%.\par
 
 
-% meter imagens novas correlacoes
-% \input{tables/tabela_res_metrics.tex}
 
-Aqui as correlações maiores são, como seria de esperar, entre a energia usada e a sua alocaçao. Com 48\% na energia a subir e 58\% a descer. E as energias alocadas têm uma correlaçao baixa.\par 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/heatmap_correlation_pred.png}
+    \caption{Attribute correlation}
+    \label{fig:Attribute_correlation}
+  \end{figure}
 
+
+We can also check that the correlation between used and alocated is bigger than in the current method, achieving 48\% in upward energy and 58\% in downward. \par
 
 % The proposed dynamic reserve procurement methodology is implemented in three main steps:
 
