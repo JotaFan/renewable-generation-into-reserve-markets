@@ -9,6 +9,8 @@ The case study utilizes publicly available operational and historical data from 
     \item \textbf{Market Prices}: \gls{DA} and balancing market clearing prices.
 \end{itemize}
 
+\input{tables/indicators_metadata.tex}
+
 
 The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing steps included:
 \begin{itemize}
@@ -18,7 +20,47 @@ The data spans multiple years to account for seasonal variability and long-term 
 
 For training the full dataset from 2014 to 2023, inclusive was used. As for validation it was chosen the years 2019-2022, in direct comparison with validation from \cite{Algarvio2024}
 
-\subsection*{Methodology Implementation}
+\subsubsection{Training Data}
+
+\input{tables/tabela_dados_treino_medias.tex}
+
+% meter heatmap com as variaveis q queremos ver
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/correlation_heatmap.png}
+    \caption{Attribute correlation}
+    \label{fig:Attribute_correlation}
+  \end{figure}
+  \unskip
+  
+  
+  
+
+\subsubsection{Validation Data}
+
+% meter resultados metricas
+\input{tables/tabela_res_benchmark.tex}
+
+% meter heatmap só da validaçao/real
+% \input{tables/tabela_dados_validacao_medias.tex}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/correlation_heatmap_benchmark.png}
+    \caption{Attribute correlation benchmark}
+    \label{fig:Attribute_correlation_benchmark}
+  \end{figure}
+  \unskip
+  
+  
+
+
+\subsection{Methodology Implementation}
+\subsection{Results}
+
 % The proposed dynamic reserve procurement methodology is implemented in three main steps:
 
 % \subsubsection*{Forecasting Reserve Needs}
