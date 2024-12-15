@@ -33,7 +33,7 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
     \caption{Attribute correlation}
     \label{fig:Attribute_correlation}
   \end{figure}
-  \unskip
+%   \unskip
   
   
   
@@ -53,12 +53,37 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
     \caption{Attribute correlation benchmark}
     \label{fig:Attribute_correlation_benchmark}
   \end{figure}
-  \unskip
+%   \unskip
   
   
 
 
 \subsection{Methodology Implementation}
+
+The methodology aplied was a "brute force" choosing of better model. With multiple model related variables in study:\par
+
+\input{tables/muaddib_variables.tex}
+
+Where each of the model variables in study where a layer of training, giving the best model within that scope we would go to the next variable with the given best option so far. Going back and forward as to not loose best possible choices.\par
+
+
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{\input{tables/methodoly_training.tex}}
+	\caption{Model choice method scheme.}
+	\label{fig:method_training}
+\end{figure}
+
+For the porpuse of controling and processing this experiment three python packages were created.
+
+\begin{itemize}
+    \item \textbf{\href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia}}: A keras based model builder package, to create the necessary models with each different arch and variable.
+    \item \textbf{\href{https://github.com/alquimodelia/alquitable}{Alquitable}}: A keras based workshop package, to create custom callbacks, loss functions, data generators.
+    \item \textbf{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}}: A machine learning framework that uses alquimodelia to test and choose best models on given conditions automatically.
+\end{itemize}
+
+The experiments were done using \href{https://keras.io/}{keras}>=3 with a torch backend on a CPU laptop.
+
 \subsection{Results}
 
 % The proposed dynamic reserve procurement methodology is implemented in three main steps:

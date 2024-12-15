@@ -1,0 +1,31 @@
+\begin{table}[H] 
+    \caption{This is a table caption. Tables should be placed in the main text near to the first time they are~cited.\label{tab1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{CC}
+    \toprule
+    \textbf{Variables} & \textbf{options} \\
+        \midrule
+            \multirow[m]{5}{*}{architecture}	& CNN\\
+                                                & LSTM\\
+                                                & RNN\\
+                                                & UNET\\
+                                                & Transformer\\
+        \midrule
+            \multirow[m]{2}{*}{Advance Loss function}	& Mirror Weights\\
+                                                & N/A \\
+        \midrule
+            \multirow[m]{3}{*}{Loss function}	& \gls{MAE}\\
+                                                & \gls{MSE}\\
+                                                & \gls{MSLE}\\
+        \midrule
+            \multirow[m]{3}{*}{Activation}	& linear\\
+                                                & relu\\
+                                                & gelu\\
+        \midrule
+            \multirow[m]{3}{*}{Weights}	& Temporal\\
+                                                & Distance to mean \\
+                                                & No Weights\\    
+    \bottomrule
+    \end{tabularx}
+    % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
+\end{table}
