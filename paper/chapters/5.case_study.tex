@@ -1,31 +1,39 @@
-To evaluate the proposed methodology for dynamic procurement of secondary reserves, a case study was conducted using the Spanish electricity market as a benchmark. The Spanish power system is an ideal candidate for this analysis due to its significant integration of variable renewable energy sources (vRES), particularly wind and solar photovoltaic (PV) power. The case study aims to demonstrate the effectiveness of machine learning techniques in improving forecast accuracy and optimizing secondary reserve allocation.\par
+To evaluate the aplicability of machine learning techniques for secondary reserve allocation the study was conducted using the Spanish electricity market historical data.
+
 \subsection{Data Sources and Preprocessing}
 
-The case study utilizes publicly available operational and historical data from \gls{REE}, the Spanish \gls{TSO}. The dataset includes the following key variables:
-\begin{itemize}
-    \item \textbf{vRES Generation}: \gls{DA} and real-time generation data for wind and solar power.
-    \item \textbf{System Demand}: \gls{DA} forecasts and real-time measurements of electricity consumption.
-    \item \textbf{Reserve Activation}: Historical data on upward and downward reserve activation.
-    \item \textbf{Market Prices}: \gls{DA} and balancing market clearing prices.
-\end{itemize}
+The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE}. Available at \href{https://www.esios.ree.es/es}{\gls{ESIOS}}. The dataset includes the following key variables:
 
 \input{tables/indicators_metadata.tex}
 
 
-The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing steps included:
-\begin{itemize}
-    \item Handling missing values using interpolation methods, with \href{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}{IterativeImputer} \cite{vanBuuren2011}\cite{Buck1960}.
-    \item Aligning time-series data to ensure synchronization between forecasts, real-time values, and reserve activations.
-\end{itemize}
+The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with \href{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}{IterativeImputer} \cite{vanBuuren2011}\cite{Buck1960}.:
 
-For training the full dataset from 2014 to 2023, inclusive was used. As for validation it was chosen the years 2019-2022, in direct comparison with validation from \cite{Algarvio2024}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/missing_data.png}
+    \caption{Missing Data}
+    \label{fig:misisng_data}
+  \end{figure}
+
+
+To choose the temporal space of the models temporal auto-correlations were checked:
+
+\input{tables/autocorrelation.tex}
+
+
+We wanted to forecast \gls{DA} values, so we will be forecasting 24 hours ahead. As for the input for that forecast the temporal correlactions present 168 hours as the next correlation after the one day period, which represents a week.
+We add also variable to account for each time range: day, day of year, month, day of week.\par
+And so our models will receive data in (Batch Size, 168, 18) shape for input, and (Batch Size, 24, 1) shape for output.
+
+
 
 \subsubsection{Training Data}
+For training the full dataset from 2014 to 2023, inclusive was used. follows a description of said data:
 
 \input{tables/tabela_dados_treino_medias.tex}
 
-% meter heatmap com as variaveis q queremos ver
-
+With each variable correlation to used secondary reserve energy:
 
 \begin{figure}[H]
     \centering
@@ -39,14 +47,11 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
   
 
 \subsubsection{Validation Data}
-
-% meter resultados metricas
+As for validation it was chosen the years 2019-2022, in direct comparison with validation from \cite{Algarvio2024}.\par
+Using the non comparitive metrics we have the following results:
 \input{tables/tabela_res_benchmark.tex}
 
-% meter heatmap só da validaçao/real
-% \input{tables/tabela_dados_validacao_medias.tex}
-
-
+And the correlation between allocated energy in the current method to the used energy can be seen in the following image:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{plots/correlation_heatmap_benchmark.png}
@@ -54,7 +59,7 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
     \label{fig:Attribute_correlation_benchmark}
   \end{figure}
 %   \unskip
-  
+
   
 
 
