@@ -1,0 +1,60 @@
+
+\begin{table}[H] 
+    \caption{This is a table caption. Tables should be placed in the main text near to the first time they are~cited.\label{tab1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{CCCCCC}
+    \toprule
+    &  & RMSE & SAE & AllocF & AllocD  \\
+    & Arquitetura &  & $\times10^{6}$ & $\times10^{5}$ & $\times10^{6}$  \\
+
+
+
+    \midrule
+            \multirow[m]{5}{*}{Up Allocation}	& UNET & 304.34 & 9.19 & 1.47 & 9.05  \\
+                                                & VanillaCNN & 363.35 & 11.49 & 1.48 & 11.34  \\
+                                                & VanillaFCNN & 430.56 & 13.71 & 1.52 & 13.56  \\
+                                                & StackedCNN & 285.37 & 9.05 & 5.51 & 8.50 \\
+                                                & Transformer & 267.64 & 8.28 & 6.37 & 7.65 \\
+           
+        \midrule
+            \multirow[m]{5}{*}{Down Allocation}	& UNET & 262.71 & 7.52 & 4.71 & 7.05  \\
+                                                & VanillaCNN & 290.88 & 8.71 & 4.79 & 8.23 \\
+                                                & VanillaFCNN & 345.38 & 10.50 & 4.77 & 10.03  \\
+                                                & Transformer & 351.15 & 10.69 & 4.59 & 10.23  \\
+                                                & StackedCNN & 270.28 & 8.16 & 9.92 & 7,17  \\
+    \bottomrule
+    \end{tabularx}
+    % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
+\end{table}
+
+
+
+
+\begin{table}[H] 
+    \caption{This is a table caption. Tables should be placed in the main text near to the first time they are~cited.\label{tab1}}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \begin{tabularx}{\textwidth}{CCCCCC}
+    \toprule
+    &  & GPD & GPD F & GPD D &  GPD Positivo \\
+    & Arquitetura & \% & \% & \% & \% \\
+
+
+
+    \midrule
+            \multirow[m]{5}{*}{Up Allocation}	& UNET &  47.00 & 3.60 & 47.39 & 47.00 \\
+                                                & VanillaCNN &  33.83 & 2.76 & 34.11 & 33.83 \\
+                                                & VanillaFCNN &  21.01 & 0.69 & 21.19 & 21.01 \\
+                                                & StackedCNN &  47.86 & -261.16 & 50.60  & 0.00 \\
+                                                & Transformer &  52.27 & -317.32 & 55.55  & 0.00 \\
+           
+        \midrule
+            \multirow[m]{5}{*}{Down Allocation}	& UNET &  42.07 & 1.65 & 43.62 & 42.07 \\
+                                                & VanillaCNN &  32.89 & 0.01 & 34.15 &  32.89 \\
+                                                & VanillaFCNN & 19.09 & 0.40 & 19.81  & 19.09 \\
+                                                & Transformer & 17.63 & 4.18 & 18.15  & 17.63 \\
+                                                & StackedCNN &  37.12 & -106.92 & 42.64  & 0.00 \\
+    \bottomrule
+    \end{tabularx}
+    % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
+\end{table}
+

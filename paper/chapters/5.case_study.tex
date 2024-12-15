@@ -60,7 +60,7 @@ For training the full dataset from 2014 to 2023, inclusive was used. As for vali
 
 \subsection{Methodology Implementation}
 
-The methodology aplied was a "brute force" choosing of better model. With multiple model related variables in study:\par
+The methodology aplied was a "brute force" choosing of better model, which can lead to better fine tuning results than a more complex architecture as shown in \cite{Liu2022}. With multiple model related variables in study:\par
 
 \input{tables/muaddib_variables.tex}
 
@@ -85,6 +85,33 @@ For the porpuse of controling and processing this experiment three python packag
 The experiments were done using \href{https://keras.io/}{keras}>=3 with a torch backend on a CPU laptop.
 
 \subsection{Results}
+
+The best results for each architeture can be seen below:
+
+\input{tables/tabela_res_metrics.tex}
+
+Within the validation time, best model results can be summarized by:
+
+% meter tableas dos resutlados com benchmark
+% \input{tables/tabela_res_metrics.tex}
+
+
+O método proposto apresenta uma melhoria total, durante o período de validação, de \textasciitilde47\% na alocação a subir e \textasciitilde42\% na alocação a descer face ao método usado no mercado. As melhorias médias são de \textasciitilde37\% e \textasciitilde29\% respectivamente, o que também é uma melhoria face ao estado da arte \cite{Algarvio2024} com 13\% e 8\%.\par
+
+
+Where the hourly means differences between benchmark and validation results are:
+
+% meter tableas dos resutlados dos deltas com benchmark
+% \input{tables/tabela_res_metrics.tex}
+
+O método proposto liberta em média \textasciitilde33\% dos recursos horários, e baixando a necessidade de activar a reserva terciária em \textasciitilde52\% e \textasciitilde59\%.\par
+
+
+% meter imagens novas correlacoes
+% \input{tables/tabela_res_metrics.tex}
+
+Aqui as correlações maiores são, como seria de esperar, entre a energia usada e a sua alocaçao. Com 48\% na energia a subir e 58\% a descer. E as energias alocadas têm uma correlaçao baixa.\par 
+
 
 % The proposed dynamic reserve procurement methodology is implemented in three main steps:
 

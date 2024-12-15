@@ -32,11 +32,11 @@
     \draw [line] (loss) -- (activations);
     \draw [line] (activations) -- (weights);
 
-    \draw [line, bend right=30] (advance_loss_function) to (archs);
+    \draw [line, bend right=30] (loss) to (archs);
 
 
 
-    \draw [line, bend right=30] (weights) to (archs);
+    \draw [line, bend right=40] (weights) to (archs);
 
     % \draw [line, bend left=30] (loss_function) to (archs);
     % \draw [line] (up1) -- (declayer1);
