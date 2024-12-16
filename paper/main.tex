@@ -2,6 +2,27 @@
 %  For support, please attach all files needed for compiling as well as the log file, and specify your operating system, LaTeX version, and LaTeX editor.
 %=================================================================
 \documentclass[journal,article,submit,pdftex,moreauthors]{Definitions/mdpi} 
+\newglossarystyle{customstyle}{ 
+    \setglossarystyle{long}% Base on the 'long' style
+    \renewenvironment{theglossary}{%
+        \begin{longtable}[l]{@{}ll@{}} % Use a table with no indentation
+    }{\end{longtable}}
+    
+    \renewcommand*{\glossarypreamble}{\setlength{\leftskip}{0pt}}
+    \renewcommand*{\glossaryheader}{\noindent}% No extra formatting for the glossary header
+    \renewcommand*{\glossarysection}[4]{% Define how sections (alphabet groups) are formatted
+                {\selectfont\textbf{##2}\par} % Title formatting
+                \noindent \raggedright \fontsize{9}{9}\selectfont\par % Entry formatting
+                \setlength{\leftskip}{0pt}
+            }
+
+    \renewcommand*{\glsgroupskip}{\noindent \raggedright  \vspace{1pt} \par}% Spacing between groups
+    \renewcommand*{\glossentry}[2]{%
+        \noindent \raggedright \text{\glsentryitem{##1}\glossentryname{##1}} % Acronym bold and aligned left
+        & \noindent \raggedright \glossentrydesc{##1}\tabularnewline % Description aligned left
+    }
+
+    }
 
 %--------------------
 % Class Options:
@@ -449,20 +470,38 @@ The following abbreviations are used in this manuscript:\\
 
 \noindent 
 \begin{tabular}{@{}ll}
-MDPI & Multidisciplinary Digital Publishing Institute\\
-DOAJ & Directory of open access journals\\
-TLA & Three letter acronym\\
-LD & Linear dichroism
+aFRR & automatic Frequency Restoration Reserve\\
+CNN & Convolutional neural network\\
+DA & Day-Ahead\\
+DAM & day-ahead markets\\
+ENTSO-E & European Network of Transmission System Operators for Electricity\\
+ESIOS & \textit{Sistema de Información del Operador del Sistema}\\
+FCR & Frequency Containment Reserve\\
+IDM & intraday markets\\
+LSTM & Long Short-Term Memory\\
+MAE & Mean Absolute Error\\
+mFRR & manual Frequency Restoration Reserve\\
+MIBEL & \textit{Mercado Ibérico de Eletricidade}\\
+MSE & Mean Squared Error\\
+MSLE & Mean Squared Logarithmic Error\\
+OMIE & \textit{Operador del Mercado Ibérico de Energía - Pólo Espanhol, S.A}\\
+OMIP & \textit{Operador do Mercado Ibérico de Energia Português}\\
+PV & solar photovoltaic\\
+REE & \textit{Red Eléctrica de España}\\
+REN & \textit{Redes Energéticas Nacionais}\\
+SDG & Sustainable Development Goals\\
+TSO & Transmission System Operators\\
+vRES & variable Renewable Energy Systems
 \end{tabular}
 }
 
-\abbreviations{Abbreviations}{
-The following abbreviations are used in this manuscript:\\
+% \abbreviations{Abbreviations}{
+% The following abbreviations are used in this manuscript:\\
 
-\noindent 
+% \noindent 
 	
-	\printglossary[type=\acronymtype, style=long]
-}
+% 	\printglossary[type=\acronymtype, style=customstyle]
+% }
 
 
 % \abbreviations{Abbreviations}{
@@ -475,25 +514,25 @@ The following abbreviations are used in this manuscript:\\
 \appendixtitles{no} % Leave argument "no" if all appendix headings stay EMPTY (then no dot is printed after "Appendix A"). If the appendix sections contain a heading then change the argument to "yes".
 \appendixstart
 \appendix
-\section[\appendixname~\thesection]{}
-\subsection[\appendixname~\thesubsection]{}
-The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
+% \section[\appendixname~\thesection]{}
+% \subsection[\appendixname~\thesubsection]{}
+% The appendix is an optional section that can contain details and data supplemental to the main text---for example, explanations of experimental details that would disrupt the flow of the main text but nonetheless remain crucial to understanding and reproducing the research shown; figures of replicates for experiments of which representative data are shown in the main text can be added here if brief, or as Supplementary Data. Mathematical proofs of results not central to the paper can be added as an appendix.
 
-\begin{table}[H] 
-\caption{This is a table caption.\label{tab5}}
-\newcolumntype{C}{>{\centering\arraybackslash}X}
-\begin{tabularx}{\textwidth}{CCC}
-\toprule
-\textbf{Title 1}	& \textbf{Title 2}	& \textbf{Title 3}\\
-\midrule
-Entry 1		& Data			& Data\\
-Entry 2		& Data			& Data\\
-\bottomrule
-\end{tabularx}
-\end{table}
+% \begin{table}[H] 
+% \caption{This is a table caption.\label{tab5}}
+% \newcolumntype{C}{>{\centering\arraybackslash}X}
+% \begin{tabularx}{\textwidth}{CCC}
+% \toprule
+% \textbf{Title 1}	& \textbf{Title 2}	& \textbf{Title 3}\\
+% \midrule
+% Entry 1		& Data			& Data\\
+% Entry 2		& Data			& Data\\
+% \bottomrule
+% \end{tabularx}
+% \end{table}
 
-\section[\appendixname~\thesection]{}
-All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
+% \section[\appendixname~\thesection]{}
+% All appendix sections must be cited in the main text. In the appendices, Figures, Tables, etc. should be labeled, starting with ``A''---e.g., Figure A1, Figure A2, etc.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{adjustwidth}{-\extralength}{0cm}

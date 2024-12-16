@@ -3,6 +3,58 @@
 This study proposes a dynamic procurement based on machine learning techniques trained with historical hourly data. With custom made model architectures
 
 
+
+\subsection{Methodology Implementation}
+
+The methodology aplied was a "brute force" choosing of better model, which can lead to better fine tuning results than a more complex architecture as shown in \cite{Liu2022}. With multiple model related variables in study:\par
+
+\input{tables/muaddib_variables.tex}
+
+Where each of the model variables in study where a layer of training, giving the best model within that scope we would go to the next variable with the given best option so far. Going back and forward as to not loose best possible choices.\par
+
+
+\begin{figure}[H]
+	\centering
+	\resizebox{\linewidth}{!}{\input{tables/methodoly_training.tex}}
+	\caption{Model choice method scheme.}
+	\label{fig:method_training}
+\end{figure}
+
+For the porpuse of controling and processing this experiment three python packages were created.
+
+\begin{itemize}
+    \item \textbf{\href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia}}: A keras based model builder package, to create the necessary models with each different arch and variable.
+    \item \textbf{\href{https://github.com/alquimodelia/alquitable}{Alquitable}}: A keras based workshop package, to create custom callbacks, loss functions, data generators.
+    \item \textbf{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}}: A machine learning framework that uses alquimodelia to test and choose best models on given conditions automatically.
+\end{itemize}
+
+The experiments were done using \href{https://keras.io/}{keras}>=3 with a torch backend on a CPU laptop.
+
+% \subsubsection{Advance Loss Function}
+
+
+% Para escolher a melhor maneira de distribuir pesos foi criada uma função de perda com diferentes regras, que distribuem o peso da amostra:
+% \href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py#L33}{Mirror Weights (Pesos Espelhados)},
+% que vai distribuir os pesos da amostra consoante um rácio predefinido e o próprio erro da amostra.\par
+% Os pesos nas amostras vão ser divididos entre os erros negativos (alocação em demasia) e os positivos (alocação em falta). Consoante uma variável lógica,  uns terão peso 1 e os outros serão o próprio erro em absoluto. Dando assim um peso equivalente ao erro, quanto maior o erro maior o peso da amostra na função de perda, do lado da amostra escolhido (em demasia ou em falta).\par
+% O rácio pode ser multiplicado um rácio tanto a um dos pesos como a outro, sendo estes rácios que irão equilibrar as diferenças entre a alocação em falta e a em demasia. Refira-se que o sinal do rácio influencia qual o lado a ser multiplicado.\par
+% Este pesos são passados directamente à função de perda em uso.\par
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=\textwidth]{plots/ratio_mw.png}
+%     \caption{Resultados de alocações totais em diferentes rácios}
+%     \label{fig:resexpratiomw}
+%   \end{figure}
+
+% Estas variações no rácio produzem diferentes dimensões nas alocações, modificando assim a sua posição em relação ao \textit{benchmark}. Aqui para cada arquitetura o rácio ideal para o melhor GPD Positivo diferencia ligeiramente, tendo sido procurado com tentativa/erro baseado em assunções perante a aparente distribuição rácio/alocações.\par
+
+
+\subsection{Metrics}
+\input{chapters/4.1.2.metrics.tex}
+
+
 % To address the challenges introduced by \gls{vRES}, dynamic reserve procurement methods have been proposed. Unlike static methods, dynamic approaches consider real-time or near real-time forecasts of energy demand and renewable generation, allowing \gls{TSO}s to adjust reserve allocations accordingly. This adaptability reduces over-procurement and minimizes costs, improving the efficiency of reserve markets.
 
 % The adoption of advanced forecasting tools, particularly machine learning techniques, is central to enabling dynamic reserve procurement. By leveraging historical and operational data, machine learning models can predict reserve needs with greater accuracy, addressing the uncertainties associated with \gls{vRES} generation. Studies have shown that these models outperform traditional statistical methods, offering significant improvements in reserve management and cost reduction.
