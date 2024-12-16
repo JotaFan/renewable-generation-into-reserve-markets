@@ -6,9 +6,26 @@ This study proposes a dynamic procurement based on machine learning techniques t
 
 \subsection{Methodology Implementation}
 
-The methodology aplied was a "brute force" choosing of better model, which can lead to better fine tuning results than a more complex architecture as shown in \cite{Liu2022}. With multiple model related variables in study:\par
+The methodology aplied was a "brute force" choosing of better model, which can lead to better fine tuning results than a more complex architecture as shown in \cite{Liu2022}.\par
+With multiple model related variables in study:\par
 
 \input{tables/muaddib_variables.tex}
+
+For that we will study different architectures already proven to work in energy forecast \cite{Costa2022}, or in forecast in general \cite{Hewamalage2021}, such as \gls{RNN}, \gls{LSTM}, \gls{CNN}. Testing also architectures proven to work in other fields, such as UNET \cite{Shelhamer2014} from image segmentation, or Transformers \cite{Vaswani2017}, the current machine learning state of art arquiteture. Although for Transformer, processing limitation wont allow for a deep study of potencial the given problem.\par
+As for the loss function used, we shall test it with the three most commun regression loss funtion, with a twist. Since the problem we are trying to solve is not only of finding the smallest error, but to make sure the there is less negative and positive error than the benchmark we create a custom loss funtion to encapsulate the final loss calculation, \href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py#L33}{Mirror Weights}. \par
+This function acts as a weight distribuiter for the negative and positive erros, in such a way that the a ratio defines which size gives more meaning to the final loss calculation. This was created since the error in missing energy is on a $10^{5}$ dimension, and on surplus $10^{6}$.\par
+In a default loss function trying to lower the absolute error, this diference means most work would be to lower surplus erros even at the expenses of raising the missing error. The created function allows for more behaviours, and some of them were studied, but the one with better results was defaulting surplus results weight 1, and making the weights of missing values it's own error, multiplied by a ratio. Insights on given diferent ratio outcomes can be seen below:\par
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/article_ratio_mw.png}
+    \caption{Mirror Weights ratio influence on metrics}
+    \label{fig:Ratio_influence_on_metrics}
+  \end{figure}
+Were the red doted line shows the benchmark values, and our goal is to have both Allocs below the benchmark line.\par
+As for activation research suggested it could  provide significante impact on the outcome \cite{Vaswani2017} \cite{Liu2022}. The test were done using the most commun activations for regression problems, where we separeted activations inside the model structure (on each deep layer), and the final layer.\par
+And the last model variable in test were the weights, these given directly to the model training, not in a custom loss function. These weights are multiplied with the Mirror Weights. The test here was if either the temporal distance would make a diference, the older the data the less valuable, giving more weight to values far off the mean could also help in securing spikes.\par
 
 Where each of the model variables in study where a layer of training, giving the best model within that scope we would go to the next variable with the given best option so far. Going back and forward as to not loose best possible choices.\par
 
