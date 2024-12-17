@@ -10,14 +10,13 @@ The operation of modern electricity systems relies heavily on well-structured ma
 
 \subsection{Wholesale Electricity Markets}
 
-Wholesale electricity markets facilitate the trading of electricity between generators, suppliers, and other market participants. These markets are typically divided into three main categories: \gls{DAM}, \gls{IDM}, and real-time balancing markets. In the \gls{DAM}, participants submit bids for energy delivery 12 to 37 hours before real-time operation. The market-clearing process determines the energy schedules and market prices based on supply and demand equilibrium \cite{dgegmss}. While the \gls{DAM} provides a foundation for energy trading, \gls{IDM} allow participants to make adjustments closer to real-time, responding to unforeseen changes in demand or \gls{vRES} generation.\par
+Wholesale electricity markets facilitate the trading of electricity between generators, suppliers, and other market participants. These markets are typically divided into three main categories: \gls{DAM}, \gls{IDM}, and real-time balancing markets. In the \gls{DAM}, participants submit bids for energy delivery 12 to 37 hours before real-time operation. The market-clearing process determines the energy schedules and market prices based on supply and demand equilibrium \cite{Algarvio:19b}. While the \gls{DAM} provides a foundation for energy trading, \gls{IDM} allow participants to make adjustments closer to real-time, responding to unforeseen changes in demand or \gls{vRES} generation.\par
 
-Balancing markets, on the other hand, operate in near real-time to address deviations between scheduled and actual energy delivery. \gls{TSO}s procure balancing services to ensure system equilibrium, activating reserves as needed. This process is particularly critical in systems with high \gls{vRES} penetration, where forecasting errors can cause significant imbalances.\cite{Rassid2017} \cite{Carneiro2016}\par
+Balancing markets, on the other hand, operate in near real-time to address deviations between scheduled and actual energy delivery. \gls{TSO}s procure balancing services to ensure system equilibrium, activating reserves as needed. This process is particularly critical in systems with high \gls{vRES} penetration, where forecasting errors can cause significant imbalances \cite{Algarvio:19a}.\par
 
 \subsection{Ancillary Services and Reserve Requirements}
 
-Ancillary services are essential for maintaining grid stability and ensuring a reliable power supply. They include services such as frequency control, voltage regulation, and operating reserves. Among these, frequency control reserves play a crucial role in balancing supply and demand in real-time. These reserves are divided into three main categories:
-
+Ancillary services are essential for maintaining grid stability and ensuring a reliable power supply. They include services such as frequency control, voltage regulation, and operating reserves. Among these, frequency control reserves play a crucial role in balancing supply and demand in real-time. These reserves are divided into three main categories \cite{Algarvio:19a}:
 
 \begin{itemize}
     \item	\gls{FCR}: Activated automatically within seconds to stabilize frequency deviations.
@@ -44,13 +43,13 @@ Ancillary services are essential for maintaining grid stability and ensuring a r
 
 \subsection{Iberian Reserve Markets}
 
-
 \gls{MIBEL} is the iberian example of energy market integration across countries. Acting as a bond between portuguese and spanish electricity markets, \gls{OMIP} and \gls{OMIE}. This joint market consists of bilateral, derivatives, and spot markets.\par
 Even though there is a joint market, each country's \gls{TSO}, \gls{REE} for Spain and \gls{REN} for Portugal, manages it's own ancillary services independently. 
 
 \subsubsection{Static Reserve Procurement}
-In Europe, the \gls{ENTSO-E} provides guidelines for the procurement and activation of these reserves. Traditionally, \gls{TSO}s acquire reserves symmetrically (equal upward and downward capacities), based on deterministic demand forecasts. However, this approach often leads to inefficiencies in systems with high \gls{vRES} variability. \par
-For Secundary Reserve \gls{ENTSO-E} proposes:
+In Europe, the \gls{ENTSO-E} provides guidelines for the procurement and activation of these reserves. Traditionally, \gls{TSO}s acquire reserves symmetrically (equal upward and downward capacities), based on deterministic demand forecasts. However, this approach often leads to inefficiencies in systems with high \gls{vRES} variability.
+%
+For secundary reserve \gls{ENTSO-E} proposes:
 \begin{linenomath}
 \begin{equation}\label{eq:BRENTSOE} 
     R = \sqrt{a \times  L_{max} + b^{2}} - b 
@@ -60,14 +59,12 @@ where:
 
 \begin{itemize}
   \item $R$: Secondary Control Reserve.
-  \item $a$ e $b$: empiric coeficients, $a$=10MW and $b$=150MW .
+  \item $a$ and $b$: empiric coefficients, $a$=10MW and $b$=150MW .
   \item $L_{max}$: maximum anticipated consumer load.
 \end{itemize}
 
-
-The Spanish and Portuguese markets provide examples of differing reserve procurement methods. In Portugal, the \gls{TSO} employs a fixed ratio formula for secondary reserve sizing. Creating a symmetrical distribution for Upward and Downward bands, respectively $\frac{2}{3}$ and $\frac{1}{3}$ of the Reserve band.\par
+The Spanish and Portuguese markets provide examples of differing reserve procurement methods. In Portugal, the \gls{TSO} employs a fixed ratio formula for secondary reserve sizing. Creating a symmetrical distribution for upward and downward bands, respectively $\frac{2}{3}$ and $\frac{1}{3}$ of the reserve band.\par
 The given formula is based on \gls{ENTSO-E} equation \eqref{eq:BRENTSOE}, adding an hourly ratio $\rho$:
-
 
 \begin{linenomath}
   \begin{equation}\label{eq:BRREN} 
@@ -75,7 +72,9 @@ The given formula is based on \gls{ENTSO-E} equation \eqref{eq:BRENTSOE}, adding
   \end{equation}
   \end{linenomath}
 
-Conversely, the Spanish market lacks a standardized reserve procurement formula, relying instead on flexible procurement mechanisms \cite{Frade2019_market}. Where the upward and downard bands distribuition is not directly symmetric.
+The hourly ratio $\rho$ varies between 20\% (1.2) and 60\% (1.6), upscaling the the ENTSO-E suggestion for up regulation.
+
+Conversely, the Spanish market lacks a standardized reserve procurement formula, relying instead on a more flexible procurement mechanism \cite{Frade2019_market}. Where the upward and downward bands distribution is not directly symmetric.
 These differences highlight the need for market design improvements to better accommodate the variability of \gls{vRES}.
 
 

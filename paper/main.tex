@@ -90,17 +90,18 @@
 
 %=================================================================
 % Full title of the paper (Capitalized)
-\Title{A machine learning model for forecast procurement of secondary reserve capacity in power systems with significant vRES penetrations}
+\Title{A machine learning model for procurement of secondary reserve capacity in power systems with significant vRES penetrations}
 
 % MDPI internal command: Title for citation in the left column
-\TitleCitation{Title}
+\TitleCitation{A machine learning model for procurement of secondary reserve capacity in power systems with significant vRES penetrations}
 
 % Author Orchid ID: enter ID or remove command
-\newcommand{\orcidauthorA}{0009-0007-5995-8060} % Add \orcidA{} behind the author's name
+\newcommand{\orcidauthorA}{0009-0007-5995-8060} 
+\newcommand{\orcidauthorB}{0000-0002-4129-838X}% Add \orcidA{} behind the author's name
 %\newcommand{\orcidauthorB}{0000-0000-0000-000X} % Add \orcidB{} behind the author's name
 
 % Authors, for the paper (add full first names)
-\Author{João Passagem Santos \orcidA{} and Hugo Algarvio}
+\Author{João Passagem Santos$^{1*}$ \orcidA{} and Hugo Algarvio$^{2*}\orcidB{}$}
 
 %\longauthorlist{yes}
 
@@ -114,7 +115,8 @@
 % Affiliations / Addresses (Add [1] after \address if there is only one affiliation.)
 \address{%
 $^{1}$ \quad Affiliation 1; e-mail@e-mail.com\\
-$^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
+$^{2}$ \quad LNEG---National Laboratory of Energy and Geology, Est. Pa\c{c}o Lumiar 22, 1649-038 Lisbon, Portugal  \\ }
+\corres{\hangafter=1 \hangindent=1.05em \hspace{-0.82em} Correspondence: {fc55144@alunos.ciencias.ulisboa.pt (J.P.S), hugo.algarvio@lneg.pt (H.A.)}}
 
 % Contact information of the corresponding author
 % \corres{Correspondence: e-mail@e-mail.com; Tel.: (optional; include country code; if there are multiple corresponding authors, add author initials) +xx-xxxx-xxx-xxxx (F.L.)}
@@ -129,10 +131,10 @@ $^{2}$ \quad Affiliation 2; e-mail@e-mail.com}
 %\conference{} % An extended version of a conference paper
 
 % Abstract (Do not insert blank lines, i.e. \\) 
-\abstract{The growing investment in variable renewable energy sources is changing how electricity markets operate. Players rely on forecasts to participate in markets closing between 1 and 37 hours ahead of real-time operation.  Usually,  transmission system operators (TSOs) use a symmetrical procurement of up and down secondary power reserves based on the expected demand. This work uses machine learning techniques that dynamically computes it using the day-ahead programmed and expected dispatches of variable renewables, demand, and other technologies. The study uses operational open data from the Spanish TSO from 2014 to 2023 for training. Benchmark and test data are from the period of 2019 to 2022. The proposed methodology improves the usage of the up and down secondary reserved power by almost 47\% and 42\%, respectively.}
+\abstract{The growing investment in variable renewable energy sources is changing how electricity markets operate. In Europe, players rely on forecasts to participate in day-ahead markets closing between 1 and 37 hours ahead of real-time operation. Usually, transmission system operators use a symmetrical procurement of up and down secondary power reserves based on the expected demand. This work uses machine learning techniques that dynamically computes it using the day-ahead programmed and expected dispatches of variable renewables, demand, and other technologies. \colorbox[rgb]{1,1,0}{Frase sobre tecnicas usadas com a keyword neural networks}. The study uses operational open data from the Spanish operator from 2014 to 2023 for training. Benchmark and test data are from the period of 2019 to 2022. The proposed methodology improves the usage of the up and down secondary reserved power by almost 47\% and 42\%, respectively.}
 
 % Keywords
-\keyword{reserve systems; energy markets; neural networks; forecast} 
+\keyword{energy markets; forecast; machine learning; neural networks; reserve systems; secondary capacity; variable renewables} 
 
 % The fields PACS, MSC, and JEL may be left empty or commented out if not applicable
 %\PACS{J0101}
@@ -476,21 +478,18 @@ DA & Day-Ahead\\
 DAM & day-ahead markets\\
 ENTSO-E & European Network of Transmission System Operators for Electricity\\
 ESIOS & \textit{Sistema de Información del Operador del Sistema}\\
-FCNN & Fully Connected Neural Network\\
 FCR & Frequency Containment Reserve\\
-GELU & Gaussian Error Linear Unit\\
 IDM & intraday markets\\
 LSTM & Long Short-Term Memory\\
 MAE & Mean Absolute Error\\
 mFRR & manual Frequency Restoration Reserve\\
-MIBEL & \textit{Mercado Ibérico de Eletricidade}\\
+MIBEL & \textit{Iberian Market of Electricity}\\
 MSE & Mean Squared Error\\
 MSLE & Mean Squared Logarithmic Error\\
 OMIE & \textit{Operador del Mercado Ibérico de Energía - Pólo Espanhol, S.A}\\
 OMIP & \textit{Operador do Mercado Ibérico de Energia Português}\\
 PV & solar photovoltaic\\
 REE & \textit{Red Eléctrica de España}\\
-ReLU & Rectified Linear Unit\\
 REN & \textit{Redes Energéticas Nacionais}\\
 SDG & Sustainable Development Goals\\
 TSO & Transmission System Operators\\
@@ -549,8 +548,141 @@ vRES & variable Renewable Energy Systems
 %=====================================
 % References, variant A: external bibliography
 %=====================================
-\bibliography{export, ../dissertation/library}
+\begin{thebibliography}{11}
+%\bibliography{export, ../dissertation/library}
+%
+\bibitem[Perissi and Jones(2022)]{Perissi2022}
+Perissi, I.; Jones, A.
+\newblock Investigating European Union Decarbonization Strategies: Evaluating
+  the Pathway to Carbon Neutrality by 2050.
+\newblock {\em Sustainability (Switzerland)} {\bf 2022}, {\em 14},~4728.
+%\newblock {\url{https://doi.org/10.3390/SU14084728/S1}}.
+%
+\bibitem{Franc:21}
+Franc-Dabrowska, J.; Madra-Sawicka, M.; Milewska, A. Energy Sector Risk and Cost of Capital Assessment—Companies and Investors Perspective. 
+\textit{Energies} \textbf{2021}, \emph{14}, 1613
+%
+\bibitem{Dobrowolski:22}
+Dobrowolski, Z.; Drozdowski, G.; Panait, M.; Apostu, S.A. The Weighted Average Cost of Capital and Its Universality in Crisis Times: Evidence from the Energy Sector. \textit{Energies} \textbf{2022}, \emph{15}, 6655.
+%
+\bibitem[Ocker and Ehrhart(2017)]{Ocker2017}
+Ocker, F.; Ehrhart, K.M.
+\newblock The “German Paradox” in the balancing power markets.
+\newblock {\em Renewable and Sustainable Energy Reviews} {\bf 2017}, {\em
+  67},~892--898.
+%\newblock {\url{https://doi.org/10.1016/J.RSER.2016.09.040}}.
+%
+\bibitem[Frade et~al.(2019)Frade, Pereira, Santana, and
+  Catalão]{Frade2019_wind}
+Frade, P.M.; Pereira, J.P.; Santana, J.J.; Catalão, J.P.
+\newblock Wind balancing costs in a power system with high wind penetration -
+  Evidence from Portugal.
+\newblock {\em Energy Policy} {\bf 2019}, {\em 132},~702--713.
+%\newblock {\url{https://doi.org/10.1016/J.ENPOL.2019.06.006}}.
+%
+\bibitem{Algarvio:19c}
+Algarvio, H.; Lopes, F.; Couto, A.; Santana, J.; Estanqueiro, A.
+Variable Renewable Energy and Market Design: New Market Products and a Real-world Study.
+\textit{Energies} \textbf{2019}, \emph{12}, 4576.
+%
+\bibitem{Skytte:19}
+Skytte, K.; Bobo, L.
+Increasing the value of wind: From passive to active actors in multiple power markets
+\textit{WIREs Energy  Environ.} \textbf{2019}, \emph{8}, {e328}.
+%
+\bibitem{Algarvio:24}
+Algarvio, H.; Couto, A.; Estanqueiro, A.
+RES.Trade: An Open-Access Simulator to Assess the Impact of Different Designs on Balancing Electricity Markets.
+\textit{Energies} \textbf{2024}, \emph{17(24)}, 6212.
+%
+\bibitem{Frade:19c}
+Frade, P.; Os\'{o}rio, G.; Santana, J.; Catal\~{a}o, J. 
+Cooperation Regional coordination in ancillary services: An innovative study for secondary control in the Iberian electrical system.
+\textit{Int. J. Electr. Power Energy Syst.} \textbf{2019}, \textit{109}, 513--525.
+%
+\bibitem{Knorr:19}
+Knorr, K.; Dreher, A.; B\"{o}ttger, D. 
+Common dimensioning of frequency restoration reserve capacities for european load-frequency control blocks: An advanced dynamic probabilistic approach.
+\textit{Electric Power Systems Research} \textbf{2019}, \emph{170}, pp. 358--363.
+%
+\bibitem{Algarvio:19b}
+Algarvio, H.; Lopes, F.; Couto, A.; Santana, J.; Estanqueiro, A.
+Effects of Regulating the European Internal Market on the integration of Variable Renewable Energy.
+\textit{WIREs Energy  Environ.} \textbf{2019}, \emph{8}, {e346}.
 
+\bibitem[Vos et~al.(2019)Vos, Stevens, Devolder, Papavasiliou, Hebb, and
+  Matthys-Donnadieu]{DeVos2019}
+Vos, K.D.; Stevens, N.; Devolder, O.; Papavasiliou, A.; Hebb, B.;
+  Matthys-Donnadieu, J.
+\newblock Dynamic dimensioning approach for operating reserves: Proof of
+  concept in Belgium.
+\newblock {\em Energy Policy} {\bf 2019}, {\em 124},~272--285.
+%\newblock {\url{https://doi.org/10.1016/J.ENPOL.2018.09.031}}.
+
+\bibitem[Kruse et~al.(2022)Kruse, Schäfer, and Witthaut]{Kruse2022}
+Kruse, J.; Schäfer, B.; Witthaut, D.
+\newblock Secondary control activation analysed and predicted with explainable
+  AI.
+\newblock {\em Electric Power Systems Research} {\bf 2022}, {\em 212}.
+%\newblock {\url{https://doi.org/10.1016/J.EPSR.2022.108489}}.
+
+\bibitem[Algarvio et~al.(2024)Algarvio, Couto, and Estanqueiro]{Algarvio2024}
+Algarvio, H.; Couto, A.; Estanqueiro, A.
+\newblock A Methodology for Dynamic Procurement of Secondary Reserve Capacity
+  in Power Systems with Significant vRES Penetrations.
+\newblock {\em International Conference on the European Energy Market, EEM}
+  {\bf 2024}.
+%\newblock {\url{https://doi.org/10.1109/EEM60825.2024.10608904}}.
+
+%
+\bibitem{Martin:18}
+Mart\'{i}n-Mart\'{i}nez, S.; Lorenzo-Bonache, A.; Honrubia-Escribano, A.; Ca\~{n}as-Carret\'{o}n, M.; G\'{o}mez-L\'{a}zaro, E.
+ Contribution of wind energy to balancing markets: The case of Spain.
+\textit{WIREs Energy  Environ.} \textbf{2018}, \emph{7}, {e300}.
+
+\bibitem[Frade et~al.(2019)Frade, Shafie-khah, Santana, and
+  Catalão]{Frade2019_market}
+Frade, P.M.; Shafie-khah, M.; Santana, J.J.; Catalão, J.P.
+\newblock Cooperation in ancillary services: Portuguese strategic perspective
+  on replacement reserves.
+\newblock {\em Energy Strategy Reviews} {\bf 2019}, {\em 23},~142--151.
+%\newblock {\url{https://doi.org/10.1016/J.ESR.2018.12.011}}.
+%
+\bibitem{Papavasiliou:21}
+Papavasiliou, A. 
+An overview of probabilistic dimensioning of frequency restoration reserves with a focus on the greek electricity market.
+\textit{Energies} \textbf{2021}, \emph{14(18)}, 5719.
+%
+\bibitem{Khodadadi:20}
+Khodadadi, A.; Herre, L.; Shinde, P.; Eriksson, R.; S\"{o}der, L.; Amelin, M. 
+Nordic balancing markets: Overview of market rules. 
+In 17th International Conference on the European Energy Market (EEM20), p. 6, 2020.
+%
+\bibitem{Algarvio:19a}
+Algarvio, H.; Lopes, F.; Couto, A.; Estanqueiro, A.
+Participation of wind power producers in day‐ahead and balancing markets: An overview and a simulation‐based study.
+\textit{Wiley Interdiscip. Rev. Energy Environ.} \textbf{2019}, \emph{8}, {e343}.
+%
+\bibitem[Liu et~al.(2022)Liu, Mao, Wu, Feichtenhofer, Darrell, and
+  Xie]{Liu2022}
+Liu, Z.; Mao, H.; Wu, C.Y.; Feichtenhofer, C.; Darrell, T.; Xie, S.
+\newblock A ConvNet for the 2020s.
+\newblock {\em Proceedings of the IEEE Computer Society Conference on Computer
+  Vision and Pattern Recognition} {\bf 2022}, {\em 2022-June},~11966--11976.
+%\newblock {\url{https://doi.org/10.1109/CVPR52688.2022.01167}}.
+
+
+%
+%\bibitem{Strbac:21}
+%Strbac, G.; Papadaskalopoulos, D.; Chrysanthopoulos, N.; Estanqueiro, A.; Algarvio, H.; Lopes, F.; de Vries, L.; Morales-Espa\~{n}a, G.; Sijm, J.; Hernandez-Serna, R.;~et~al. 
+%Decarbonization of Electricity Systems in Europe: Market Design Challenges.
+%\textit{IEEE Power Energy Mag.} \textbf{2021}, \emph{19},  53--63.
+
+
+
+
+
+\end{thebibliography}
 %=====================================
 % References, variant B: internal bibliography
 %=====================================

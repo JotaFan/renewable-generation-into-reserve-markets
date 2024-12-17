@@ -1,10 +1,10 @@
 
-With distinct valorizations, the metrics, are used to choose best model on each iteration, and they can be divided into two groups:
-Model metric, where we just use the usual regression metrics adding a metric for how much did the model missed in alocating for the validation periodo. And the comparative metrics, where we assert percentual gains over the current allocation method. \par 
-\begin{alignat*}{3} 
-& t : \text{Real value.} &\qquad& p : \text{Forecast} &\qquad& n : \text{number of samples} \\
-\end{alignat*}
+With distinct weights, the metrics, are used to choose best model on each iteration, and they can be divided into two groups:
 
+\begin{enumerate}
+\item Model metrics, where we just use the usual regression metrics adding a metric for how much did the model missed in allocating for the validation period.
+\item Comparative metrics, where we assert percentage gains over the current allocation method. 
+\end{enumerate} 
 
 \subsubsection{Model Metrics}
 \begin{linenomath}
@@ -12,14 +12,18 @@ Model metric, where we just use the usual regression metrics adding a metric for
         RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n}(t_i - p_i)^2}
     \end{equation}
     \end{linenomath}
+		
+		where $t$ is the observed value, $p$ is the forecast and $n$ is the number of samples.
 
 \begin{linenomath}
     \begin{equation}\label{eq:SAE}
         SAE = \sum_{i=1}^{n}\left|t_i - p_i \right|
     \end{equation}
     \end{linenomath}
-SAE can be divide into the following metrics, where we obtain the error, within the time period, of allocated energy not enough for the needs, and too much energy allocated, separatly.\\
-AllocM - Missing Allocation: \\
+
+SAE can be divide into the following metrics, where we obtain the error, within the time period, of allocated energy not enough for the needs, and too much energy allocated, separately.\\
+
+The \gls{AllocM} is computed as follows:
 \begin{linenomath}
     \begin{equation}\label{eq:AllocM}
         AllocM = 
@@ -29,7 +33,9 @@ AllocM - Missing Allocation: \\
         \end{cases} 
         \end{equation}
     \end{linenomath}
-AllocS - Surplus Allocation \\
+		
+The \gls{AllocS} is computed as follows:
+
 \begin{linenomath}
     \begin{equation}\label{eq:AllocS}
         AllocS = 
@@ -39,33 +45,37 @@ AllocS - Surplus Allocation \\
         \end{cases} 
             \end{equation}
     \end{linenomath}
-We need these metrics because we are not just looking to get a better error than the benchmark, we want to have both instances of less wasted allocated energy (AllocS), and less occurences of missing allocation (AllocS).\par
-
+		
+These metrics are needed to get a better error than the benchmark, but also to have less wasted \gls{AllocM}, and less occurrences of \gls{AllocS}.\par
 
 \subsubsection{Model/benchmark comparative metrics}
 
-PPG - Performance Percentual Gain
+\gls{PPG} is the percentage of how much better is the model over the benchmark, it is computed as follows: 
 \begin{linenomath}
     \begin{equation}\label{eq:PPG}
         PPG = \frac{SAE_{benchmark} - SAE_{modelo}}{SAE_{benchmark}} \times 100
     \end{equation}
     \end{linenomath}
-PPG is the percentage of how much better is the model over the benchmark. The following metrics are the same but for only missing allocation and surplus allocation.\\
-PPGM - Performance Percentual Gain Missing (allocation)\\
+		
+The following metrics are the same but for only missing allocation and surplus allocation.\\
+\gls{PPGM} computes the performance of the missing allocation as follows:\\
+
 \begin{linenomath}
     \begin{equation}\label{eq:PPGM}
         PPGM = \frac{AllocM_{benchmark} - AllocM_{modelo}}{AllocM_{benchmark}} \times 100
     \end{equation}
     \end{linenomath}
-PPGS - Performance Percentual Gain Surplus (allocation)\\
+		
+\gls{PPGM} computes the performance of the surplus allocation as follows:
+
 \begin{linenomath}
     \begin{equation}\label{eq:PPGS}
         PPGS = \frac{AllocS_{benchmark} - AllocS_{modelo}}{AllocS_{benchmark}} \times 100
     \end{equation}
     \end{linenomath}
 
-The next metric is showing how much better is the model over the benchmark, but only if both condition are met. PPGM and PPGS positive.\\
-PPG Positive  - Performance Percentual Gain Positive
+The \gls{PPG}Positive metric is showing how much better is the model over the benchmark, but only if \gls{PPGM} and \gls{PPGM} are positive.\\
+
 \begin{linenomath}
     \begin{equation}\label{eq:PPGPositive}
         PPG Positive = 
