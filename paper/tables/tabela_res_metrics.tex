@@ -1,11 +1,12 @@
 
 \begin{table}[H] 
     \caption{Metric results for up and down forecast. \label{res_linear_forecast}}
+    \begin{adjustwidth}{-\extralength}{0cm}
     \newcolumntype{C}{>{\centering\arraybackslash}X}
-    \begin{tabularx}{\textwidth}{CCCCCC}
+    \begin{tabularx}{\fulllength}{CCCCCC}
     \toprule
     &  & RMSE & SAE & AllocM & AllocS  \\
-    & Arquitetura &  & $\times10^{6}$ & $\times10^{5}$ & $\times10^{6}$  \\
+    & Architecture &  & $\times10^{6}$ & $\times10^{5}$ & $\times10^{6}$  \\
 
 
 
@@ -24,16 +25,18 @@
                                                 & StackedCNN & 270.28 & 8.16 & 9.92 & 7,17  \\
     \bottomrule
     \end{tabularx}
+    \end{adjustwidth}
     % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
 \end{table}
 
 
 
 
-\begin{table}[H] 
+\begin{table}[H]
+    \begin{adjustwidth}{-\extralength}{0cm}
     \caption{Comparative metric results for up and down forecast. \label{res_comparative_forecast}}
     \newcolumntype{C}{>{\centering\arraybackslash}X}
-    \begin{tabularx}{\textwidth}{CCCCCC}
+    \begin{tabularx}{\fulllength}{CCCCCC}
     \toprule
     &  & PPG & PPG M & PPG S &  PPG Positive \\
     & Architecture & \% & \% & \% & \% \\
@@ -55,6 +58,6 @@
                                                 & StackedCNN &  37.12 & -106.92 & 42.64  & 0.00 \\
     \bottomrule
     \end{tabularx}
-    % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
+    \end{adjustwidth}
 \end{table}
 
