@@ -38,25 +38,26 @@ Com o $\rho_{proposto}$, calculado através da fórmula \ref{eq:rhoproposed}, ar
 \end{figure}
 
 Como podemos ver na figura \ref{fig:valor_do_parametro_ρ_hora}, acima apresentada, o $\rho_{proposto}$ apresenta um grande variabilidade em todas as horas, embora de notar que em todas tem um maior peso perto da mediana. O $\rho$ de comparação embora sempre dentro da distribuição note-se que cai quase sempre em zonas com pouco peso nestes dados históricos.\par
-Calculamos $\rho$ possíveis para proposta final usando as seguintes aproximações: média, mediana, e média ponderada ao consumo, e à banda.\par
+Calculamos $\rho$ possíveis para proposta final usando as seguintes aproximações: média, mediana, \gls{mp-consumo} e \gls{mp-BS}.\par
 
-As distribuições por hora são as seguintes:
+As distribuições por hora são as apresentadas na seguinte figura:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{plots/comparação_de_ρ_propostos_por_hora.png}
+    \includegraphics[height=0.42\textwidth]{plots/comparação_de_ρ_propostos_por_hora.png}
     \caption{Comparação $\rho$ por hora}
     \label{fig:comparação_de_ρ_propostos_por_hora}
 \end{figure}
 
 Todas seguem um percurso semelhante ao longo do dia, o qual também pode ser extrapolado para Carneiro2016. A média e mediana destacam-se seguindo muito parecidas, enquanto que as ponderadas também parecidas entre elas são bastante mais discretas.\par
-Para a escolha da normalização deste parâmetro à Hora, estudou-se o erro entre a Banda Reserva calculada através das normalizações e a Banda Reserva disponível nos dados.\par
+Para a escolha da aproximação deste parâmetro à Hora, estudou-se o erro entre a Banda Reserva calculada através das aproximações feitas e a Banda Reserva disponível nos dados.\par
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{plots/comparação_das_metricas_de_erro.png}
+    \includegraphics[width=0.7\textwidth]{plots/comparação_das_métricas_de_erro.png}
     \caption{Comparaçao dos erros por $\rho$}
+    \label{fig:comparação_das_métricas_de_erro}
 \end{figure}
 
 
@@ -64,6 +65,7 @@ Para a escolha da normalização deste parâmetro à Hora, estudou-se o erro ent
     \centering
     \caption{Erros de Banda de Reserva por método de normalização $\rho$}    
     \resizebox{0.65\linewidth}{!}{\input{tabelas/tabela_estudo_1_medias.tex}}
+    \label{fig:tabela_estudo_1_medias}
     \end{table}
 
 
