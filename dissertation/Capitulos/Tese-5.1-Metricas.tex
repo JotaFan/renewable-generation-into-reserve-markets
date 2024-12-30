@@ -29,16 +29,13 @@ SAE - Sum Abs Error \\
 \end{equation}
 \smallskip
 
-Este simboliza a soma absoluta de todos os erros, dentro da janela temporal em questão. Que representa a quantidade total da energia alocada/não alocada em erro, este é também a soma das duas próximas métricas.\par
+Este simboliza a soma absoluta de todos os erros, dentro da janela temporal em questão. Que representa a quantidade total da energia alocada/não alocada em erro, este é também a soma das duas próximas métricas. Que representam a soma absoluta dos erros positivos e dos erros negativos respectivamentente.\par
 \bigskip
 AllocF - Alocação em Falta \\
 
+
 \begin{equation} \label{eq:allocf} 
-    AllocF = 
-    \begin{cases} 
-        0 & , \text{se } p \geq t \\
-        t - p  & , \text{se } p < t \\
-    \end{cases} 
+    AllocF = \sum_{i=1}^{n}\left|t_i - p_i \right| , \text{se } p_i < t_i
 \end{equation}
 \smallskip
 
@@ -46,12 +43,9 @@ Representa a soma total de toda a energia que faltou ser alocada.\par
 \bigskip
 AllocD - Alocação em Demasia \\
 
+
 \begin{equation} \label{eq:allocd} 
-    AllocD = 
-    \begin{cases} 
-        0 & , \text{se } p \leq t \\
-        p - t  & , \text{se } p > t \\
-    \end{cases} 
+    AllocD = \sum_{i=1}^{n}\left|t_i - p_i \right| , \text{se } p_i > t_i
 \end{equation}
 \smallskip
 
