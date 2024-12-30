@@ -1,8 +1,8 @@
-\section{Métodos}
+% \section{Métodos}
 
-Terminamos a contextualização com a definição de dois problemas de previsão. Um de optimização de uma variável numa fórmula, com o caso do mercado português; e o uso de \textit{machine learning} para fazer a previsão apenas usando os dados disponíveis.\par
+Iniciamos a metodologia com a definição de dois problemas de previsão. Um de optimização de uma variável numa fórmula, com o caso do mercado português; e o uso de \textit{machine learning} para fazer a previsão apenas usando os dados disponíveis.\par
 
-\subsection{Optimização}
+\section{Optimização}
 
 Queremos optimizar o parâmetro $\rho$ presente na equação \ref{eq:BRREN}. Parâmetro esse com os seguintes valores para cada hora apresentados em \cite{Carneiro2016}, que usaremos como medida de comparação:\par
 \begin{table}[H] \centering \caption{Valores de $\rho$ apresentado em \cite{Carneiro2016}} \input{tabelas/rho_carneiro2016.tex} \end{table}
@@ -16,7 +16,7 @@ Para aproximar os $\rho$s em cada um das horas, com o menor erro possível, vamo
 O erro será diferença entre a \textit{BR} calculada a partir do $\rho_{proposto}$ e do consumo real, e a \text{BR} calculada pela \gls{REN}. A aproximação que apresentar um menor erro é escolhida.\par
 
 
-\subsection{\textit{Machine Learning}}
+\section{\textit{Machine Learning}}
 
 Na tentativa de solucionar este problema propomos-nos a realizar várias experiências criando modelos com as várias arquiteturas apresentadas, e experimentado diversas parametrizações das mesmas.\par
 Além dos métodos de redes neuronais vamos testar métodos de previsão estatísticos, de modo a termos também um ponto de comparação usando métodos interpretáveis e transparentes.\par
@@ -27,7 +27,7 @@ O objectivo é conseguir um modelo que dentro do período de validação, 2019 a
 \input{Capitulos/Tese-5.2.1-Metodos-Estatisticos} \label{se:metstats}
 
 
-\newpage
+% \newpage
 \thispagestyle{plain}
 \input{Capitulos/Tese-5.2.2-Metodos-Redes_neuronais} \label{se:metneuralnet}
 
