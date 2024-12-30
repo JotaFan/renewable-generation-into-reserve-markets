@@ -1,25 +1,43 @@
 \section{Estimativa do parâmetro $\rho$ da fórmula da REN}
 
 
-Arredondando o $\rho_{proposto}$, da fórmula \ref{eq:rhoproposed}, a uma casa decimal, podemos verificar que o histograma das diferentes propostas difere bastante,sendo que esta apresenta uma curva de distribuição normal.\par
+Com o $\rho_{proposto}$, calculado através da fórmula \ref{eq:rhoproposed}, arredondado a uma casa decimal, podemos verificar no histograma, apresentado na figura \ref{fig:histograma_parametro_p}, uma diferença considerável entre as contagens de ambos os conjuntos de valores $\rho$ apresentados.\par
 
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{plots/histograma_parâmetro_ρ.png}
+%     \caption{Histograma $\rho$}
+%     \label{fig:histograma_parametro_p}
+%   \end{figure}
+
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.65\textwidth]{plots/valor_do_parametro_ρ_(hora).png}
+%     \caption{Valor do paramêtro $\rho$ (hora)}
+%     \label{fig:valor_do_parametro_ρ_hora}
+%   \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{plots/histograma_parametro_p.png}
-    \caption{Histograma $\rho$}
-  \end{figure}
+    % First figure in a minipage
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/histograma_parâmetro_ρ.png}
+        \caption{Histograma $\rho$}
+        \label{fig:histograma_parametro_p}
+    \end{minipage}
+    % Second figure in a minipage
+    \begin{minipage}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{plots/valor_do_parâmetro_ρ_(hora).png}
+        \caption{Valor do parâmetro $\rho$ (hora)}
+        \label{fig:valor_do_parametro_ρ_hora}
+    \end{minipage}
+\end{figure}
 
-
-Atentando as distribuições por hora: \\
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{plots/valor_do_parametro_ρ_(hora).png}
-    \caption{Valor do paramêtro $\rho$ (hora)}
-  \end{figure}
-
-O $\rho_{proposto}$ apresenta um grande variabilidade em todas as horas, embora de notar que em todas tem um maior peso perto da mediana. O $\rho$ de comparação embora sempre dentro da distribuição note-se que cai quase sempre em zonas com pouco peso nestes dados históricos.\par
+Como podemos ver na figura \ref{fig:valor_do_parametro_ρ_hora}, acima apresentada, o $\rho_{proposto}$ apresenta um grande variabilidade em todas as horas, embora de notar que em todas tem um maior peso perto da mediana. O $\rho$ de comparação embora sempre dentro da distribuição note-se que cai quase sempre em zonas com pouco peso nestes dados históricos.\par
 Calculamos $\rho$ possíveis para proposta final usando as seguintes aproximações: média, mediana, e média ponderada ao consumo, e à banda.\par
 
 As distribuições por hora são as seguintes:
@@ -28,6 +46,7 @@ As distribuições por hora são as seguintes:
     \centering
     \includegraphics[width=0.8\textwidth]{plots/comparação_de_ρ_propostos_por_hora.png}
     \caption{Comparação $\rho$ por hora}
+    \label{fig:comparação_de_ρ_propostos_por_hora}
 \end{figure}
 
 Todas seguem um percurso semelhante ao longo do dia, o qual também pode ser extrapolado para Carneiro2016. A média e mediana destacam-se seguindo muito parecidas, enquanto que as ponderadas também parecidas entre elas são bastante mais discretas.\par
