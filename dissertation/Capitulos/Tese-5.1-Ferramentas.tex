@@ -19,6 +19,16 @@ Considere-se como exemplo uma janela temporal de 168 (horas, uma semana) para tr
 
 Como estamos também a lidar com dados desfasados, o gerador atribui este desfasamento em atributos a especificar. No caso em estudo temos que os atributos são de \gls{DA}, logo estão desfasados 24 horas. O que implica termos de aplicar este desfasamento nos dados que não são \gls{DA}, nomeadamente os dados alvo. Esta propriedade permite também o fácil uso da ferramenta noutros dados desfasados, como as previsões a 3 ou 8 horas.\par
 
+
+\subsection{Funções de Perda Avançada \label{advanced_loss_expl}}
+
+Para diminuir a diferença entre os erros positivos e os erros negativos foi criada uma função de perda com diferentes regras:
+\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py#L33}{Mirror Weights (Pesos Espelhados)},
+que distribui os pesos da amostra consoante um rácio predefinido e o próprio erro.\par
+Os pesos nas amostras são divididos entre os erros negativos e os positivos. Consoante uma variável lógica, uns terão peso 1 e os outros serão o próprio erro em absoluto. Dando assim um peso equivalente ao erro, quanto maior o erro maior o peso da amostra na função de perda, do lado da amostra escolhido (em demasia ou em falta).\par
+O rácio pode ser multiplicado tanto a um dos pesos como a outro, sendo estes rácios que irão equilibrar as diferenças entre os erros positvo e negativo.\par
+Este pesos são passados directamente à função de perda em uso.\par
+
 \section{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}\label{se:muaddib}}
 
 % Esta ferramenta criada para desenvolver as experiências desta dissertação, permite ao utilizador apenas com os dados que quer utilizar e a especificação das métricas pretendidas, facilmente ter um modelo optimizado para os seus dados e problema.\par

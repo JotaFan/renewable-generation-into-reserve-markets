@@ -1,0 +1,56 @@
+\begin{tikzpicture}[ node distance = 1cm, auto, block/.style={ rectangle, draw, align=center, minimum width=1cm, minimum height=1cm }, line/.style={ draw, -latex' } ]
+    % Encoder (Contracting Path)
+    \node [block] (archs) {Arquitecturas};
+    \node [block,  right=of archs] (advance_loss_function) {Função de Perda Avançada};
+    \node [block,  below=of advance_loss_function] (loss_function) {Função de Perda};
+    
+    \node[block, fit=(advance_loss_function)(loss_function)] (loss) {};
+
+    
+    \node [block,  right=of loss] (activations) {Activações};
+
+    \node [block,  right=of activations] (weights) {Pesos};
+
+    % \node [block, below right=of enclayer1, xshift=-1.8cm] (enclayer2) {Enconding2};
+    % \node [block, below right=of enclayer2, xshift=-1.6cm] (enclayer3) {Enconding3};
+    % % (None, 168, 18) 
+    
+    % \node [block, below right=of enclayer3] (up1) {Enconding4};
+    
+    % % Decoder (Expanding Path)
+    % \node [block, above right=of up1] (declayer1) {Decoding1};
+    % \node [block, above right=of declayer1, xshift=-1.6cm] (declayer2) {Decoding2};
+    % \node [block, above right=of declayer2, xshift=-1.8cm] (declayer3) {Decoding3};
+    % \node [block, above right=of declayer3, xshift=-2cm] (output) {Output};
+    
+    % % Skip Connection
+    % % \draw [line] (pool1) -- ++(0,-1) -| (up1);
+    
+    % Connections
+    \draw [line] (archs) -- (advance_loss_function);
+    \draw [line] (advance_loss_function) -- (loss_function);
+    \draw [line] (loss) -- (activations);
+    \draw [line] (activations) -- (weights);
+
+    \draw [line, bend right=30] (loss) to (archs);
+
+
+
+    \draw [line, bend right=40] (weights) to (archs);
+
+    % \draw [line, bend left=30] (loss_function) to (archs);
+    % \draw [line] (up1) -- (declayer1);
+    
+    
+    % \draw [line] (declayer1) -- (declayer2);
+    % \draw [line] (declayer2) -- (declayer3);
+    % \draw [line] (declayer3) -- (output);
+    
+    
+    % \draw [line] (input) -- (output);
+    % \draw [line] (enclayer1) -- (declayer3);
+    % \draw [line] (enclayer2) -- (declayer2);
+    % \draw [line] (enclayer3) -- (declayer1);
+    
+    
+    \end{tikzpicture}
