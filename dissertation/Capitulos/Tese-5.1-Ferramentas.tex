@@ -1,15 +1,15 @@
+Para a realização do presente estudo, foi necessário o desenvolvimento e utilização de ferramentas específicas, com o objetivo de facilitar a modelação, análise e experimentação. Estas ferramentas, desenvolvidas em \textit{python}, em código aberto, possuem funcionalidades distintas e complementares, permitindo uma abordagem sistemática e eficiente. As principais ferramentas utilizadas neste estudo são: Alquimodelia, Alquitable e MuadDib. \par
+
+
 \section{\href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia}\label{se:alquimodelia}}
 
+A biblioteca \href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia} foi concebida para automatizar o processo de construção de modelos baseados nas arquiteturas apresentadas neste estudo. A ferramenta permite que o utilizador especifique os parâmetros desejados para o modelo sem a necessidade de reescrever o código para cada arquitetura ou hiperparâmetro. Isso facilita a realização de testes com diferentes arquiteturas, como \gls{FCNN}, \gls{CNN}, \gls{RNN}, \gls{LSTM} e Transformers. \par
+\href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia} é composta por um construtor de modelos que permite a criação rápida e eficiente de redes neuronais adaptadas aos objetivos específicos do estudo. Este construtor aceita diferentes entradas, tais como o número de camadas, tipos de funções de ativação e dimensões dos dados. Além disso, a ferramenta está preparada para lidar com arquiteturas mais complexas, como UNETs, ampliando as possibilidades de aplicação em diversos contextos. \par
 
-Com o propósito de desenvolver o presente estudo, e disponibilizar ferramentas para a replicação do mesmo, foi criada uma biblioteca em \textit{python} para desenhar as arquitecturas em estudo.\par
-
-\subsection{Construtor de modelos}
-
-Seguindo as arquitecturas descritas anteriormente esta ferramenta constrói os modelos automaticamente, sendo apenas necessário fornecer os parâmetros variáveis, o que permitirá um fácil teste de vários tipo de modelos, não havendo a necessidade de reescrever código para cada um deles.\par
 
 \section{\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable}{Alquitable}}
 
-Biblioteca “oficina”, com camadas, geradores, funções de perda.
+A biblioteca \href{https://github.com/alquimodelia/alquitable/blob/main/alquitable}{Alquitable} é uma extensão personalizada do Keras, com camadas, funções de perda, callbacks e geradores de dados. O seu objetivo principal é criar funcionalidades nos modelos em Keras que possam não ser nativas a essa biblioteca. \par
 
 \subsection{\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/generator.py}{Gerador de dados}}
 
@@ -21,5 +21,13 @@ Como estamos também a lidar com dados desfasados, o gerador atribui este desfas
 
 \section{\href{https://github.com/alquimodelia/MuadDib}{MuadDib}\label{se:muaddib}}
 
-Esta ferramenta criada para desenvolver as experiências desta dissertação, permite ao utilizador apenas com os dados que quer utilizar e a especificação das métricas pretendidas, facilmente ter um modelo optimizado para os seus dados e problema.\par
-Ao usar a ferramenta o utilizador consegue testar vários modelos e hiper parametrizações diferentes, mantendo a vantagem de escrever código ao mínimo.\par
+% Esta ferramenta criada para desenvolver as experiências desta dissertação, permite ao utilizador apenas com os dados que quer utilizar e a especificação das métricas pretendidas, facilmente ter um modelo optimizado para os seus dados e problema.\par
+% Ao usar a ferramenta o utilizador consegue testar vários modelos e hiper parametrizações diferentes, mantendo a vantagem de escrever código ao mínimo.\par
+
+A ferramenta \href{https://github.com/alquimodelia/MuadDib}{MuadDib} foi criada com o intuito de otimizar o processo de experimentação, oferecendo um ambiente integrado para testes e validação de modelos. Com esta biblioteca, é possível testar diferentes combinações de hiperparâmetros e avaliar o desempenho de vários modelos de \text{machine learning}. \par
+\href{https://github.com/alquimodelia/MuadDib}{MuadDib} é altamente customizável e oferece suporte para métricas de avaliação, permitindo que o utilizador identifique rapidamente as configurações mais eficientes para o problema em questão. Além disso, a ferramenta é capaz de comparar modelos baseados em redes neuronais com métodos estatísticos, fornecendo uma visão abrangente dos resultados obtidos.\par
+A integração com outras ferramentas, como \href{https://github.com/alquimodelia/alquimodelia}{Alquimodelia} e \href{https://github.com/alquimodelia/alquitable/blob/main/alquitable}{Alquitable}, garante um fluxo de trabalho coeso, desde a preparação dos dados até a avaliação final dos modelos. \par
+
+
+\bigskip
+Estas ferramentas não só facilitam a reprodução dos resultados deste estudo, mas também oferecem uma base para o desenvolvimento de projetos futuros em contextos semelhantes. A sua documentação e código aberto estão disponíveis, permitindo a expansão e adaptação conforme as necessidades específicas de cada utilizador. \par
