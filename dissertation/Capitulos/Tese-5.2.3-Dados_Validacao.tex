@@ -1,5 +1,5 @@
 \subsection{Dados de Validação}
-Os dados de validação são os meses após os dados de treino, de Janeiro 2024 ao fim de Agosto 2024.\par
+Os dados de validação estão num espaço temporal após os dados de treino, começando a 20 de Abril de 2024 e terminando a 08 de Agosto do mesmo ano.\par
 Usamos como \textit{benchmark} as capacidades alocadas, "\textit{SecondaryReserveAllocationAUpward}" e "\textit{SecondaryReserveAllocationADownward}", e como validação e objectivo, \hyperref[se:metneuralnet]{y}, a própria energia usada, "\textit{UpwardUsedSecondaryReserveEnergy}" e "\textit{DownwardUsedSecondaryReserveEnergy}".
 
 \begin{figure}[H]
@@ -14,12 +14,12 @@ Mas o mais importante a notar é a forma estática destes métodos, que, em virt
 Tal é possível de verificar através da análise de algumas janelas temporais dentro do período de validação, em concreto, atentando no melhor e pior resultado, em termos de erro absoluto, em janelas temporais de ano, mês, semana e dia.\par
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{plots/alocacoes_temporais_upward_dataset.png}
-    \caption{Janelas temporais de \textit{benchmark} energia a subir}
-    \label{fig:benchmarktimewindowsup}
-\end{figure}
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{plots/alocacoes_temporais_upward_dataset.png}
+%     \caption{Janelas temporais de \textit{benchmark} energia a subir}
+%     \label{fig:benchmarktimewindowsup}
+% \end{figure}
 
 
 \begin{figure}[H]
@@ -50,7 +50,7 @@ As correlações entre o método actual e a energia consumida podem ser vistas n
 \end{figure}
 
 % TODO: meter formula da previsão ENTO-e no capitulo estudo 2 -> nao existe publicamente
-Neste período de validação, a energia alocado para cima é igual a alocada para baixo. com uma correlação de 1, diferente da totalidade dos dados disponíveis em que as alocações mostram uma correlação de 58\%.
-As relações entre as energias alocadas são altas devido à natureza do \hyperref[]{método de previsão} enquanto que a correlação entre a energia alocada e a usada são bastante baixas com 23\% na alocaçao a descer e 9,8\% na alocação a subir.\par
-O que não mostra uma ligaçao entre as alocações e a energia usada, mas apenas entre as energias alocadas.\par
+Neste período de validação, a energia alocado para cima é igual a alocada para baixo, com uma correlação de 1, diferente da totalidade dos dados disponíveis em que as alocações mostram uma correlação de 58\%.
+As relações entre as energias alocadas são altas devido à natureza do \hyperref[]{método de previsão} enquanto que a correlação entre a energia alocada e a usada são bastante baixas com 25\% na alocaçao a descer e 12\% na alocação a subir.\par
+O que não mostra uma ligação entre as alocações e a energia usada, mas apenas entre as energias alocadas.\par
 
