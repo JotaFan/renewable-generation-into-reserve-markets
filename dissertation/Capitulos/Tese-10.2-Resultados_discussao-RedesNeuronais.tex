@@ -9,7 +9,7 @@ Os vários métodos percorreram muitos tipos de modelos diferentes. Na tabela se
     \label{tab:mlresmetrics}
     \end{table}
 
-O melhor modelo para alocação a Descer apresenta um ganho de desempenho em relação ao \textit{benchmark} de 42\%, e o a Subir de 47\% na soma da janela temporal de validação.\par
+O melhor modelo para alocação a Descer apresenta um ganho de desempenho em relação ao \textit{benchmark} de 12\%, e o a Subir de 15\% na soma da janela temporal de validação.\par
 Estes modelos têm ambas as alocações e os erros menores que o \textit{benchmark}. Considerando que os dados que permitem quantificar a mais valia económica de reduzir a alocação de reserva secundária em falta devido não são dados públicos, o objetivo passa por manter esta alocações com valores mais baixos que o \textit{benchmark} (GPDF positivo mas próximo de 0) e minimizar a alocação em excesso, maximizando o GPDD, ou juntando as condições maximizando o GPD Positivo. Desta forma a primeira arquitetura de cada tabela é aquela que apresenta melhores resultados quantificáveis quer do ponto de vista operacional como económico.\par
 Escolhendo o modelo com melhores resultados em GPD Positivo podemos ver algumas janelas temporais.\par
 
@@ -58,8 +58,8 @@ Os gráficos anteriores vêm realçar esta mesma ideia. Analisando a energia cum
     \label{tab:mlres_deltas}
     \end{table}
 
-O método proposto apresenta uma melhoria total, durante o período de validação, de \textasciitilde47\% na alocação a subir e \textasciitilde42\% na alocação a descer face ao método usado no mercado. As melhorias médias são de \textasciitilde37\% e \textasciitilde29\% respectivamente, o que também é uma melhoria face ao estado da arte \cite{Algarvio2024} com 13\% e 8\%.\par
-O método proposto liberta em média \textasciitilde33\% dos recursos horários, e baixando a necessidade de activar a reserva terciária em \textasciitilde52\% e \textasciitilde59\%.\par
+O método proposto apresenta uma melhoria total, durante o período de validação, de \textasciitilde15\% na alocação a subir e \textasciitilde12\% na alocação a descer face ao método usado no mercado. %As melhorias médias são de \textasciitilde37\% e \textasciitilde29\% respectivamente, o que também é uma melhoria face ao estado da arte \cite{Algarvio2024} com 13\% e 8\%.\par
+O método proposto liberta em média \textasciitilde10\% dos recursos horários, e baixando a necessidade de activar a reserva terciária em \textasciitilde14\% e \textasciitilde12\%.\par
 
 As correlações entre o modelo e a realidade são também mais elevadas que entre \hyperref[fig:featurecorrelation]{modelo e \textit{benchmark}}.
 
@@ -71,5 +71,5 @@ As correlações entre o modelo e a realidade são também mais elevadas que ent
     \label{fig:predcorrelation}
   \end{figure}
 
-Este mapa de correlações é quase o oposto do apresentado pelo \hyperref[fig:benchmarkcorr]{\textit{benchmark}}.\par
-Aqui as correlações maiores são, como seria de esperar, entre a energia usada e a sua alocaçao. Com 48\% na energia a subir e 58\% a descer. E as energias alocadas têm uma correlaçao baixa.\par 
+Este mapa de correlações é diferente do apresentado pelo \hyperref[fig:benchmarkcorr]{\textit{benchmark}}.\par
+Aqui as correlações maiores são, como seria de esperar, entre a energia usada e a sua alocaçao. Com 26\% na energia a subir e 37\% a descer. E as energias alocadas têm uma correlaçao baixa.\par 
