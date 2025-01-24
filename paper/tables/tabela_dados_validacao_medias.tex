@@ -1,22 +1,17 @@
-\begin{table}[H] 
-    \caption{This is a table caption. Tables should be placed in the main text near to the first time they are~cited.\label{tab1}}
-    \newcolumntype{C}{>{\centering\arraybackslash}X}
-    \begin{tabularx}{\textwidth}{CCCCC}
-    \toprule
-    & \textbf{mean}	& \textbf{std}	& \textbf{min} & \textbf{max}\\
-    \midrule
-    Down Used & 199.69 & 212.06 & 0.00 & 1721.40 \\
-    Up Allocated & 623.68 & 152.39 & 419.00 & 958.00 \\
-    Down Allocated & 542.59 & 126.09 & 363.00 & 946.00 \\
-    Up Used & 137.36 & 170.86 & 0.00 & 1654.80 \\
-    DA Wind & 6367.23 & 3603.95 & 348.00 & 20879.30 \\
-    DA PV & 2056.20 & 2889.09 & 0.00 & 11892.00 \\
-    DA Demand & 27604.37 & 4476.32 & 14170.00 & 41773.00 \\
-    DA Schedule Generation & 27378.12 & 4738.10 & 14394.40 & 42064.50 \\
-    DA Schedule PV Generation & 2084.45 & 2905.35 & 0.00 & 12175.50 \\
-    DA Schedule Wind Generation & 7091.18 & 3719.91 & 392.80 & 21330.80 \\
-    DA Scheduled Tie Lines & -151.89 & 2339.57 & -7112.50 & 6769.50 \\
-    \bottomrule
-    \end{tabularx}
-    % \noindent{\footnotesize{\textsuperscript{1} Tables may have a footer.}}
-\end{table}
+\begin{tabular}{lrrrr}
+\toprule
+ & média & desvio padrão & min & max \\
+\midrule
+DownwardUsedSecondaryReserveEnergy & 176.10 & 199.52 & 0.00 & 2012.00 \\
+SecondaryReserveAllocationAUpward & 922.12 & 192.01 & 719.00 & 1694.00 \\
+SecondaryReserveAllocationADownward & 922.39 & 191.22 & 720.00 & 1708.00 \\
+UpwardUsedSecondaryReserveEnergy & 272.61 & 238.78 & 0.00 & 1852.80 \\
+WindD+1DailyForecast & 6868.05 & 3968.63 & 452.80 & 19182.00 \\
+PhotovoltaicD+1DailyForecast & 4917.46 & 6133.40 & 0.00 & 19526.50 \\
+DemandD+1DailyForecast & 26428.42 & 4001.32 & 17500.30 & 38047.00 \\
+TotalBaseDailyOperatingSchedulePBFGeneration & 27779.55 & 5318.23 & 14489.30 & 41348.40 \\
+BaseDailyOperatingSchedulePBFSolarPV & 5438.46 & 6569.09 & 1.30 & 21273.90 \\
+BaseDailyOperatingSchedulePBFWind & 7758.42 & 4072.76 & 545.00 & 21195.10 \\
+BaseDailyOperatingShedulePBFTotalBalanceInterconnections & -1124.49 & 2477.22 & -7814.20 & 5884.80 \\
+\bottomrule
+\end{tabular}

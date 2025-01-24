@@ -26,23 +26,15 @@ SAE can be divide into the following metrics, where we obtain the error, within 
 The \gls{AllocM} is computed as follows:
 \begin{linenomath}
     \begin{equation}\label{eq:AllocM}
-        AllocM = 
-        \begin{cases} 
-            0 & , \text{if } p \geq t \\
-            t - p  & , \text{if } p < t \\
-        \end{cases} 
+        AllocM = \sum_{i=1}^{n}\left|t_i - p_i \right| , \text{if } p_i < t_i
         \end{equation}
     \end{linenomath}
-		
+
 The \gls{AllocS} is computed as follows:
 
 \begin{linenomath}
     \begin{equation}\label{eq:AllocS}
-        AllocS = 
-        \begin{cases} 
-            0 & , \text{if } p \leq t \\
-            p - t  & , \text{if } p > t \\
-        \end{cases} 
+        AllocS = \sum_{i=1}^{n}\left|t_i - p_i \right| , \text{if } p_i > t_i
             \end{equation}
     \end{linenomath}
 		
