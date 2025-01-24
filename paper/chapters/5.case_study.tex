@@ -1,39 +1,41 @@
-To evaluate the aplicability of machine learning techniques for secondary reserve allocation the study was conducted using the Spanish electricity market historical data.
+To evaluate the applicability of machine learning techniques for secondary reserve allocation the study was conducted using the Spanish electricity market historical data.
 
 \subsection{Data Sources and Preprocessing}
 
-The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE}. Available at \href{https://www.esios.ree.es/es}{\gls{ESIOS}}. The dataset includes the following key variables:
+The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE} (please check the Data Availability Statement). The dataset includes the key variables presented in Table~\ref{esios_data}.
 
 \input{tables/indicators_metadata.tex}
 
-
-The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with \href{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}{IterativeImputer} \cite{vanBuuren2011}\cite{Buck1960}.:
+The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with IterativeImputer \cite{vanBuuren2011,Buck1960}, as presented in Figure~\ref{fig:misisng_data}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/missing_data.png}
-    \caption{Missing Data}
+    \caption{Missing Data.}
     \label{fig:misisng_data}
   \end{figure}
+	
 
-
-To choose the temporal space of the models temporal auto-correlations were checked:
+To choose the temporal space of the models temporal auto-correlations were checked in Table~\ref{temp_corr}.
 
 \input{tables/autocorrelation.tex}
 
+From Table~\ref{temp_corr} can be verified the small correlation between variables,  
 
-We wanted to forecast \gls{DA} values, so we will be forecasting 24 hours ahead. As for the input for that forecast the temporal correlactions present 168 hours as the next correlation after the one day period, which represents a week.
-We add also variable to account for each time range: day, day of year, month, day of week.\par
-And so our models will receive data in (Batch Size, 168, 18) shape for input, and (Batch Size, 24, 1) shape for output.
+The goal is to forecast \gls{DA} values 24 hours ahead. As for the input for that forecast the temporal correlations present 168 hours as the next correlation after the one day period, which represents a week.
+Variables has been added to account for each time range: day, day of year, month, day of week.\par
+So, models will receive data in (Batch Size, 168, 18) shape for input, and (Batch Size, 24, 1) shape for output.
 
 
 
 \subsubsection{Training Data}
-For training the full dataset from 2014 to 2023, inclusive was used. follows a description of said data:
+For training the full dataset from 2014 to 2023, the data used has the following metric presented in Table~\ref{training_data_sum}:
 
 \input{tables/tabela_dados_treino_medias.tex}
 
-With each variable correlation to used secondary reserve energy:
+Can be verified a significant standard deviations between the used energy for up and down regulation. Furthermore, even the allocated up and down capacities significantly differ according to the time period. 
+
+The correlation of each variable with used secondary reserve energy presented in Figure~\ref{fig:Attribute_correlation}:
 
 \begin{figure}[H]
     \centering
@@ -43,15 +45,20 @@ With each variable correlation to used secondary reserve energy:
   \end{figure}
 %   \unskip
   
+ In Figure~\ref{fig:Attribute_correlation} is possible to verify that the correlation between allocated capacities and used energy is close to zero.  
   
-  
+The goal of this work is to reduce the difference between allocated capacities and used energy to efficiently use the available resources.
 
 \subsubsection{Validation Data}
 As for validation it was chosen the year 2024.\par
-Using the non comparitive metrics we have the following results:
+Using the non comparative metrics the results are presented in Table~\ref{validation_res}.
+
 \input{tables/tabela_res_benchmark.tex}
 
-And the correlation between allocated energy in the current method to the used energy can be seen in the following image:
+Table~\ref{validation_res} presents the main problems of the actual capacity allocation methodology, resulting with high: i) errors (RMSE and SAE) with used energy, ii) missing energy (AllocM), and iii) extra energy (AllocS).
+
+The correlation between allocated energy in the current method to the used energy can be seen in Figure~\ref{fig:Attribute_correlation_benchmark}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.75\textwidth]{plots/correlation_heatmap_benchmark.png}
@@ -60,34 +67,37 @@ And the correlation between allocated energy in the current method to the used e
   \end{figure}
 %   \unskip
 
-  
+In Figure~\ref{fig:Attribute_correlation_benchmark} can be verified a high correlation between up and down allocated capacities, identifying the practically symmetrical used allocation.
+%
+Furthermore, the correlation of allocated capacities with used energy is small, which can be solved by using dynamic allocation as presented in the next section.
 
 \subsection{Results}
 
-The best results for each architeture can be seen below, were Vanilla means it's only one layer deep, and Stacked means two layers deep:
+The best results, only based on PPG Positive, for each architecture are presented in Tables~\ref{res_linear_forecast} and \ref{res_comparative_forecast}, were Vanilla means it is only one layer deep, and Stacked means two layers deep:
 
 \input{tables/tabela_res_metrics.tex}
 
-Within the validation time, best model results can be summarized by:
+To choose the best model there was some analysis on \gls{PPG} and the individuals \gls{PPGS} and \gls{PPGM}. So that the final results would not just be the one best across the validation time, but also meanwise in the same time.\par
+Regarding all variables in Table~\ref{training_vars} the chosen models can be described as presented in Table~\ref{chosen_models}.
+\input{tables/chosen_models.tex}
+Within the validation time, best model results can be summarized by Tables~\ref{pred_res_linear} and \ref{pred_res}:
 
 \input{tables/tabela_res_model.tex}
 
-With an overall description as follows:
+With an overall description as follows in Table~\ref{model_vs_bench}:
 % meter tableas dos resutlados com benchmark
 \input{tables/tabela_modelos_res.tex}
 
-
-The proposed model presente an overall improvement of \textasciitilde22\% in upward allocation amd \textasciitilde11\% in downward allocation, comparing to current allocation methods.\par
-
-Where the hourly means differences between benchmark and validation results are:
+The proposed model presents an overall improvement of \textasciitilde22\% in upward allocation and \textasciitilde11\% in downward allocation, comparing to current allocation methods.\par
+Where the hourly means differences between benchmark and validation results are presented in Table~\ref{model_vs_bench_perc}.
 
 % meter tableas dos resutlados dos deltas com benchmark
 \input{tables/perc_delta_res.tex}
 
 Average hourly improvements are of \textasciitilde16\% and \textasciitilde9\% respectively, which also is an improvement on state of the art \cite{Algarvio2024} with 13\% and 8\%.
-The current study can free in average \textasciitilde12\% of hourly resources, lowering the average need to activate the third reserve in \textasciitilde21\% and \textasciitilde11\%.\par
+The current study can free in average \textasciitilde12\% of hourly resources, lowering the need to allocate down and up capacity to the secondary reserve in \textasciitilde21\% and \textasciitilde11\%, respectively.\par
 
-
+Can also be checked that the correlation between used and alocated is bigger than in the current method, achieving 36\% in both upward energy and downward energy. \par
 
 \begin{figure}[H]
     \centering
@@ -97,7 +107,7 @@ The current study can free in average \textasciitilde12\% of hourly resources, l
   \end{figure}
 
 
-We can also check that the correlation between used and alocated is bigger than in the current method, achieving 36\% in both upward energy and downward energy. \par
+ \par
 
 % The proposed dynamic reserve procurement methodology is implemented in three main steps:
 

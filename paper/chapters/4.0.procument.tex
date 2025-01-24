@@ -5,7 +5,7 @@ This study proposes a dynamic procurement based on machine learning techniques, 
 \subsection{Methodology Implementation}
 
 The methodology applied was a "brute force" choosing of better model, which can lead to better fine tuning results than a more complex architecture as shown in \cite{Liu2022}.\par
-With multiple model related variables in study:\par
+With multiple model related variables in study presented in Table~\ref{training_vars}:\par
 
 \input{tables/muaddib_variables.tex}
 
@@ -14,7 +14,7 @@ As for the loss function used, we shall test it with the three most common regre
 But since the problem we are trying to solve is not only of finding the smallest error, but to make sure the there is less negative and positive error than the benchmark we create a custom loss function to encapsulate the final loss calculation, the Mirror Weights. %\href{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py#L33}{Mirror Weights}. \par
 
 This function acts as a weight distributor for the negative and positive errors, in such a way that the a ratio defines which size gives more meaning to the final loss calculation. This was created since the error in missing energy is on a $10^{5}$ dimension, and on surplus $10^{6}$.\par
-In a default loss function trying to lower the absolute error, this difference means most work would be to lower surplus errors even at the expenses of raising the missing error. The created function allows for more behaviors, and some of them were studied, but the one with better results was defaulting surplus results weight 1, and making the weights of missing values its own error, multiplied by a ratio. Insights on given different ratio outcomes can be seen below:\par
+In a default loss function trying to lower the absolute error, this difference means most work would be to lower surplus errors even at the expenses of raising the missing error. The created function allows for more behaviors, and some of them were studied, but the one with better results was defaulting surplus results weight 1, and making the weights of missing values its own error, multiplied by a ratio. Insights on given different ratio outcomes can be seen in Figure~\ref{fig:Ratio_influence_on_metrics}:\par
 
 
 \begin{figure}[H]

@@ -1,5 +1,28 @@
 The results of the case study validate the effectiveness of machine learning techniques in improving the accuracy of reserve forecasts and optimizing reserve allocation. By dynamically adjusting upward and downward reserves based on real-time forecasts, the proposed methodology addresses the inefficiencies of static procurement methods. The observed cost savings and improved reserve utilization demonstrate the practical benefits of this approach for systems with high renewable penetration.
 
-Additionally, the case study highlights the potential for asymmetrical reserve procurement to better reflect system needs, particularly during periods of extreme renewable generation variability. The integration of weather forecasts into the predictive models further enhances their reliability, ensuring that reserve procurement decisions are informed by real-time conditions.
+Additionally, the case study highlights the potential for asymmetrical dynamic reserve procurement to better reflect system needs, particularly during periods of extreme renewable generation variability. The integration of weather forecasts into the predictive models further enhances their reliability, ensuring that reserve procurement decisions are informed by real-time conditions.
 
-In conclusion, the case study illustrates that dynamic reserve procurement, supported by machine learning techniques, can significantly improve the efficiency and cost-effectiveness of balancing services in modern electricity systems. These findings provide a strong foundation for further research and potential implementation in other power markets with similar challenges.
+Using the StackedFCNN architecture the average hourly improvements are of \textasciitilde16\% and \textasciitilde9\%, respectively.
+By using this leaning architecture the average hourly secondary allocated capacity can be reduced by \textasciitilde12\%, lowering the hourly need to allocate down and up capacities in \textasciitilde11\% and \textasciitilde21\%, respectively.
+
+In conclusion, the case study illustrates that dynamic reserve procurement, supported by machine learning techniques, can significantly improve the efficiency and cost-effectiveness of balancing services in modern electricity systems. These findings provide a strong foundation for further research and potential implementation in other balancing markets with similar challenges.
+
+\authorcontributions{{Conceptualization, J.S and H.A.; Methodology, J.S and H.A.; Software, J.S.; Validation, H.A.; Formal analysis, J.S and H.A.; Investigation, J.S and H.A.; Resources, J.S and H.A.; Data curation, J.S and H.A.; Writing---original draft, J.S.; Writing---review \& editing, H.A; Visualization, J.S.; Supervision, H.A.; Project administration, H.A.; Funding acquisition, H.A. All authors have read and agreed to the published version of the manuscript.}}
+
+\funding{This work received funding from the EU Horizon 2020 research and innovation program under the project TradeRES (grant agreement no. 864276).}
+
+%\institutionalreview{Not applicable}
+%
+%\informedconsent{Not applicable}
+
+\supplementary{All methodologies are provided to allow the replicability of this work and testing them on other markets. IterativeImputer data preprocessing methodology is at \url{https://scikit-learn.org/stable/modules/generated/sklearn.impute.IterativeImputer.html}. Alquimodelia model can be obtained at \url{https://github.com/alquimodelia}. Mirror Weights ratio methodology is at \url{https://github.com/alquimodelia/alquitable/blob/main/alquitable/advanced_losses.py\#L33}. Alquitable workshop package is at \url{https://github.com/alquimodelia/alquitable}. MuadDib machine learning framework can be obtained at \url{https://github.com/alquimodelia/MuadDib}.
+}
+
+
+\dataavailability{The data used to dynamically forecast secondary reserve needs and validate the proposed model is available at \url{https://www.esios.ree.es/es}.
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\acknowledgments{In this section, you can acknowledge any support given which is not covered by the author contribution or funding sections. This may include administrative and technical support, or donations in kind (e.g., materials used for experiments).}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\conflictsofinterest{The authors declare no conflicts of interest.} 
