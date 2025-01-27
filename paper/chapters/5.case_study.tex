@@ -1,12 +1,12 @@
-To evaluate the applicability of machine learning techniques for secondary reserve allocation the study was conducted using the Spanish electricity market historical data.
+To evaluate the applicability of machine learning techniques for secondary reserve allocation, the study was conducted using the Spanish electricity market historical data from 2014 to 2024.
 
 \subsection{Data Sources and Preprocessing}
 
 The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE} (please check the Data Availability Statement). The dataset includes the key variables presented in Table~\ref{esios_data}.
 
-\input{tables/indicators_metadata.tex}
-
 The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with IterativeImputer \cite{vanBuuren2011,Buck1960}, as presented in Figure~\ref{fig:misisng_data}.
+
+To choose the temporal space of the models, temporal auto-correlations were checked in Table~\ref{temp_corr}.
 
 \begin{figure}[H]
     \centering
@@ -14,32 +14,29 @@ The data spans multiple years to account for seasonal variability and long-term 
     \caption{Missing Data.}
     \label{fig:misisng_data}
   \end{figure}
-	
 
-To choose the temporal space of the models temporal auto-correlations were checked in Table~\ref{temp_corr}.
+\input{tables/indicators_metadata.tex}
 
 \input{tables/autocorrelation.tex}
 
-From Table~\ref{temp_corr} can be verified the small correlation between variables,  
+From Table~\ref{temp_corr} can be verified small correlations between variables. 
 
-The goal is to forecast \gls{DA} values 24 hours ahead. As for the input for that forecast the temporal correlations present 168 hours as the next correlation after the one day period, which represents a week.
+The goal is to forecast \gls{DA} values 24 hours ahead. The input for that forecast considers that temporal correlations present 168 hours after each day as the next correlation, which represents a week, i.e., is used the data of a week to forecast the next day.
 Variables has been added to account for each time range: day, day of year, month, day of week.\par
 So, models will receive data in (Batch Size, 168, 18) shape for input, and (Batch Size, 24, 1) shape for output.
 
-
-
 \subsubsection{Training Data}
-For training the full dataset from 2014 to 2023, the data used has the following metric presented in Table~\ref{training_data_sum}:
+For training the full dataset from 2014 to 2023, the data used has the following metric presented in Table~\ref{training_data_sum}.
 
 \input{tables/tabela_dados_treino_medias.tex}
 
 Can be verified a significant standard deviations between the used energy for up and down regulation. Furthermore, even the allocated up and down capacities significantly differ according to the time period. 
-
-The correlation of each variable with used secondary reserve energy presented in Figure~\ref{fig:Attribute_correlation}:
+%
+The correlation of each variable with used secondary reserve energy presented in Figure~\ref{fig:Attribute_correlation}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{plots/correlation_heatmap.png}
+    \includegraphics[height=9cm, keepaspectratio=true]{plots/correlation_heatmap.png}
     \caption{Attribute correlation}
     \label{fig:Attribute_correlation}
   \end{figure}
@@ -78,13 +75,19 @@ The best results, only based on PPG Positive, for each architecture are presente
 \input{tables/tabela_res_metrics.tex}
 
 To choose the best model there was some analysis on \gls{PPG} and the individuals \gls{PPGS} and \gls{PPGM}. So that the final results would not just be the one best across the validation time, but also meanwise in the same time.\par
-Regarding all variables in Table~\ref{training_vars} the chosen models can be described as presented in Table~\ref{chosen_models}.
+Regarding all variables in Table~\ref{training_vars}, the chosen model can be described as presented in Table~\ref{chosen_models}.
 \input{tables/chosen_models.tex}
-Within the validation time, best model results can be summarized by Tables~\ref{pred_res_linear} and \ref{pred_res}:
+Within the validation time, best model results can be summarized by Tables~\ref{pred_res_linear} and \ref{pred_res}.
 
 \input{tables/tabela_res_model.tex}
 
-With an overall description as follows in Table~\ref{model_vs_bench}:
+When comparing Table~\ref{validation_res} with Table~\ref{pred_res_linear} can be verified a significant improvement in all outputs, supported by the metrics presented in Table~\ref{pred_res}.
+%
+Indeed, by using the best machine learning methodology, in Table~\ref{pred_res} is possible to verify a reduction of 21.92\% and 11.39\% in the extra up and down allocated capacity (PPG S) concerning the benchmark, respectively.
+%
+Furthermore, the missing allocated up and down capacity (PPG M) also reduced by 1.24\% and 9.31\% concerning the benchmark, respectively.
+
+Table~\ref{model_vs_bench} presents the overall description and comparison of the presented model with the benchmark.
 % meter tableas dos resutlados com benchmark
 \input{tables/tabela_modelos_res.tex}
 
