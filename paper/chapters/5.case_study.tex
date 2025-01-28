@@ -26,7 +26,7 @@ Variables has been added to account for each time range: day, day of year, month
 So, models will receive data in (Batch Size, 168, 18) shape for input, and (Batch Size, 24, 1) shape for output.
 
 \subsubsection{Training Data}
-For training the full dataset from 2014 to 2023, the data used has the following metric presented in Table~\ref{training_data_sum}.
+For training the full dataset from 2014 to 2023, the data used has the following summary presented in Table~\ref{training_data_sum}.
 
 \input{tables/tabela_dados_treino_medias.tex}
 
@@ -47,7 +47,8 @@ The correlation of each variable with used secondary reserve energy presented in
 The goal of this work is to reduce the difference between allocated capacities and used energy to efficiently use the available resources.
 
 \subsubsection{Validation Data}
-As for validation it was chosen the year 2024.\par
+As for validation it was chosen the year 2024, with summary presented in Table~\ref{validation_data_mean}.\par
+\input{tables/tabela_dados_validacao_medias.tex}
 Using the non comparative metrics the results are presented in Table~\ref{validation_res}.
 
 \input{tables/tabela_res_benchmark.tex}
