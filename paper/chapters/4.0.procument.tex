@@ -28,7 +28,7 @@ As for activation research suggested it could  provide significant impact on the
 And the last model variable in test were the weights, these given directly to the model training, not in a custom loss function. These weights are multiplied with the Mirror Weights.\par
 Temporal weights give weight one to the oldest sample and add one per time sample, making older data less relevant, in an attempt to be more aware of latest trends. The distance to mean purpose is to give more weight values further away from the mean, this would serve as a way to alleviate mean related generalization and catch spike inducing patterns.\par
 Where each of the model variables in study is a layer of training, giving the best model within that scope we would go to the next variable with the given best option so far. Going back and forward as to not loose best possible choices.\par
-
+Figure~\ref{fig:method_training} shows this scheme. For each layer training the set of models with the given variable in study, advancing to the next layer with the best option choosen before. And trying again the same variables in the most dinamic experiments.\par
 
 \begin{figure}[H]
 	\centering
