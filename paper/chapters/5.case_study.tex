@@ -1,12 +1,31 @@
-To evaluate the applicability of machine learning techniques for secondary reserve allocation, the study was conducted using the Spanish electricity market historical data from 2014 to 2024.
+To evaluate the applicability of machine learning techniques for secondary reserve allocation, the study was conducted using the Spanish electricity market historical data from 2014 to 2024, being the training period from 2014 to 2023.
 
 \subsection{Data Sources and Preprocessing}
 
+\textcolor[rgb]{0.43, 0.21, 0.1}{
+This study aims at minimizing the difference between allocated capacity and used energy in the Spanish secondary reserve market}.\par
+\textcolor[rgb]{0.43, 0.21, 0.1}{Figure~\ref{fig:training_data} presents the data of the allocated upward and downward capacity and the used energy in the training period.}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{plots/allocations_dataset.png}
+    \caption{Spanish allocated upward and downward secondary capacity and used energy in the training period.}
+    \label{fig:training_data}
+  \end{figure}
+	
+	\textcolor[rgb]{0.43, 0.21, 0.1}{
+	From Figure~\ref{fig:training_data} can be verified the significant difference between allocated capacity and used energy.
+	The blue area bellow the orange area reflects the excess of allocated capacity. Contrariwise, the blue are above the orange area reflects the missing allocated capacity.
+	From the figure can be verifies that the incidence of excess allocated capacity is significantly higher than the incidence of missing allocated capacity.
+	Historically, excess allocated capacity was more common for upward capacity and excess missing energy for downward capacity.
+	However, the Spanish TSO changed the methodology in the middle of 2022 because of the European gas crisis, increasing the allocation of downward capacity to a value practically symmetrical to upward capacity.
+	Furthermore, after the gas crisis, can be verified an increase in the number of events with missing energy, supporting the use of dynamic sizing of secondary capacity.}
+
 The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE} (please check the Data Availability Statement). The dataset includes the key variables presented in Table~\ref{esios_data}.
 
-The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with IterativeImputer \cite{vanBuuren2011,Buck1960}, as presented in Figure~\ref{fig:misisng_data}.
+\input{tables/indicators_metadata.tex}
 
-To choose the temporal space of the models, temporal auto-correlations were checked in Table~\ref{temp_corr}.
+The data spans multiple years to account for seasonal variability and long-term trends in vRES generation and demand. Data preprocessing only handled missing values using interpolation methods, with IterativeImputer \cite{vanBuuren2011,Buck1960}, as presented in Figure~\ref{fig:misisng_data}.
 
 \begin{figure}[H]
     \centering
@@ -15,7 +34,7 @@ To choose the temporal space of the models, temporal auto-correlations were chec
     \label{fig:misisng_data}
   \end{figure}
 
-\input{tables/indicators_metadata.tex}
+To choose the temporal space of the models, temporal auto-correlations were checked in Table~\ref{temp_corr}.
 
 \input{tables/autocorrelation.tex}
 
@@ -32,7 +51,11 @@ For training the full dataset from 2014 to 2023, the data used has the following
 
 Can be verified a significant standard deviations between the used energy for up and down regulation. Furthermore, even the allocated up and down capacities significantly differ according to the time period. 
 %
-The correlation of each variable with used secondary reserve energy presented in Figure~\ref{fig:Attribute_correlation}.
+The correlation of each variable with used secondary reserve energy is presented in Figure~\ref{fig:Attribute_correlation}.
+
+In Figure~\ref{fig:Attribute_correlation} is possible to verify that the correlation between allocated capacities and used energy is close to zero.  
+  
+The goal of this work is to reduce the difference between allocated capacities and used energy to efficiently use the available resources.
 
 \begin{figure}[H]
     \centering
@@ -42,9 +65,7 @@ The correlation of each variable with used secondary reserve energy presented in
   \end{figure}
 %   \unskip
   
- In Figure~\ref{fig:Attribute_correlation} is possible to verify that the correlation between allocated capacities and used energy is close to zero.  
-  
-The goal of this work is to reduce the difference between allocated capacities and used energy to efficiently use the available resources.
+
 
 \subsubsection{Validation Data}
 As for validation it was chosen the year 2024, with summary presented in Table~\ref{validation_data_mean}.\par
@@ -105,7 +126,7 @@ Can also be checked that the correlation between used and alocated is bigger tha
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.75\textwidth]{plots/heatmap_correlation_pred.png}
+    \includegraphics[width=0.65\textwidth]{plots/heatmap_correlation_pred.png}
     \caption{Correlations between Used and Alocated Energy}
     \label{fig:mode_pred_corres}
   \end{figure}
@@ -114,15 +135,15 @@ Can also be checked that the correlation between used and alocated is bigger tha
 
 \subsection{Discussion and Shortcomings}
 
-\textcolor[rgb]{0.43, 0.21, 0.1}{
-  Although the gain between this method and literature \cite{Algarvio2024} are small, this study shows that machine learning techniques can, with lower effort, get the same response or better, than more traditional methods. \\
-  Since the main goal was to insert machine learning studies in the area, comparing to other techniques, we used the same set of variables and expanded the dataset, in time, as much as it was available. \\
-  With this we can also infere that feature selection would be an improvement on current model, and specially, using only consume and production variables, instead of DA, leaving the forecast alone to the model. A study on feature selection might provide greater insight on which variables can best be used to model the forecast in hands. \\
-  A future study might also prove that only the use of recent data could provide better insight on current modelation, without the bias of older energy schemes.\\
-  Given also the current dinamic state of machine learning techniques, the best architectures to provide the best forecast might come from different families from the one used in this study.\\
-  As for structure it might be better to create a model for every single diferent hour, instead of a model for the 24 hours, or even a single hour model, but for all hours. \\
-  All this choices impact the feasibility of the final results, and should be made considering the production level on where they will be used.
-}
+
+\textcolor[rgb]{0.43, 0.21, 0.1}{Although the gain between this method and literature \cite{Algarvio2024} are small, this study shows that machine learning techniques can, with lower effort, get the same response or better, than more traditional methods.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{Since the main goal was to insert machine learning studies in the area, comparing to other techniques, has been used the same set of variables and expanded the dataset, in time, as much as it was available.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{With this can also be inferred that feature selection would be an improvement on current model, and specially, using only consumption and production variables, instead of DA forecasts, leaving the forecast alone to the model. A study on feature selection might provide greater insight on which best variables can be used to model the forecast in hands.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{A future study might also prove that only the use of recent data could provide better insight on current modulation, without the bias of older energy schemes.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{Given also the current dynamic state of machine learning techniques, the best architectures to provide the best forecast might come from different families from the one used in this study.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{As for structure it might be better to create a model for every single different hour, instead of a model for the 24 hours, or even a single hour model, but for all hours.} \par
+\textcolor[rgb]{0.43, 0.21, 0.1}{All this choices impact the feasibility of the final results, and should be made considering the production level on where they will be used.} \par
+
 
 \par
 
