@@ -2,24 +2,26 @@ To evaluate the applicability of machine learning techniques for secondary reser
 
 \subsection{Data Sources and Preprocessing}
 
-\textcolor[rgb]{0.43, 0.21, 0.1}{
+{
 This study aims at minimizing the difference between allocated capacity and used energy in the Spanish secondary reserve market}.\par
-\textcolor[rgb]{0.43, 0.21, 0.1}{Figure~\ref{fig:training_data} presents the data of the allocated upward and downward capacity and the used energy in the training period.}
+{Figure~\ref{fig:training_data} presents the data of the allocated upward and downward capacity and the used energy.}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{plots/allocations_dataset.png}
-    \caption{Spanish allocated upward and downward secondary capacity and used energy in the training period.}
+    \caption{Spanish allocated upward and downward secondary capacity and used energy.}
     \label{fig:training_data}
   \end{figure}
 	
-	\textcolor[rgb]{0.43, 0.21, 0.1}{
+	{
 	From Figure~\ref{fig:training_data} can be verified the significant difference between allocated capacity and used energy.
 	The blue area bellow the orange area reflects the excess of allocated capacity. Contrariwise, the blue are above the orange area reflects the missing allocated capacity.
 	From the figure can be verifies that the incidence of excess allocated capacity is significantly higher than the incidence of missing allocated capacity.
 	Historically, excess allocated capacity was more common for upward capacity and excess missing energy for downward capacity.
 	However, the Spanish TSO changed the methodology in the middle of 2022 because of the European gas crisis, increasing the allocation of downward capacity to a value practically symmetrical to upward capacity.
-	Furthermore, after the gas crisis, can be verified an increase in the number of events with missing energy, supporting the use of dynamic sizing of secondary capacity.}
+	Furthermore, after the gas crisis, can be verified an increase in the number of events with missing energy, supporting the use of dynamic sizing of secondary capacity.
+	%
+	Indeed, because of that the TSO changed the methodology in the middle of 2024 to decrease the number of missing energy events. Now, The deterministic methodology is more dynamic throughout the day, reducing the quantity of missing energy. However, it substantially increased the practically allocated upward and downward capacity, highly increasing the not used extra capacity.}
 
 The case study utilizes publicly available operational and historical data from the Spanish \gls{TSO}, \gls{REE} (please check the Data Availability Statement). The dataset includes the key variables presented in Table~\ref{esios_data}.
 
@@ -136,13 +138,13 @@ Can also be checked that the correlation between used and alocated is bigger tha
 \subsection{Discussion and Shortcomings}
 
 
-\textcolor[rgb]{0.43, 0.21, 0.1}{Although the gain between this method and literature \cite{Algarvio2024} are small, this study shows that machine learning techniques can, with lower effort, get the same response or better, than more traditional methods.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{Since the main goal was to insert machine learning studies in the area, comparing to other techniques, has been used the same set of variables and expanded the dataset, in time, as much as it was available.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{With this can also be inferred that feature selection would be an improvement on current model, and specially, using only consumption and production variables, instead of DA forecasts, leaving the forecast alone to the model. A study on feature selection might provide greater insight on which best variables can be used to model the forecast in hands.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{A future study might also prove that only the use of recent data could provide better insight on current modulation, without the bias of older energy schemes.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{Given also the current dynamic state of machine learning techniques, the best architectures to provide the best forecast might come from different families from the one used in this study.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{As for structure it might be better to create a model for every single different hour, instead of a model for the 24 hours, or even a single hour model, but for all hours.} \par
-\textcolor[rgb]{0.43, 0.21, 0.1}{All this choices impact the feasibility of the final results, and should be made considering the production level on where they will be used.} \par
+{Although the gain between this method and literature \cite{Algarvio2024} are small, this study shows that machine learning techniques can, with lower effort, get the same response or better, than more traditional methods.} \par
+{Since the main goal was to insert machine learning studies in the area, comparing to other techniques, has been used the same set of variables and expanded the dataset, in time, as much as it was available.} \par
+{With this can also be inferred that feature selection would be an improvement on current model, and specially, using only consumption and production variables, instead of DA forecasts, leaving the forecast alone to the model. A study on feature selection might provide greater insight on which best variables can be used to model the forecast in hands.} \par
+{A future study might also prove that only the use of recent data could provide better insight on current modulation, without the bias of older energy schemes.} \par
+{Given also the current dynamic state of machine learning techniques, the best architectures to provide the best forecast might come from different families from the one used in this study.} \par
+{As for structure it might be better to create a model for every single different hour, instead of a model for the 24 hours, or even a single hour model, but for all hours.} \par
+{All this choices impact the feasibility of the final results, and should be made considering the production level on where they will be used.} \par
 
 
 \par
